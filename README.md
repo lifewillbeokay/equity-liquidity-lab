@@ -62,6 +62,10 @@ The test suite covers normalization, full-input fills, route selection, adaptive
 
 The committed snapshots in `lib/data/` provide the initial dated view and test fixtures. They are not live prices. Shared production cache contents are runtime data and are not stored in Git.
 
+## Aggregator benchmark
+
+The [AAPL/MSFT KyberSwap benchmark](docs/benchmarks/kyberswap-2026-11-15.md) compares complete cold sweeps using identical inputs. The public endpoint was slower and lost samples to rate limiting, so direct DEX quoting remains the production source. The report includes per-profile coverage, a slower-rate control, machine-readable results, and commands to reproduce the test. A higher-capacity API-key gateway has not been benchmarked.
+
 ## Source map
 
 | Path | Purpose |
