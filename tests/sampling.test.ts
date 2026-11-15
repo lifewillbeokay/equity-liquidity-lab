@@ -77,7 +77,10 @@ test('EVM base and adaptive samples use one pinned block and reject incomplete f
 test('public coverage is restricted to the requested five chains',async()=>{
  const {ACTIVE_CHAINS,DEPLOYMENTS,ACTIVE_DEXES}=await import('../lib/registry');
  assert.deepEqual(new Set(ACTIVE_CHAINS),new Set(['ethereum','robinhood','base','solana','bsc']));
- assert.ok(DEPLOYMENTS.every(d=>ACTIVE_CHAINS.includes(d.chain)));assert.equal(DEPLOYMENTS.length,107);
+ assert.ok(DEPLOYMENTS.every(d=>ACTIVE_CHAINS.includes(d.chain)));assert.equal(new Set(DEPLOYMENTS.map(d=>d.id)).size,DEPLOYMENTS.length);
+ const {STOCKS,stockOf}=await import('../lib/market');
+ assert.deepEqual(new Set(DEPLOYMENTS.map(stockOf)),new Set(STOCKS.map(s=>s.id)));
+ assert.ok(STOCKS.some(s=>s.id==='MSFT'));assert.ok(!STOCKS.some(s=>s.id==='COIN'));
  assert.ok(!ACTIVE_DEXES.includes('jupiter'));assert.ok(!ACTIVE_DEXES.includes('stonfi'));assert.ok(!ACTIVE_DEXES.includes('fluxion'));assert.ok(!ACTIVE_DEXES.includes('nest'));
 });
 

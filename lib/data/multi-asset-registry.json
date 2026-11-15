@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-15T03:18:41.647Z",
+  "asOf": "2026-11-15T05:15:02.206216+00:00",
   "deployments": [
     {
       "id": "xstocks-nvda-ethereum-native",
@@ -3969,839 +3969,6 @@
       "underlying": "0x96702be57cd9777f835117a809c7124fe4ec989a"
     },
     {
-      "id": "xstocks-coin-ethereum-native",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "COINx",
-      "chain": "ethereum",
-      "token": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "native-shares",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Native ERC20/TRC20 transfer units already reflect equity shares.",
-      "variant": "native",
-      "network": "Ethereum",
-      "chainId": 1,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-ethereum-native",
-        "token": "0x364f210f430ec2448fc68a49203040f6124096f0",
-        "decimals": 18,
-        "totalSupply": "87000000000000000000000",
-        "block": "26417610",
-        "chain": "ethereum"
-      }
-    },
-    {
-      "id": "xstocks-coin-ethereum-wrapped-v1",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "wCOINx",
-      "chain": "ethereum",
-      "token": "0x3a98e79cdc7d8b2716a8696e25af028e429f11da",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "wrapper",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Official ERC4626 wrapper; normalize convertToAssets once.",
-      "variant": "wrapped-v1",
-      "network": "Ethereum",
-      "chainId": 1,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-ethereum-wrapped-v1",
-        "token": "0x3a98e79cdc7d8b2716a8696e25af028e429f11da",
-        "decimals": 18,
-        "totalSupply": "1600049321569652085",
-        "asset": "0x364f210f430eC2448Fc68A49203040F6124096F0",
-        "convertToAssets": "1000000000000000000",
-        "block": "26417610",
-        "chain": "ethereum"
-      },
-      "underlying": "0x364f210f430ec2448fc68a49203040f6124096f0"
-    },
-    {
-      "id": "xstocks-coin-ethereum-wrapped-v2",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "wCOINx",
-      "chain": "ethereum",
-      "token": "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "wrapper",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Official ERC4626 wrapper; normalize convertToAssets once.",
-      "variant": "wrapped-v2",
-      "network": "Ethereum",
-      "chainId": 1,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-ethereum-wrapped-v2",
-        "token": "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e",
-        "decimals": 18,
-        "totalSupply": "248871924824627348",
-        "asset": "0x364f210f430eC2448Fc68A49203040F6124096F0",
-        "convertToAssets": "1000000000000000000",
-        "block": "26417610",
-        "chain": "ethereum"
-      },
-      "underlying": "0x364f210f430ec2448fc68a49203040f6124096f0"
-    },
-    {
-      "id": "xstocks-coin-bsc-native",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "COINx",
-      "chain": "bsc",
-      "token": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 18,
-      "normalization": "native-shares",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Native ERC20/TRC20 transfer units already reflect equity shares.",
-      "variant": "native",
-      "network": "BinanceSmartChain",
-      "chainId": 56,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-bsc-native",
-        "token": "0x364f210f430ec2448fc68a49203040f6124096f0",
-        "decimals": 18,
-        "totalSupply": "41984177534839640583600",
-        "block": "133661094",
-        "chain": "bsc"
-      }
-    },
-    {
-      "id": "xstocks-coin-bsc-wrapped-v1",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "wCOINx",
-      "chain": "bsc",
-      "token": "0x3a98e79cdc7d8b2716a8696e25af028e429f11da",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 18,
-      "normalization": "wrapper",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Official ERC4626 wrapper; normalize convertToAssets once.",
-      "variant": "wrapped-v1",
-      "network": "BinanceSmartChain",
-      "chainId": 56,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-bsc-wrapped-v1",
-        "token": "0x3a98e79cdc7d8b2716a8696e25af028e429f11da",
-        "decimals": 18,
-        "totalSupply": "0",
-        "asset": "0x364f210f430eC2448Fc68A49203040F6124096F0",
-        "convertToAssets": "1000000000000000000",
-        "block": "133661094",
-        "chain": "bsc"
-      },
-      "underlying": "0x364f210f430ec2448fc68a49203040f6124096f0"
-    },
-    {
-      "id": "xstocks-coin-bsc-wrapped-v2",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "wCOINx",
-      "chain": "bsc",
-      "token": "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 18,
-      "normalization": "wrapper",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Official ERC4626 wrapper; normalize convertToAssets once.",
-      "variant": "wrapped-v2",
-      "network": "BinanceSmartChain",
-      "chainId": 56,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-bsc-wrapped-v2",
-        "token": "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e",
-        "decimals": 18,
-        "totalSupply": "0",
-        "asset": "0x364f210f430eC2448Fc68A49203040F6124096F0",
-        "convertToAssets": "1000000000000000000",
-        "block": "133661094",
-        "chain": "bsc"
-      },
-      "underlying": "0x364f210f430ec2448fc68a49203040f6124096f0"
-    },
-    {
-      "id": "xstocks-coin-arbitrum-native",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "COINx",
-      "chain": "arbitrum",
-      "token": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0xaf88d065e77c8cc2239327c5edb3a432268e5831",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "native-shares",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Native ERC20/TRC20 transfer units already reflect equity shares.",
-      "variant": "native",
-      "network": "Arbitrum",
-      "chainId": 42161,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-arbitrum-native",
-        "token": "0x364f210f430ec2448fc68a49203040f6124096f0",
-        "decimals": 18,
-        "totalSupply": "120000000000000000000000",
-        "block": "524346850",
-        "chain": "arbitrum"
-      }
-    },
-    {
-      "id": "xstocks-coin-arbitrum-wrapped-v1",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "wCOINx",
-      "chain": "arbitrum",
-      "token": "0x3a98e79cdc7d8b2716a8696e25af028e429f11da",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0xaf88d065e77c8cc2239327c5edb3a432268e5831",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "wrapper",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Official ERC4626 wrapper; normalize convertToAssets once.",
-      "variant": "wrapped-v1",
-      "network": "Arbitrum",
-      "chainId": 42161,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-arbitrum-wrapped-v1",
-        "token": "0x3a98e79cdc7d8b2716a8696e25af028e429f11da",
-        "decimals": 18,
-        "totalSupply": "0",
-        "asset": "0x364f210f430eC2448Fc68A49203040F6124096F0",
-        "convertToAssets": "1000000000000000000",
-        "block": "524346850",
-        "chain": "arbitrum"
-      },
-      "underlying": "0x364f210f430ec2448fc68a49203040f6124096f0"
-    },
-    {
-      "id": "xstocks-coin-arbitrum-wrapped-v2",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "wCOINx",
-      "chain": "arbitrum",
-      "token": "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0xaf88d065e77c8cc2239327c5edb3a432268e5831",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "wrapper",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Official ERC4626 wrapper; normalize convertToAssets once.",
-      "variant": "wrapped-v2",
-      "network": "Arbitrum",
-      "chainId": 42161,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-arbitrum-wrapped-v2",
-        "token": "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e",
-        "decimals": 18,
-        "totalSupply": "0",
-        "asset": "0x364f210f430eC2448Fc68A49203040F6124096F0",
-        "convertToAssets": "1000000000000000000",
-        "block": "524346850",
-        "chain": "arbitrum"
-      },
-      "underlying": "0x364f210f430ec2448fc68a49203040f6124096f0"
-    },
-    {
-      "id": "xstocks-coin-solana-native",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "COINx",
-      "chain": "solana",
-      "token": "Xs7ZdzSHLU9ftNJsii5fCeJhoRWSC32SQGzGQtePxNu",
-      "decimals": 8,
-      "color": "#efae76",
-      "settlement": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "solana-scaled",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Scaled UI multiplier applied once to raw amounts.",
-      "variant": "native",
-      "network": "Solana",
-      "chainId": null,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "Xs7ZdzSHLU9ftNJsii5fCeJhoRWSC32SQGzGQtePxNu",
-      "coverageNote": "Jupiter returned $10 buy and reverse sell quotes; live path selection may split across Solana DEXs.",
-      "observedMetadata": {
-        "decimals": 8,
-        "scaledUi": {
-          "authority": "S7vYFFWH6BjJyEsdrPQpqpYTqLTrPRK6KW3VwsJuRaS",
-          "multiplier": "1",
-          "newMultiplier": "1",
-          "newMultiplierEffectiveTimestamp": 0
-        },
-        "activeMultiplier": "1",
-        "contextSlot": 469573581
-      }
-    },
-    {
-      "id": "xstocks-coin-tron-native",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "COINx",
-      "chain": "tron",
-      "token": "TCaGwbURbmdYkG7fE8uXdbnofhw1uhA9zL",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t",
-      "settlementSymbol": "USDT",
-      "settlementDecimals": 6,
-      "normalization": "native-shares",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Native ERC20/TRC20 transfer units already reflect equity shares.",
-      "variant": "native",
-      "network": "Tron",
-      "chainId": null,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "TCaGwbURbmdYkG7fE8uXdbnofhw1uhA9zL",
-      "coverageNote": "Official deployment listed. No current quote provider integrated; this task did not probe Tron liquidity."
-    },
-    {
-      "id": "xstocks-coin-ton-native",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "COINx",
-      "chain": "ton",
-      "token": "EQCvk4Oq2l5Yts_S7Q4j08fB9Ftzx3IY-7UI1AqssyKGDt_I",
-      "decimals": 8,
-      "color": "#efae76",
-      "settlement": "EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs",
-      "settlementSymbol": "USDT",
-      "settlementDecimals": 6,
-      "normalization": "ton-scaled",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Scaled UI multiplier applied once to raw amounts.",
-      "variant": "native",
-      "network": "Ton",
-      "chainId": null,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "EQCvk4Oq2l5Yts_S7Q4j08fB9Ftzx3IY-7UI1AqssyKGDt_I",
-      "coverageNote": "Canonical TON mint verified. STON.fi $10 quote returned no pool; provider metadata alone does not establish liquidity.",
-      "observedMetadata": {
-        "decimals": "8",
-        "scaledUi": {
-          "numerator": "1",
-          "denominator": "1"
-        }
-      }
-    },
-    {
-      "id": "xstocks-coin-mantle-native",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "COINx",
-      "chain": "mantle",
-      "token": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0x09bc4e0d864854c6afb6eb9a9cdf58ac190d0df9",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "native-shares",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Native ERC20/TRC20 transfer units already reflect equity shares.",
-      "variant": "native",
-      "network": "Mantle",
-      "chainId": 5000,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-mantle-native",
-        "token": "0x364f210f430ec2448fc68a49203040f6124096f0",
-        "decimals": 18,
-        "totalSupply": "42421195195019132351300",
-        "block": "103290914",
-        "chain": "mantle"
-      }
-    },
-    {
-      "id": "xstocks-coin-mantle-wrapped-v1",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "wCOINx",
-      "chain": "mantle",
-      "token": "0x3a98e79cdc7d8b2716a8696e25af028e429f11da",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0x09bc4e0d864854c6afb6eb9a9cdf58ac190d0df9",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "wrapper",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Official ERC4626 wrapper; normalize convertToAssets once.",
-      "variant": "wrapped-v1",
-      "network": "Mantle",
-      "chainId": 5000,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-mantle-wrapped-v1",
-        "token": "0x3a98e79cdc7d8b2716a8696e25af028e429f11da",
-        "decimals": 18,
-        "totalSupply": "0",
-        "asset": "0x364f210f430eC2448Fc68A49203040F6124096F0",
-        "convertToAssets": "1000000000000000000",
-        "block": "103290914",
-        "chain": "mantle"
-      },
-      "underlying": "0x364f210f430ec2448fc68a49203040f6124096f0"
-    },
-    {
-      "id": "xstocks-coin-mantle-wrapped-v2",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "wCOINx",
-      "chain": "mantle",
-      "token": "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0x09bc4e0d864854c6afb6eb9a9cdf58ac190d0df9",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "wrapper",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Official ERC4626 wrapper; normalize convertToAssets once.",
-      "variant": "wrapped-v2",
-      "network": "Mantle",
-      "chainId": 5000,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-mantle-wrapped-v2",
-        "token": "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e",
-        "decimals": 18,
-        "totalSupply": "0",
-        "asset": "0x364f210f430eC2448Fc68A49203040F6124096F0",
-        "convertToAssets": "1000000000000000000",
-        "block": "103290914",
-        "chain": "mantle"
-      },
-      "underlying": "0x364f210f430ec2448fc68a49203040f6124096f0"
-    },
-    {
-      "id": "xstocks-coin-hyperevm-native",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "COINx",
-      "chain": "hyperevm",
-      "token": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0xb88339cb7199b77e23db6e890353e22632ba630f",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "native-shares",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Native ERC20/TRC20 transfer units already reflect equity shares.",
-      "variant": "native",
-      "network": "HyperEVM",
-      "chainId": 999,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-hyperevm-native",
-        "token": "0x364f210f430ec2448fc68a49203040f6124096f0",
-        "decimals": 18,
-        "totalSupply": "102701040000000000000000",
-        "block": "51296116",
-        "chain": "hyperevm"
-      }
-    },
-    {
-      "id": "xstocks-coin-hyperevm-wrapped-v2",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "wCOINx",
-      "chain": "hyperevm",
-      "token": "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0xb88339cb7199b77e23db6e890353e22632ba630f",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "wrapper",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Official ERC4626 wrapper; normalize convertToAssets once.",
-      "variant": "wrapped-v2",
-      "network": "HyperEVM",
-      "chainId": 999,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-hyperevm-wrapped-v2",
-        "token": "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e",
-        "decimals": 18,
-        "totalSupply": "0",
-        "asset": "0x364f210f430eC2448Fc68A49203040F6124096F0",
-        "convertToAssets": "1000000000000000000",
-        "block": "51296116",
-        "chain": "hyperevm"
-      },
-      "underlying": "0x364f210f430ec2448fc68a49203040f6124096f0"
-    },
-    {
-      "id": "xstocks-coin-ink-native",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "COINx",
-      "chain": "ink",
-      "token": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0xe343167631d89b6ffc58b88d6b7fb0228795491d",
-      "settlementSymbol": "USDG",
-      "settlementDecimals": 6,
-      "normalization": "native-shares",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Native ERC20/TRC20 transfer units already reflect equity shares.",
-      "variant": "native",
-      "network": "Ink",
-      "chainId": 57073,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-ink-native",
-        "token": "0x364f210f430ec2448fc68a49203040f6124096f0",
-        "decimals": 18,
-        "totalSupply": "102701040000000000000000",
-        "block": "61213721",
-        "chain": "ink"
-      }
-    },
-    {
-      "id": "xstocks-coin-ink-wrapped-v2",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "wCOINx",
-      "chain": "ink",
-      "token": "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0xe343167631d89b6ffc58b88d6b7fb0228795491d",
-      "settlementSymbol": "USDG",
-      "settlementDecimals": 6,
-      "normalization": "wrapper",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Official ERC4626 wrapper; normalize convertToAssets once.",
-      "variant": "wrapped-v2",
-      "network": "Ink",
-      "chainId": 57073,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-ink-wrapped-v2",
-        "token": "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e",
-        "decimals": 18,
-        "totalSupply": "0",
-        "asset": "0x364f210f430eC2448Fc68A49203040F6124096F0",
-        "convertToAssets": "1000000000000000000",
-        "block": "61213721",
-        "chain": "ink"
-      },
-      "underlying": "0x364f210f430ec2448fc68a49203040f6124096f0"
-    },
-    {
-      "id": "xstocks-coin-xlayer-native",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "COINx",
-      "chain": "xlayer",
-      "token": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0xb6ceceab302e2e4948951ee7843fc24e92933061",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "native-shares",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Native ERC20/TRC20 transfer units already reflect equity shares.",
-      "variant": "native",
-      "network": "XLayer",
-      "chainId": 196,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-xlayer-native",
-        "token": "0x364f210f430ec2448fc68a49203040f6124096f0",
-        "decimals": 18,
-        "totalSupply": "50240445289879599240000",
-        "block": "75943125",
-        "chain": "xlayer"
-      }
-    },
-    {
-      "id": "xstocks-coin-xlayer-wrapped-v2",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "wCOINx",
-      "chain": "xlayer",
-      "token": "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0xb6ceceab302e2e4948951ee7843fc24e92933061",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "wrapper",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Official ERC4626 wrapper; normalize convertToAssets once.",
-      "variant": "wrapped-v2",
-      "network": "XLayer",
-      "chainId": 196,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical direct stablecoin pool and positive $10 buy / reverse sell quotes verified. Quote availability depends on amount and state.",
-      "observedMetadata": {
-        "id": "xstocks-coin-xlayer-wrapped-v2",
-        "token": "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e",
-        "decimals": 18,
-        "totalSupply": "226675254113974277802",
-        "asset": "0x364f210f430eC2448Fc68A49203040F6124096F0",
-        "convertToAssets": "1000000000000000000",
-        "block": "75943125",
-        "chain": "xlayer"
-      },
-      "underlying": "0x364f210f430ec2448fc68a49203040f6124096f0"
-    },
-    {
-      "id": "xstocks-coin-optimism-native",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "COINx",
-      "chain": "optimism",
-      "token": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "native-shares",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Native ERC20/TRC20 transfer units already reflect equity shares.",
-      "variant": "native",
-      "network": "Optimism",
-      "chainId": 10,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-optimism-native",
-        "token": "0x364f210f430ec2448fc68a49203040f6124096f0",
-        "decimals": 18,
-        "totalSupply": "37174721189591078067000",
-        "block": "159556690",
-        "chain": "optimism"
-      }
-    },
-    {
-      "id": "xstocks-coin-optimism-wrapped-v2",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "wCOINx",
-      "chain": "optimism",
-      "token": "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "wrapper",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Official ERC4626 wrapper; normalize convertToAssets once.",
-      "variant": "wrapped-v2",
-      "network": "Optimism",
-      "chainId": 10,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-optimism-wrapped-v2",
-        "token": "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e",
-        "decimals": 18,
-        "totalSupply": "93783951175295029627",
-        "asset": "0x364f210f430eC2448Fc68A49203040F6124096F0",
-        "convertToAssets": "1000000000000000000",
-        "block": "159556690",
-        "chain": "optimism"
-      },
-      "underlying": "0x364f210f430ec2448fc68a49203040f6124096f0"
-    },
-    {
-      "id": "xstocks-coin-monad-native",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "COINx",
-      "chain": "monad",
-      "token": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0x754704bc059f8c67012fed69bc8a327a5aafb603",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "native-shares",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Native ERC20/TRC20 transfer units already reflect equity shares.",
-      "variant": "native",
-      "network": "Monad",
-      "chainId": 143,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-monad-native",
-        "token": "0x364f210f430ec2448fc68a49203040f6124096f0",
-        "decimals": 18,
-        "totalSupply": "41873196889028462234300",
-        "block": "122346181",
-        "chain": "monad"
-      }
-    },
-    {
-      "id": "xstocks-coin-monad-wrapped-v2",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "wCOINx",
-      "chain": "monad",
-      "token": "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0x754704bc059f8c67012fed69bc8a327a5aafb603",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "wrapper",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Official ERC4626 wrapper; normalize convertToAssets once.",
-      "variant": "wrapped-v2",
-      "network": "Monad",
-      "chainId": 143,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical contract metadata verified at a pinned block; no quote route found in the bounded canonical Uniswap v3 scan.",
-      "observedMetadata": {
-        "id": "xstocks-coin-monad-wrapped-v2",
-        "token": "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e",
-        "decimals": 18,
-        "totalSupply": "0",
-        "asset": "0x364f210f430eC2448Fc68A49203040F6124096F0",
-        "convertToAssets": "1000000000000000000",
-        "block": "122346181",
-        "chain": "monad"
-      },
-      "underlying": "0x364f210f430ec2448fc68a49203040f6124096f0"
-    },
-    {
       "id": "xstocks-tsla-ethereum-native",
       "groupId": "xstocks",
       "stock": "TSLA",
@@ -5800,41 +4967,6 @@
       "underlying": "0x96702be57cd9777f835117a809c7124fe4ec989a"
     },
     {
-      "id": "xstocks-coin-xlayer-wrapped-v2-usdg",
-      "groupId": "xstocks",
-      "stock": "COIN",
-      "name": "xStocks",
-      "symbol": "wCOINx",
-      "chain": "xlayer",
-      "token": "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e",
-      "decimals": 18,
-      "color": "#efae76",
-      "settlement": "0x4ae46a509f6b1d9056937ba4500cb143933d2dc8",
-      "settlementSymbol": "USDG",
-      "settlementDecimals": 6,
-      "normalization": "wrapper",
-      "source": "https://api.xstocks.fi/api/v2/public/assets/COINx",
-      "note": "Official ERC4626 wrapper; normalize convertToAssets once.",
-      "variant": "wrapped-v2 / USDG",
-      "network": "XLayer",
-      "chainId": 196,
-      "assetName": "Coinbase xStock",
-      "underlyingIsin": "US19260Q1076",
-      "canonicalAsset": "0x364f210f430ec2448fc68a49203040f6124096f0",
-      "coverageNote": "Canonical direct stablecoin pool and positive $10 buy / reverse sell quotes verified. Quote availability depends on amount and state.",
-      "observedMetadata": {
-        "id": "xstocks-coin-xlayer-wrapped-v2",
-        "token": "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e",
-        "decimals": 18,
-        "totalSupply": "226675254113974277802",
-        "asset": "0x364f210f430eC2448Fc68A49203040F6124096F0",
-        "convertToAssets": "1000000000000000000",
-        "block": "75943125",
-        "chain": "xlayer"
-      },
-      "underlying": "0x364f210f430ec2448fc68a49203040f6124096f0"
-    },
-    {
       "id": "xstocks-tsla-xlayer-wrapped-v2-usdg",
       "groupId": "xstocks",
       "stock": "TSLA",
@@ -5868,82 +5000,6 @@
         "chain": "xlayer"
       },
       "underlying": "0x8ad3c73f833d3f9a523ab01476625f269aeb7cf0"
-    },
-    {
-      "id": "ondo-coin-ethereum",
-      "stock": "COIN",
-      "groupId": "ondo",
-      "name": "Ondo",
-      "symbol": "COINon",
-      "chain": "ethereum",
-      "token": "0xf042cfa86cf1d598a75bdb55c3507a1f39f9493b",
-      "decimals": 18,
-      "color": "#c2a6ff",
-      "settlement": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "ondo",
-      "oracleToken": "0xf8589b526fdd65f7f301c605a6e04f0f1b4b3620",
-      "source": "https://docs.ondo.finance/addresses",
-      "note": "Ondo Coinbase total-return tracker.",
-      "coverageNote": "1 canonical route candidates returned a complete $100 or $1,000 buy/sell quote at the checked block."
-    },
-    {
-      "id": "ondo-coin-bsc",
-      "stock": "COIN",
-      "groupId": "ondo",
-      "name": "Ondo",
-      "symbol": "COINon",
-      "chain": "bsc",
-      "token": "0xf8589b526fdd65f7f301c605a6e04f0f1b4b3620",
-      "decimals": 18,
-      "color": "#c2a6ff",
-      "settlement": "0x55d398326f99059ff775485246999027b3197955",
-      "settlementSymbol": "USDT",
-      "settlementDecimals": 18,
-      "normalization": "ondo",
-      "oracleToken": "0xf8589b526fdd65f7f301c605a6e04f0f1b4b3620",
-      "source": "https://docs.ondo.finance/addresses",
-      "note": "Ondo Coinbase total-return tracker.",
-      "coverageNote": "Official deployment; no complete $100/$1,000 sample quote among checked direct/two-hop routes at the checked block."
-    },
-    {
-      "id": "ondo-coin-hyperevm",
-      "stock": "COIN",
-      "groupId": "ondo",
-      "name": "Ondo",
-      "symbol": "COINon",
-      "chain": "hyperevm",
-      "token": "0x639bcd00422facaca534063e3d860e8fcf78b46f",
-      "decimals": 18,
-      "color": "#c2a6ff",
-      "settlement": "0xb88339cb7199b77e23db6e890353e22632ba630f",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "ondo",
-      "oracleToken": "0xf8589b526fdd65f7f301c605a6e04f0f1b4b3620",
-      "source": "https://docs.ondo.finance/addresses",
-      "note": "Ondo Coinbase total-return tracker.",
-      "coverageNote": "Official deployment, zero outstanding supply at checked block."
-    },
-    {
-      "id": "ondo-coin-solana",
-      "stock": "COIN",
-      "groupId": "ondo",
-      "name": "Ondo",
-      "symbol": "COINon",
-      "chain": "solana",
-      "token": "5u6KDiNJXxX4rGMfYT4BApZQC5CuDNrG6MHkwp1ondo",
-      "decimals": 9,
-      "color": "#c2a6ff",
-      "settlement": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-      "settlementSymbol": "USDC",
-      "settlementDecimals": 6,
-      "normalization": "solana-scaled",
-      "oracleToken": "0xf8589b526fdd65f7f301c605a6e04f0f1b4b3620",
-      "source": "https://docs.ondo.finance/addresses",
-      "note": "Ondo Coinbase total-return tracker.",
-      "coverageNote": "Official mint and Token2022 scaled UI configuration verified; Jupiter provider routing."
     },
     {
       "id": "ondo-googl-ethereum",
@@ -6758,43 +5814,6 @@
       "note": "Raw BEP-677 token units multiplied by onchain uiMultiplier() / 1e18 gives share equivalents. Token decimals verified onchain; Binance 8-digit display precision is not ERC20 decimals."
     },
     {
-      "stock": "COIN",
-      "id": "robinhood-coin-robinhood",
-      "groupId": "robinhood",
-      "name": "Robinhood",
-      "symbol": "COIN",
-      "chain": "robinhood",
-      "token": "0x6330D8C3178a418788dF01a47479c0ce7CCF450b",
-      "decimals": 18,
-      "color": "#a4d674",
-      "settlement": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
-      "settlementSymbol": "USDG",
-      "settlementDecimals": 6,
-      "normalization": "robinhood",
-      "source": "https://api.robinhood.com/rhj/assets",
-      "note": "Raw token units multiplied by onchain uiMultiplier() / 1e18 gives share equivalents.",
-      "apiMultiplier": "1.000000000000000000",
-      "assetId": "0x00000000000000000000000000000000970b46dbdece4ae4958a53815e62a85a",
-      "isin": "US19260Q1076"
-    },
-    {
-      "stock": "COIN",
-      "id": "binance-coin-bsc",
-      "groupId": "binance",
-      "name": "bStocks",
-      "symbol": "COINB",
-      "chain": "bsc",
-      "token": "0x585bde7c54abb5ccd7791f923d6c2187635f3952",
-      "decimals": 18,
-      "color": "#e7cf6e",
-      "settlement": "0x55d398326f99059ff775485246999027b3197955",
-      "settlementSymbol": "USDT",
-      "settlementDecimals": 18,
-      "normalization": "bep677",
-      "source": "https://www.binance.com/en/support/announcement/detail/6a55706a042c4a7ebedc2a0899744088",
-      "note": "Raw BEP-677 token units multiplied by onchain uiMultiplier() / 1e18 gives share equivalents. Token decimals verified onchain; Binance 8-digit display precision is not ERC20 decimals."
-    },
-    {
       "stock": "TSLA",
       "id": "coinbase-tsla-base",
       "groupId": "coinbase",
@@ -6849,6 +5868,554 @@
       "normalization": "bep677",
       "source": "https://www.binance.com/en/square/post/332986647950738",
       "note": "Raw BEP-677 token units multiplied by onchain uiMultiplier() / 1e18 gives share equivalents. Token decimals verified onchain; Binance 8-digit display precision is not ERC20 decimals."
+    },
+    {
+      "stock": "MSFT",
+      "id": "coinbase-msft-base",
+      "groupId": "coinbase",
+      "name": "Coinbase",
+      "symbol": "MSFTc",
+      "chain": "base",
+      "token": "0xb200000000000000000000ab99cfa739e253872b",
+      "decimals": 8,
+      "color": "#6ba4ff",
+      "settlement": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "settlementSymbol": "USDC",
+      "settlementDecimals": 6,
+      "normalization": "b20",
+      "source": "https://api.coinbase.com/v1/tokenized-stocks",
+      "note": "Raw B20 token units multiplied by onchain multiplier() / 1e18 gives share equivalents.",
+      "isin": "US5949181045",
+      "apiMultiplier": 1,
+      "verification": {
+        "decimals": 8,
+        "symbol": "MSFTc",
+        "totalSupply": "269670741505",
+        "multiplier": "1000000000000000000"
+      },
+      "verifiedBlock": "57645697",
+      "coverageNote": "Official issuer deployment; token metadata verified onchain."
+    },
+    {
+      "stock": "MSFT",
+      "id": "robinhood-msft-robinhood",
+      "groupId": "robinhood",
+      "name": "Robinhood",
+      "symbol": "MSFT",
+      "chain": "robinhood",
+      "token": "0xe93237c50d904957cf27e7b1133b510c669c2e74",
+      "decimals": 18,
+      "color": "#a4d674",
+      "settlement": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+      "settlementSymbol": "USDG",
+      "settlementDecimals": 6,
+      "normalization": "robinhood",
+      "source": "https://api.robinhood.com/rhj/assets",
+      "note": "Raw token units multiplied by onchain uiMultiplier() / 1e18 gives share equivalents.",
+      "isin": "US5949181045",
+      "apiMultiplier": "1.000412952576205964",
+      "assetId": "0x00000000000000000000000000000000307bb0113ca54f93adf80f4ff2bf681a",
+      "verification": {
+        "decimals": 18,
+        "symbol": "MSFT",
+        "totalSupply": "3499209272450000000000",
+        "uiMultiplier": "1000412952576205964"
+      },
+      "verifiedBlock": "114722419",
+      "coverageNote": "Official issuer deployment; token metadata verified onchain."
+    },
+    {
+      "stock": "MSFT",
+      "id": "binance-msft-bsc",
+      "groupId": "binance",
+      "name": "bStocks",
+      "symbol": "MSFTB",
+      "chain": "bsc",
+      "token": "0x80106cb3ead06659a5ad19df39d9b4733863b9b0",
+      "decimals": 18,
+      "color": "#e7cf6e",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "settlementSymbol": "USDT",
+      "settlementDecimals": 18,
+      "normalization": "bep677",
+      "source": "https://www.binance.com/en/support/announcement/detail/03b264b679a646119d1a2415b9097bd6",
+      "note": "Raw BEP-677 token units multiplied by onchain uiMultiplier() / 1e18 gives share equivalents. Token decimals verified onchain; Binance 8-digit display precision is not ERC20 decimals.",
+      "verification": {
+        "decimals": 18,
+        "symbol": "MSFTB",
+        "totalSupply": "5635887073990000000000",
+        "uiMultiplier": "1001313964833366845"
+      },
+      "verifiedBlock": "133677494",
+      "coverageNote": "Official issuer deployment; token metadata verified onchain."
+    },
+    {
+      "id": "ondo-msft-ethereum",
+      "stock": "MSFT",
+      "groupId": "ondo",
+      "name": "Ondo",
+      "symbol": "MSFTon",
+      "chain": "ethereum",
+      "token": "0xb812837b81a3a6b81d7cd74cfb19a7f2784555e5",
+      "decimals": 18,
+      "color": "#c2a6ff",
+      "settlement": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "settlementSymbol": "USDC",
+      "settlementDecimals": 6,
+      "normalization": "ondo",
+      "oracleToken": "0x6bfe75d1ad432050ea973c3a3dcd88f02e2444c3",
+      "source": "https://docs.ondo.finance/addresses",
+      "note": "Ondo Microsoft total-return tracker.",
+      "coverageNote": "Official issuer deployment; token metadata verified onchain.",
+      "verification": {
+        "decimals": 18,
+        "symbol": "MSFTon",
+        "totalSupply": "4989763526240031453771"
+      },
+      "verifiedBlock": "26418225"
+    },
+    {
+      "id": "ondo-msft-bsc",
+      "stock": "MSFT",
+      "groupId": "ondo",
+      "name": "Ondo",
+      "symbol": "MSFTon",
+      "chain": "bsc",
+      "token": "0x6bfe75d1ad432050ea973c3a3dcd88f02e2444c3",
+      "decimals": 18,
+      "color": "#c2a6ff",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "settlementSymbol": "USDT",
+      "settlementDecimals": 18,
+      "normalization": "ondo",
+      "oracleToken": "0x6bfe75d1ad432050ea973c3a3dcd88f02e2444c3",
+      "source": "https://docs.ondo.finance/addresses",
+      "note": "Ondo Microsoft total-return tracker.",
+      "coverageNote": "Official issuer deployment; token metadata verified onchain.",
+      "verification": {
+        "decimals": 18,
+        "symbol": "MSFTon",
+        "totalSupply": "9010946083161114065011"
+      },
+      "verifiedBlock": "133677494"
+    },
+    {
+      "id": "ondo-msft-solana",
+      "stock": "MSFT",
+      "groupId": "ondo",
+      "name": "Ondo",
+      "symbol": "MSFTon",
+      "chain": "solana",
+      "token": "FRmH6iRkMr33DLG6zVLR7EM4LojBFAuq6NtFzG6ondo",
+      "decimals": 9,
+      "color": "#c2a6ff",
+      "settlement": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "settlementSymbol": "USDC",
+      "settlementDecimals": 6,
+      "normalization": "solana-scaled",
+      "oracleToken": "0x6bfe75d1ad432050ea973c3a3dcd88f02e2444c3",
+      "source": "https://docs.ondo.finance/addresses",
+      "note": "Ondo Microsoft total-return tracker.",
+      "coverageNote": "Official issuer deployment."
+    },
+    {
+      "id": "xstocks-msft-ethereum-native",
+      "stock": "MSFT",
+      "groupId": "xstocks",
+      "name": "xStocks",
+      "symbol": "MSFTx",
+      "chain": "ethereum",
+      "token": "0x5621737f42dae558b81269fcb9e9e70c19aa6b35",
+      "decimals": 18,
+      "color": "#efae76",
+      "settlement": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "settlementSymbol": "USDC",
+      "settlementDecimals": 6,
+      "normalization": "native-shares",
+      "source": "https://api.xstocks.fi/api/v2/public/assets/MSFTx",
+      "note": "Native EVM token transfer units are share equivalents.",
+      "variant": "native",
+      "canonicalAsset": "0x5621737f42dae558b81269fcb9e9e70c19aa6b35",
+      "settlements": [
+        {
+          "symbol": "PYUSD",
+          "currency": "USD",
+          "network": "Ethereum",
+          "address": "0x6c3ea9036406852006290770bedfcaba0e23a0e8",
+          "decimals": 6,
+          "issuance": true,
+          "redemption": true,
+          "supportsAtomicSwaps": true
+        },
+        {
+          "symbol": "EURC",
+          "currency": "EUR",
+          "network": "Ethereum",
+          "address": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "decimals": 6,
+          "issuance": false,
+          "redemption": false,
+          "supportsAtomicSwaps": true
+        },
+        {
+          "symbol": "USDG",
+          "currency": "USD",
+          "network": "Ethereum",
+          "address": "0xe343167631d89b6ffc58b88d6b7fb0228795491d",
+          "decimals": 6,
+          "issuance": true,
+          "redemption": true,
+          "supportsAtomicSwaps": true
+        },
+        {
+          "symbol": "USDC",
+          "currency": "USD",
+          "network": "Ethereum",
+          "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "decimals": 6,
+          "issuance": true,
+          "redemption": true,
+          "supportsAtomicSwaps": true
+        },
+        {
+          "symbol": "USDT",
+          "currency": "USD",
+          "network": "Ethereum",
+          "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "decimals": 6,
+          "issuance": true,
+          "redemption": true,
+          "supportsAtomicSwaps": true
+        }
+      ],
+      "coverageNote": "Official issuer deployment; token metadata verified onchain.",
+      "verification": {
+        "decimals": 18,
+        "symbol": "MSFTx",
+        "totalSupply": "21602024332703866185931"
+      },
+      "verifiedBlock": "26418225"
+    },
+    {
+      "id": "xstocks-msft-ethereum-wrapped-v1",
+      "stock": "MSFT",
+      "groupId": "xstocks",
+      "name": "xStocks",
+      "symbol": "wMSFTx",
+      "chain": "ethereum",
+      "token": "0x63ad27614231767c8c489745b9145272de50d09b",
+      "decimals": 18,
+      "color": "#efae76",
+      "settlement": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "settlementSymbol": "USDC",
+      "settlementDecimals": 6,
+      "normalization": "wrapper",
+      "source": "https://api.xstocks.fi/api/v2/public/assets/MSFTx",
+      "note": "Official ERC4626 wrapper; normalize convertToAssets once.",
+      "variant": "wrapped-v1",
+      "canonicalAsset": "0x5621737f42dae558b81269fcb9e9e70c19aa6b35",
+      "settlements": [
+        {
+          "symbol": "PYUSD",
+          "currency": "USD",
+          "network": "Ethereum",
+          "address": "0x6c3ea9036406852006290770bedfcaba0e23a0e8",
+          "decimals": 6,
+          "issuance": true,
+          "redemption": true,
+          "supportsAtomicSwaps": true
+        },
+        {
+          "symbol": "EURC",
+          "currency": "EUR",
+          "network": "Ethereum",
+          "address": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "decimals": 6,
+          "issuance": false,
+          "redemption": false,
+          "supportsAtomicSwaps": true
+        },
+        {
+          "symbol": "USDG",
+          "currency": "USD",
+          "network": "Ethereum",
+          "address": "0xe343167631d89b6ffc58b88d6b7fb0228795491d",
+          "decimals": 6,
+          "issuance": true,
+          "redemption": true,
+          "supportsAtomicSwaps": true
+        },
+        {
+          "symbol": "USDC",
+          "currency": "USD",
+          "network": "Ethereum",
+          "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "decimals": 6,
+          "issuance": true,
+          "redemption": true,
+          "supportsAtomicSwaps": true
+        },
+        {
+          "symbol": "USDT",
+          "currency": "USD",
+          "network": "Ethereum",
+          "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "decimals": 6,
+          "issuance": true,
+          "redemption": true,
+          "supportsAtomicSwaps": true
+        }
+      ],
+      "coverageNote": "Official issuer deployment; token metadata verified onchain.",
+      "verification": {
+        "decimals": 18,
+        "symbol": "wMSFTx",
+        "totalSupply": "618060651880306845",
+        "asset": "0x5621737f42dAE558b81269FcB9E9E70c19Aa6b35",
+        "convertToAssets": "1001315273275000111"
+      },
+      "verifiedBlock": "26418225"
+    },
+    {
+      "id": "xstocks-msft-ethereum-wrapped-v2",
+      "stock": "MSFT",
+      "groupId": "xstocks",
+      "name": "xStocks",
+      "symbol": "wMSFTx",
+      "chain": "ethereum",
+      "token": "0x166fbe68274b6a47e025f4ba17388c539f1fa1d0",
+      "decimals": 18,
+      "color": "#efae76",
+      "settlement": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "settlementSymbol": "USDC",
+      "settlementDecimals": 6,
+      "normalization": "wrapper",
+      "source": "https://api.xstocks.fi/api/v2/public/assets/MSFTx",
+      "note": "Official ERC4626 wrapper; normalize convertToAssets once.",
+      "variant": "wrapped-v2",
+      "canonicalAsset": "0x5621737f42dae558b81269fcb9e9e70c19aa6b35",
+      "settlements": [
+        {
+          "symbol": "PYUSD",
+          "currency": "USD",
+          "network": "Ethereum",
+          "address": "0x6c3ea9036406852006290770bedfcaba0e23a0e8",
+          "decimals": 6,
+          "issuance": true,
+          "redemption": true,
+          "supportsAtomicSwaps": true
+        },
+        {
+          "symbol": "EURC",
+          "currency": "EUR",
+          "network": "Ethereum",
+          "address": "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "decimals": 6,
+          "issuance": false,
+          "redemption": false,
+          "supportsAtomicSwaps": true
+        },
+        {
+          "symbol": "USDG",
+          "currency": "USD",
+          "network": "Ethereum",
+          "address": "0xe343167631d89b6ffc58b88d6b7fb0228795491d",
+          "decimals": 6,
+          "issuance": true,
+          "redemption": true,
+          "supportsAtomicSwaps": true
+        },
+        {
+          "symbol": "USDC",
+          "currency": "USD",
+          "network": "Ethereum",
+          "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "decimals": 6,
+          "issuance": true,
+          "redemption": true,
+          "supportsAtomicSwaps": true
+        },
+        {
+          "symbol": "USDT",
+          "currency": "USD",
+          "network": "Ethereum",
+          "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "decimals": 6,
+          "issuance": true,
+          "redemption": true,
+          "supportsAtomicSwaps": true
+        }
+      ],
+      "coverageNote": "Official issuer deployment; token metadata verified onchain.",
+      "verification": {
+        "decimals": 18,
+        "symbol": "wMSFTx",
+        "totalSupply": "75053364264186824",
+        "asset": "0x5621737f42dAE558b81269FcB9E9E70c19Aa6b35",
+        "convertToAssets": "1005903390478745600"
+      },
+      "verifiedBlock": "26418225"
+    },
+    {
+      "id": "xstocks-msft-bsc-native",
+      "stock": "MSFT",
+      "groupId": "xstocks",
+      "name": "xStocks",
+      "symbol": "MSFTx",
+      "chain": "bsc",
+      "token": "0x5621737f42dae558b81269fcb9e9e70c19aa6b35",
+      "decimals": 18,
+      "color": "#efae76",
+      "settlement": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+      "settlementSymbol": "USDC",
+      "settlementDecimals": 18,
+      "normalization": "native-shares",
+      "source": "https://api.xstocks.fi/api/v2/public/assets/MSFTx",
+      "note": "Native EVM token transfer units are share equivalents.",
+      "variant": "native",
+      "canonicalAsset": "0x5621737f42dae558b81269fcb9e9e70c19aa6b35",
+      "settlements": [
+        {
+          "symbol": "USDC",
+          "currency": "USD",
+          "network": "BinanceSmartChain",
+          "address": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+          "decimals": 18,
+          "issuance": true,
+          "redemption": true,
+          "supportsAtomicSwaps": true
+        }
+      ],
+      "coverageNote": "Official issuer deployment; token metadata verified onchain.",
+      "verification": {
+        "decimals": 18,
+        "symbol": "MSFTx",
+        "totalSupply": "10059033904787456000000"
+      },
+      "verifiedBlock": "133677494"
+    },
+    {
+      "id": "xstocks-msft-bsc-wrapped-v1",
+      "stock": "MSFT",
+      "groupId": "xstocks",
+      "name": "xStocks",
+      "symbol": "wMSFTx",
+      "chain": "bsc",
+      "token": "0x63ad27614231767c8c489745b9145272de50d09b",
+      "decimals": 18,
+      "color": "#efae76",
+      "settlement": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+      "settlementSymbol": "USDC",
+      "settlementDecimals": 18,
+      "normalization": "wrapper",
+      "source": "https://api.xstocks.fi/api/v2/public/assets/MSFTx",
+      "note": "Official ERC4626 wrapper; normalize convertToAssets once.",
+      "variant": "wrapped-v1",
+      "canonicalAsset": "0x5621737f42dae558b81269fcb9e9e70c19aa6b35",
+      "settlements": [
+        {
+          "symbol": "USDC",
+          "currency": "USD",
+          "network": "BinanceSmartChain",
+          "address": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+          "decimals": 18,
+          "issuance": true,
+          "redemption": true,
+          "supportsAtomicSwaps": true
+        }
+      ],
+      "coverageNote": "Official issuer deployment; token metadata verified onchain.",
+      "verification": {
+        "decimals": 18,
+        "symbol": "wMSFTx",
+        "totalSupply": "0",
+        "asset": "0x5621737f42dAE558b81269FcB9E9E70c19Aa6b35",
+        "convertToAssets": "1000000000000000000"
+      },
+      "verifiedBlock": "133677494"
+    },
+    {
+      "id": "xstocks-msft-bsc-wrapped-v2",
+      "stock": "MSFT",
+      "groupId": "xstocks",
+      "name": "xStocks",
+      "symbol": "wMSFTx",
+      "chain": "bsc",
+      "token": "0x166fbe68274b6a47e025f4ba17388c539f1fa1d0",
+      "decimals": 18,
+      "color": "#efae76",
+      "settlement": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+      "settlementSymbol": "USDC",
+      "settlementDecimals": 18,
+      "normalization": "wrapper",
+      "source": "https://api.xstocks.fi/api/v2/public/assets/MSFTx",
+      "note": "Official ERC4626 wrapper; normalize convertToAssets once.",
+      "variant": "wrapped-v2",
+      "canonicalAsset": "0x5621737f42dae558b81269fcb9e9e70c19aa6b35",
+      "settlements": [
+        {
+          "symbol": "USDC",
+          "currency": "USD",
+          "network": "BinanceSmartChain",
+          "address": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+          "decimals": 18,
+          "issuance": true,
+          "redemption": true,
+          "supportsAtomicSwaps": true
+        }
+      ],
+      "coverageNote": "Official issuer deployment; token metadata verified onchain.",
+      "verification": {
+        "decimals": 18,
+        "symbol": "wMSFTx",
+        "totalSupply": "0",
+        "asset": "0x5621737f42dAE558b81269FcB9E9E70c19Aa6b35",
+        "convertToAssets": "1005903390478745600"
+      },
+      "verifiedBlock": "133677494"
+    },
+    {
+      "id": "xstocks-msft-solana-native",
+      "stock": "MSFT",
+      "groupId": "xstocks",
+      "name": "xStocks",
+      "symbol": "MSFTx",
+      "chain": "solana",
+      "token": "XspzcW1PRtgf6Wj92HCiZdjzKCyFekVD8P5Ueh3dRMX",
+      "decimals": 8,
+      "color": "#efae76",
+      "settlement": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "settlementSymbol": "USDC",
+      "settlementDecimals": 6,
+      "normalization": "solana-scaled",
+      "source": "https://api.xstocks.fi/api/v2/public/assets/MSFTx",
+      "note": "Scaled UI multiplier applies to raw mint units.",
+      "variant": "native",
+      "canonicalAsset": "XspzcW1PRtgf6Wj92HCiZdjzKCyFekVD8P5Ueh3dRMX",
+      "settlements": [
+        {
+          "symbol": "USDC",
+          "currency": "USD",
+          "network": "Solana",
+          "address": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "decimals": 6,
+          "issuance": true,
+          "redemption": true,
+          "supportsAtomicSwaps": true,
+          "solanaTokenProgram": "TokenProgram"
+        },
+        {
+          "symbol": "USDG",
+          "currency": "USD",
+          "network": "Solana",
+          "address": "2u1tszSeqZ3qBWF3uNGPFc8TzMk2tdiwknnRMWGWjGWH",
+          "decimals": 6,
+          "issuance": true,
+          "redemption": true,
+          "supportsAtomicSwaps": true
+        }
+      ],
+      "coverageNote": "Official issuer deployment."
     }
   ],
   "routes": [
@@ -7198,75 +6765,6 @@
       "probeStatus": "buy-sell-quoted"
     },
     {
-      "issuerId": "xstocks-coin-xlayer-wrapped-v2",
-      "stock": "COIN",
-      "id": "uniswap-0x91db1a80bd51fcbd30c6bfa398eee0de24ee2663",
-      "venue": "uniswap",
-      "version": "v3",
-      "factory": "0x4B2ab38DBF28D31D467aA8993f6c2585981D6804",
-      "quoter": "0xD1b797D92d87B688193A2B976eFc8D577D204343",
-      "poolIds": [
-        "0x91db1a80bd51FcBD30c6BFa398EEe0De24eE2663"
-      ],
-      "tokens": [
-        "0xb6ceceab302e2e4948951ee7843fc24e92933061",
-        "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e"
-      ],
-      "fees": [
-        500
-      ],
-      "label": "Uniswap v3 \u00b7 USDC \u00b7 0.05%",
-      "verifiedBlock": "75943125",
-      "source": "https://github.com/Uniswap/contracts/tree/main/deployments",
-      "probeStatus": "buy-sell-quoted"
-    },
-    {
-      "issuerId": "xstocks-coin-xlayer-wrapped-v2-usdg",
-      "stock": "COIN",
-      "id": "uniswap-0xfd69fd884bd7c35df86d2ec80ae74cbe774c00ab",
-      "venue": "uniswap",
-      "version": "v3",
-      "factory": "0x4B2ab38DBF28D31D467aA8993f6c2585981D6804",
-      "quoter": "0xD1b797D92d87B688193A2B976eFc8D577D204343",
-      "poolIds": [
-        "0xFD69Fd884BD7c35DF86D2eC80ae74Cbe774C00ab"
-      ],
-      "tokens": [
-        "0x4ae46a509f6b1d9056937ba4500cb143933d2dc8",
-        "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e"
-      ],
-      "fees": [
-        500
-      ],
-      "label": "Uniswap v3 \u00b7 USDG \u00b7 0.05%",
-      "verifiedBlock": "75943125",
-      "source": "https://github.com/Uniswap/contracts/tree/main/deployments",
-      "probeStatus": "buy-only"
-    },
-    {
-      "issuerId": "xstocks-coin-xlayer-wrapped-v2-usdg",
-      "stock": "COIN",
-      "id": "uniswap-0x04aad2b26e203aaa0bc4a89305a7b46972476a30",
-      "venue": "uniswap",
-      "version": "v3",
-      "factory": "0x4B2ab38DBF28D31D467aA8993f6c2585981D6804",
-      "quoter": "0xD1b797D92d87B688193A2B976eFc8D577D204343",
-      "poolIds": [
-        "0x04AAd2b26e203aAA0bC4A89305a7B46972476a30"
-      ],
-      "tokens": [
-        "0x4ae46a509f6b1d9056937ba4500cb143933d2dc8",
-        "0x44c7ed7ffdf8465c9d27f60aec845eed3d49d56e"
-      ],
-      "fees": [
-        3000
-      ],
-      "label": "Uniswap v3 \u00b7 USDG \u00b7 0.3%",
-      "verifiedBlock": "75943125",
-      "source": "https://github.com/Uniswap/contracts/tree/main/deployments",
-      "probeStatus": "buy-sell-quoted"
-    },
-    {
       "issuerId": "xstocks-tsla-xlayer-wrapped-v2",
       "stock": "TSLA",
       "id": "uniswap-0x6a58944eed3d2074e137eb4e94b302fe4af247a6",
@@ -7357,167 +6855,6 @@
       "verifiedBlock": "51296445",
       "source": "https://docs.usenest.xyz/protocol-and-security/7.4-contracts",
       "probeStatus": "buy-sell-quoted"
-    },
-    {
-      "id": "ondo-coin-ethereum-uniswap-0x6b12D00DBdFC765d57Aba9E6E37560ce2BA3D829",
-      "venue": "uniswap",
-      "version": "v3",
-      "factory": "0x1F98431c8aD98523631AE4a59f267346ea31F984",
-      "quoter": "0x61fFE014bA17989E743c5F6cB21bF9697530B21e",
-      "poolIds": [
-        "0x6b12D00DBdFC765d57Aba9E6E37560ce2BA3D829"
-      ],
-      "tokens": [
-        "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-        "0xf042cfa86cf1d598a75bdb55c3507a1f39f9493b"
-      ],
-      "fees": [
-        10000
-      ],
-      "label": "uniswap v3 1%",
-      "currentLiquidity": "0",
-      "verifiedBlock": "26417623",
-      "issuerId": "ondo-coin-ethereum",
-      "chain": "ethereum",
-      "sampledUsable": false
-    },
-    {
-      "id": "ondo-coin-ethereum-communityv3-0x834E688aF3D22a81B012B0F02d6E38FdA9a3E4e1",
-      "venue": "communityv3",
-      "version": "v3",
-      "factory": "0x00a38533c68327aBE0Cc265436e036066E2D6B38",
-      "quoter": "0xCC1c929D41106D78D798315AFfFEF6A832eDe90A",
-      "poolIds": [
-        "0x834E688aF3D22a81B012B0F02d6E38FdA9a3E4e1"
-      ],
-      "tokens": [
-        "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-        "0xf042cfa86cf1d598a75bdb55c3507a1f39f9493b"
-      ],
-      "fees": [
-        4000
-      ],
-      "label": "communityv3 v3 0.4%",
-      "currentLiquidity": "0",
-      "verifiedBlock": "26417623",
-      "issuerId": "ondo-coin-ethereum",
-      "chain": "ethereum",
-      "sampledUsable": false
-    },
-    {
-      "id": "ondo-coin-ethereum-communityv3-0x8B98f96FF05bb6afe856204D98429c62f7EAfd9e",
-      "venue": "communityv3",
-      "version": "v3",
-      "factory": "0x00a38533c68327aBE0Cc265436e036066E2D6B38",
-      "quoter": "0xCC1c929D41106D78D798315AFfFEF6A832eDe90A",
-      "poolIds": [
-        "0x8B98f96FF05bb6afe856204D98429c62f7EAfd9e"
-      ],
-      "tokens": [
-        "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-        "0xf042cfa86cf1d598a75bdb55c3507a1f39f9493b"
-      ],
-      "fees": [
-        10000
-      ],
-      "label": "communityv3 v3 1%",
-      "currentLiquidity": "0",
-      "verifiedBlock": "26417623",
-      "issuerId": "ondo-coin-ethereum",
-      "chain": "ethereum",
-      "sampledUsable": false
-    },
-    {
-      "id": "ondo-coin-ethereum-communityv3-0x0161FF978B2749190A71DE5188fdA48fE2f030D5",
-      "venue": "communityv3",
-      "version": "v3",
-      "factory": "0x00a38533c68327aBE0Cc265436e036066E2D6B38",
-      "quoter": "0xCC1c929D41106D78D798315AFfFEF6A832eDe90A",
-      "poolIds": [
-        "0x0161FF978B2749190A71DE5188fdA48fE2f030D5"
-      ],
-      "tokens": [
-        "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-        "0xf042cfa86cf1d598a75bdb55c3507a1f39f9493b"
-      ],
-      "fees": [
-        15000
-      ],
-      "label": "communityv3 v3 1.5%",
-      "currentLiquidity": "0",
-      "verifiedBlock": "26417623",
-      "issuerId": "ondo-coin-ethereum",
-      "chain": "ethereum",
-      "sampledUsable": false
-    },
-    {
-      "id": "ondo-coin-ethereum-communityv3-0x64139ddeB0E4E6Dbd00A944B79c27f45Bc847Cdc",
-      "venue": "communityv3",
-      "version": "v3",
-      "factory": "0x00a38533c68327aBE0Cc265436e036066E2D6B38",
-      "quoter": "0xCC1c929D41106D78D798315AFfFEF6A832eDe90A",
-      "poolIds": [
-        "0x64139ddeB0E4E6Dbd00A944B79c27f45Bc847Cdc"
-      ],
-      "tokens": [
-        "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-        "0xf042cfa86cf1d598a75bdb55c3507a1f39f9493b"
-      ],
-      "fees": [
-        20000
-      ],
-      "label": "communityv3 v3 2%",
-      "currentLiquidity": "0",
-      "verifiedBlock": "26417623",
-      "issuerId": "ondo-coin-ethereum",
-      "chain": "ethereum",
-      "sampledUsable": false
-    },
-    {
-      "id": "ondo-coin-ethereum-communityv3-0x1088Fd72A23aCB7068cA484A94Ba06C4e2885c79",
-      "venue": "communityv3",
-      "version": "v3",
-      "factory": "0x00a38533c68327aBE0Cc265436e036066E2D6B38",
-      "quoter": "0xCC1c929D41106D78D798315AFfFEF6A832eDe90A",
-      "poolIds": [
-        "0x1088Fd72A23aCB7068cA484A94Ba06C4e2885c79"
-      ],
-      "tokens": [
-        "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-        "0xf042cfa86cf1d598a75bdb55c3507a1f39f9493b"
-      ],
-      "fees": [
-        30000
-      ],
-      "label": "communityv3 v3 3%",
-      "currentLiquidity": "0",
-      "verifiedBlock": "26417623",
-      "issuerId": "ondo-coin-ethereum",
-      "chain": "ethereum",
-      "sampledUsable": true
-    },
-    {
-      "id": "ondo-coin-bsc-pancakeswap-0x6F68B45f34F3F15f1A08b2670002D72605d4acc4",
-      "venue": "pancakeswap",
-      "version": "v3",
-      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
-      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
-      "poolIds": [
-        "0x6F68B45f34F3F15f1A08b2670002D72605d4acc4"
-      ],
-      "tokens": [
-        "0x55d398326f99059ff775485246999027b3197955",
-        "0xf8589b526fdd65f7f301c605a6e04f0f1b4b3620"
-      ],
-      "fees": [
-        10000
-      ],
-      "label": "pancakeswap v3 1%",
-      "currentLiquidity": "0",
-      "verifiedBlock": "133661443",
-      "issuerId": "ondo-coin-bsc",
-      "chain": "bsc",
-      "sampledUsable": false
     },
     {
       "id": "ondo-googl-ethereum-uniswap-0x39FCB1935f6Ccb0A106D05eB928205C59646af57",
@@ -34041,266 +33378,6 @@
       "verified": true
     },
     {
-      "id": "robinhood-coin-robinhood-0x3a6eC0aa6C702323414d449B5F60f4B742A82dED",
-      "issuerId": "robinhood-coin-robinhood",
-      "stock": "COIN",
-      "chain": "robinhood",
-      "venue": "uniswap",
-      "version": "v3",
-      "factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
-      "quoter": "0x33e885eD0Ec9bF04EcfB19341582aADCb4c8A9E7",
-      "poolIds": [
-        "0x3a6eC0aa6C702323414d449B5F60f4B742A82dED"
-      ],
-      "tokens": [
-        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
-        "0x6330D8C3178a418788dF01a47479c0ce7CCF450b"
-      ],
-      "fees": [
-        500
-      ],
-      "token0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
-      "label": "uniswap v3 \u00b7 COIN/USDG",
-      "verification": {
-        "block": "114658310",
-        "factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
-        "tokens": [
-          "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
-          "0x6330D8C3178a418788dF01a47479c0ce7CCF450b"
-        ],
-        "factoryPoolMatch": true,
-        "indexedTvl": 76600.41
-      },
-      "quoteBlock": "114659322",
-      "quoteEvidence": [
-        {
-          "side": "buy",
-          "inputRaw": "100000000",
-          "outputRaw": "841529738491055738",
-          "result": [
-            "841529738491055738",
-            "7268779252376874367896137232394933",
-            0,
-            "116761"
-          ],
-          "inputRequiredForQuotedOutput": "100000000",
-          "fullInput": true,
-          "output": 0.8415297384910557,
-          "status": "quoted"
-        },
-        {
-          "side": "sell",
-          "inputRaw": "793335977786592594",
-          "outputRaw": "94127094",
-          "result": [
-            "94127094",
-            "7272774258549559664364705428577290",
-            0,
-            "107167"
-          ],
-          "inputRequiredForQuotedOutput": "793335977179051334",
-          "fullInput": true,
-          "output": 94.127094,
-          "status": "quoted"
-        }
-      ],
-      "verified": true
-    },
-    {
-      "id": "robinhood-coin-robinhood-0xF13a2d87E13904E0B38270686D5953A7D8207b91",
-      "issuerId": "robinhood-coin-robinhood",
-      "stock": "COIN",
-      "chain": "robinhood",
-      "venue": "up",
-      "version": "slipstream",
-      "factory": "0x1ac9dB4a2608ba45D6127B1737949b51Bb54B7F3",
-      "quoter": "0x03983AB2C057a2eac211ff01738a1e49ff325B49",
-      "poolIds": [
-        "0xF13a2d87E13904E0B38270686D5953A7D8207b91"
-      ],
-      "tokens": [
-        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
-        "0x6330D8C3178a418788dF01a47479c0ce7CCF450b"
-      ],
-      "fees": [],
-      "token0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
-      "label": "up slipstream \u00b7 COIN/USDG",
-      "tickSpacing": 60,
-      "verification": {
-        "block": "114658310",
-        "factory": "0x1ac9dB4a2608ba45D6127B1737949b51Bb54B7F3",
-        "tokens": [
-          "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
-          "0x6330D8C3178a418788dF01a47479c0ce7CCF450b"
-        ],
-        "factoryPoolMatch": true,
-        "indexedTvl": 21392.66
-      },
-      "quoteBlock": "114659322",
-      "quoteEvidence": [
-        {
-          "side": "buy",
-          "inputRaw": "100000000",
-          "outputRaw": "834607020262807352",
-          "result": [
-            "834607020262807352",
-            "7238798187881210834633953204416512",
-            1,
-            "242228"
-          ],
-          "inputRequiredForQuotedOutput": "100000000",
-          "fullInput": true,
-          "output": 0.8346070202628073,
-          "status": "quoted"
-        },
-        {
-          "side": "sell",
-          "inputRaw": "793335977786592594",
-          "outputRaw": "93533195",
-          "result": [
-            "93533195",
-            "7311058371940222824503953388056390",
-            2,
-            "252690"
-          ],
-          "inputRequiredForQuotedOutput": "793335973970170857",
-          "fullInput": true,
-          "output": 93.533195,
-          "status": "quoted"
-        }
-      ],
-      "verified": true
-    },
-    {
-      "id": "robinhood-coin-robinhood-0xe9B6F324A7019B1f073AfF1870d664Bf9673f782",
-      "issuerId": "robinhood-coin-robinhood",
-      "stock": "COIN",
-      "chain": "robinhood",
-      "venue": "ramses",
-      "version": "slipstream",
-      "factory": "0xE0c4ceb92d08CA985bB70fe0a22fEb121A9854A8",
-      "quoter": "0x4730e03EB4a58A5e20244062D5f9A99bCf5770a6",
-      "deployer": "0x4b37359BF291AbE8453692DB58d515a8b013Dca9",
-      "poolIds": [
-        "0xe9B6F324A7019B1f073AfF1870d664Bf9673f782"
-      ],
-      "tokens": [
-        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
-        "0x6330D8C3178a418788dF01a47479c0ce7CCF450b"
-      ],
-      "fees": [],
-      "token0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
-      "label": "ramses slipstream \u00b7 COIN/USDG",
-      "tickSpacing": 50,
-      "verification": {
-        "block": "114658310",
-        "factory": "0xE0c4ceb92d08CA985bB70fe0a22fEb121A9854A8",
-        "tokens": [
-          "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
-          "0x6330D8C3178a418788dF01a47479c0ce7CCF450b"
-        ],
-        "factoryPoolMatch": true,
-        "indexedTvl": 1921.85
-      },
-      "quoteBlock": "114659322",
-      "quoteEvidence": [
-        {
-          "side": "buy",
-          "inputRaw": "100000000",
-          "outputRaw": "829498478605121678",
-          "result": [
-            "829498478605121678",
-            "7181842424825452259400914605969779",
-            0,
-            "136660"
-          ],
-          "inputRequiredForQuotedOutput": "100000000",
-          "fullInput": true,
-          "output": 0.8294984786051217,
-          "status": "quoted"
-        },
-        {
-          "side": "sell",
-          "inputRaw": "793335977786592594",
-          "outputRaw": "92978592",
-          "result": [
-            "92978592",
-            "7350557355453981753684118914029003",
-            0,
-            "127021"
-          ],
-          "inputRequiredForQuotedOutput": "793335975771437919",
-          "fullInput": true,
-          "output": 92.978592,
-          "status": "quoted"
-        }
-      ],
-      "verified": true
-    },
-    {
-      "id": "robinhood-coin-robinhood-0xBDe37e67C24Ebb7E951D8fDaf8b9Dcd79cF66012",
-      "issuerId": "robinhood-coin-robinhood",
-      "stock": "COIN",
-      "chain": "robinhood",
-      "venue": "aerodrome",
-      "version": "aero",
-      "factory": "0xc63d7338c178e805c544B8f897066bD3BBcBE136",
-      "quoter": "0x1dDfeC5058180C207F55BB77D95AcDd0d8227868",
-      "poolIds": [
-        "0xBDe37e67C24Ebb7E951D8fDaf8b9Dcd79cF66012"
-      ],
-      "tokens": [
-        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
-        "0x6330D8C3178a418788dF01a47479c0ce7CCF450b"
-      ],
-      "fees": [],
-      "token0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
-      "label": "aerodrome aero \u00b7 COIN/USDG",
-      "tickSpacing": 200,
-      "verification": {
-        "block": "114658310",
-        "factory": "0xc63d7338c178e805c544B8f897066bD3BBcBE136",
-        "tokens": [
-          "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
-          "0x6330D8C3178a418788dF01a47479c0ce7CCF450b"
-        ],
-        "factoryPoolMatch": true,
-        "indexedTvl": 225.69
-      },
-      "quoteBlock": "114659322",
-      "quoteEvidence": [
-        {
-          "side": "buy",
-          "inputRaw": "100000000",
-          "outputRaw": "697393003401196632",
-          "result": [
-            "697393003401196632",
-            "5996809864369959422766834905044608",
-            2
-          ],
-          "inputRequiredForQuotedOutput": null,
-          "fullInput": true,
-          "output": 0.6973930034011966,
-          "status": "quoted"
-        },
-        {
-          "side": "sell",
-          "inputRaw": "793335977786592594",
-          "outputRaw": "7588620",
-          "result": [
-            "7588620",
-            "150756422924435104458939416292078157",
-            1
-          ],
-          "inputRequiredForQuotedOutput": null,
-          "fullInput": true,
-          "output": 7.58862,
-          "status": "quoted"
-        }
-      ],
-      "verified": true
-    },
-    {
       "id": "robinhood-tsla-robinhood-0xf4ACdAEEB7022862A763C9B1B885e11191c889E3",
       "issuerId": "robinhood-tsla-robinhood",
       "stock": "TSLA",
@@ -40001,136 +39078,6 @@
       "verified": true
     },
     {
-      "stock": "COIN",
-      "issuerId": "robinhood-coin-robinhood",
-      "chain": "robinhood",
-      "id": "0x007a13fa152f6dc383cad20a8eaab4e1e2538b606936eae2a424f8aa47d6db31",
-      "venue": "uniswap",
-      "version": "v4",
-      "poolIds": [
-        "0x007a13fa152f6dc383cad20a8eaab4e1e2538b606936eae2a424f8aa47d6db31"
-      ],
-      "tokens": [
-        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
-        "0x6330d8c3178a418788df01a47479c0ce7ccf450b"
-      ],
-      "fees": [
-        10000
-      ],
-      "key": {
-        "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
-        "currency1": "0x6330D8C3178a418788dF01a47479c0ce7CCF450b",
-        "fee": 10000,
-        "tickSpacing": 200,
-        "hooks": "0x0000000000000000000000000000000000000000"
-      },
-      "label": "Uniswap v4 \u00b7 direct USDG",
-      "verification": "PositionManager.poolKeys",
-      "verifiedBlock": "114657608",
-      "state": [
-        "7292225042253393639397535292325888",
-        "228611",
-        "4097000",
-        "10000"
-      ],
-      "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
-      "quoteBlock": "114659368",
-      "quoteEvidence": [
-        {
-          "side": "buy",
-          "inputRaw": "100000000",
-          "outputRaw": "837690253713972015",
-          "result": [
-            "837690253713972015",
-            "43205"
-          ],
-          "inputRequiredForQuotedOutput": "100000000",
-          "fullInput": true,
-          "output": 0.837690253713972,
-          "status": "quoted"
-        },
-        {
-          "side": "sell",
-          "inputRaw": "793335977786592594",
-          "outputRaw": "92602702",
-          "result": [
-            "92602702",
-            "42550"
-          ],
-          "inputRequiredForQuotedOutput": "793335971511974209",
-          "fullInput": true,
-          "output": 92.602702,
-          "status": "quoted"
-        }
-      ],
-      "verified": true
-    },
-    {
-      "stock": "COIN",
-      "issuerId": "robinhood-coin-robinhood",
-      "chain": "robinhood",
-      "id": "0x8138ea2894ce8f825d830569df6faf33e55344290954ce22432ca4f11913bacc",
-      "venue": "uniswap",
-      "version": "v4",
-      "poolIds": [
-        "0x8138ea2894ce8f825d830569df6faf33e55344290954ce22432ca4f11913bacc"
-      ],
-      "tokens": [
-        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
-        "0x6330d8c3178a418788df01a47479c0ce7ccf450b"
-      ],
-      "fees": [
-        8388608
-      ],
-      "key": {
-        "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
-        "currency1": "0x6330D8C3178a418788dF01a47479c0ce7CCF450b",
-        "fee": 8388608,
-        "tickSpacing": 60,
-        "hooks": "0x5Eb87F69bE00Df39981622Fd60A8De4b7837e080"
-      },
-      "label": "Uniswap v4 \u00b7 direct USDG",
-      "verification": "PositionManager.poolKeys",
-      "verifiedBlock": "114657608",
-      "state": [
-        "7266138532256716631325488150430009",
-        "228539",
-        "0",
-        "0"
-      ],
-      "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
-      "quoteBlock": "114659368",
-      "quoteEvidence": [
-        {
-          "side": "buy",
-          "inputRaw": "100000000",
-          "outputRaw": "829966353447481293",
-          "result": [
-            "829966353447481293",
-            "87709"
-          ],
-          "inputRequiredForQuotedOutput": "100000000",
-          "fullInput": true,
-          "output": 0.8299663534474813,
-          "status": "quoted"
-        },
-        {
-          "side": "sell",
-          "inputRaw": "793335977786592594",
-          "outputRaw": "92802053",
-          "result": [
-            "92802053",
-            "87416"
-          ],
-          "inputRequiredForQuotedOutput": "793335976332742666",
-          "fullInput": true,
-          "output": 92.802053,
-          "status": "quoted"
-        }
-      ],
-      "verified": true
-    },
-    {
       "stock": "TSLA",
       "issuerId": "robinhood-tsla-robinhood",
       "chain": "robinhood",
@@ -40320,288 +39267,6 @@
           "inputRequiredForQuotedOutput": "257869532040312130",
           "fullInput": true,
           "output": 96.812301,
-          "status": "quoted"
-        }
-      ],
-      "verified": true
-    },
-    {
-      "id": "binance-coin-bsc-via-btcb-100",
-      "issuerId": "binance-coin-bsc",
-      "stock": "COIN",
-      "chain": "bsc",
-      "venue": "uniswap",
-      "version": "v3",
-      "factory": "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
-      "quoter": "0x78D78E420Da98ad378D7799bE8f4AF69033EB077",
-      "poolIds": [
-        "0xf2c9339945Bff71dd0bFFd3c142164112cD05dC6",
-        "0x974e79232F40eB20436DA8D345710d00779A6Df5"
-      ],
-      "tokens": [
-        "0x55d398326f99059ff775485246999027b3197955",
-        "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
-        "0x585bde7c54abb5ccd7791f923d6c2187635f3952"
-      ],
-      "fees": [
-        100,
-        3000
-      ],
-      "label": "Uniswap v3 \u00b7 via BTCB",
-      "verification": {
-        "block": "133662136",
-        "stockPoolFactory": "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
-        "token0": "0x585BDE7C54ABB5cCD7791F923D6c2187635f3952",
-        "token1": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
-        "stockPoolFee": 3000
-      },
-      "note": "Thin COINB/BTCB stock pool; not assumed full-fill for large orders.",
-      "quoteBlock": "133662168",
-      "quoteEvidence": [
-        {
-          "side": "buy",
-          "inputRaw": "100000000000000000000",
-          "status": "quote-error",
-          "error": "Transaction creation failed."
-        },
-        {
-          "side": "sell",
-          "inputRaw": "793335977786592594",
-          "status": "quote-error",
-          "error": "Transaction creation failed."
-        }
-      ],
-      "verified": false
-    },
-    {
-      "id": "binance-coin-bsc-via-btcb-500",
-      "issuerId": "binance-coin-bsc",
-      "stock": "COIN",
-      "chain": "bsc",
-      "venue": "uniswap",
-      "version": "v3",
-      "factory": "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
-      "quoter": "0x78D78E420Da98ad378D7799bE8f4AF69033EB077",
-      "poolIds": [
-        "0x813c0decbB1097fFF46d0Ed6a39fB5f6a83043f4",
-        "0x974e79232F40eB20436DA8D345710d00779A6Df5"
-      ],
-      "tokens": [
-        "0x55d398326f99059ff775485246999027b3197955",
-        "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
-        "0x585bde7c54abb5ccd7791f923d6c2187635f3952"
-      ],
-      "fees": [
-        500,
-        3000
-      ],
-      "label": "Uniswap v3 \u00b7 via BTCB",
-      "verification": {
-        "block": "133662136",
-        "stockPoolFactory": "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
-        "token0": "0x585BDE7C54ABB5cCD7791F923D6c2187635f3952",
-        "token1": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
-        "stockPoolFee": 3000
-      },
-      "note": "Thin COINB/BTCB stock pool; not assumed full-fill for large orders.",
-      "quoteBlock": "133662168",
-      "quoteEvidence": [
-        {
-          "side": "buy",
-          "inputRaw": "100000000000000000000",
-          "outputRaw": "826543102367666366",
-          "result": [
-            "826543102367666366",
-            [
-              "310123986918279642041114514",
-              "3419997972223935990108718331"
-            ],
-            [
-              1,
-              0
-            ],
-            "207729"
-          ],
-          "inputRequiredForQuotedOutput": "99999999999999972928",
-          "fullInput": true,
-          "output": 0.8265431023676664,
-          "status": "quoted"
-        },
-        {
-          "side": "sell",
-          "inputRaw": "793335977786592594",
-          "outputRaw": "93713715156807159543",
-          "result": [
-            "93713715156807159543",
-            [
-              "3362817232791093824594060674",
-              "310139567276476508763572747"
-            ],
-            [
-              0,
-              1
-            ],
-            "182377"
-          ],
-          "inputRequiredForQuotedOutput": "793335977786592056",
-          "fullInput": true,
-          "output": 93.71371515680715,
-          "status": "quoted"
-        }
-      ],
-      "verified": true
-    },
-    {
-      "id": "binance-coin-bsc-via-btcb-3000",
-      "issuerId": "binance-coin-bsc",
-      "stock": "COIN",
-      "chain": "bsc",
-      "venue": "uniswap",
-      "version": "v3",
-      "factory": "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
-      "quoter": "0x78D78E420Da98ad378D7799bE8f4AF69033EB077",
-      "poolIds": [
-        "0x06396509195EB9E07C38A016694Dc9FF535b128a",
-        "0x974e79232F40eB20436DA8D345710d00779A6Df5"
-      ],
-      "tokens": [
-        "0x55d398326f99059ff775485246999027b3197955",
-        "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
-        "0x585bde7c54abb5ccd7791f923d6c2187635f3952"
-      ],
-      "fees": [
-        3000,
-        3000
-      ],
-      "label": "Uniswap v3 \u00b7 via BTCB",
-      "verification": {
-        "block": "133662136",
-        "stockPoolFactory": "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
-        "token0": "0x585BDE7C54ABB5cCD7791F923D6c2187635f3952",
-        "token1": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
-        "stockPoolFee": 3000
-      },
-      "note": "Thin COINB/BTCB stock pool; not assumed full-fill for large orders.",
-      "quoteBlock": "133662168",
-      "quoteEvidence": [
-        {
-          "side": "buy",
-          "inputRaw": "100000000000000000000",
-          "outputRaw": "814077985797796288",
-          "result": [
-            "814077985797796288",
-            [
-              "306336124897187586969086714",
-              "3419549879646623481906122401"
-            ],
-            [
-              1,
-              0
-            ],
-            "215246"
-          ],
-          "inputRequiredForQuotedOutput": "99999999999999945671",
-          "fullInput": true,
-          "output": 0.8140779857977963,
-          "status": "quoted"
-        },
-        {
-          "side": "sell",
-          "inputRaw": "793335977786592594",
-          "outputRaw": "92548386218754000411",
-          "result": [
-            "92548386218754000411",
-            [
-              "3362817232791093824594060674",
-              "313430428785150170492063661"
-            ],
-            [
-              0,
-              2
-            ],
-            "212500"
-          ],
-          "inputRequiredForQuotedOutput": "793335977786592056",
-          "fullInput": true,
-          "output": 92.548386218754,
-          "status": "quoted"
-        }
-      ],
-      "verified": true
-    },
-    {
-      "id": "binance-coin-bsc-via-btcb-10000",
-      "issuerId": "binance-coin-bsc",
-      "stock": "COIN",
-      "chain": "bsc",
-      "venue": "uniswap",
-      "version": "v3",
-      "factory": "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
-      "quoter": "0x78D78E420Da98ad378D7799bE8f4AF69033EB077",
-      "poolIds": [
-        "0x2CF9a89dE7B86273d4C7dB9416C0EF160de136c1",
-        "0x974e79232F40eB20436DA8D345710d00779A6Df5"
-      ],
-      "tokens": [
-        "0x55d398326f99059ff775485246999027b3197955",
-        "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
-        "0x585bde7c54abb5ccd7791f923d6c2187635f3952"
-      ],
-      "fees": [
-        10000,
-        3000
-      ],
-      "label": "Uniswap v3 \u00b7 via BTCB",
-      "verification": {
-        "block": "133662136",
-        "stockPoolFactory": "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
-        "token0": "0x585BDE7C54ABB5cCD7791F923D6c2187635f3952",
-        "token1": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
-        "stockPoolFee": 3000
-      },
-      "note": "Thin COINB/BTCB stock pool; not assumed full-fill for large orders.",
-      "quoteBlock": "133662168",
-      "quoteEvidence": [
-        {
-          "side": "buy",
-          "inputRaw": "100000000000000000000",
-          "outputRaw": "863445572086204",
-          "result": [
-            "863445572086204",
-            [
-              "66757427439575530458938",
-              "3390568224805151561376108527"
-            ],
-            [
-              1,
-              0
-            ],
-            "265987"
-          ],
-          "inputRequiredForQuotedOutput": "99999999856473190976",
-          "fullInput": true,
-          "output": 0.000863445572086204,
-          "status": "quoted"
-        },
-        {
-          "side": "sell",
-          "inputRaw": "793335977786592594",
-          "outputRaw": "1365617293081207028",
-          "result": [
-            "1365617293081207028",
-            [
-              "3362817232791093824594060674",
-              "213579963713854914776302646089"
-            ],
-            [
-              0,
-              2
-            ],
-            "287800"
-          ],
-          "inputRequiredForQuotedOutput": "793335977786590942",
-          "fullInput": true,
-          "output": 1.365617293081207,
           "status": "quoted"
         }
       ],
@@ -42331,6 +40996,1358 @@
       "stock": "TSLA",
       "verifiedBlock": "61214306",
       "probeStatus": "buy-sell-full-input-quoted"
+    },
+    {
+      "venue": "aerodrome",
+      "version": "aero",
+      "factory": "0x9CB220581b91b0C83223012FE69688b92aD07a76",
+      "quoter": "0x1dDfeC5058180C207F55BB77D95AcDd0d8227868",
+      "id": "coinbase-msft-base-aerodrome-0x2740c0faab738f6e346e545fde02aef9b1a01ee7",
+      "issuerId": "coinbase-msft-base",
+      "stock": "MSFT",
+      "chain": "base",
+      "poolIds": [
+        "0x2740C0faAb738F6e346e545fDE02aEF9B1A01ee7"
+      ],
+      "tokens": [
+        "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "0xb200000000000000000000ab99cfa739e253872b"
+      ],
+      "fees": [],
+      "token0": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "tickSpacing": 10,
+      "label": "aerodrome aero \u00b7 MSFTc/USDC",
+      "verification": {
+        "block": "57645697",
+        "poolMetadata": {
+          "factory": "0x9CB220581b91b0C83223012FE69688b92aD07a76",
+          "token0": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "token1": "0xB200000000000000000000Ab99cFa739E253872B",
+          "tickSpacing": 10,
+          "liquidity": "100595475493033"
+        },
+        "factoryPoolMatch": true
+      },
+      "quoteEvidence": [
+        {
+          "side": "buy",
+          "inputRaw": "100000000",
+          "outputRaw": "19230858",
+          "fullInput": true,
+          "status": "quoted"
+        },
+        {
+          "side": "sell",
+          "inputRaw": "19230858",
+          "outputRaw": "99968309",
+          "fullInput": true,
+          "status": "quoted"
+        }
+      ],
+      "quoteBlock": "57645979",
+      "verified": true
+    },
+    {
+      "id": "coinbase-msft-base-0x38f481173df3c7c5f893cd95aed8731cff192d2406115aedc5f27836f311fa6f",
+      "issuerId": "coinbase-msft-base",
+      "stock": "MSFT",
+      "chain": "base",
+      "venue": "uniswap",
+      "version": "v4",
+      "quoter": "0xE1A6C5803e3c44368b171BD680c7D32dfc92CA47",
+      "poolIds": [
+        "0x38f481173df3c7c5f893cd95aed8731cff192d2406115aedc5f27836f311fa6f"
+      ],
+      "tokens": [
+        "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "0xb200000000000000000000ab99cfa739e253872b"
+      ],
+      "fees": [
+        8388608
+      ],
+      "key": {
+        "currency0": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "currency1": "0xB200000000000000000000Ab99cFa739E253872B",
+        "fee": 8388608,
+        "tickSpacing": 10,
+        "hooks": "0x81f989dcB1677ccEa3A4f822aa871c08bD2400C4"
+      },
+      "label": "Uniswap v4 \u00b7 MSFTc/USDC",
+      "verification": {
+        "block": "57645697",
+        "positionManagerKeyHashMatch": true,
+        "slot": [
+          "34753490983319144240032087636",
+          -16482,
+          0,
+          519
+        ]
+      },
+      "quoteEvidence": [
+        {
+          "side": "buy",
+          "inputRaw": "100000000",
+          "outputRaw": "19216837",
+          "fullInput": false,
+          "inputRequired": "99999979",
+          "status": "no-full-fill"
+        },
+        {
+          "side": "sell",
+          "inputRaw": "19216837",
+          "outputRaw": "99744467",
+          "fullInput": true,
+          "inputRequired": "19216832",
+          "status": "quoted"
+        }
+      ],
+      "quoteBlock": "57645979",
+      "verified": true
+    },
+    {
+      "venue": "aerodrome",
+      "version": "slipstream",
+      "factory": "0xf8f2eb4940cfe7d13603dddd87f123820fc061ef",
+      "quoter": "0x514c8b5f54112481e28028f1166bd78501089259",
+      "id": "coinbase-msft-base-aerodrome-0x7103eb3c9590d1281f7dc03b2a9ee27c39df5d54",
+      "issuerId": "coinbase-msft-base",
+      "stock": "MSFT",
+      "chain": "base",
+      "poolIds": [
+        "0x7103eB3c9590d1281f7dc03b2A9EE27C39dF5D54"
+      ],
+      "tokens": [
+        "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "0xb200000000000000000000ab99cfa739e253872b"
+      ],
+      "fees": [],
+      "token0": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "tickSpacing": 10,
+      "label": "aerodrome slipstream \u00b7 MSFTc/USDC",
+      "verification": {
+        "block": "57645697",
+        "poolMetadata": {
+          "factory": "0xf8f2eB4940CFE7d13603DDDD87f123820Fc061Ef",
+          "token0": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "token1": "0xB200000000000000000000Ab99cFa739E253872B",
+          "tickSpacing": 10,
+          "liquidity": "29473915684"
+        },
+        "factoryPoolMatch": true
+      },
+      "quoteEvidence": [
+        {
+          "side": "buy",
+          "inputRaw": "100000000",
+          "outputRaw": "19181830",
+          "fullInput": true,
+          "inputRequired": "99999999",
+          "status": "quoted"
+        },
+        {
+          "side": "sell",
+          "inputRaw": "19181830",
+          "outputRaw": "99604103",
+          "fullInput": true,
+          "inputRequired": "19181830",
+          "status": "quoted"
+        }
+      ],
+      "quoteBlock": "57645979",
+      "verified": true
+    },
+    {
+      "id": "coinbase-msft-base-0xe61a2016e4128a5212bf2de9fc72a1b70a329efece51ab87142d0d44074e7064",
+      "issuerId": "coinbase-msft-base",
+      "stock": "MSFT",
+      "chain": "base",
+      "venue": "uniswap",
+      "version": "v4",
+      "quoter": "0xE1A6C5803e3c44368b171BD680c7D32dfc92CA47",
+      "poolIds": [
+        "0xe61a2016e4128a5212bf2de9fc72a1b70a329efece51ab87142d0d44074e7064"
+      ],
+      "tokens": [
+        "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "0xb200000000000000000000ab99cfa739e253872b"
+      ],
+      "fees": [
+        2000
+      ],
+      "key": {
+        "currency0": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "currency1": "0xB200000000000000000000Ab99cFa739E253872B",
+        "fee": 2000,
+        "tickSpacing": 10,
+        "hooks": "0xEEee3DA335342996Ab288fBcF70fBe5F9ED81040"
+      },
+      "label": "Uniswap v4 \u00b7 MSFTc/USDC",
+      "verification": {
+        "block": "57645697",
+        "positionManagerKeyHashMatch": true,
+        "slot": [
+          "34764642363333734645662000780",
+          -16476,
+          0,
+          2000
+        ]
+      },
+      "quoteEvidence": [
+        {
+          "side": "buy",
+          "inputRaw": "100000000",
+          "outputRaw": "18854585",
+          "fullInput": true,
+          "inputRequired": "99999995",
+          "status": "quoted"
+        },
+        {
+          "side": "sell",
+          "inputRaw": "18854585",
+          "outputRaw": "95933501",
+          "fullInput": true,
+          "inputRequired": "18854585",
+          "status": "quoted"
+        }
+      ],
+      "quoteBlock": "57645979",
+      "verified": true
+    },
+    {
+      "venue": "uniswap",
+      "version": "v3",
+      "factory": "0x33128a8fC17869897dcE68Ed026d694621f6FDfD",
+      "quoter": "0x3d4e44Eb1374240CE5F1B871ab261CD16335B76a",
+      "id": "coinbase-msft-base-uniswap-0xd73cbecc0f62c7c1704332ed119514d6d84dc607",
+      "issuerId": "coinbase-msft-base",
+      "stock": "MSFT",
+      "chain": "base",
+      "poolIds": [
+        "0xD73cBeCC0F62C7C1704332ED119514d6d84DC607"
+      ],
+      "tokens": [
+        "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "0xb200000000000000000000ab99cfa739e253872b"
+      ],
+      "fees": [
+        10000
+      ],
+      "token0": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "label": "uniswap v3 \u00b7 MSFTc/USDC",
+      "verification": {
+        "block": "57645697",
+        "poolMetadata": {
+          "factory": "0x33128a8fC17869897dcE68Ed026d694621f6FDfD",
+          "token0": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "token1": "0xB200000000000000000000Ab99cFa739E253872B",
+          "fee": 10000,
+          "liquidity": "12756665556"
+        },
+        "factoryPoolMatch": true
+      },
+      "quoteEvidence": [
+        {
+          "side": "buy",
+          "inputRaw": "100000000",
+          "outputRaw": "18926334",
+          "fullInput": true,
+          "inputRequired": "99999996",
+          "status": "quoted"
+        },
+        {
+          "side": "sell",
+          "inputRaw": "18926334",
+          "outputRaw": "97351506",
+          "fullInput": true,
+          "inputRequired": "18926334",
+          "status": "quoted"
+        }
+      ],
+      "quoteBlock": "57645979",
+      "verified": true
+    },
+    {
+      "venue": "uniswap",
+      "version": "v3",
+      "factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
+      "quoter": "0x33e885eD0Ec9bF04EcfB19341582aADCb4c8A9E7",
+      "id": "robinhood-msft-robinhood-uniswap-0xeb60bcd1d920ad6e102690ccfc6fb488899e1510",
+      "issuerId": "robinhood-msft-robinhood",
+      "stock": "MSFT",
+      "chain": "robinhood",
+      "poolIds": [
+        "0xeb60bCD1D920ad6E102690CCFC6fB488899E1510"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xe93237c50d904957cf27e7b1133b510c669c2e74"
+      ],
+      "fees": [
+        3000
+      ],
+      "token0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "label": "uniswap v3 \u00b7 MSFT/USDG",
+      "verification": {
+        "block": "114722419",
+        "poolMetadata": {
+          "factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
+          "token0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+          "token1": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+          "fee": 3000,
+          "liquidity": "102981552022501752"
+        },
+        "factoryPoolMatch": true
+      },
+      "quoteEvidence": [
+        {
+          "side": "buy",
+          "inputRaw": "100000000",
+          "outputRaw": "192198378702638008",
+          "fullInput": true,
+          "inputRequired": "100000000",
+          "status": "quoted"
+        },
+        {
+          "side": "sell",
+          "inputRaw": "192198378702638008",
+          "outputRaw": "99392462",
+          "fullInput": true,
+          "inputRequired": "192198377358798960",
+          "status": "quoted"
+        }
+      ],
+      "quoteBlock": "114722884",
+      "verified": true
+    },
+    {
+      "id": "robinhood-msft-robinhood-0x9194a557b6a6bb2236b49ea7e2bbccec5d3eeb705aef00903be4b3de1d949579",
+      "issuerId": "robinhood-msft-robinhood",
+      "stock": "MSFT",
+      "chain": "robinhood",
+      "venue": "uniswap",
+      "version": "v4",
+      "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+      "poolIds": [
+        "0x9194a557b6a6bb2236b49ea7e2bbccec5d3eeb705aef00903be4b3de1d949579"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xe93237c50d904957cf27e7b1133b510c669c2e74"
+      ],
+      "fees": [
+        3000
+      ],
+      "key": {
+        "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+        "currency1": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+        "fee": 3000,
+        "tickSpacing": 60,
+        "hooks": "0x0000000000000000000000000000000000000000"
+      },
+      "label": "Uniswap v4 \u00b7 MSFT/USDG",
+      "verification": {
+        "block": "114722419",
+        "positionManagerKeyHashMatch": true,
+        "slot": [
+          "3478592856754351096638828756294915",
+          213806,
+          2048500,
+          3000
+        ]
+      },
+      "quoteEvidence": [
+        {
+          "side": "buy",
+          "inputRaw": "100000000",
+          "outputRaw": "192087719793970145",
+          "fullInput": true,
+          "inputRequired": "100000000",
+          "status": "quoted"
+        },
+        {
+          "side": "sell",
+          "inputRaw": "192087719793970145",
+          "outputRaw": "99289477",
+          "fullInput": true,
+          "inputRequired": "192087717919124030",
+          "status": "quoted"
+        }
+      ],
+      "quoteBlock": "114722884",
+      "verified": true
+    },
+    {
+      "venue": "up",
+      "version": "slipstream",
+      "factory": "0x1ac9dB4a2608ba45D6127B1737949b51Bb54B7F3",
+      "quoter": "0x03983AB2C057a2eac211ff01738a1e49ff325B49",
+      "id": "robinhood-msft-robinhood-up-0x4230750b3c69ae6054a3f778d75adc2e9a27d70f",
+      "issuerId": "robinhood-msft-robinhood",
+      "stock": "MSFT",
+      "chain": "robinhood",
+      "poolIds": [
+        "0x4230750b3C69AE6054A3F778d75Adc2e9A27D70f"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xe93237c50d904957cf27e7b1133b510c669c2e74"
+      ],
+      "fees": [],
+      "token0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "tickSpacing": 60,
+      "label": "up slipstream \u00b7 MSFT/USDG",
+      "verification": {
+        "block": "114722419",
+        "poolMetadata": {
+          "factory": "0x1ac9dB4a2608ba45D6127B1737949b51Bb54B7F3",
+          "token0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+          "token1": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+          "tickSpacing": 60,
+          "liquidity": "6465869256126815"
+        },
+        "factoryPoolMatch": true
+      },
+      "quoteEvidence": [
+        {
+          "side": "buy",
+          "inputRaw": "100000000",
+          "outputRaw": "192087699541871255",
+          "fullInput": true,
+          "inputRequired": "100000000",
+          "status": "quoted"
+        },
+        {
+          "side": "sell",
+          "inputRaw": "192087699541871255",
+          "outputRaw": "99764799",
+          "fullInput": true,
+          "inputRequired": "192087699511746137",
+          "status": "quoted"
+        }
+      ],
+      "quoteBlock": "114722884",
+      "verified": true
+    },
+    {
+      "id": "robinhood-msft-robinhood-0xaa38841efd9536cb643b491414d31e09030d2226721447158ac1067095f56008",
+      "issuerId": "robinhood-msft-robinhood",
+      "stock": "MSFT",
+      "chain": "robinhood",
+      "venue": "uniswap",
+      "version": "v4",
+      "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+      "poolIds": [
+        "0xaa38841efd9536cb643b491414d31e09030d2226721447158ac1067095f56008"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xe93237c50d904957cf27e7b1133b510c669c2e74"
+      ],
+      "fees": [
+        500
+      ],
+      "key": {
+        "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+        "currency1": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+        "fee": 500,
+        "tickSpacing": 10,
+        "hooks": "0xF4F48Bf7C0333ab56D418BDD5118D48674d6D040"
+      },
+      "label": "Uniswap v4 \u00b7 MSFT/USDG",
+      "verification": {
+        "block": "114722419",
+        "positionManagerKeyHashMatch": true,
+        "slot": [
+          "3474176921202944119454510942565723",
+          213781,
+          0,
+          500
+        ]
+      },
+      "quoteEvidence": [
+        {
+          "side": "buy",
+          "inputRaw": "100000000",
+          "outputRaw": "188532450615292233",
+          "fullInput": true,
+          "inputRequired": "100000000",
+          "status": "quoted"
+        },
+        {
+          "side": "sell",
+          "inputRaw": "188532450615292233",
+          "outputRaw": "96170989",
+          "fullInput": true,
+          "inputRequired": "188532448736979594",
+          "status": "quoted"
+        }
+      ],
+      "quoteBlock": "114722884",
+      "verified": true
+    },
+    {
+      "id": "robinhood-msft-robinhood-0xdd04fe28b7f5fcb07b492cfd434286ff1a54b12eaa69ff00a2807fa1f2adc6a8",
+      "issuerId": "robinhood-msft-robinhood",
+      "stock": "MSFT",
+      "chain": "robinhood",
+      "venue": "uniswap",
+      "version": "v4",
+      "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+      "poolIds": [
+        "0xdd04fe28b7f5fcb07b492cfd434286ff1a54b12eaa69ff00a2807fa1f2adc6a8"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xe93237c50d904957cf27e7b1133b510c669c2e74"
+      ],
+      "fees": [
+        900
+      ],
+      "key": {
+        "currency0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+        "currency1": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+        "fee": 900,
+        "tickSpacing": 9,
+        "hooks": "0x0000000000000000000000000000000000000000"
+      },
+      "label": "Uniswap v4 \u00b7 MSFT/USDG",
+      "verification": {
+        "block": "114722419",
+        "positionManagerKeyHashMatch": true,
+        "slot": [
+          "3472236142922376029488907350495926",
+          213770,
+          737460,
+          900
+        ]
+      },
+      "quoteEvidence": [
+        {
+          "side": "buy",
+          "inputRaw": "100000000",
+          "outputRaw": "177524327849432915",
+          "fullInput": true,
+          "inputRequired": "100000000",
+          "status": "quoted"
+        },
+        {
+          "side": "sell",
+          "status": "quote-error",
+          "error": "The contract function \"quoteExactInputSingle\" reverted with the following signature:\n0x6190b2b0"
+        }
+      ],
+      "quoteBlock": "114722884",
+      "verified": true
+    },
+    {
+      "venue": "uniswap",
+      "version": "v3",
+      "factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
+      "quoter": "0x33e885eD0Ec9bF04EcfB19341582aADCb4c8A9E7",
+      "id": "robinhood-msft-robinhood-uniswap-0x2ea9292113514ed84fd16aa4ad1e416537e39c8c",
+      "issuerId": "robinhood-msft-robinhood",
+      "stock": "MSFT",
+      "chain": "robinhood",
+      "poolIds": [
+        "0x2Ea9292113514eD84Fd16aA4AD1e416537E39C8c"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xe93237c50d904957cf27e7b1133b510c669c2e74"
+      ],
+      "fees": [
+        10000
+      ],
+      "token0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "label": "uniswap v3 \u00b7 MSFT/USDG",
+      "verification": {
+        "block": "114722419",
+        "poolMetadata": {
+          "factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
+          "token0": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+          "token1": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+          "fee": 10000,
+          "liquidity": "112985518521"
+        },
+        "factoryPoolMatch": true
+      },
+      "quoteEvidence": [
+        {
+          "side": "buy",
+          "inputRaw": "100000000",
+          "outputRaw": "897682486910967",
+          "fullInput": false,
+          "inputRequired": "575038",
+          "status": "no-full-fill"
+        },
+        {
+          "side": "sell",
+          "inputRaw": "897682486910967",
+          "outputRaw": "391390",
+          "fullInput": false,
+          "inputRequired": "897682358102485",
+          "status": "no-full-fill"
+        }
+      ],
+      "quoteBlock": "114722884",
+      "verified": false
+    },
+    {
+      "venue": "metric",
+      "version": "metric",
+      "factory": "0x2a53833cc95548cf52c7b159110e22D3a9018f32",
+      "quoter": "0x3B9ea79f482094323d06064E637a7F4528560fcb",
+      "router": "0x02201E6f13c41506c7Bb635d7543F98826229aB7",
+      "id": "robinhood-msft-robinhood-metric-0x922c8c144082ef542334a62b07a73ce37ab16b27",
+      "issuerId": "robinhood-msft-robinhood",
+      "stock": "MSFT",
+      "chain": "robinhood",
+      "poolIds": [
+        "0x922c8C144082Ef542334a62B07a73Ce37aB16b27"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xe93237c50d904957cf27e7b1133b510c669c2e74"
+      ],
+      "fees": [],
+      "token0": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+      "label": "Metric \u00b7 MSFT/USDG",
+      "verification": {
+        "block": "114722419",
+        "getImmutables": {
+          "factory": "0x2a53833cc95548cf52c7b159110e22D3a9018f32",
+          "token0": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+          "token1": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+          "token0ScaleMultiplier": "1",
+          "token1ScaleMultiplier": "1000000000000",
+          "initialScaledToken0PerShareE18": "193795995943852798",
+          "initialScaledToken1PerShareE18": "104658558629497978049",
+          "minimalOperationalLiquidity": "5160065",
+          "immutablePriceProvider": "0xaf458b583EAf84b524aA423baab25EA8Ee72a673",
+          "lowestBin": "-13",
+          "highestBin": "12",
+          "extension1": "0xE4038fA09f0bB9963068afaF97BE0c045155090D",
+          "extension2": "0x0000000000000000000000000000000000000000",
+          "extension3": "0x0000000000000000000000000000000000000000",
+          "extension4": "0x0000000000000000000000000000000000000000",
+          "extension5": "0x0000000000000000000000000000000000000000",
+          "extension6": "0x0000000000000000000000000000000000000000",
+          "extension7": "0x0000000000000000000000000000000000000000",
+          "beforeAddLiquidityOrder": "0",
+          "afterAddLiquidityOrder": "0",
+          "beforeRemoveLiquidityOrder": "0",
+          "afterRemoveLiquidityOrder": "0",
+          "beforeSwapOrder": "0",
+          "afterSwapOrder": "1"
+        }
+      },
+      "source": "https://api.metric.xyz/public/v1/evm/4663/metadata",
+      "quoteEvidence": [
+        {
+          "side": "buy",
+          "status": "quote-error",
+          "error": "The contract function \"quoteLiveExactInSingle\" reverted with the following signature:\n0x4e054b40"
+        }
+      ],
+      "quoteBlock": "114722884",
+      "verified": false
+    },
+    {
+      "venue": "uniswap",
+      "version": "v3",
+      "factory": "0x1F98431c8aD98523631AE4a59f267346ea31F984",
+      "quoter": "0x61fFE014bA17989E743c5F6cB21bF9697530B21e",
+      "id": "ondo-msft-ethereum-uniswap-0x33b80e73d77b04dd43a1401de99a74b8bf1c5177",
+      "issuerId": "ondo-msft-ethereum",
+      "stock": "MSFT",
+      "chain": "ethereum",
+      "poolIds": [
+        "0x33B80E73D77b04DD43a1401De99A74b8BF1c5177"
+      ],
+      "tokens": [
+        "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "0xb812837b81a3a6b81d7cd74cfb19a7f2784555e5"
+      ],
+      "fees": [
+        10000
+      ],
+      "token0": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "label": "uniswap v3 \u00b7 MSFTon/USDC",
+      "verification": {
+        "block": "26418225",
+        "poolMetadata": {
+          "factory": "0x1F98431c8aD98523631AE4a59f267346ea31F984",
+          "token0": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          "token1": "0xB812837b81a3a6b81d7CD74CfB19A7f2784555E5",
+          "fee": 10000,
+          "liquidity": "817914718625"
+        },
+        "factoryPoolMatch": true
+      },
+      "quoteEvidence": [
+        {
+          "side": "buy",
+          "inputRaw": "100000000",
+          "outputRaw": "3706296010126498",
+          "fullInput": false,
+          "inputRequired": "2255215",
+          "status": "no-full-fill"
+        },
+        {
+          "side": "sell",
+          "inputRaw": "3706296010126498",
+          "outputRaw": "1791235",
+          "fullInput": false,
+          "inputRequired": "3706295371466010",
+          "status": "no-full-fill"
+        }
+      ],
+      "quoteBlock": "26418230",
+      "verified": false
+    },
+    {
+      "venue": "uniswap",
+      "version": "v3",
+      "factory": "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
+      "quoter": "0x78D78E420Da98ad378D7799bE8f4AF69033EB077",
+      "id": "binance-msft-bsc-uniswap-0x6a1d40c050289cc8dad85ae2c1ad705222f596d2",
+      "issuerId": "binance-msft-bsc",
+      "stock": "MSFT",
+      "chain": "bsc",
+      "poolIds": [
+        "0x6a1d40c050289cC8daD85ae2C1ad705222F596D2"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x80106cb3ead06659a5ad19df39d9b4733863b9b0"
+      ],
+      "fees": [
+        3000
+      ],
+      "token0": "0x55d398326f99059fF775485246999027B3197955",
+      "label": "uniswap v3 \u00b7 MSFTB/USDT",
+      "verification": {
+        "block": "133677494",
+        "poolMetadata": {
+          "factory": "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
+          "token0": "0x55d398326f99059fF775485246999027B3197955",
+          "token1": "0x80106cb3EAD06659A5ad19DF39D9b4733863B9b0",
+          "fee": 3000,
+          "liquidity": "46693624466311909653506"
+        },
+        "factoryPoolMatch": true
+      },
+      "quoteEvidence": [
+        {
+          "side": "buy",
+          "inputRaw": "100000000000000000000",
+          "outputRaw": "191898980826965693",
+          "fullInput": true,
+          "inputRequired": "99999999999999999674",
+          "status": "quoted"
+        },
+        {
+          "side": "sell",
+          "inputRaw": "191898980826965693",
+          "outputRaw": "99382307670382373554",
+          "fullInput": true,
+          "inputRequired": "191898980826965693",
+          "status": "quoted"
+        }
+      ],
+      "quoteBlock": "133677607",
+      "verified": true
+    },
+    {
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "id": "binance-msft-bsc-pancakeswap-0x5018b018ceb7645c927c5cf246786f89ebcbe7ea",
+      "issuerId": "binance-msft-bsc",
+      "stock": "MSFT",
+      "chain": "bsc",
+      "poolIds": [
+        "0x5018b018cEB7645c927c5Cf246786F89ebCbe7Ea"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x80106cb3ead06659a5ad19df39d9b4733863b9b0"
+      ],
+      "fees": [
+        2500
+      ],
+      "token0": "0x55d398326f99059fF775485246999027B3197955",
+      "label": "pancakeswap v3 \u00b7 MSFTB/USDT",
+      "verification": {
+        "block": "133677494",
+        "poolMetadata": {
+          "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+          "token0": "0x55d398326f99059fF775485246999027B3197955",
+          "token1": "0x80106cb3EAD06659A5ad19DF39D9b4733863B9b0",
+          "fee": 2500,
+          "liquidity": "65545748041425571035523"
+        },
+        "factoryPoolMatch": true
+      },
+      "deployer": "0x41ff9AA7e16B8B1a8a8dc4f0eFacd93D02d071c9",
+      "quoteEvidence": [
+        {
+          "side": "buy",
+          "inputRaw": "100000000000000000000",
+          "outputRaw": "191950635874648655",
+          "fullInput": true,
+          "inputRequired": "99999999999999999874",
+          "status": "quoted"
+        },
+        {
+          "side": "sell",
+          "inputRaw": "191950635874648655",
+          "outputRaw": "99487357903521017554",
+          "fullInput": true,
+          "inputRequired": "191950635874648655",
+          "status": "quoted"
+        }
+      ],
+      "quoteBlock": "133677607",
+      "verified": true
+    },
+    {
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "id": "binance-msft-bsc-pancakeswap-0x58e44c2e5b17ef40915b4b3ae8451b6b87285b44",
+      "issuerId": "binance-msft-bsc",
+      "stock": "MSFT",
+      "chain": "bsc",
+      "poolIds": [
+        "0x58e44C2e5B17EF40915B4B3AE8451B6B87285B44"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x80106cb3ead06659a5ad19df39d9b4733863b9b0"
+      ],
+      "fees": [
+        10000
+      ],
+      "token0": "0x55d398326f99059fF775485246999027B3197955",
+      "label": "pancakeswap v3 \u00b7 MSFTB/USDT",
+      "verification": {
+        "block": "133677494",
+        "poolMetadata": {
+          "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+          "token0": "0x55d398326f99059fF775485246999027B3197955",
+          "token1": "0x80106cb3EAD06659A5ad19DF39D9b4733863B9b0",
+          "fee": 10000,
+          "liquidity": "14473984429691964336700"
+        },
+        "factoryPoolMatch": true
+      },
+      "deployer": "0x41ff9AA7e16B8B1a8a8dc4f0eFacd93D02d071c9",
+      "quoteEvidence": [
+        {
+          "side": "buy",
+          "inputRaw": "100000000000000000000",
+          "outputRaw": "189849716501060376",
+          "fullInput": true,
+          "inputRequired": "99999999999999999683",
+          "status": "quoted"
+        },
+        {
+          "side": "sell",
+          "inputRaw": "189849716501060376",
+          "outputRaw": "97951606547474575920",
+          "fullInput": true,
+          "inputRequired": "189849716501060376",
+          "status": "quoted"
+        }
+      ],
+      "quoteBlock": "133677607",
+      "verified": true
+    },
+    {
+      "venue": "pancakeswap",
+      "version": "v2",
+      "factory": "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73",
+      "quoter": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+      "router": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+      "id": "binance-msft-bsc-pancakeswap-0x3619d76aed6c4cfc3bb6946224253f129f03f839",
+      "issuerId": "binance-msft-bsc",
+      "stock": "MSFT",
+      "chain": "bsc",
+      "poolIds": [
+        "0x3619d76AeD6C4CFC3bB6946224253F129F03F839"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x80106cb3ead06659a5ad19df39d9b4733863b9b0"
+      ],
+      "fees": [],
+      "token0": "0x55d398326f99059fF775485246999027B3197955",
+      "label": "pancakeswap v2 \u00b7 MSFTB/USDT",
+      "verification": {
+        "block": "133677494",
+        "poolMetadata": {
+          "factory": "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73",
+          "token0": "0x55d398326f99059fF775485246999027B3197955",
+          "token1": "0x80106cb3EAD06659A5ad19DF39D9b4733863B9b0"
+        },
+        "factoryPoolMatch": true
+      },
+      "quoteEvidence": [
+        {
+          "side": "buy",
+          "status": "quote-error",
+          "error": "The contract function \"getAmountsOut\" reverted with the following reason:\nPancakeLibrary: INSUFFICIENT_LIQUIDITY"
+        }
+      ],
+      "quoteBlock": "133677607",
+      "verified": false
+    },
+    {
+      "venue": "pancakeswap",
+      "version": "v2",
+      "factory": "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73",
+      "quoter": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+      "router": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+      "id": "ondo-msft-bsc-pancakeswap-0xfb3beb765210975e49448af9f2c037896b044277",
+      "issuerId": "ondo-msft-bsc",
+      "stock": "MSFT",
+      "chain": "bsc",
+      "poolIds": [
+        "0xfb3bEB765210975E49448af9F2c037896b044277"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x6bfe75d1ad432050ea973c3a3dcd88f02e2444c3"
+      ],
+      "fees": [],
+      "token0": "0x55d398326f99059fF775485246999027B3197955",
+      "label": "pancakeswap v2 \u00b7 MSFTon/USDT",
+      "verification": {
+        "block": "133677494",
+        "poolMetadata": {
+          "factory": "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73",
+          "token0": "0x55d398326f99059fF775485246999027B3197955",
+          "token1": "0x6Bfe75D1ad432050eA973C3A3DcD88F02e2444C3"
+        },
+        "factoryPoolMatch": true
+      },
+      "quoteEvidence": [
+        {
+          "side": "buy",
+          "inputRaw": "100000000000000000000",
+          "outputRaw": "497556023663812",
+          "fullInput": true,
+          "status": "quoted"
+        },
+        {
+          "side": "sell",
+          "inputRaw": "497556023663812",
+          "outputRaw": "117073093216859481",
+          "fullInput": true,
+          "status": "quoted"
+        }
+      ],
+      "quoteBlock": "133677607",
+      "verified": true
+    },
+    {
+      "id": "robinhood-msft-robinhood-0x62FDE201C424d6d07730B77450Dd73928EBAc5f5-0x18074ca08154f613c70444ef22793ff1875e9bdc92bab25a5ee0f39107c77258",
+      "issuerId": "robinhood-msft-robinhood",
+      "stock": "MSFT",
+      "chain": "robinhood",
+      "venue": "uniswap",
+      "version": "composite",
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+        "0xe93237c50d904957cf27e7b1133b510c669c2e74"
+      ],
+      "poolIds": [
+        "0x62FDE201C424d6d07730B77450Dd73928EBAc5f5",
+        "0x18074ca08154f613c70444ef22793ff1875e9bdc92bab25a5ee0f39107c77258"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "id": "0x62FDE201C424d6d07730B77450Dd73928EBAc5f5",
+          "venue": "uniswap",
+          "version": "v3",
+          "factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
+          "quoter": "0x33e885eD0Ec9bF04EcfB19341582aADCb4c8A9E7",
+          "poolIds": [
+            "0x62FDE201C424d6d07730B77450Dd73928EBAc5f5"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C"
+          ],
+          "fees": [
+            100
+          ],
+          "label": "uniswap v3 bridge",
+          "verifiedBlock": "114723818"
+        },
+        {
+          "id": "0x18074ca08154f613c70444ef22793ff1875e9bdc92bab25a5ee0f39107c77258",
+          "venue": "uniswap",
+          "version": "v4",
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolIds": [
+            "0x18074ca08154f613c70444ef22793ff1875e9bdc92bab25a5ee0f39107c77258"
+          ],
+          "tokens": [
+            "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+            "0xe93237c50d904957cf27e7b1133b510c669c2e74"
+          ],
+          "fees": [
+            300
+          ],
+          "key": {
+            "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+            "currency1": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+            "fee": 300,
+            "tickSpacing": 3,
+            "hooks": "0x0000000000000000000000000000000000000000"
+          },
+          "label": "Uniswap v4 terminal",
+          "verifiedBlock": "114723818"
+        }
+      ],
+      "label": "uniswap + uniswap \u00b7 SPY",
+      "verifiedBlock": "114723818"
+    },
+    {
+      "id": "robinhood-msft-robinhood-0xa7Bb1AC63BBaB0C44316E6c8C455213441689167-0x18074ca08154f613c70444ef22793ff1875e9bdc92bab25a5ee0f39107c77258",
+      "issuerId": "robinhood-msft-robinhood",
+      "stock": "MSFT",
+      "chain": "robinhood",
+      "venue": "uniswap",
+      "version": "composite",
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+        "0xe93237c50d904957cf27e7b1133b510c669c2e74"
+      ],
+      "poolIds": [
+        "0xa7Bb1AC63BBaB0C44316E6c8C455213441689167",
+        "0x18074ca08154f613c70444ef22793ff1875e9bdc92bab25a5ee0f39107c77258"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "id": "0xa7Bb1AC63BBaB0C44316E6c8C455213441689167",
+          "venue": "uniswap",
+          "version": "v3",
+          "factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
+          "quoter": "0x33e885eD0Ec9bF04EcfB19341582aADCb4c8A9E7",
+          "poolIds": [
+            "0xa7Bb1AC63BBaB0C44316E6c8C455213441689167"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C"
+          ],
+          "fees": [
+            500
+          ],
+          "label": "uniswap v3 bridge",
+          "verifiedBlock": "114723818"
+        },
+        {
+          "id": "0x18074ca08154f613c70444ef22793ff1875e9bdc92bab25a5ee0f39107c77258",
+          "venue": "uniswap",
+          "version": "v4",
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolIds": [
+            "0x18074ca08154f613c70444ef22793ff1875e9bdc92bab25a5ee0f39107c77258"
+          ],
+          "tokens": [
+            "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+            "0xe93237c50d904957cf27e7b1133b510c669c2e74"
+          ],
+          "fees": [
+            300
+          ],
+          "key": {
+            "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+            "currency1": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+            "fee": 300,
+            "tickSpacing": 3,
+            "hooks": "0x0000000000000000000000000000000000000000"
+          },
+          "label": "Uniswap v4 terminal",
+          "verifiedBlock": "114723818"
+        }
+      ],
+      "label": "uniswap + uniswap \u00b7 SPY",
+      "verifiedBlock": "114723818"
+    },
+    {
+      "id": "robinhood-msft-robinhood-0xA43b424Bc609495AED4BCD88d654934b510B0aD9-0x18074ca08154f613c70444ef22793ff1875e9bdc92bab25a5ee0f39107c77258",
+      "issuerId": "robinhood-msft-robinhood",
+      "stock": "MSFT",
+      "chain": "robinhood",
+      "venue": "uniswap",
+      "version": "composite",
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+        "0xe93237c50d904957cf27e7b1133b510c669c2e74"
+      ],
+      "poolIds": [
+        "0xA43b424Bc609495AED4BCD88d654934b510B0aD9",
+        "0x18074ca08154f613c70444ef22793ff1875e9bdc92bab25a5ee0f39107c77258"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "id": "0xA43b424Bc609495AED4BCD88d654934b510B0aD9",
+          "venue": "uniswap",
+          "version": "v3",
+          "factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
+          "quoter": "0x33e885eD0Ec9bF04EcfB19341582aADCb4c8A9E7",
+          "poolIds": [
+            "0xA43b424Bc609495AED4BCD88d654934b510B0aD9"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C"
+          ],
+          "fees": [
+            3000
+          ],
+          "label": "uniswap v3 bridge",
+          "verifiedBlock": "114723818"
+        },
+        {
+          "id": "0x18074ca08154f613c70444ef22793ff1875e9bdc92bab25a5ee0f39107c77258",
+          "venue": "uniswap",
+          "version": "v4",
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolIds": [
+            "0x18074ca08154f613c70444ef22793ff1875e9bdc92bab25a5ee0f39107c77258"
+          ],
+          "tokens": [
+            "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+            "0xe93237c50d904957cf27e7b1133b510c669c2e74"
+          ],
+          "fees": [
+            300
+          ],
+          "key": {
+            "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+            "currency1": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+            "fee": 300,
+            "tickSpacing": 3,
+            "hooks": "0x0000000000000000000000000000000000000000"
+          },
+          "label": "Uniswap v4 terminal",
+          "verifiedBlock": "114723818"
+        }
+      ],
+      "label": "uniswap + uniswap \u00b7 SPY",
+      "verifiedBlock": "114723818"
+    },
+    {
+      "id": "robinhood-msft-robinhood-0x62FDE201C424d6d07730B77450Dd73928EBAc5f5-0xaef5609ceaf79abbd244bcd5198723bf34c50b33136ff3dca52dd559d9554741",
+      "issuerId": "robinhood-msft-robinhood",
+      "stock": "MSFT",
+      "chain": "robinhood",
+      "venue": "uniswap",
+      "version": "composite",
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+        "0xe93237c50d904957cf27e7b1133b510c669c2e74"
+      ],
+      "poolIds": [
+        "0x62FDE201C424d6d07730B77450Dd73928EBAc5f5",
+        "0xaef5609ceaf79abbd244bcd5198723bf34c50b33136ff3dca52dd559d9554741"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "id": "0x62FDE201C424d6d07730B77450Dd73928EBAc5f5",
+          "venue": "uniswap",
+          "version": "v3",
+          "factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
+          "quoter": "0x33e885eD0Ec9bF04EcfB19341582aADCb4c8A9E7",
+          "poolIds": [
+            "0x62FDE201C424d6d07730B77450Dd73928EBAc5f5"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C"
+          ],
+          "fees": [
+            100
+          ],
+          "label": "uniswap v3 bridge",
+          "verifiedBlock": "114723818"
+        },
+        {
+          "id": "0xaef5609ceaf79abbd244bcd5198723bf34c50b33136ff3dca52dd559d9554741",
+          "venue": "uniswap",
+          "version": "v4",
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolIds": [
+            "0xaef5609ceaf79abbd244bcd5198723bf34c50b33136ff3dca52dd559d9554741"
+          ],
+          "tokens": [
+            "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+            "0xe93237c50d904957cf27e7b1133b510c669c2e74"
+          ],
+          "fees": [
+            500
+          ],
+          "key": {
+            "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+            "currency1": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+            "fee": 500,
+            "tickSpacing": 5,
+            "hooks": "0x0000000000000000000000000000000000000000"
+          },
+          "label": "Uniswap v4 terminal",
+          "verifiedBlock": "114723818"
+        }
+      ],
+      "label": "uniswap + uniswap \u00b7 SPY",
+      "verifiedBlock": "114723818"
+    },
+    {
+      "id": "robinhood-msft-robinhood-0xa7Bb1AC63BBaB0C44316E6c8C455213441689167-0xaef5609ceaf79abbd244bcd5198723bf34c50b33136ff3dca52dd559d9554741",
+      "issuerId": "robinhood-msft-robinhood",
+      "stock": "MSFT",
+      "chain": "robinhood",
+      "venue": "uniswap",
+      "version": "composite",
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+        "0xe93237c50d904957cf27e7b1133b510c669c2e74"
+      ],
+      "poolIds": [
+        "0xa7Bb1AC63BBaB0C44316E6c8C455213441689167",
+        "0xaef5609ceaf79abbd244bcd5198723bf34c50b33136ff3dca52dd559d9554741"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "id": "0xa7Bb1AC63BBaB0C44316E6c8C455213441689167",
+          "venue": "uniswap",
+          "version": "v3",
+          "factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
+          "quoter": "0x33e885eD0Ec9bF04EcfB19341582aADCb4c8A9E7",
+          "poolIds": [
+            "0xa7Bb1AC63BBaB0C44316E6c8C455213441689167"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C"
+          ],
+          "fees": [
+            500
+          ],
+          "label": "uniswap v3 bridge",
+          "verifiedBlock": "114723818"
+        },
+        {
+          "id": "0xaef5609ceaf79abbd244bcd5198723bf34c50b33136ff3dca52dd559d9554741",
+          "venue": "uniswap",
+          "version": "v4",
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolIds": [
+            "0xaef5609ceaf79abbd244bcd5198723bf34c50b33136ff3dca52dd559d9554741"
+          ],
+          "tokens": [
+            "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+            "0xe93237c50d904957cf27e7b1133b510c669c2e74"
+          ],
+          "fees": [
+            500
+          ],
+          "key": {
+            "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+            "currency1": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+            "fee": 500,
+            "tickSpacing": 5,
+            "hooks": "0x0000000000000000000000000000000000000000"
+          },
+          "label": "Uniswap v4 terminal",
+          "verifiedBlock": "114723818"
+        }
+      ],
+      "label": "uniswap + uniswap \u00b7 SPY",
+      "verifiedBlock": "114723818"
+    },
+    {
+      "id": "robinhood-msft-robinhood-0xA43b424Bc609495AED4BCD88d654934b510B0aD9-0xaef5609ceaf79abbd244bcd5198723bf34c50b33136ff3dca52dd559d9554741",
+      "issuerId": "robinhood-msft-robinhood",
+      "stock": "MSFT",
+      "chain": "robinhood",
+      "venue": "uniswap",
+      "version": "composite",
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+        "0xe93237c50d904957cf27e7b1133b510c669c2e74"
+      ],
+      "poolIds": [
+        "0xA43b424Bc609495AED4BCD88d654934b510B0aD9",
+        "0xaef5609ceaf79abbd244bcd5198723bf34c50b33136ff3dca52dd559d9554741"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "id": "0xA43b424Bc609495AED4BCD88d654934b510B0aD9",
+          "venue": "uniswap",
+          "version": "v3",
+          "factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
+          "quoter": "0x33e885eD0Ec9bF04EcfB19341582aADCb4c8A9E7",
+          "poolIds": [
+            "0xA43b424Bc609495AED4BCD88d654934b510B0aD9"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C"
+          ],
+          "fees": [
+            3000
+          ],
+          "label": "uniswap v3 bridge",
+          "verifiedBlock": "114723818"
+        },
+        {
+          "id": "0xaef5609ceaf79abbd244bcd5198723bf34c50b33136ff3dca52dd559d9554741",
+          "venue": "uniswap",
+          "version": "v4",
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolIds": [
+            "0xaef5609ceaf79abbd244bcd5198723bf34c50b33136ff3dca52dd559d9554741"
+          ],
+          "tokens": [
+            "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+            "0xe93237c50d904957cf27e7b1133b510c669c2e74"
+          ],
+          "fees": [
+            500
+          ],
+          "key": {
+            "currency0": "0x117cc2133c37B721F49dE2A7a74833232B3B4C0C",
+            "currency1": "0xe93237C50D904957Cf27E7B1133b510C669c2e74",
+            "fee": 500,
+            "tickSpacing": 5,
+            "hooks": "0x0000000000000000000000000000000000000000"
+          },
+          "label": "Uniswap v4 terminal",
+          "verifiedBlock": "114723818"
+        }
+      ],
+      "label": "uniswap + uniswap \u00b7 SPY",
+      "verifiedBlock": "114723818"
     }
   ],
   "sources": [
@@ -42338,7 +42355,6 @@
       "issuer": "xstocks",
       "asOf": "2026-11-15T03:15:41.568373+00:00",
       "sources": [
-        "https://api.xstocks.fi/api/v2/public/assets/COINx",
         "https://api.xstocks.fi/api/v2/public/assets/GOOGLx",
         "https://api.xstocks.fi/api/v2/public/assets/METAx",
         "https://api.xstocks.fi/api/v2/public/assets/MUx",
@@ -42379,6 +42395,17 @@
         "Metric oracle-derived quotes may require freshest block/provider context; known failed or partial probes are kept explicitly and must not be counted usable.",
         "RPC blocks are pinned per smoke-check batch; different rows may have different block numbers. Public RH RPC has a short old-state history window.",
         "References are dated offchain share values; MU/COIN selected consolidated after-hours venue trades are stale while US equity market is closed."
+      ]
+    },
+    {
+      "stock": "MSFT",
+      "asOf": "2026-11-15T05:15:02.206216+00:00",
+      "sources": [
+        "https://api.xstocks.fi/api/v2/public/assets/MSFTx",
+        "https://docs.ondo.finance/addresses",
+        "https://api.coinbase.com/v1/tokenized-stocks",
+        "https://api.robinhood.com/rhj/assets",
+        "https://www.binance.com/en/support/announcement/detail/03b264b679a646119d1a2415b9097bd6"
       ]
     }
   ]
