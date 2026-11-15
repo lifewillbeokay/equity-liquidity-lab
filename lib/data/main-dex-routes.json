@@ -1,0 +1,843 @@
+{
+  "asOf": "2026-11-15T02:36:22.894Z",
+  "routes": [
+    {
+      "issuerId": "binance",
+      "chain": "bsc",
+      "token": "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "verified": true,
+      "id": "bsc-pancake-v3-direct-100",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "poolIds": [
+        "0x0905edeC2928B701Fb6C6354e4eEE4960895A82f"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a"
+      ],
+      "fees": [
+        100
+      ],
+      "label": "PancakeSwap v3 \u00b7 0.01%",
+      "currentLiquidity": "2506937012883380531958"
+    },
+    {
+      "issuerId": "binance",
+      "chain": "bsc",
+      "token": "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "verified": true,
+      "id": "bsc-pancake-v3-direct-500",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "poolIds": [
+        "0x45A7e1307D1C61377746362baEc6eb9728f1f785"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a"
+      ],
+      "fees": [
+        500
+      ],
+      "label": "PancakeSwap v3 \u00b7 0.05%",
+      "currentLiquidity": "0"
+    },
+    {
+      "issuerId": "binance",
+      "chain": "bsc",
+      "token": "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "verified": true,
+      "id": "bsc-pancake-v3-direct-2500",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "poolIds": [
+        "0xe9b9998B2EC5430D2246c7f1F8D9f298c97D7365"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a"
+      ],
+      "fees": [
+        2500
+      ],
+      "label": "PancakeSwap v3 \u00b7 0.25%",
+      "currentLiquidity": "495620366225420032381744"
+    },
+    {
+      "issuerId": "binance",
+      "chain": "bsc",
+      "token": "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "verified": true,
+      "id": "bsc-pancake-v3-direct-10000",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "poolIds": [
+        "0xE9A0fa4f1E30704C2f394d1053FF2C62c4D745bc"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a"
+      ],
+      "fees": [
+        10000
+      ],
+      "label": "PancakeSwap v3 \u00b7 1%",
+      "currentLiquidity": "0"
+    },
+    {
+      "issuerId": "binance",
+      "chain": "bsc",
+      "token": "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "verified": true,
+      "id": "bsc-pancake-v3-wbnb-100-2500",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "poolIds": [
+        "0x172fcD41E0913e95784454622d1c3724f546f849",
+        "0x5aCa9563F8d14A6d79F12421D549a5606644A270"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a"
+      ],
+      "fees": [
+        100,
+        2500
+      ],
+      "label": "PancakeSwap v3 \u00b7 via WBNB \u00b7 100/2500",
+      "currentLiquidity": [
+        "1750554959753303546239091",
+        "40311449822874400541"
+      ]
+    },
+    {
+      "issuerId": "binance",
+      "chain": "bsc",
+      "token": "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "verified": true,
+      "id": "bsc-pancake-v3-wbnb-100-10000",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "poolIds": [
+        "0x172fcD41E0913e95784454622d1c3724f546f849",
+        "0x63ECC45e02b9958a13C4a1Becfa5B4eA443c5EBA"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a"
+      ],
+      "fees": [
+        100,
+        10000
+      ],
+      "label": "PancakeSwap v3 \u00b7 via WBNB \u00b7 100/10000",
+      "currentLiquidity": [
+        "1750554959753303546239091",
+        "0"
+      ]
+    },
+    {
+      "issuerId": "binance",
+      "chain": "bsc",
+      "token": "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "verified": true,
+      "id": "bsc-pancake-v3-wbnb-500-2500",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "poolIds": [
+        "0x36696169C63e42cd08ce11f5deeBbCeBae652050",
+        "0x5aCa9563F8d14A6d79F12421D549a5606644A270"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a"
+      ],
+      "fees": [
+        500,
+        2500
+      ],
+      "label": "PancakeSwap v3 \u00b7 via WBNB \u00b7 500/2500",
+      "currentLiquidity": [
+        "1243869679378690023998694",
+        "40311449822874400541"
+      ]
+    },
+    {
+      "issuerId": "binance",
+      "chain": "bsc",
+      "token": "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "verified": true,
+      "id": "bsc-pancake-v3-wbnb-500-10000",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "poolIds": [
+        "0x36696169C63e42cd08ce11f5deeBbCeBae652050",
+        "0x63ECC45e02b9958a13C4a1Becfa5B4eA443c5EBA"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a"
+      ],
+      "fees": [
+        500,
+        10000
+      ],
+      "label": "PancakeSwap v3 \u00b7 via WBNB \u00b7 500/10000",
+      "currentLiquidity": [
+        "1243869679378690023998694",
+        "0"
+      ]
+    },
+    {
+      "issuerId": "binance",
+      "chain": "bsc",
+      "token": "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "verified": true,
+      "id": "bsc-pancake-v3-wbnb-2500-2500",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "poolIds": [
+        "0x1401ff943D08a7E098328C1d3a9d388923B115D2",
+        "0x5aCa9563F8d14A6d79F12421D549a5606644A270"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a"
+      ],
+      "fees": [
+        2500,
+        2500
+      ],
+      "label": "PancakeSwap v3 \u00b7 via WBNB \u00b7 2500/2500",
+      "currentLiquidity": [
+        "5455238126986295576693",
+        "40311449822874400541"
+      ]
+    },
+    {
+      "issuerId": "binance",
+      "chain": "bsc",
+      "token": "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "verified": true,
+      "id": "bsc-pancake-v3-wbnb-2500-10000",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "poolIds": [
+        "0x1401ff943D08a7E098328C1d3a9d388923B115D2",
+        "0x63ECC45e02b9958a13C4a1Becfa5B4eA443c5EBA"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a"
+      ],
+      "fees": [
+        2500,
+        10000
+      ],
+      "label": "PancakeSwap v3 \u00b7 via WBNB \u00b7 2500/10000",
+      "currentLiquidity": [
+        "5455238126986295576693",
+        "0"
+      ]
+    },
+    {
+      "issuerId": "binance",
+      "chain": "bsc",
+      "token": "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "verified": true,
+      "id": "bsc-pancake-v3-wbnb-10000-2500",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "poolIds": [
+        "0x6805E0E5333c5c3acCF2930Be4734E2b98f4Ce06",
+        "0x5aCa9563F8d14A6d79F12421D549a5606644A270"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a"
+      ],
+      "fees": [
+        10000,
+        2500
+      ],
+      "label": "PancakeSwap v3 \u00b7 via WBNB \u00b7 10000/2500",
+      "currentLiquidity": [
+        "797564729406983182897",
+        "40311449822874400541"
+      ]
+    },
+    {
+      "issuerId": "binance",
+      "chain": "bsc",
+      "token": "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "verified": true,
+      "id": "bsc-pancake-v3-wbnb-10000-10000",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "poolIds": [
+        "0x6805E0E5333c5c3acCF2930Be4734E2b98f4Ce06",
+        "0x63ECC45e02b9958a13C4a1Becfa5B4eA443c5EBA"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a"
+      ],
+      "fees": [
+        10000,
+        10000
+      ],
+      "label": "PancakeSwap v3 \u00b7 via WBNB \u00b7 10000/10000",
+      "currentLiquidity": [
+        "797564729406983182897",
+        "0"
+      ]
+    },
+    {
+      "issuerId": "binance",
+      "chain": "bsc",
+      "token": "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "verified": true,
+      "id": "bsc-pancake-v2-wbnb",
+      "venue": "pancakeswap",
+      "version": "v2",
+      "factory": "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73",
+      "router": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+      "quoter": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+      "poolIds": [
+        "0x16b9a82891338f9bA80E2D6970FddA79D1eb0daE",
+        "0x550C36D2c777F8621D300f2aA9Da4Fda5AeFffE5"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a"
+      ],
+      "fees": [
+        2500,
+        2500
+      ],
+      "label": "PancakeSwap v2 \u00b7 via WBNB"
+    },
+    {
+      "issuerId": "binance",
+      "chain": "bsc",
+      "token": "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "verified": true,
+      "id": "bsc-metric-aaplb-usdt",
+      "venue": "metric",
+      "version": "metric",
+      "factory": "0x2a53833cc95548cf52c7b159110e22D3a9018f32",
+      "quoter": "0x3B9ea79f482094323d06064E637a7F4528560fcb",
+      "router": "0x02201E6f13c41506c7Bb635d7543F98826229aB7",
+      "poolIds": [
+        "0x755f5baA43f692550AA46Be662240eEb99Ae7502"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a"
+      ],
+      "fees": [],
+      "token0": "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
+      "token1": "0x55d398326f99059ff775485246999027b3197955",
+      "label": "Metric \u00b7 AAPLB/USDT",
+      "verification": "Official Metric metadata; successful live quoter call. Dynamic provider-derived spread, no fixed pool fee."
+    },
+    {
+      "issuerId": "coinbase",
+      "chain": "base",
+      "venue": "aerodrome",
+      "version": "aero",
+      "factory": "0x9CB220581b91b0C83223012FE69688b92aD07a76",
+      "quoter": "0x1dDfeC5058180C207F55BB77D95AcDd0d8227868",
+      "fees": [],
+      "id": "0xF5FCB9CDAFcE67d50AfEf298F88E709d2B946BA6",
+      "poolIds": [
+        "0xF5FCB9CDAFcE67d50AfEf298F88E709d2B946BA6"
+      ],
+      "tokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "0xb200000000000000000000C2e324d24d7eEcd1fb"
+      ],
+      "tickSpacing": 10,
+      "label": "Aero CL \u00b7 direct USDC"
+    },
+    {
+      "issuerId": "coinbase",
+      "chain": "base",
+      "venue": "aerodrome",
+      "version": "aero",
+      "factory": "0x9CB220581b91b0C83223012FE69688b92aD07a76",
+      "quoter": "0x1dDfeC5058180C207F55BB77D95AcDd0d8227868",
+      "fees": [],
+      "id": "base-aero-weth-50",
+      "poolIds": [
+        "0x4A7af46bC8aBc00048c6c7920a1488DAF568366c",
+        "0xBc9050D78d2D8d88F7536AF49d4007aEf469d7B4"
+      ],
+      "tokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "0x4200000000000000000000000000000000000006",
+        "0xb200000000000000000000C2e324d24d7eEcd1fb"
+      ],
+      "tickSpacings": [
+        50,
+        10
+      ],
+      "label": "Aero CL \u00b7 via WETH \u00b7 ts 50"
+    },
+    {
+      "issuerId": "coinbase",
+      "chain": "base",
+      "venue": "aerodrome",
+      "version": "aero",
+      "factory": "0x9CB220581b91b0C83223012FE69688b92aD07a76",
+      "quoter": "0x1dDfeC5058180C207F55BB77D95AcDd0d8227868",
+      "fees": [],
+      "id": "base-aero-weth-100",
+      "poolIds": [
+        "0x2A430bEbD2082d8e05D56d64DEDE8944279bbC24",
+        "0xBc9050D78d2D8d88F7536AF49d4007aEf469d7B4"
+      ],
+      "tokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "0x4200000000000000000000000000000000000006",
+        "0xb200000000000000000000C2e324d24d7eEcd1fb"
+      ],
+      "tickSpacings": [
+        100,
+        10
+      ],
+      "label": "Aero CL \u00b7 via WETH \u00b7 ts 100"
+    },
+    {
+      "issuerId": "robinhood",
+      "chain": "robinhood",
+      "venue": "up",
+      "id": "0x19D55ABa3E5d2C389B7011c634725136dFDcaE33",
+      "poolIds": [
+        "0x19D55ABa3E5d2C389B7011c634725136dFDcaE33"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+      ],
+      "version": "slipstream",
+      "factory": "0x1ac9dB4a2608ba45D6127B1737949b51Bb54B7F3",
+      "quoter": "0x03983AB2C057a2eac211ff01738a1e49ff325B49",
+      "fees": [],
+      "label": "UP CL \u00b7 ts 60",
+      "tickSpacing": 60
+    },
+    {
+      "issuerId": "robinhood",
+      "chain": "robinhood",
+      "venue": "ramses",
+      "id": "0x6f7368F0dd18a4E1db631095363d109E6aDe9293",
+      "poolIds": [
+        "0x6f7368F0dd18a4E1db631095363d109E6aDe9293"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+      ],
+      "version": "slipstream",
+      "factory": "0xE0c4ceb92d08CA985bB70fe0a22fEb121A9854A8",
+      "quoter": "0x4730e03EB4a58A5e20244062D5f9A99bCf5770a6",
+      "fees": [],
+      "label": "Ramses CL \u00b7 ts 1",
+      "tickSpacing": 1,
+      "deployer": "0x4b37359BF291AbE8453692DB58d515a8b013Dca9"
+    },
+    {
+      "issuerId": "robinhood",
+      "chain": "robinhood",
+      "venue": "metric",
+      "id": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+      "poolIds": [
+        "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+      ],
+      "version": "metric",
+      "factory": "0x2a53833cc95548cf52c7b159110e22D3a9018f32",
+      "quoter": "0x3B9ea79f482094323d06064E637a7F4528560fcb",
+      "fees": [],
+      "label": "Metric \u00b7 AAPL/USDG",
+      "router": "0x02201E6f13c41506c7Bb635d7543F98826229aB7",
+      "token0": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9"
+    },
+    {
+      "issuerId": "robinhood",
+      "chain": "robinhood",
+      "venue": "metric",
+      "id": "0x7054E59cC5aDeF6c0dFf80cf7f239eb961c8004b",
+      "poolIds": [
+        "0x7054E59cC5aDeF6c0dFf80cf7f239eb961c8004b"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+      ],
+      "version": "metric",
+      "factory": "0x2a53833cc95548cf52c7b159110e22D3a9018f32",
+      "quoter": "0x3B9ea79f482094323d06064E637a7F4528560fcb",
+      "fees": [],
+      "label": "Metric \u00b7 AAPL/USDG",
+      "router": "0x02201E6f13c41506c7Bb635d7543F98826229aB7",
+      "token0": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9"
+    },
+    {
+      "issuerId": "robinhood",
+      "chain": "robinhood",
+      "venue": "metric",
+      "id": "0x5eD5bb20A7859fFa050739123F0cd3C8171e70c3",
+      "poolIds": [
+        "0x5eD5bb20A7859fFa050739123F0cd3C8171e70c3"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+      ],
+      "version": "metric",
+      "factory": "0x2a53833cc95548cf52c7b159110e22D3a9018f32",
+      "quoter": "0x3B9ea79f482094323d06064E637a7F4528560fcb",
+      "fees": [],
+      "label": "Metric \u00b7 AAPL/USDG",
+      "router": "0x02201E6f13c41506c7Bb635d7543F98826229aB7",
+      "token0": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9"
+    },
+    {
+      "issuerId": "robinhood",
+      "chain": "robinhood",
+      "venue": "metric",
+      "id": "0xD69337991EC1Ad70576bB76B47aB2df1a487cc8F",
+      "poolIds": [
+        "0xD69337991EC1Ad70576bB76B47aB2df1a487cc8F"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+      ],
+      "version": "metric",
+      "factory": "0x2a53833cc95548cf52c7b159110e22D3a9018f32",
+      "quoter": "0x3B9ea79f482094323d06064E637a7F4528560fcb",
+      "fees": [],
+      "label": "Metric \u00b7 AAPL/USDG",
+      "router": "0x02201E6f13c41506c7Bb635d7543F98826229aB7",
+      "token0": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9"
+    },
+    {
+      "issuerId": "robinhood",
+      "chain": "robinhood",
+      "venue": "metric",
+      "id": "0xE6c82845cea7b36e819F33a79ed8009E700C3aD6",
+      "poolIds": [
+        "0xE6c82845cea7b36e819F33a79ed8009E700C3aD6"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+      ],
+      "version": "metric",
+      "factory": "0x2a53833cc95548cf52c7b159110e22D3a9018f32",
+      "quoter": "0x3B9ea79f482094323d06064E637a7F4528560fcb",
+      "fees": [],
+      "label": "Metric \u00b7 AAPL/USDG",
+      "router": "0x02201E6f13c41506c7Bb635d7543F98826229aB7",
+      "token0": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9"
+    },
+    {
+      "issuerId": "robinhood",
+      "chain": "robinhood",
+      "venue": "metric",
+      "id": "0x3c2Dae11373059b54dCA262016832FDfaaeA0c46",
+      "poolIds": [
+        "0x3c2Dae11373059b54dCA262016832FDfaaeA0c46"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+      ],
+      "version": "metric",
+      "factory": "0x2a53833cc95548cf52c7b159110e22D3a9018f32",
+      "quoter": "0x3B9ea79f482094323d06064E637a7F4528560fcb",
+      "fees": [],
+      "label": "Metric \u00b7 AAPL/USDG",
+      "router": "0x02201E6f13c41506c7Bb635d7543F98826229aB7",
+      "token0": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9"
+    },
+    {
+      "issuerId": "robinhood",
+      "chain": "robinhood",
+      "venue": "aerodrome",
+      "id": "0x907a9EA0D9b7c9b3B42A923375BEB9d2C09D794A",
+      "poolIds": [
+        "0x907a9EA0D9b7c9b3B42A923375BEB9d2C09D794A"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+      ],
+      "version": "aero",
+      "factory": "0xc63d7338c178e805c544B8f897066bD3BBcBE136",
+      "quoter": "0x1dDfeC5058180C207F55BB77D95AcDd0d8227868",
+      "tickSpacing": 10,
+      "fees": [],
+      "label": "Aero CL \u00b7 direct USDG"
+    },
+    {
+      "issuerId": "robinhood",
+      "chain": "robinhood",
+      "id": "rh-weth-0",
+      "venue": "uniswap",
+      "version": "v3",
+      "factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
+      "quoter": "0x33e885eD0Ec9bF04EcfB19341582aADCb4c8A9E7",
+      "poolIds": [
+        "0x52e65B17fB6E5BA00Ed806f37Afcd2DaA50271Ca",
+        "0x8bb3514e2204E1cDF3Ac149EFEe7Ff04D91B719f"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0x0bd7d308f8e1639fab988df18a8011f41eacad73",
+        "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+      ],
+      "fees": [
+        100,
+        500
+      ],
+      "tickSpacings": [],
+      "label": "Uniswap v3 \u00b7 via WETH \u00b7 100"
+    },
+    {
+      "issuerId": "robinhood",
+      "chain": "robinhood",
+      "id": "rh-weth-1",
+      "venue": "uniswap",
+      "version": "v3",
+      "factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
+      "quoter": "0x33e885eD0Ec9bF04EcfB19341582aADCb4c8A9E7",
+      "poolIds": [
+        "0x69BfaF19C9f377BB306a89aEd9F6B07e2c1a8d9a",
+        "0x8bb3514e2204E1cDF3Ac149EFEe7Ff04D91B719f"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0x0bd7d308f8e1639fab988df18a8011f41eacad73",
+        "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+      ],
+      "fees": [
+        500,
+        500
+      ],
+      "tickSpacings": [],
+      "label": "Uniswap v3 \u00b7 via WETH \u00b7 500"
+    },
+    {
+      "issuerId": "robinhood",
+      "chain": "robinhood",
+      "id": "rh-weth-2",
+      "venue": "uniswap",
+      "version": "v3",
+      "factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
+      "quoter": "0x33e885eD0Ec9bF04EcfB19341582aADCb4c8A9E7",
+      "poolIds": [
+        "0xa9188730Fe85Be88ad499D7d52B099e800fB0334",
+        "0x8bb3514e2204E1cDF3Ac149EFEe7Ff04D91B719f"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0x0bd7d308f8e1639fab988df18a8011f41eacad73",
+        "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+      ],
+      "fees": [
+        3000,
+        500
+      ],
+      "tickSpacings": [],
+      "label": "Uniswap v3 \u00b7 via WETH \u00b7 3000"
+    },
+    {
+      "issuerId": "robinhood",
+      "chain": "robinhood",
+      "id": "rh-weth-3",
+      "venue": "uniswap",
+      "version": "v3",
+      "factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
+      "quoter": "0x33e885eD0Ec9bF04EcfB19341582aADCb4c8A9E7",
+      "poolIds": [
+        "0x5f009E071F07e92B6C624e83F52F17bBDa34680D",
+        "0x8bb3514e2204E1cDF3Ac149EFEe7Ff04D91B719f"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0x0bd7d308f8e1639fab988df18a8011f41eacad73",
+        "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+      ],
+      "fees": [
+        10000,
+        500
+      ],
+      "tickSpacings": [],
+      "label": "Uniswap v3 \u00b7 via WETH \u00b7 10000"
+    },
+    {
+      "issuerId": "robinhood",
+      "chain": "robinhood",
+      "id": "rh-weth-4",
+      "venue": "aerodrome",
+      "version": "aero",
+      "factory": "0xc63d7338c178e805c544B8f897066bD3BBcBE136",
+      "quoter": "0x1dDfeC5058180C207F55BB77D95AcDd0d8227868",
+      "poolIds": [
+        "0x7615926023bb149f36095645C2a81DC367d39750",
+        "0x2Ebf42AC7196C3181B3937897902fA0a6715224b"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0x0bd7d308f8e1639fab988df18a8011f41eacad73",
+        "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+      ],
+      "fees": [],
+      "tickSpacings": [
+        50,
+        50
+      ],
+      "label": "Aero CL \u00b7 via WETH \u00b7 50"
+    },
+    {
+      "issuerId": "robinhood",
+      "chain": "robinhood",
+      "id": "rh-weth-5",
+      "venue": "aerodrome",
+      "version": "aero",
+      "factory": "0xc63d7338c178e805c544B8f897066bD3BBcBE136",
+      "quoter": "0x1dDfeC5058180C207F55BB77D95AcDd0d8227868",
+      "poolIds": [
+        "0x87d56aEa335f6097bC7F26F05D7D5019C89E1b79",
+        "0x2Ebf42AC7196C3181B3937897902fA0a6715224b"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0x0bd7d308f8e1639fab988df18a8011f41eacad73",
+        "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+      ],
+      "fees": [],
+      "tickSpacings": [
+        150,
+        50
+      ],
+      "label": "Aero CL \u00b7 via WETH \u00b7 150"
+    }
+  ],
+  "coverage": [
+    {
+      "issuerId": "coinbase",
+      "quoted": "Uniswap \u00b7 Aero / Aerodrome",
+      "checked": "PancakeSwap v2/v3, Sushi v2/v3: no pools in tested USDC/WETH pairs. Curve: no Apple token in API inventory.",
+      "gaps": "Balancer unverified. Tiny Equalizer and Hydrex pools lack validated adapters. Private/aggregator market-maker routes excluded."
+    },
+    {
+      "issuerId": "ondo",
+      "quoted": "Uniswap",
+      "checked": "PancakeSwap v2/v3, Sushi v2/v3 and Aero: no pools in tested USDC/WETH/USDT pairs. Curve: no Apple token in API inventory.",
+      "gaps": "Other Ondo chains, Balancer and issuer mint/redemption are outside this profile."
+    },
+    {
+      "issuerId": "xstocks",
+      "quoted": "Uniswap",
+      "checked": "160 Velodrome classic/CL and Aero CL factory lookups for native and wrapped AAPLx vs USDG/WETH/USDT/wUSDC found no pools.",
+      "gaps": "Compares the official v2 wrapper on Ink. Other deployments and unusual intermediary tokens excluded."
+    },
+    {
+      "issuerId": "binance",
+      "quoted": "Uniswap \u00b7 PancakeSwap \u00b7 Metric",
+      "checked": "Pancake v2/v3: USDT, WBNB and ETH pairs plus settlement bridges. Metric pool confirmed in canonical factory.",
+      "gaps": "Pancake Infinity unsupported: historical pool discovery needs archive access. No claim of zero Infinity liquidity."
+    },
+    {
+      "issuerId": "robinhood",
+      "quoted": "Uniswap \u00b7 Aero \u00b7 Metric \u00b7 UP \u00b7 Ramses",
+      "checked": "Official contracts and token order verified; all input sizes quoted in both directions.",
+      "gaps": "Metric API discovery was bounded to 500 of 625 pools; smaller pools may be missing. Other intermediary tokens excluded."
+    }
+  ],
+  "sources": [
+    "https://api.metric.xyz/public/v1/evm/4663/metadata?count=500&minTvlFiat=0",
+    "https://api.metric.xyz/public/v1/evm/56/metadata?addresses=0x755f5baA43f692550AA46Be662240eEb99Ae7502",
+    "https://developer.pancakeswap.finance/contracts/infinity/resources/addresses",
+    "https://developer.pancakeswap.finance/contracts/v2/addresses",
+    "https://developer.pancakeswap.finance/contracts/v3/addresses",
+    "https://docs.metric.xyz/reference/smart-contracts/get-quote",
+    "https://docs.metric.xyz/reference/supported-chains-and-deployments",
+    "https://github.com/Metricxyz/pool-contracts/blob/main/contracts/MetricOmmPoolFactory.sol",
+    "https://github.com/Metricxyz/pool-contracts/blob/main/contracts/interfaces/IMetricOmmPool/IMetricOmmPool.sol",
+    "https://github.com/RamsesExchange/ramses-v3-contracts/blob/main/contracts/CL/periphery/interfaces/IQuoterV2.sol",
+    "https://github.com/dromos-labs/metadex-slipstream-public/blob/main/contracts/periphery/interfaces/IMetaquoter.sol",
+    "https://github.com/dromos-labs/metadex-slipstream-public/blob/main/deployment-addresses/cl-base.json",
+    "https://github.com/dromos-labs/metadex-slipstream-public/blob/main/deployment-addresses/cl-ethereum.json",
+    "https://github.com/dromos-labs/metadex-slipstream-public/blob/main/deployment-addresses/cl-ink.json",
+    "https://github.com/pancakeswap/infinity-core/blob/main/script/config/bsc-mainnet.json",
+    "https://github.com/pancakeswap/infinity-periphery/blob/main/script/config/bsc-mainnet.json",
+    "https://github.com/pancakeswap/pancake-v3-contracts/blob/main/projects/v3-periphery/contracts/interfaces/IQuoterV2.sol",
+    "https://github.com/sushiswap/v2-core/blob/master/deployments/base/UniswapV2Factory.json",
+    "https://github.com/sushiswap/v2-core/blob/master/deployments/ethereum/UniswapV2Factory.json",
+    "https://github.com/sushiswap/v3-core/blob/master/deployments/base/UniswapV3Factory.json",
+    "https://github.com/sushiswap/v3-core/blob/master/deployments/ethereum/UniswapV3Factory.json",
+    "https://github.com/up-exchange/up-slipstream/blob/open-source/contracts/periphery/interfaces/IQuoterV2.sol",
+    "https://github.com/velodrome-finance/indexer/blob/main/config.yaml",
+    "https://github.com/velodrome-finance/superchain-contracts/blob/main/deployment-addresses/ink.json",
+    "https://up33.xyz/assets/index-vlacCHHL.js",
+    "https://up33.xyz/docs",
+    "https://www.ramses.xyz/docs/contract-addresses"
+  ]
+}

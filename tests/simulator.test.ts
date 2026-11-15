@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {decodeFunctionData,encodeFunctionResult,encodeAbiParameters,keccak256,parseUnits} from 'viem';
-import {ISSUERS,routesFor} from '../lib/registry';
-import {parseQuote,encodeRouteQuote,v3Abi,slipstreamAbi,classicAbi,rpcBatch,simulateIssuer,type Simulation} from '../lib/simulator';
+import {ISSUERS,routesFor,DEXES} from '../lib/registry';
+import {parseQuote,encodeRouteQuote,v3Abi,slipstreamAbi,classicAbi,v2Abi,aeroAbi,metricAbi,tokenAbi,verifyRoutes,rpcBatch,simulateIssuer,type Simulation} from '../lib/simulator';
 import snapshot from '../lib/data/snapshot.json';
 import {simulationForVenue} from '../lib/view';
 
@@ -46,7 +46,7 @@ test('Captured real quotes reconcile share prices, notional units, and extreme-i
    assert.equal(p.consumedInputRaw,p.inputRaw);assert.ok(p.outputRaw);if(p.impactBps!>1000)extreme++;
   }
  }
- assert.ok(failed>0,'Fixture must exercise unavailable full fills');assert.ok(extreme>0,'Fixture must retain economically poor quotes');
+ assert.ok(snapshot.simulations.some(s=>s.points.some(p=>(p.candidateQuotes as {fullInput:boolean|null}[]).some(c=>c.fullInput===false))),'Fixture must retain rejected partial candidates');assert.ok(extreme>0,'Fixture must retain economically poor quotes');
 });
 
 test('Slipstream uses signed tick spacing in its own ABI and rejects boundary partial fills',()=>{
@@ -70,6 +70,34 @@ test('DEX filtering preserves the block, excludes other venues and recalculates 
    const combined=s.points.find(q=>q.size===p.size&&q.side===p.side)!;assert.equal(combined.status,'ok');assert.ok(BigInt(combined.outputRaw!)>=BigInt(p.outputRaw!));
   }
  }
- for(const i of ISSUERS.filter(i=>i.id!=='coinbase')){const empty=simulationForVenue(snapshot.simulations.find(s=>s.issuerId===i.id)! as Simulation,'aerodrome');assert.equal(empty.status,'unavailable');assert.equal(empty.routes.length,0);assert.ok(empty.points.every(p=>p.status==='unavailable'));}
+ for(const i of ISSUERS.filter(i=>!routesFor(i,'aerodrome').length)){const empty=simulationForVenue(snapshot.simulations.find(s=>s.issuerId===i.id)! as Simulation,'aerodrome');assert.equal(empty.status,'unavailable');assert.equal(empty.routes.length,0);assert.ok(empty.points.every(p=>p.status==='unavailable'));}
  const failed=simulationForVenue({...s,status:'error',points:[],error:'RPC unavailable'},'aerodrome');assert.equal(failed.status,'error');assert.deepEqual(failed.points,[]);
+});
+
+test('Metric uses consumed input, never output alone, to decide full fills',()=>{
+ const i=ISSUERS.find(i=>i.id==='binance')!,r=routesFor(i,'metric')[0];const requested=10000000000000000000000n;
+ for(const side of ['buy','sell'] as const){const encoded=encodeRouteQuote(i,r,side,requested);const decoded=decodeFunctionData({abi:metricAbi,data:encoded.data});assert.equal(decoded.args[2],side==='sell');assert.equal(decoded.args[1],r.router);assert.equal(decoded.args[3],requested);
+  for(const consumed of [requested-1n,requested]){const result=encodeFunctionResult({abi:metricAbi,functionName:'quoteLiveExactInSingle',result:[consumed,500n]});const quote=parseQuote({result},encoded);assert.equal(quote.complete,consumed===requested);assert.equal(quote.amount,500n);assert.equal(quote.consumedInput,consumed);}
+ }
+});
+test('Aero and V3 two-hop quotes reject either exhausted hop and reverse the whole sell path',()=>{
+ for(const [issuer,version,abi] of [[ISSUERS[0],'aero',aeroAbi],[ISSUERS[3],'v3',v3Abi]] as const){
+ const route=routesFor(issuer).find(r=>r.version===version&&r.poolIds.length===2)!;const encoded=encodeRouteQuote(issuer,route,'sell',100n);
+ if(version==='aero'){const d=decodeFunctionData({abi:aeroAbi,data:encoded.data});assert.equal(d.functionName,'quoteExactInput');assert.deepEqual(d.args![0],route.poolIds.slice().reverse());assert.equal(String(d.args![1]).toLowerCase(),issuer.token);}
+ for(const prices of [[4295128740n,2n**96n],[2n**96n,1461446703485210103287273052203988822378723970341n],[2n**96n,2n**96n]]){
+ const result=encodeFunctionResult({abi,functionName:'quoteExactInput',result:(version==='aero'?[100n,prices,[1,2]]:[100n,prices,[1,2],70000n]) as never});assert.equal(parseQuote({result},encoded).complete,prices.every(p=>p===2n**96n));
+ }
+ }
+});
+test('Pancake V2 quotes use reversed sell path and final stablecoin output',()=>{
+ const i=ISSUERS[3],route=routesFor(i).find(r=>r.version==='v2')!;const encoded=encodeRouteQuote(i,route,'sell',123n);const d=decodeFunctionData({abi:v2Abi,data:encoded.data});assert.equal(d.args[0],123n);assert.deepEqual(d.args[1].map(t=>t.toLowerCase()),route.tokens.slice().reverse().map(t=>t.toLowerCase()));const result=encodeFunctionResult({abi:v2Abi,functionName:'getAmountsOut',result:[123n,456n,789n]});assert.equal(parseQuote({result},encoded).amount,789n);
+});
+test('A multihop route is excluded when its second pool fails canonical factory verification',async()=>{
+ const i=ISSUERS[3],route=routesFor(i,'pancakeswap').find(r=>r.version==='v3'&&r.poolIds.length===2)!;
+ const checked=await verifyRoutes(i,[route],'0x123',async(_url,body)=>(body as {id:number;params:{data:`0x${string}`}[]}[]).map(req=>{
+ const call=decodeFunctionData({abi:tokenAbi,data:req.params[0].data});const first=call.functionName==='getPool'&&String(call.args?.[0]).toLowerCase()===route.tokens[0].toLowerCase();const value=call.functionName==='factory'?route.factory!:first?route.poolIds[0]:'0x0000000000000000000000000000000000000000';return {id:req.id,result:encodeFunctionResult({abi:tokenAbi,functionName:call.functionName,result:value as never})};}));
+ assert.equal(checked.routes.length,0);assert.match(checked.errors[0].reason,/mismatch/);
+});
+test('Every venue uses one snapshot; combined ranking never loses output to a full single-venue quote',()=>{
+ for(const sim of snapshot.simulations){const s=sim as Simulation;for(const venue of DEXES){const view=simulationForVenue(s,venue);assert.equal(view.blockHash,s.blockHash);for(const p of view.points){if(p.status!=='ok')continue;assert.equal(p.venue,venue);const best=s.points.find(q=>q.side===p.side&&q.size===p.size)!;assert.equal(best.status,'ok');assert.ok(BigInt(best.outputRaw!)>=BigInt(p.outputRaw!));}}}
 });
