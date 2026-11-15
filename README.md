@@ -14,7 +14,7 @@ A tokenized-equity liquidity dashboard that compares issuer equivalents of the s
 
 Jupiter is excluded. Solana listings remain visible, but direct Solana DEX quoting is not currently integrated.
 
-The dashboard selects the best observed full-input quote for each issuer and order size across covered chains and venues. It normalizes tokens to underlying share exposure and displays mirrored step charts, hover details, route comparisons, and an auditable JSON export.
+The dashboard selects the best observed full-input quote for each issuer and order size across covered chains and venues. It normalizes tokens to underlying share exposure and displays mirrored step charts, hover details, route comparisons, and an auditable JSON export. The order-size dropdown contains only the 25 standard sizes; adaptive samples remain in the charts and tooltips.
 
 ## Run locally
 
@@ -58,7 +58,7 @@ The test suite covers normalization, full-input fills, route selection, adaptive
 - R2 stores full computed curves and their quote evidence. Successful curves are reused for up to two minutes; unavailable results have a shorter 30-second lifetime.
 - Simultaneous refreshes share one capture. Failed refreshes preserve available prior quotes with their original timestamps.
 - When server RPC access fails, the browser can collect and save a validated capture. Such captures are explicitly marked as browser-origin data.
-- The page loads saved captures from the shared cache; a cold capture still depends on public RPC availability.
+- The page loads saved captures from the shared cache; a cold capture still depends on public RPC availability. The displayed range spans the oldest and newest saved profiles for a stock, including older captures retained after failed or incomplete refreshes.
 
 The committed snapshots in `lib/data/` provide the initial dated view and test fixtures. They are not live prices. Shared production cache contents are runtime data and are not stored in Git.
 
