@@ -41,7 +41,7 @@
   },
   "robinhood": {
     "id": 4663,
-    "rpc": "https://rpc.mainnet.chain.robinhood.com",
+    "rpc": "https://robinhood-rpc.publicnode.com",
     "UniswapV3Factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
     "UniswapV2Factory": "0x8bcEaA40B9AcdfAedF85AdF4FF01F5Ad6517937f",
     "QuoterV2": "0x33e885eD0Ec9bF04EcfB19341582aADCb4c8A9E7",

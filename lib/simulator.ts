@@ -47,10 +47,9 @@ const fetchTransport:Transport=async(url,body)=>{
 };
 export async function rpcBatch(chain:ChainKey,requests:RpcRequest[],transport:Transport=fetchTransport):Promise<RpcReply[]>{
  const result:RpcReply[]=[];
- const batchSize=chain==='robinhood'?8:25;
+ const batchSize=25;
  for(let offset=0;offset<requests.length;offset+=batchSize){
   const chunk=requests.slice(offset,offset+batchSize);const body=chunk.map((r,j)=>({jsonrpc:'2.0',id:offset+j+1,...r}));
-  if(offset&&chain==='robinhood')await new Promise(resolve=>setTimeout(resolve,300));
   const data=await transport(CHAINS[chain].rpc,body) as (RpcReply&{id:number})[];
   if(!Array.isArray(data)){const one=data as unknown as RpcReply;throw new Error(one.error?.message||'Invalid RPC batch response');}
   const mapped=new Map(data.map(r=>[r.id,r]));result.push(...body.map(r=>mapped.get(r.id)||{error:{code:-1,message:'Missing RPC response'}}));
@@ -112,8 +111,8 @@ export function parseQuote(r:RpcReply,encoded:ReturnType<typeof encodeRouteQuote
 }
 export async function verifyRoutes(issuer:Issuer,routes:Route[],block:Hex,transport?:Transport){
  type Check={to:Address;abi:Abi;fn:string;args:unknown[];expected?:string;nonzero?:boolean;field?:string};
- const requests:RpcRequest[]=[];const decoders:Check[]=[];const lookup=new Map<string,number>();
- const add=(c:Check)=>{const data=encodeFunctionData({abi:c.abi,functionName:c.fn,args:c.args as never});const key=c.to.toLowerCase()+data;let index=lookup.get(key);if(index===undefined){index=requests.length;lookup.set(key,index);requests.push(ethCall(c.to,data,block));decoders.push(c);}return {index,...c};};
+ const requests:RpcRequest[]=[];const lookup=new Map<string,number>();
+ const add=(c:Check)=>{const data=encodeFunctionData({abi:c.abi,functionName:c.fn,args:c.args as never});const key=c.to.toLowerCase()+data;let index=lookup.get(key);if(index===undefined){index=requests.length;lookup.set(key,index);requests.push(ethCall(c.to,data,block));}return {index,...c};};
  const checks=routes.map(route=>{
   const list:Check[]=[];const factory=(route.factory??CHAINS[issuer.chain].UniswapV3Factory).toLowerCase() as Address;
   if(route.version==='v4')list.push({to:CHAINS[issuer.chain].StateView.toLowerCase() as Address,abi:tokenAbi,fn:'getSlot0',args:[route.id],nonzero:true});
@@ -162,7 +161,11 @@ export async function simulateIssuer(issuer:Issuer,reference:Reference,transport
  try{
   const [head,chainId]=await rpcBatch(issuer.chain,[{method:'eth_getBlockByNumber',params:['latest',false]},{method:'eth_chainId',params:[]}],transport);
   if(head.error||chainId.error)throw new Error(head.error?.message||chainId.error?.message);if(Number(BigInt(chainId.result as Hex))!==CHAINS[issuer.chain].id)throw new Error('Unexpected chain ID');
-  const b=head.result as {number:Hex;hash:Hex;timestamp:Hex};const block=b.number;
+  let b=head.result as {number:Hex;hash:Hex;timestamp:Hex};
+  // Ink's public load-balanced RPC can announce a tip before all replicas have it.
+  // Quote a slightly older block so every call can resolve the same state.
+  if(issuer.chain==='ink'){const target=('0x'+(BigInt(b.number)-20n).toString(16)) as Hex;const [settled]=await rpcBatch(issuer.chain,[{method:'eth_getBlockByNumber',params:[target,false]}],transport);if(settled.error||!settled.result)throw new Error(settled.error?.message??'Recent snapshot block unavailable');b=settled.result as typeof b;}
+  const block=b.number;
   base.blockNumber=Number(BigInt(block));base.blockHash=b.hash;base.blockTimestamp=new Date(Number(BigInt(b.timestamp))*1000).toISOString();
   const decimals=Number(await tokenCall(issuer.chain,issuer.token,'decimals',[],block,transport));const quoteDecimals=Number(await tokenCall(issuer.chain,issuer.settlement,'decimals',[],block,transport));
   if(decimals!==issuer.decimals||quoteDecimals!==issuer.settlementDecimals)throw new Error('Token decimals changed or registry mismatch');
