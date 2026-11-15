@@ -105,3 +105,10 @@ test('expected liquidity reverts allow rate recovery; real RPC throttles do not'
  assert.equal(rpcThrottled({error:{code:429,message:'Too Many Requests'}}),true);
  assert.equal(rpcThrottled([{id:1,error:{code:-32005,message:'Your IP has exceeded its request rate limit.'}}]),true);
 });
+
+test('opaque browser network failures still reach the official Robinhood RPC',async()=>{
+ const {rpcBatch}=await import('../lib/simulator');const urls:string[]=[];const result=await rpcBatch('robinhood',[{method:'eth_call',params:[{to:ISSUERS[4].token,data:'0x313ce567'},'0x123']}],async(url)=>{urls.push(url);if(urls.length===1)throw new TypeError('Failed to fetch');return [{id:1,result:'0x12'}];});assert.equal(urls[1],'https://rpc.mainnet.chain.robinhood.com');assert.equal(result[0].result,'0x12');
+});
+test('failed refreshes preserve usable captures, original times and explicit failure provenance',async()=>{
+ const {retainPreviousQuote}=await import('../lib/view');const old=fixture.simulations[0] as unknown as Simulation;const failure={...old,status:'error' as const,points:[],error:'Failed to fetch',fetchedAt:'2026-11-15T05:00:00Z'};const kept=retainPreviousQuote(failure,old);assert.deepEqual(kept.points,old.points);assert.equal(kept.fetchedAt,old.fetchedAt);assert.equal(kept.refreshError,'Failed to fetch');assert.equal(kept.lastRefreshAttempt,failure.fetchedAt);assert.equal(retainPreviousQuote(failure).status,'error');assert.equal(retainPreviousQuote(old,failure),old);
+});

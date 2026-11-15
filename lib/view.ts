@@ -34,3 +34,9 @@ export function bestPoint(views:IssuerView[],size:number,side:'buy'|'sell'){
 export function sampledDepth(points:QuotePoint[],side:'buy'|'sell',impactPercent:number):number{
  return Math.max(0,...points.filter(p=>p.side===side&&p.status==='ok'&&p.impactBps!==null&&Number.isFinite(p.impactBps)&&Math.max(0,p.impactBps)/100<=impactPercent+1e-10).map(p=>p.size));
 }
+
+/** A failed refresh must not erase a usable, timestamped capture. */
+export function retainPreviousQuote(next:Simulation,previous?:Simulation):Simulation{
+ if(next.status!=='error'||previous?.status!=='ok'||!previous.points.some(p=>p.status==='ok'))return next;
+ return {...previous,refreshError:next.error??'Quote refresh failed',lastRefreshAttempt:next.fetchedAt};
+}
