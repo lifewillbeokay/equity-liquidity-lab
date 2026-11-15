@@ -1,0 +1,2741 @@
+{
+  "version": 1,
+  "reference": {
+    "price": 355.585,
+    "updatedAt": "2026-11-13T21:05:53Z",
+    "fetchedAt": "2026-11-15T01:55:38.249Z",
+    "source": "https://api.coinbase.com/v1/tokenized-stocks",
+    "label": "Coinbase / Chainlink share reference"
+  },
+  "simulations": [
+    {
+      "issuerId": "coinbase",
+      "status": "ok",
+      "blockNumber": 57586814,
+      "blockHash": "0xaea093f0a5d404344209d2ed3975b729e1838cbdf00000a1d29fc8ce6b5fd548",
+      "blockTimestamp": "2026-11-15T01:55:38.000Z",
+      "fetchedAt": "2026-11-15T01:55:40.163Z",
+      "normalization": {
+        "sharesPerToken": 1,
+        "method": "B20 multiplier",
+        "source": "onchain",
+        "asOf": "2026-11-15T01:55:38.000Z",
+        "sourceChain": "base",
+        "sourceBlock": 57586814,
+        "sourceBlockHash": "0xaea093f0a5d404344209d2ed3975b729e1838cbdf00000a1d29fc8ce6b5fd548",
+        "factorRaw": "1000000000000000000"
+      },
+      "routes": [
+        {
+          "id": "0xe48e5351265960ea686a5c6d23fea9897feb4a976206d2390c135d9ceeeabcbb",
+          "version": "v4",
+          "poolIds": [
+            "0xe48e5351265960ea686a5c6d23fea9897feb4a976206d2390c135d9ceeeabcbb"
+          ],
+          "tokens": [
+            "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+            "0xb200000000000000000000c2e324d24d7eecd1fb"
+          ],
+          "fees": [
+            8388608
+          ],
+          "key": {
+            "currency0": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+            "currency1": "0xb200000000000000000000c2e324d24d7eecd1fb",
+            "fee": 8388608,
+            "tickSpacing": 10,
+            "hooks": "0x81f989dcb1677ccea3a4f822aa871c08bd2400c4"
+          },
+          "label": "Uniswap v4 · dynamic fee"
+        },
+        {
+          "id": "0x97F35d1E92795327614BE000cd18cba1Be2c1931",
+          "version": "v3",
+          "poolIds": [
+            "0x97F35d1E92795327614BE000cd18cba1Be2c1931"
+          ],
+          "tokens": [
+            "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+            "0xb200000000000000000000c2e324d24d7eecd1fb"
+          ],
+          "fees": [
+            3000
+          ],
+          "label": "Uniswap v3 · 0.30%"
+        },
+        {
+          "id": "0x6f3741139e087324fb023a1d5a1e038a343de15edba4409d6bf9c4b54db443ed",
+          "version": "v4",
+          "poolIds": [
+            "0x6f3741139e087324fb023a1d5a1e038a343de15edba4409d6bf9c4b54db443ed"
+          ],
+          "tokens": [
+            "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+            "0xb200000000000000000000c2e324d24d7eecd1fb"
+          ],
+          "fees": [
+            2000
+          ],
+          "key": {
+            "currency0": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+            "currency1": "0xb200000000000000000000c2e324d24d7eecd1fb",
+            "fee": 2000,
+            "tickSpacing": 10,
+            "hooks": "0xeeee3da335342996ab288fbcf70fbe5f9ed81040"
+          },
+          "label": "Uniswap v4 · 0.20%"
+        }
+      ],
+      "points": [
+        {
+          "size": 100,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "100000000",
+          "outputRaw": "28028591",
+          "input": 100,
+          "output": 0.28028591,
+          "shares": 0.28028591,
+          "price": 356.77854801905664,
+          "referenceBps": 33.56575837160314,
+          "impactBps": 6.792706775733404,
+          "routeId": "0xe48e5351265960ea686a5c6d23fea9897feb4a976206d2390c135d9ceeeabcbb",
+          "routeLabel": "Uniswap v4 · dynamic fee",
+          "gasUnits": "58237",
+          "candidateQuotes": [
+            {
+              "routeId": "0xe48e5351265960ea686a5c6d23fea9897feb4a976206d2390c135d9ceeeabcbb",
+              "outputRaw": "28028591",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x97F35d1E92795327614BE000cd18cba1Be2c1931",
+              "outputRaw": "27985770",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x6f3741139e087324fb023a1d5a1e038a343de15edba4409d6bf9c4b54db443ed",
+              "outputRaw": "27504486",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "100000000"
+        },
+        {
+          "size": 1000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "1000000000",
+          "outputRaw": "278395555",
+          "input": 1000,
+          "output": 2.78395555,
+          "shares": 2.78395555,
+          "price": 359.2011373888495,
+          "referenceBps": 101.69544240756778,
+          "impactBps": 74.74059706161552,
+          "routeId": "0xe48e5351265960ea686a5c6d23fea9897feb4a976206d2390c135d9ceeeabcbb",
+          "routeLabel": "Uniswap v4 · dynamic fee",
+          "gasUnits": "63878",
+          "candidateQuotes": [
+            {
+              "routeId": "0xe48e5351265960ea686a5c6d23fea9897feb4a976206d2390c135d9ceeeabcbb",
+              "outputRaw": "278395555",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x97F35d1E92795327614BE000cd18cba1Be2c1931",
+              "outputRaw": "277059149",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x6f3741139e087324fb023a1d5a1e038a343de15edba4409d6bf9c4b54db443ed",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "1000000000"
+        },
+        {
+          "size": 5000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "5000000000",
+          "outputRaw": "1351430509",
+          "input": 5000,
+          "output": 13.51430509,
+          "shares": 13.51430509,
+          "price": 369.9783279052789,
+          "referenceBps": 404.7788265893915,
+          "impactBps": 377.01524910593645,
+          "routeId": "0xe48e5351265960ea686a5c6d23fea9897feb4a976206d2390c135d9ceeeabcbb",
+          "routeLabel": "Uniswap v4 · dynamic fee",
+          "gasUnits": "102237",
+          "candidateQuotes": [
+            {
+              "routeId": "0xe48e5351265960ea686a5c6d23fea9897feb4a976206d2390c135d9ceeeabcbb",
+              "outputRaw": "1351430509",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x97F35d1E92795327614BE000cd18cba1Be2c1931",
+              "outputRaw": "382714627",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x6f3741139e087324fb023a1d5a1e038a343de15edba4409d6bf9c4b54db443ed",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "5000000000"
+        },
+        {
+          "size": 10000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "10000000000",
+          "outputRaw": "2607847780",
+          "input": 10000,
+          "output": 26.0784778,
+          "shares": 26.0784778,
+          "price": 383.4579639460398,
+          "referenceBps": 783.8621973941473,
+          "impactBps": 755.0870933118637,
+          "routeId": "0xe48e5351265960ea686a5c6d23fea9897feb4a976206d2390c135d9ceeeabcbb",
+          "routeLabel": "Uniswap v4 · dynamic fee",
+          "gasUnits": "102365",
+          "candidateQuotes": [
+            {
+              "routeId": "0xe48e5351265960ea686a5c6d23fea9897feb4a976206d2390c135d9ceeeabcbb",
+              "outputRaw": "2607847780",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x97F35d1E92795327614BE000cd18cba1Be2c1931",
+              "outputRaw": "382839151",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x6f3741139e087324fb023a1d5a1e038a343de15edba4409d6bf9c4b54db443ed",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "10000000000"
+        },
+        {
+          "size": 50000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "50000000000",
+          "outputRaw": "382912819",
+          "input": 50000,
+          "output": 3.82912819,
+          "shares": 3.82912819,
+          "price": 13057.802590829428,
+          "referenceBps": 357220.2874370243,
+          "impactBps": 356240.4156806252,
+          "routeId": "0x97F35d1E92795327614BE000cd18cba1Be2c1931",
+          "routeLabel": "Uniswap v3 · 0.30%",
+          "gasUnits": "293896",
+          "candidateQuotes": [
+            {
+              "routeId": "0xe48e5351265960ea686a5c6d23fea9897feb4a976206d2390c135d9ceeeabcbb",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x97F35d1E92795327614BE000cd18cba1Be2c1931",
+              "outputRaw": "382912819",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x6f3741139e087324fb023a1d5a1e038a343de15edba4409d6bf9c4b54db443ed",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "50000000000"
+        },
+        {
+          "size": 100000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "100000000000",
+          "outputRaw": "382920844",
+          "input": 100000,
+          "output": 3.82920844,
+          "shares": 3.82920844,
+          "price": 26115.05786820004,
+          "referenceBps": 724425.1829576625,
+          "impactBps": 722465.4805158636,
+          "routeId": "0x97F35d1E92795327614BE000cd18cba1Be2c1931",
+          "routeLabel": "Uniswap v3 · 0.30%",
+          "gasUnits": "300290",
+          "candidateQuotes": [
+            {
+              "routeId": "0xe48e5351265960ea686a5c6d23fea9897feb4a976206d2390c135d9ceeeabcbb",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x97F35d1E92795327614BE000cd18cba1Be2c1931",
+              "outputRaw": "382920844",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x6f3741139e087324fb023a1d5a1e038a343de15edba4409d6bf9c4b54db443ed",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "100000000000"
+        },
+        {
+          "size": 100,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "28122671",
+          "outputRaw": "99928351",
+          "input": 0.28122671,
+          "output": 99.928351,
+          "shares": 0.28122671,
+          "price": 355.3302280569296,
+          "referenceBps": -7.16486755825918,
+          "impactBps": 6.7975054784286115,
+          "routeId": "0xe48e5351265960ea686a5c6d23fea9897feb4a976206d2390c135d9ceeeabcbb",
+          "routeLabel": "Uniswap v4 · dynamic fee",
+          "gasUnits": "57612",
+          "candidateQuotes": [
+            {
+              "routeId": "0xe48e5351265960ea686a5c6d23fea9897feb4a976206d2390c135d9ceeeabcbb",
+              "outputRaw": "99928351",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x97F35d1E92795327614BE000cd18cba1Be2c1931",
+              "outputRaw": "99862449",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x6f3741139e087324fb023a1d5a1e038a343de15edba4409d6bf9c4b54db443ed",
+              "outputRaw": "98243664",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "28122671"
+        },
+        {
+          "size": 1000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "281226710",
+          "outputRaw": "997513720",
+          "input": 2.8122671,
+          "output": 997.51372,
+          "shares": 2.8122671,
+          "price": 354.70091727773655,
+          "referenceBps": -24.862767615715377,
+          "impactBps": 24.496056155782764,
+          "routeId": "0x97F35d1E92795327614BE000cd18cba1Be2c1931",
+          "routeLabel": "Uniswap v3 · 0.30%",
+          "gasUnits": "81152",
+          "candidateQuotes": [
+            {
+              "routeId": "0xe48e5351265960ea686a5c6d23fea9897feb4a976206d2390c135d9ceeeabcbb",
+              "outputRaw": "992535178",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x97F35d1E92795327614BE000cd18cba1Be2c1931",
+              "outputRaw": "997513720",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x6f3741139e087324fb023a1d5a1e038a343de15edba4409d6bf9c4b54db443ed",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "281226710"
+        },
+        {
+          "size": 5000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "1406133554",
+          "outputRaw": "4963318580",
+          "input": 14.06133554,
+          "output": 4963.31858,
+          "shares": 14.06133554,
+          "price": 352.97632759569296,
+          "referenceBps": -73.36283601127813,
+          "impactBps": 72.99790753743096,
+          "routeId": "0x97F35d1E92795327614BE000cd18cba1Be2c1931",
+          "routeLabel": "Uniswap v3 · 0.30%",
+          "gasUnits": "135083",
+          "candidateQuotes": [
+            {
+              "routeId": "0xe48e5351265960ea686a5c6d23fea9897feb4a976206d2390c135d9ceeeabcbb",
+              "outputRaw": "4818065631",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x97F35d1E92795327614BE000cd18cba1Be2c1931",
+              "outputRaw": "4963318580",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x6f3741139e087324fb023a1d5a1e038a343de15edba4409d6bf9c4b54db443ed",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "1406133554"
+        },
+        {
+          "size": 10000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "2812267109",
+          "outputRaw": "9864777558",
+          "input": 28.12267109,
+          "output": 9864.777558,
+          "shares": 28.12267109,
+          "price": 350.77669281236115,
+          "referenceBps": -135.22244154390185,
+          "impactBps": 134.85978718676407,
+          "routeId": "0x97F35d1E92795327614BE000cd18cba1Be2c1931",
+          "routeLabel": "Uniswap v3 · 0.30%",
+          "gasUnits": "158898",
+          "candidateQuotes": [
+            {
+              "routeId": "0xe48e5351265960ea686a5c6d23fea9897feb4a976206d2390c135d9ceeeabcbb",
+              "outputRaw": "9297349713",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x97F35d1E92795327614BE000cd18cba1Be2c1931",
+              "outputRaw": "9864777558",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x6f3741139e087324fb023a1d5a1e038a343de15edba4409d6bf9c4b54db443ed",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "2812267109"
+        },
+        {
+          "size": 50000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "14061335545",
+          "outputRaw": "19706586157",
+          "input": 140.61335545,
+          "output": 19706.586157,
+          "shares": 140.61335545,
+          "price": 140.14732877921662,
+          "referenceBps": -6058.682768417772,
+          "impactBps": 6058.537875554408,
+          "routeId": "0x97F35d1E92795327614BE000cd18cba1Be2c1931",
+          "routeLabel": "Uniswap v3 · 0.30%",
+          "gasUnits": "931401",
+          "candidateQuotes": [
+            {
+              "routeId": "0xe48e5351265960ea686a5c6d23fea9897feb4a976206d2390c135d9ceeeabcbb",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x97F35d1E92795327614BE000cd18cba1Be2c1931",
+              "outputRaw": "19706586157",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x6f3741139e087324fb023a1d5a1e038a343de15edba4409d6bf9c4b54db443ed",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "14061335545"
+        },
+        {
+          "size": 100000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "28122671091",
+          "outputRaw": "19706644621",
+          "input": 281.22671091,
+          "output": 19706.644621,
+          "shares": 281.22671091,
+          "price": 70.07387227633099,
+          "referenceBps": -8029.33553787896,
+          "impactBps": 8029.263091232353,
+          "routeId": "0x97F35d1E92795327614BE000cd18cba1Be2c1931",
+          "routeLabel": "Uniswap v3 · 0.30%",
+          "gasUnits": "938757",
+          "candidateQuotes": [
+            {
+              "routeId": "0xe48e5351265960ea686a5c6d23fea9897feb4a976206d2390c135d9ceeeabcbb",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x97F35d1E92795327614BE000cd18cba1Be2c1931",
+              "outputRaw": "19706644621",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x6f3741139e087324fb023a1d5a1e038a343de15edba4409d6bf9c4b54db443ed",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "28122671091"
+        }
+      ],
+      "probe": {
+        "buyPrice": 356.5363633219634,
+        "sellPrice": 355.5719282699687
+      },
+      "rpc": "https://base.publicnode.com",
+      "reference": {
+        "price": 355.585,
+        "updatedAt": "2026-11-13T21:05:53Z",
+        "fetchedAt": "2026-11-15T01:55:38.249Z",
+        "source": "https://api.coinbase.com/v1/tokenized-stocks",
+        "label": "Coinbase / Chainlink share reference"
+      }
+    },
+    {
+      "issuerId": "ondo",
+      "status": "ok",
+      "blockNumber": 26417244,
+      "blockHash": "0x869ef9aeca89e54a641c0aa26eca894f6faeeccb8121704a4c154e949ecc962b",
+      "blockTimestamp": "2026-11-15T01:55:35.000Z",
+      "fetchedAt": "2026-11-15T01:55:38.822Z",
+      "normalization": {
+        "sharesPerToken": 1.0039083015136119,
+        "method": "Issuer-wide shares ratio · Ondo BNB oracle",
+        "source": "https://bscscan.com/address/0xf4fd8a1b412633e10527454137a29db7aa35f15e#readContract",
+        "asOf": "2026-11-15T01:55:38.000Z",
+        "sourceChain": "bsc",
+        "sourceBlock": 133651319,
+        "sourceBlockHash": "0x8225da862bd9ba7b62ac755099d9cc555e7a591f22012d1756a37582b1025155",
+        "factorRaw": "1003908301513611930"
+      },
+      "routes": [
+        {
+          "id": "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921",
+          "version": "v3",
+          "poolIds": [
+            "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921"
+          ],
+          "tokens": [
+            "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+            "0x14c3abf95cb9c93a8b82c1cdcb76d72cb87b2d4c"
+          ],
+          "fees": [
+            10000
+          ],
+          "label": "Uniswap v3 · 1.00%"
+        },
+        {
+          "id": "0x50B31AB7A061843CA6EBaB6c006ab4ece6Ca2fd8",
+          "version": "v3",
+          "poolIds": [
+            "0x50B31AB7A061843CA6EBaB6c006ab4ece6Ca2fd8"
+          ],
+          "tokens": [
+            "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+            "0x14c3abf95cb9c93a8b82c1cdcb76d72cb87b2d4c"
+          ],
+          "fees": [
+            3000
+          ],
+          "label": "Uniswap v3 · 0.30%"
+        }
+      ],
+      "points": [
+        {
+          "size": 100,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "100000000",
+          "outputRaw": "276437657388798185",
+          "input": 100,
+          "output": 0.27643765738879816,
+          "shares": 0.2775180591035902,
+          "price": 360.3369104086759,
+          "referenceBps": 133.6364134785195,
+          "impactBps": 2.7676671780785256,
+          "routeId": "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921",
+          "routeLabel": "Uniswap v3 · 1.00%",
+          "gasUnits": "153573",
+          "candidateQuotes": [
+            {
+              "routeId": "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921",
+              "outputRaw": "276437657388798185",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x50B31AB7A061843CA6EBaB6c006ab4ece6Ca2fd8",
+              "outputRaw": "156984497875816339",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "100000000"
+        },
+        {
+          "size": 1000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "1000000000",
+          "outputRaw": "2756748921460178493",
+          "input": 1000,
+          "output": 2.7567489214601784,
+          "shares": 2.7675231274425696,
+          "price": 361.3339271076251,
+          "referenceBps": 161.67518617560052,
+          "impactBps": 30.444338958870443,
+          "routeId": "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921",
+          "routeLabel": "Uniswap v3 · 1.00%",
+          "gasUnits": "153607",
+          "candidateQuotes": [
+            {
+              "routeId": "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921",
+              "outputRaw": "2756748921460178493",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x50B31AB7A061843CA6EBaB6c006ab4ece6Ca2fd8",
+              "outputRaw": "314518796772443568",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "1000000000"
+        },
+        {
+          "size": 5000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "5000000000",
+          "outputRaw": "13341688432128829963",
+          "input": 5000,
+          "output": 13.34168843212883,
+          "shares": 13.393831773222258,
+          "price": 373.3061669474075,
+          "referenceBps": 498.3665494159628,
+          "impactBps": 362.7875714000206,
+          "routeId": "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921",
+          "routeLabel": "Uniswap v3 · 1.00%",
+          "gasUnits": "241776",
+          "candidateQuotes": [
+            {
+              "routeId": "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921",
+              "outputRaw": "13341688432128829963",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x50B31AB7A061843CA6EBaB6c006ab4ece6Ca2fd8",
+              "outputRaw": "345321547829098201",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "5000000000"
+        },
+        {
+          "size": 10000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "10000000000",
+          "outputRaw": "349601373135974052",
+          "input": 10000,
+          "output": 0.34960137313597406,
+          "shares": 0.3509677207117622,
+          "price": 28492.64878183102,
+          "referenceBps": 791289.3902113705,
+          "impactBps": 780941.3045250389,
+          "routeId": "0x50B31AB7A061843CA6EBaB6c006ab4ece6Ca2fd8",
+          "routeLabel": "Uniswap v3 · 0.30%",
+          "gasUnits": "195687",
+          "candidateQuotes": [
+            {
+              "routeId": "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921",
+              "outputRaw": "15474541001674847353",
+              "fullInput": false
+            },
+            {
+              "routeId": "0x50B31AB7A061843CA6EBaB6c006ab4ece6Ca2fd8",
+              "outputRaw": "349601373135974052",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "10000000000"
+        },
+        {
+          "size": 50000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "50000000000",
+          "outputRaw": "353102380265852409",
+          "input": 50000,
+          "output": 0.3531023802658524,
+          "shares": 0.3544824108331054,
+          "price": 141050.72204426132,
+          "referenceBps": 3956723.0632411754,
+          "impactBps": 3905495.640722153,
+          "routeId": "0x50B31AB7A061843CA6EBaB6c006ab4ece6Ca2fd8",
+          "routeLabel": "Uniswap v3 · 0.30%",
+          "gasUnits": "210499",
+          "candidateQuotes": [
+            {
+              "routeId": "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921",
+              "outputRaw": "15474541001674847353",
+              "fullInput": false
+            },
+            {
+              "routeId": "0x50B31AB7A061843CA6EBaB6c006ab4ece6Ca2fd8",
+              "outputRaw": "353102380265852409",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "50000000000"
+        },
+        {
+          "size": 100000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "100000000000",
+          "outputRaw": "353544942659539437",
+          "input": 100000,
+          "output": 0.35354494265953945,
+          "shares": 0.3549267028940656,
+          "price": 281748.31362250826,
+          "referenceBps": 7913515.15453431,
+          "impactBps": 7811188.560974347,
+          "routeId": "0x50B31AB7A061843CA6EBaB6c006ab4ece6Ca2fd8",
+          "routeLabel": "Uniswap v3 · 0.30%",
+          "gasUnits": "217862",
+          "candidateQuotes": [
+            {
+              "routeId": "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921",
+              "outputRaw": "15474541001674847353",
+              "fullInput": false
+            },
+            {
+              "routeId": "0x50B31AB7A061843CA6EBaB6c006ab4ece6Ca2fd8",
+              "outputRaw": "353544942659539437",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "100000000000"
+        },
+        {
+          "size": 100,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "280131871097179949",
+          "outputRaw": "99258622",
+          "input": 0.28013187109717996,
+          "output": 99.258622,
+          "shares": 0.281226710913,
+          "price": 352.94877103870317,
+          "referenceBps": -74.13779999991044,
+          "impactBps": 2.774606076438868,
+          "routeId": "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921",
+          "routeLabel": "Uniswap v3 · 1.00%",
+          "gasUnits": "109190",
+          "candidateQuotes": [
+            {
+              "routeId": "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921",
+              "outputRaw": "99258622",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x50B31AB7A061843CA6EBaB6c006ab4ece6Ca2fd8",
+              "outputRaw": "86896771",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "280131871097179949"
+        },
+        {
+          "size": 1000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "2801318710971799495",
+          "outputRaw": "989839435",
+          "input": 2.8013187109717994,
+          "output": 989.839435,
+          "shares": 2.81226710913,
+          "price": 351.9720554944781,
+          "referenceBps": -101.60564999991183,
+          "impactBps": 30.439939525909175,
+          "routeId": "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921",
+          "routeLabel": "Uniswap v3 · 1.00%",
+          "gasUnits": "109174",
+          "candidateQuotes": [
+            {
+              "routeId": "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921",
+              "outputRaw": "989839435",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x50B31AB7A061843CA6EBaB6c006ab4ece6Ca2fd8",
+              "outputRaw": "832586477",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "2801318710971799495"
+        },
+        {
+          "size": 5000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "14006593554858997476",
+          "outputRaw": "4888761943",
+          "input": 14.006593554858997,
+          "output": 4888.761943,
+          "shares": 14.06133554565,
+          "price": 347.67408310033414,
+          "referenceBps": -222.47611399991095,
+          "impactBps": 152.1794164326218,
+          "routeId": "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921",
+          "routeLabel": "Uniswap v3 · 1.00%",
+          "gasUnits": "139297",
+          "candidateQuotes": [
+            {
+              "routeId": "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921",
+              "outputRaw": "4888761943",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x50B31AB7A061843CA6EBaB6c006ab4ece6Ca2fd8",
+              "outputRaw": "2177875131",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "14006593554858997476"
+        },
+        {
+          "size": 10000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "28013187109717994953",
+          "outputRaw": "9564243808",
+          "input": 28.013187109717993,
+          "output": 9564.243808,
+          "shares": 28.1226710913,
+          "price": 340.09016344677104,
+          "referenceBps": -435.7561919999142,
+          "impactBps": 366.9928975022674,
+          "routeId": "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921",
+          "routeLabel": "Uniswap v3 · 1.00%",
+          "gasUnits": "163040",
+          "candidateQuotes": [
+            {
+              "routeId": "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921",
+              "outputRaw": "9564243808",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x50B31AB7A061843CA6EBaB6c006ab4ece6Ca2fd8",
+              "outputRaw": "2182146433",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "28013187109717994953"
+        },
+        {
+          "size": 50000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "140065935548590970875",
+          "outputRaw": "2183932122",
+          "input": 140.06593554859097,
+          "output": 2183.932122,
+          "shares": 140.613355456501,
+          "price": 15.531470072027428,
+          "referenceBps": -9563.213575599999,
+          "impactBps": 9560.073246459868,
+          "routeId": "0x50B31AB7A061843CA6EBaB6c006ab4ece6Ca2fd8",
+          "routeLabel": "Uniswap v3 · 0.30%",
+          "gasUnits": "209370",
+          "candidateQuotes": [
+            {
+              "routeId": "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921",
+              "outputRaw": "19813422253",
+              "fullInput": false
+            },
+            {
+              "routeId": "0x50B31AB7A061843CA6EBaB6c006ab4ece6Ca2fd8",
+              "outputRaw": "2183932122",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "140065935548590970875"
+        },
+        {
+          "size": 100000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "280131871097182937858",
+          "outputRaw": "2184103426",
+          "input": 280.13187109718297,
+          "output": 2184.103426,
+          "shares": 281.226710913003,
+          "price": 7.766344167342087,
+          "referenceBps": -9781.5896574,
+          "impactBps": 9780.01936966884,
+          "routeId": "0x50B31AB7A061843CA6EBaB6c006ab4ece6Ca2fd8",
+          "routeLabel": "Uniswap v3 · 0.30%",
+          "gasUnits": "216810",
+          "candidateQuotes": [
+            {
+              "routeId": "0xad82C9EB065a5CFed71DB087e4a52C8a09c69921",
+              "outputRaw": "19813422253",
+              "fullInput": false
+            },
+            {
+              "routeId": "0x50B31AB7A061843CA6EBaB6c006ab4ece6Ca2fd8",
+              "outputRaw": "2184103426",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "280131871097182937858"
+        }
+      ],
+      "probe": {
+        "buyPrice": 360.237208738781,
+        "sellPrice": 353.0467275982693
+      },
+      "rpc": "https://ethereum.publicnode.com",
+      "reference": {
+        "price": 355.585,
+        "updatedAt": "2026-11-13T21:05:53Z",
+        "fetchedAt": "2026-11-15T01:55:38.249Z",
+        "source": "https://api.coinbase.com/v1/tokenized-stocks",
+        "label": "Coinbase / Chainlink share reference"
+      }
+    },
+    {
+      "issuerId": "xstocks",
+      "status": "ok",
+      "blockNumber": 61209326,
+      "blockHash": "0x045631075d0f0f04e9b81e97e2aa8afc158a3f1b9f8da0a58dfc1f2b753abd9d",
+      "blockTimestamp": "2026-11-15T01:55:37.000Z",
+      "fetchedAt": "2026-11-15T01:55:42.111Z",
+      "normalization": {
+        "sharesPerToken": 1.0038023030588032,
+        "method": "ERC-4626 convertToAssets → adjusted AAPLx",
+        "source": "onchain",
+        "asOf": "2026-11-15T01:55:37.000Z",
+        "sourceChain": "ink",
+        "sourceBlock": 61209326,
+        "sourceBlockHash": "0x045631075d0f0f04e9b81e97e2aa8afc158a3f1b9f8da0a58dfc1f2b753abd9d",
+        "factorRaw": "1003802303058803200"
+      },
+      "routes": [
+        {
+          "id": "0x8986Bb68391ad5b0aFd7605e8075b273ca0189D6",
+          "version": "v3",
+          "poolIds": [
+            "0x8986Bb68391ad5b0aFd7605e8075b273ca0189D6"
+          ],
+          "tokens": [
+            "0xe343167631d89b6ffc58b88d6b7fb0228795491d",
+            "0x943bf64d566c32a2bcd41ac92fb63c111cc9de8f"
+          ],
+          "fees": [
+            500
+          ],
+          "label": "Uniswap v3 · 0.05%"
+        },
+        {
+          "id": "0x0ef0fe35389f4104afef27864010022976ed1b924e8837b30f308255d07d3092",
+          "version": "v4",
+          "poolIds": [
+            "0x0ef0fe35389f4104afef27864010022976ed1b924e8837b30f308255d07d3092"
+          ],
+          "tokens": [
+            "0xe343167631d89b6ffc58b88d6b7fb0228795491d",
+            "0x943bf64d566c32a2bcd41ac92fb63c111cc9de8f"
+          ],
+          "fees": [
+            8388608
+          ],
+          "key": {
+            "currency0": "0x943bf64d566c32a2bcd41ac92fb63c111cc9de8f",
+            "currency1": "0xe343167631d89b6ffc58b88d6b7fb0228795491d",
+            "fee": 8388608,
+            "tickSpacing": 60,
+            "hooks": "0x8bb4516059f9149bc3b89018fc7537f1f14a30cc"
+          },
+          "label": "Uniswap v4 · dynamic fee"
+        },
+        {
+          "id": "0x42e0d759c875f012a6e37e1ef1f61905bee1536cca7babfe2429b66cc18e9879",
+          "version": "v4",
+          "poolIds": [
+            "0x42e0d759c875f012a6e37e1ef1f61905bee1536cca7babfe2429b66cc18e9879"
+          ],
+          "tokens": [
+            "0xe343167631d89b6ffc58b88d6b7fb0228795491d",
+            "0x943bf64d566c32a2bcd41ac92fb63c111cc9de8f"
+          ],
+          "fees": [
+            0
+          ],
+          "key": {
+            "currency0": "0x943bf64d566c32a2bcd41ac92fb63c111cc9de8f",
+            "currency1": "0xe343167631d89b6ffc58b88d6b7fb0228795491d",
+            "fee": 0,
+            "tickSpacing": 60,
+            "hooks": "0x26b86c03bd6576b8661d53a48d70faf8c85b8044"
+          },
+          "label": "Uniswap v4 · 0.00%"
+        }
+      ],
+      "points": [
+        {
+          "size": 100,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "100000000",
+          "outputRaw": "279691278914911966",
+          "input": 100,
+          "output": 0.27969127891491197,
+          "shares": 0.28075474992025073,
+          "price": 356.18275391032677,
+          "referenceBps": 16.810436613658997,
+          "impactBps": 6.1673123419114795,
+          "routeId": "0x8986Bb68391ad5b0aFd7605e8075b273ca0189D6",
+          "routeLabel": "Uniswap v3 · 0.05%",
+          "gasUnits": "124650",
+          "candidateQuotes": [
+            {
+              "routeId": "0x8986Bb68391ad5b0aFd7605e8075b273ca0189D6",
+              "outputRaw": "279691278914911966",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x0ef0fe35389f4104afef27864010022976ed1b924e8837b30f308255d07d3092",
+              "outputRaw": "278160234869022394",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x42e0d759c875f012a6e37e1ef1f61905bee1536cca7babfe2429b66cc18e9879",
+              "outputRaw": "74048475174495809",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "100000000"
+        },
+        {
+          "size": 1000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "1000000000",
+          "outputRaw": "2779779586776836067",
+          "input": 1000,
+          "output": 2.779779586776836,
+          "shares": 2.7903491512024363,
+          "price": 358.3780902719909,
+          "referenceBps": 78.54915904751181,
+          "impactBps": 67.84043576104848,
+          "routeId": "0x8986Bb68391ad5b0aFd7605e8075b273ca0189D6",
+          "routeLabel": "Uniswap v3 · 0.05%",
+          "gasUnits": "124652",
+          "candidateQuotes": [
+            {
+              "routeId": "0x8986Bb68391ad5b0aFd7605e8075b273ca0189D6",
+              "outputRaw": "2779779586776836067",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x0ef0fe35389f4104afef27864010022976ed1b924e8837b30f308255d07d3092",
+              "outputRaw": "2766282642946946056",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x42e0d759c875f012a6e37e1ef1f61905bee1536cca7babfe2429b66cc18e9879",
+              "outputRaw": "97333984492549090",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "1000000000"
+        },
+        {
+          "size": 5000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "5000000000",
+          "outputRaw": "13530521666678051345",
+          "input": 5000,
+          "output": 13.530521666678052,
+          "shares": 13.581968810598465,
+          "price": 368.135140768276,
+          "referenceBps": 352.9434809757448,
+          "impactBps": 341.9432065127648,
+          "routeId": "0x8986Bb68391ad5b0aFd7605e8075b273ca0189D6",
+          "routeLabel": "Uniswap v3 · 0.05%",
+          "gasUnits": "124636",
+          "candidateQuotes": [
+            {
+              "routeId": "0x8986Bb68391ad5b0aFd7605e8075b273ca0189D6",
+              "outputRaw": "13530521666678051345",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x0ef0fe35389f4104afef27864010022976ed1b924e8837b30f308255d07d3092",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x42e0d759c875f012a6e37e1ef1f61905bee1536cca7babfe2429b66cc18e9879",
+              "outputRaw": "100132927180847432",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "5000000000"
+        },
+        {
+          "size": 10000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "10000000000",
+          "outputRaw": "26193260891271294875",
+          "input": 10000,
+          "output": 26.193260891271294,
+          "shares": 26.292855607278206,
+          "price": 380.3314538886324,
+          "referenceBps": 695.9363833860377,
+          "impactBps": 684.5716699524119,
+          "routeId": "0x8986Bb68391ad5b0aFd7605e8075b273ca0189D6",
+          "routeLabel": "Uniswap v3 · 0.05%",
+          "gasUnits": "124662",
+          "candidateQuotes": [
+            {
+              "routeId": "0x8986Bb68391ad5b0aFd7605e8075b273ca0189D6",
+              "outputRaw": "26193260891271294875",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x0ef0fe35389f4104afef27864010022976ed1b924e8837b30f308255d07d3092",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x42e0d759c875f012a6e37e1ef1f61905bee1536cca7babfe2429b66cc18e9879",
+              "outputRaw": "100494154273422388",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "10000000000"
+        },
+        {
+          "size": 50000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "50000000000",
+          "outputRaw": "100785017868325657",
+          "input": 50000,
+          "output": 0.10078501786832565,
+          "shares": 0.10116823305004792,
+          "price": 494226.2851943357,
+          "referenceBps": 13888963.263195457,
+          "impactBps": 13874195.249545332,
+          "routeId": "0x42e0d759c875f012a6e37e1ef1f61905bee1536cca7babfe2429b66cc18e9879",
+          "routeLabel": "Uniswap v4 · 0.00%",
+          "gasUnits": "188185",
+          "candidateQuotes": [
+            {
+              "routeId": "0x8986Bb68391ad5b0aFd7605e8075b273ca0189D6",
+              "outputRaw": "50689567313417878121",
+              "fullInput": false
+            },
+            {
+              "routeId": "0x0ef0fe35389f4104afef27864010022976ed1b924e8837b30f308255d07d3092",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x42e0d759c875f012a6e37e1ef1f61905bee1536cca7babfe2429b66cc18e9879",
+              "outputRaw": "100785017868325657",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "50000000000"
+        },
+        {
+          "size": 100000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "100000000000",
+          "outputRaw": "100821494246556054",
+          "input": 100000,
+          "output": 0.10082149424655605,
+          "shares": 0.10120484812252284,
+          "price": 988094.9564682494,
+          "referenceBps": 27777869.46772922,
+          "impactBps": 27748344.126318038,
+          "routeId": "0x42e0d759c875f012a6e37e1ef1f61905bee1536cca7babfe2429b66cc18e9879",
+          "routeLabel": "Uniswap v4 · 0.00%",
+          "gasUnits": "193751",
+          "candidateQuotes": [
+            {
+              "routeId": "0x8986Bb68391ad5b0aFd7605e8075b273ca0189D6",
+              "outputRaw": "50689567313417878121",
+              "fullInput": false
+            },
+            {
+              "routeId": "0x0ef0fe35389f4104afef27864010022976ed1b924e8837b30f308255d07d3092",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x42e0d759c875f012a6e37e1ef1f61905bee1536cca7babfe2429b66cc18e9879",
+              "outputRaw": "100821494246556054",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "100000000000"
+        },
+        {
+          "size": 100,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "280161452166468689",
+          "outputRaw": "99992461",
+          "input": 0.2801614521664687,
+          "output": 99.992461,
+          "shares": 0.281226710913,
+          "price": 355.5581924468532,
+          "referenceBps": -0.753899999910157,
+          "impactBps": 5.5742116643819895,
+          "routeId": "0x0ef0fe35389f4104afef27864010022976ed1b924e8837b30f308255d07d3092",
+          "routeLabel": "Uniswap v4 · dynamic fee",
+          "gasUnits": "95621",
+          "candidateQuotes": [
+            {
+              "routeId": "0x8986Bb68391ad5b0aFd7605e8075b273ca0189D6",
+              "outputRaw": "99930914",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x0ef0fe35389f4104afef27864010022976ed1b924e8837b30f308255d07d3092",
+              "outputRaw": "99992461",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x42e0d759c875f012a6e37e1ef1f61905bee1536cca7babfe2429b66cc18e9879",
+              "outputRaw": "26537441",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "280161452166468689"
+        },
+        {
+          "size": 1000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "2801614521664686896",
+          "outputRaw": "994381531",
+          "input": 2.801614521664687,
+          "output": 994.381531,
+          "shares": 2.81226710913,
+          "price": 353.58715670063816,
+          "referenceBps": -56.18468999991077,
+          "impactBps": 60.97828028149621,
+          "routeId": "0x0ef0fe35389f4104afef27864010022976ed1b924e8837b30f308255d07d3092",
+          "routeLabel": "Uniswap v4 · dynamic fee",
+          "gasUnits": "94728",
+          "candidateQuotes": [
+            {
+              "routeId": "0x8986Bb68391ad5b0aFd7605e8075b273ca0189D6",
+              "outputRaw": "993184613",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x0ef0fe35389f4104afef27864010022976ed1b924e8837b30f308255d07d3092",
+              "outputRaw": "994381531",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x42e0d759c875f012a6e37e1ef1f61905bee1536cca7babfe2429b66cc18e9879",
+              "outputRaw": "34856860",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "2801614521664686896"
+        },
+        {
+          "size": 5000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "14008072608323434484",
+          "outputRaw": "4852356409",
+          "input": 14.008072608323435,
+          "output": 4852.356409,
+          "shares": 14.06133554565,
+          "price": 345.0850307388561,
+          "referenceBps": -295.28718199991147,
+          "impactBps": 299.9655087386599,
+          "routeId": "0x0ef0fe35389f4104afef27864010022976ed1b924e8837b30f308255d07d3092",
+          "routeLabel": "Uniswap v4 · dynamic fee",
+          "gasUnits": "95529",
+          "candidateQuotes": [
+            {
+              "routeId": "0x8986Bb68391ad5b0aFd7605e8075b273ca0189D6",
+              "outputRaw": "4834243354",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x0ef0fe35389f4104afef27864010022976ed1b924e8837b30f308255d07d3092",
+              "outputRaw": "4852356409",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x42e0d759c875f012a6e37e1ef1f61905bee1536cca7babfe2429b66cc18e9879",
+              "outputRaw": "35856039",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "14008072608323434484"
+        },
+        {
+          "size": 10000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "28016145216646868969",
+          "outputRaw": "9421532789",
+          "input": 28.01614521664687,
+          "output": 9421.532789,
+          "shares": 28.1226710913,
+          "price": 335.0155736776595,
+          "referenceBps": -578.4672109999145,
+          "impactBps": 583.0090258473375,
+          "routeId": "0x0ef0fe35389f4104afef27864010022976ed1b924e8837b30f308255d07d3092",
+          "routeLabel": "Uniswap v4 · dynamic fee",
+          "gasUnits": "95625",
+          "candidateQuotes": [
+            {
+              "routeId": "0x8986Bb68391ad5b0aFd7605e8075b273ca0189D6",
+              "outputRaw": "9358298144",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x0ef0fe35389f4104afef27864010022976ed1b924e8837b30f308255d07d3092",
+              "outputRaw": "9421532789",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x42e0d759c875f012a6e37e1ef1f61905bee1536cca7babfe2429b66cc18e9879",
+              "outputRaw": "35984979",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "28016145216646868969"
+        },
+        {
+          "size": 50000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "140080726083235341060",
+          "outputRaw": "36088799",
+          "input": 140.08072608323533,
+          "output": 36.088799,
+          "shares": 140.613355456501,
+          "price": 0.25665271184830046,
+          "referenceBps": -9992.7822402,
+          "impactBps": 9992.78571964749,
+          "routeId": "0x42e0d759c875f012a6e37e1ef1f61905bee1536cca7babfe2429b66cc18e9879",
+          "routeLabel": "Uniswap v4 · 0.00%",
+          "gasUnits": "152576",
+          "candidateQuotes": [
+            {
+              "routeId": "0x8986Bb68391ad5b0aFd7605e8075b273ca0189D6",
+              "outputRaw": "34839507075",
+              "fullInput": false
+            },
+            {
+              "routeId": "0x0ef0fe35389f4104afef27864010022976ed1b924e8837b30f308255d07d3092",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x42e0d759c875f012a6e37e1ef1f61905bee1536cca7babfe2429b66cc18e9879",
+              "outputRaw": "36088799",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "140080726083235341060"
+        },
+        {
+          "size": 100000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "280161452166471678334",
+          "outputRaw": "36101819",
+          "input": 280.1614521664717,
+          "output": 36.101819,
+          "shares": 281.226710913003,
+          "price": 0.12837265309114979,
+          "referenceBps": -9996.3898181,
+          "impactBps": 9996.391558451398,
+          "routeId": "0x42e0d759c875f012a6e37e1ef1f61905bee1536cca7babfe2429b66cc18e9879",
+          "routeLabel": "Uniswap v4 · 0.00%",
+          "gasUnits": "163360",
+          "candidateQuotes": [
+            {
+              "routeId": "0x8986Bb68391ad5b0aFd7605e8075b273ca0189D6",
+              "outputRaw": "34839507075",
+              "fullInput": false
+            },
+            {
+              "routeId": "0x0ef0fe35389f4104afef27864010022976ed1b924e8837b30f308255d07d3092",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x42e0d759c875f012a6e37e1ef1f61905bee1536cca7babfe2429b66cc18e9879",
+              "outputRaw": "36101819",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "280161452166471678334"
+        }
+      ],
+      "probe": {
+        "buyPrice": 355.9632202741604,
+        "sellPrice": 355.75649864929824
+      },
+      "rpc": "https://rpc-gel.inkonchain.com",
+      "reference": {
+        "price": 355.585,
+        "updatedAt": "2026-11-13T21:05:53Z",
+        "fetchedAt": "2026-11-15T01:55:38.249Z",
+        "source": "https://api.coinbase.com/v1/tokenized-stocks",
+        "label": "Coinbase / Chainlink share reference"
+      }
+    },
+    {
+      "issuerId": "binance",
+      "status": "ok",
+      "blockNumber": 133651319,
+      "blockHash": "0x8225da862bd9ba7b62ac755099d9cc555e7a591f22012d1756a37582b1025155",
+      "blockTimestamp": "2026-11-15T01:55:38.000Z",
+      "fetchedAt": "2026-11-15T01:55:38.956Z",
+      "normalization": {
+        "sharesPerToken": 1.00113542417086,
+        "method": "BEP-677 uiMultiplier (1e18)",
+        "source": "onchain",
+        "asOf": "2026-11-15T01:55:38.000Z",
+        "sourceChain": "bsc",
+        "sourceBlock": 133651319,
+        "sourceBlockHash": "0x8225da862bd9ba7b62ac755099d9cc555e7a591f22012d1756a37582b1025155",
+        "factorRaw": "1001135424170860199"
+      },
+      "routes": [
+        {
+          "id": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+          "version": "v3",
+          "poolIds": [
+            "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1"
+          ],
+          "tokens": [
+            "0x55d398326f99059ff775485246999027b3197955",
+            "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a"
+          ],
+          "fees": [
+            500
+          ],
+          "label": "Uniswap v3 · 0.05%"
+        }
+      ],
+      "points": [
+        {
+          "size": 100,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "100000000000000000000",
+          "outputRaw": "280560669024187163",
+          "input": 100,
+          "output": 0.28056066902418714,
+          "shares": 0.28087922438918994,
+          "price": 356.02490792070364,
+          "referenceBps": 12.371385764406995,
+          "impactBps": 0.9949061365444045,
+          "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+          "routeLabel": "Uniswap v3 · 0.05%",
+          "gasUnits": "158754",
+          "candidateQuotes": [
+            {
+              "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+              "outputRaw": "280560669024187163",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "100000000000000000000"
+        },
+        {
+          "size": 1000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "1000000000000000000000",
+          "outputRaw": "2802802872101469618",
+          "input": 1000,
+          "output": 2.8028028721014695,
+          "shares": 2.8059852422286102,
+          "price": 356.38106179267197,
+          "referenceBps": 22.387383963664576,
+          "impactBps": 10.999523735235606,
+          "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+          "routeLabel": "Uniswap v3 · 0.05%",
+          "gasUnits": "183252",
+          "candidateQuotes": [
+            {
+              "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+              "outputRaw": "2802802872101469618",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "1000000000000000000000"
+        },
+        {
+          "size": 5000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "5000000000000000000000",
+          "outputRaw": "13951686819171309491",
+          "input": 5000,
+          "output": 13.951686819171309,
+          "shares": 13.967527901610069,
+          "price": 357.9731528170879,
+          "referenceBps": 67.16123619072701,
+          "impactBps": 55.72250201864249,
+          "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+          "routeLabel": "Uniswap v3 · 0.05%",
+          "gasUnits": "378650",
+          "candidateQuotes": [
+            {
+              "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+              "outputRaw": "13951686819171309491",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "5000000000000000000000"
+        },
+        {
+          "size": 10000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "10000000000000000000000",
+          "outputRaw": "27727794633769999206",
+          "input": 10000,
+          "output": 27.72779463377,
+          "shares": 27.759277442001828,
+          "price": 360.2399241440364,
+          "referenceBps": 130.90890065768912,
+          "impactBps": 119.397733694393,
+          "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+          "routeLabel": "Uniswap v3 · 0.05%",
+          "gasUnits": "674545",
+          "candidateQuotes": [
+            {
+              "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+              "outputRaw": "27727794633769999206",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "10000000000000000000000"
+        },
+        {
+          "size": 50000,
+          "side": "buy",
+          "status": "partial",
+          "inputRaw": "50000000000000000000000",
+          "outputRaw": null,
+          "input": 50000,
+          "output": null,
+          "shares": null,
+          "price": null,
+          "referenceBps": null,
+          "impactBps": null,
+          "routeId": null,
+          "routeLabel": null,
+          "gasUnits": null,
+          "candidateQuotes": [
+            {
+              "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+              "outputRaw": "52358398261304568424",
+              "fullInput": false
+            }
+          ],
+          "reason": "Pool cannot consume the full requested input"
+        },
+        {
+          "size": 100000,
+          "side": "buy",
+          "status": "partial",
+          "inputRaw": "100000000000000000000000",
+          "outputRaw": null,
+          "input": 100000,
+          "output": null,
+          "shares": null,
+          "price": null,
+          "referenceBps": null,
+          "impactBps": null,
+          "routeId": null,
+          "routeLabel": null,
+          "gasUnits": null,
+          "candidateQuotes": [
+            {
+              "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+              "outputRaw": "52358398261304568424",
+              "fullInput": false
+            }
+          ],
+          "reason": "Pool cannot consume the full requested input"
+        },
+        {
+          "size": 100,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "280907761450866455",
+          "outputRaw": "100001499936716964570",
+          "input": 0.28090776145086643,
+          "output": 100.00149993671697,
+          "shares": 0.281226710913,
+          "price": 355.5903335499782,
+          "referenceBps": 0.14999367178747391,
+          "impactBps": 0.9952248243050299,
+          "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+          "routeLabel": "Uniswap v3 · 0.05%",
+          "gasUnits": "95238",
+          "candidateQuotes": [
+            {
+              "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+              "outputRaw": "100001499936716964570",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "280907761450866455"
+        },
+        {
+          "size": 1000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "2809077614508664553",
+          "outputRaw": "999020843536883483386",
+          "input": 2.8090776145086647,
+          "output": 999.0208435368835,
+          "shares": 2.81226710913,
+          "price": 355.2368266490659,
+          "referenceBps": -9.791564631075333,
+          "impactBps": 10.935644618598195,
+          "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+          "routeLabel": "Uniswap v3 · 0.05%",
+          "gasUnits": "125563",
+          "candidateQuotes": [
+            {
+              "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+              "outputRaw": "999020843536883483386",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "2809077614508664553"
+        },
+        {
+          "size": 5000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "14045388072543322769",
+          "outputRaw": "4973180226042432471404",
+          "input": 14.045388072543323,
+          "output": 4973.180226042433,
+          "shares": 14.06133554565,
+          "price": 353.6776581354629,
+          "referenceBps": -53.63954791504422,
+          "impactBps": 54.7786064257394,
+          "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+          "routeLabel": "Uniswap v3 · 0.05%",
+          "gasUnits": "125549",
+          "candidateQuotes": [
+            {
+              "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+              "outputRaw": "4973180226042432471404",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "14045388072543322769"
+        },
+        {
+          "size": 10000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "28090776145086645538",
+          "outputRaw": "9885816109155564621337",
+          "input": 28.090776145086647,
+          "output": 9885.816109155565,
+          "shares": 28.1226710913,
+          "price": 351.5247921174113,
+          "referenceBps": -114.18389084434489,
+          "impactBps": 115.31601580890394,
+          "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+          "routeLabel": "Uniswap v3 · 0.05%",
+          "gasUnits": "245986",
+          "candidateQuotes": [
+            {
+              "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+              "outputRaw": "9885816109155564621337",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "28090776145086645538"
+        },
+        {
+          "size": 50000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "140453880725434226557",
+          "outputRaw": "46279640939954524754960",
+          "input": 140.45388072543423,
+          "output": 46279.64093995452,
+          "shares": 140.613355456501,
+          "price": 329.1269224726752,
+          "referenceBps": -744.0718120090784,
+          "impactBps": 745.1318021258357,
+          "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+          "routeLabel": "Uniswap v3 · 0.05%",
+          "gasUnits": "1160243",
+          "candidateQuotes": [
+            {
+              "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+              "outputRaw": "46279640939954524754960",
+              "fullInput": true
+            }
+          ],
+          "consumedInputRaw": "140453880725434226557"
+        },
+        {
+          "size": 100000,
+          "side": "sell",
+          "status": "partial",
+          "inputRaw": "280907761450869451981",
+          "outputRaw": null,
+          "input": 280.90776145086943,
+          "output": null,
+          "shares": null,
+          "price": null,
+          "referenceBps": null,
+          "impactBps": null,
+          "routeId": null,
+          "routeLabel": null,
+          "gasUnits": null,
+          "candidateQuotes": [
+            {
+              "routeId": "0x36c0fc3159EB8662A2E1B84a4df518D916bce0E1",
+              "outputRaw": "59188488554797179816244",
+              "fullInput": false
+            }
+          ],
+          "reason": "Pool cannot consume the full requested input"
+        }
+      ],
+      "probe": {
+        "buyPrice": 355.9894903078584,
+        "sellPrice": 355.6257263050762
+      },
+      "rpc": "https://bsc.publicnode.com",
+      "reference": {
+        "price": 355.585,
+        "updatedAt": "2026-11-13T21:05:53Z",
+        "fetchedAt": "2026-11-15T01:55:38.249Z",
+        "source": "https://api.coinbase.com/v1/tokenized-stocks",
+        "label": "Coinbase / Chainlink share reference"
+      }
+    },
+    {
+      "issuerId": "robinhood",
+      "status": "ok",
+      "blockNumber": 114612916,
+      "blockHash": "0x3a315b05c0fe7ed197e2bd53b917d3613f9100ddc64ecdd9358e0aff70bff147",
+      "blockTimestamp": "2026-11-15T01:55:37.000Z",
+      "fetchedAt": "2026-11-15T01:55:45.027Z",
+      "normalization": {
+        "sharesPerToken": 1.0010906169653886,
+        "method": "Robinhood uiMultiplier (1e18)",
+        "source": "onchain",
+        "asOf": "2026-11-15T01:55:37.000Z",
+        "sourceChain": "robinhood",
+        "sourceBlock": 114612916,
+        "sourceBlockHash": "0x3a315b05c0fe7ed197e2bd53b917d3613f9100ddc64ecdd9358e0aff70bff147",
+        "factorRaw": "1001090616965388660"
+      },
+      "routes": [
+        {
+          "id": "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+          "version": "v4",
+          "poolIds": [
+            "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+          ],
+          "fees": [
+            3000
+          ],
+          "key": {
+            "currency0": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "currency1": "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9",
+            "fee": 3000,
+            "tickSpacing": 60,
+            "hooks": "0x0000000000000000000000000000000000000000"
+          },
+          "label": "Uniswap v4 · 0.30%"
+        },
+        {
+          "id": "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D",
+          "version": "v3",
+          "poolIds": [
+            "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+          ],
+          "fees": [
+            500
+          ],
+          "label": "Uniswap v3 · 0.05%"
+        },
+        {
+          "id": "0x783C9bbB765047CFdD2b84b92b2Ca9F11D34b7Ed",
+          "version": "v3",
+          "poolIds": [
+            "0x783C9bbB765047CFdD2b84b92b2Ca9F11D34b7Ed"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+          ],
+          "fees": [
+            3000
+          ],
+          "label": "Uniswap v3 · 0.30%"
+        },
+        {
+          "id": "0xa2347ba69167e5602f74640ffbf737ee7cdd825e4726d3462564fc6533070147",
+          "version": "v4",
+          "poolIds": [
+            "0xa2347ba69167e5602f74640ffbf737ee7cdd825e4726d3462564fc6533070147"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+          ],
+          "fees": [
+            8388608
+          ],
+          "key": {
+            "currency0": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "currency1": "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9",
+            "fee": 8388608,
+            "tickSpacing": 10,
+            "hooks": "0x70a9a88402989226847ec122043ce5e7ff462080"
+          },
+          "label": "Uniswap v4 · dynamic fee"
+        },
+        {
+          "id": "0xeb1d5189e17c16a88e9673231c3aef2c1f30e9e6a7151872c6529dd1c950f774",
+          "version": "v4",
+          "poolIds": [
+            "0xeb1d5189e17c16a88e9673231c3aef2c1f30e9e6a7151872c6529dd1c950f774"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+          ],
+          "fees": [
+            500
+          ],
+          "key": {
+            "currency0": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "currency1": "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9",
+            "fee": 500,
+            "tickSpacing": 10,
+            "hooks": "0xf4f48bf7c0333ab56d418bdd5118d48674d6d040"
+          },
+          "label": "Uniswap v4 · 0.05%"
+        },
+        {
+          "id": "0xe5b9112909fde74416b44bb2169bb89870a1363e9897151a90126aa8e140d54f",
+          "version": "v4",
+          "poolIds": [
+            "0xe5b9112909fde74416b44bb2169bb89870a1363e9897151a90126aa8e140d54f"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+          ],
+          "fees": [
+            250
+          ],
+          "key": {
+            "currency0": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "currency1": "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9",
+            "fee": 250,
+            "tickSpacing": 3,
+            "hooks": "0x0000000000000000000000000000000000000000"
+          },
+          "label": "Uniswap v4 · 0.03%"
+        },
+        {
+          "id": "0x496d48b9c1256a5b4f3c85f85776aff8e75cf847397cc8174242f97ae99b6d71",
+          "version": "v4",
+          "poolIds": [
+            "0x496d48b9c1256a5b4f3c85f85776aff8e75cf847397cc8174242f97ae99b6d71"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+          ],
+          "fees": [
+            1000
+          ],
+          "key": {
+            "currency0": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "currency1": "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9",
+            "fee": 1000,
+            "tickSpacing": 1000,
+            "hooks": "0xc52fc52698479e42f0da9a8a75296ec3871454c0"
+          },
+          "label": "Uniswap v4 · 0.10%"
+        },
+        {
+          "id": "0x890acf4222bcb8ce2c28e2127fce1f41a9b86de3163644c1c51396baec2c9c14",
+          "version": "v4",
+          "poolIds": [
+            "0x890acf4222bcb8ce2c28e2127fce1f41a9b86de3163644c1c51396baec2c9c14"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+          ],
+          "fees": [
+            500
+          ],
+          "key": {
+            "currency0": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "currency1": "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9",
+            "fee": 500,
+            "tickSpacing": 10,
+            "hooks": "0xd1bcbcca41f3bdb6b4812652959c6df725ea2ac0"
+          },
+          "label": "Uniswap v4 · 0.05%"
+        }
+      ],
+      "points": [
+        {
+          "size": 100,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "100000000",
+          "outputRaw": "280803963878524108",
+          "input": 100,
+          "output": 0.28080396387852413,
+          "shares": 0.28111021344547843,
+          "price": 355.7323612483937,
+          "referenceBps": 4.144191920181228,
+          "impactBps": 0.42861357298029645,
+          "routeId": "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D",
+          "routeLabel": "Uniswap v3 · 0.05%",
+          "gasUnits": "116740",
+          "candidateQuotes": [
+            {
+              "routeId": "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+              "outputRaw": "280131999341384645",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D",
+              "outputRaw": "280803963878524108",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x783C9bbB765047CFdD2b84b92b2Ca9F11D34b7Ed",
+              "outputRaw": "279972230487857944",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xa2347ba69167e5602f74640ffbf737ee7cdd825e4726d3462564fc6533070147",
+              "outputRaw": "280621994345267583",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xeb1d5189e17c16a88e9673231c3aef2c1f30e9e6a7151872c6529dd1c950f774",
+              "outputRaw": "273269464620662478",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xe5b9112909fde74416b44bb2169bb89870a1363e9897151a90126aa8e140d54f",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x496d48b9c1256a5b4f3c85f85776aff8e75cf847397cc8174242f97ae99b6d71",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x890acf4222bcb8ce2c28e2127fce1f41a9b86de3163644c1c51396baec2c9c14",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "100000000"
+        },
+        {
+          "size": 1000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "1000000000",
+          "outputRaw": "2806833873970575625",
+          "input": 1000,
+          "output": 2.8068338739705756,
+          "shares": 2.8098950546125554,
+          "price": 355.8851774049212,
+          "referenceBps": 8.44179042764015,
+          "impactBps": 4.724615935516319,
+          "routeId": "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D",
+          "routeLabel": "Uniswap v3 · 0.05%",
+          "gasUnits": "147851",
+          "candidateQuotes": [
+            {
+              "routeId": "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+              "outputRaw": "2800561289875488673",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D",
+              "outputRaw": "2806833873970575625",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x783C9bbB765047CFdD2b84b92b2Ca9F11D34b7Ed",
+              "outputRaw": "2794891984188157624",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xa2347ba69167e5602f74640ffbf737ee7cdd825e4726d3462564fc6533070147",
+              "outputRaw": "2789212650755293226",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xeb1d5189e17c16a88e9673231c3aef2c1f30e9e6a7151872c6529dd1c950f774",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0xe5b9112909fde74416b44bb2169bb89870a1363e9897151a90126aa8e140d54f",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x496d48b9c1256a5b4f3c85f85776aff8e75cf847397cc8174242f97ae99b6d71",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x890acf4222bcb8ce2c28e2127fce1f41a9b86de3163644c1c51396baec2c9c14",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "1000000000"
+        },
+        {
+          "size": 5000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "5000000000",
+          "outputRaw": "14006924530996319165",
+          "input": 5000,
+          "output": 14.006924530996319,
+          "shares": 14.022200720522742,
+          "price": 356.57740890002054,
+          "referenceBps": 27.909189083357155,
+          "impactBps": 24.18478432310245,
+          "routeId": "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D",
+          "routeLabel": "Uniswap v3 · 0.05%",
+          "gasUnits": "243057",
+          "candidateQuotes": [
+            {
+              "routeId": "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+              "outputRaw": "13985545962166498727",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D",
+              "outputRaw": "14006924530996319165",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x783C9bbB765047CFdD2b84b92b2Ca9F11D34b7Ed",
+              "outputRaw": "13848037740172288544",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xa2347ba69167e5602f74640ffbf737ee7cdd825e4726d3462564fc6533070147",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0xeb1d5189e17c16a88e9673231c3aef2c1f30e9e6a7151872c6529dd1c950f774",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0xe5b9112909fde74416b44bb2169bb89870a1363e9897151a90126aa8e140d54f",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x496d48b9c1256a5b4f3c85f85776aff8e75cf847397cc8174242f97ae99b6d71",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x890acf4222bcb8ce2c28e2127fce1f41a9b86de3163644c1c51396baec2c9c14",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "5000000000"
+        },
+        {
+          "size": 10000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "10000000000",
+          "outputRaw": "27923443644611448670",
+          "input": 10000,
+          "output": 27.92344364461145,
+          "shares": 27.953897425982337,
+          "price": 357.731870000542,
+          "referenceBps": 60.37571890102234,
+          "impactBps": 56.639255944397334,
+          "routeId": "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+          "routeLabel": "Uniswap v4 · 0.30%",
+          "gasUnits": "63843",
+          "candidateQuotes": [
+            {
+              "routeId": "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+              "outputRaw": "27923443644611448670",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D",
+              "outputRaw": "27820530381449453916",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x783C9bbB765047CFdD2b84b92b2Ca9F11D34b7Ed",
+              "outputRaw": "27364045840130383206",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xa2347ba69167e5602f74640ffbf737ee7cdd825e4726d3462564fc6533070147",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0xeb1d5189e17c16a88e9673231c3aef2c1f30e9e6a7151872c6529dd1c950f774",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0xe5b9112909fde74416b44bb2169bb89870a1363e9897151a90126aa8e140d54f",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x496d48b9c1256a5b4f3c85f85776aff8e75cf847397cc8174242f97ae99b6d71",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x890acf4222bcb8ce2c28e2127fce1f41a9b86de3163644c1c51396baec2c9c14",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "10000000000"
+        },
+        {
+          "size": 50000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "50000000000",
+          "outputRaw": "108411721197274318597",
+          "input": 50000,
+          "output": 108.41172119727432,
+          "shares": 108.52995685965905,
+          "price": 460.70229314340736,
+          "referenceBps": 2956.1790610798375,
+          "impactBps": 2951.367085416723,
+          "routeId": "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+          "routeLabel": "Uniswap v4 · 0.30%",
+          "gasUnits": "532379",
+          "candidateQuotes": [
+            {
+              "routeId": "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+              "outputRaw": "108411721197274318597",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D",
+              "outputRaw": "39733905598146100440",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x783C9bbB765047CFdD2b84b92b2Ca9F11D34b7Ed",
+              "outputRaw": "33625397145560879981",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xa2347ba69167e5602f74640ffbf737ee7cdd825e4726d3462564fc6533070147",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0xeb1d5189e17c16a88e9673231c3aef2c1f30e9e6a7151872c6529dd1c950f774",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0xe5b9112909fde74416b44bb2169bb89870a1363e9897151a90126aa8e140d54f",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x496d48b9c1256a5b4f3c85f85776aff8e75cf847397cc8174242f97ae99b6d71",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x890acf4222bcb8ce2c28e2127fce1f41a9b86de3163644c1c51396baec2c9c14",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "50000000000"
+        },
+        {
+          "size": 100000,
+          "side": "buy",
+          "status": "ok",
+          "inputRaw": "100000000000",
+          "outputRaw": "108484860671646478450",
+          "input": 100000,
+          "output": 108.48486067164647,
+          "shares": 108.6031761011828,
+          "price": 920.7833839668976,
+          "referenceBps": 15894.888253635492,
+          "impactBps": 15885.270790686876,
+          "routeId": "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+          "routeLabel": "Uniswap v4 · 0.30%",
+          "gasUnits": "543557",
+          "candidateQuotes": [
+            {
+              "routeId": "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+              "outputRaw": "108484860671646478450",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D",
+              "outputRaw": "39823104852086343711",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x783C9bbB765047CFdD2b84b92b2Ca9F11D34b7Ed",
+              "outputRaw": "33625397172824850830",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xa2347ba69167e5602f74640ffbf737ee7cdd825e4726d3462564fc6533070147",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0xeb1d5189e17c16a88e9673231c3aef2c1f30e9e6a7151872c6529dd1c950f774",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0xe5b9112909fde74416b44bb2169bb89870a1363e9897151a90126aa8e140d54f",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x496d48b9c1256a5b4f3c85f85776aff8e75cf847397cc8174242f97ae99b6d71",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x890acf4222bcb8ce2c28e2127fce1f41a9b86de3163644c1c51396baec2c9c14",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "100000000000"
+        },
+        {
+          "size": 100,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "280920334430347606",
+          "outputRaw": "99931907",
+          "input": 0.2809203344303476,
+          "output": 99.931907,
+          "shares": 0.281226710913,
+          "price": 355.34287150595316,
+          "referenceBps": -6.809299999910312,
+          "impactBps": 4.462347865884508,
+          "routeId": "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D",
+          "routeLabel": "Uniswap v3 · 0.05%",
+          "gasUnits": "110167",
+          "candidateQuotes": [
+            {
+              "routeId": "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+              "outputRaw": "99574881",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D",
+              "outputRaw": "99931907",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x783C9bbB765047CFdD2b84b92b2Ca9F11D34b7Ed",
+              "outputRaw": "99703064",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xa2347ba69167e5602f74640ffbf737ee7cdd825e4726d3462564fc6533070147",
+              "outputRaw": "99919503",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xeb1d5189e17c16a88e9673231c3aef2c1f30e9e6a7151872c6529dd1c950f774",
+              "outputRaw": "97400997",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xe5b9112909fde74416b44bb2169bb89870a1363e9897151a90126aa8e140d54f",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x496d48b9c1256a5b4f3c85f85776aff8e75cf847397cc8174242f97ae99b6d71",
+              "outputRaw": "92264923",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x890acf4222bcb8ce2c28e2127fce1f41a9b86de3163644c1c51396baec2c9c14",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "280920334430347606"
+        },
+        {
+          "size": 1000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "2809203344303476067",
+          "outputRaw": "998892652",
+          "input": 2.809203344303476,
+          "output": 998.892652,
+          "shares": 2.81226710913,
+          "price": 355.1912436614232,
+          "referenceBps": -11.073479999910152,
+          "impactBps": 8.727529330445627,
+          "routeId": "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D",
+          "routeLabel": "Uniswap v3 · 0.05%",
+          "gasUnits": "138895",
+          "candidateQuotes": [
+            {
+              "routeId": "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+              "outputRaw": "995479321",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D",
+              "outputRaw": "998892652",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x783C9bbB765047CFdD2b84b92b2Ca9F11D34b7Ed",
+              "outputRaw": "995483106",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xa2347ba69167e5602f74640ffbf737ee7cdd825e4726d3462564fc6533070147",
+              "outputRaw": "994443811",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xeb1d5189e17c16a88e9673231c3aef2c1f30e9e6a7151872c6529dd1c950f774",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0xe5b9112909fde74416b44bb2169bb89870a1363e9897151a90126aa8e140d54f",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x496d48b9c1256a5b4f3c85f85776aff8e75cf847397cc8174242f97ae99b6d71",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x890acf4222bcb8ce2c28e2127fce1f41a9b86de3163644c1c51396baec2c9c14",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "2809203344303476067"
+        },
+        {
+          "size": 5000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "14046016721517380339",
+          "outputRaw": "4985229525",
+          "input": 14.04601672151738,
+          "output": 4985.229525,
+          "shares": 14.06133554565,
+          "price": 354.5345681294282,
+          "referenceBps": -29.54094999990997,
+          "impactBps": 27.199336510574934,
+          "routeId": "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D",
+          "routeLabel": "Uniswap v3 · 0.05%",
+          "gasUnits": "171515",
+          "candidateQuotes": [
+            {
+              "routeId": "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+              "outputRaw": "4971416728",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D",
+              "outputRaw": "4985229525",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x783C9bbB765047CFdD2b84b92b2Ca9F11D34b7Ed",
+              "outputRaw": "4951401828",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xa2347ba69167e5602f74640ffbf737ee7cdd825e4726d3462564fc6533070147",
+              "outputRaw": "4848696693",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xeb1d5189e17c16a88e9673231c3aef2c1f30e9e6a7151872c6529dd1c950f774",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0xe5b9112909fde74416b44bb2169bb89870a1363e9897151a90126aa8e140d54f",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x496d48b9c1256a5b4f3c85f85776aff8e75cf847397cc8174242f97ae99b6d71",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x890acf4222bcb8ce2c28e2127fce1f41a9b86de3163644c1c51396baec2c9c14",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "14046016721517380339"
+        },
+        {
+          "size": 10000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "28092033443034760679",
+          "outputRaw": "9947632915",
+          "input": 28.09203344303476,
+          "output": 9947.632915,
+          "shares": 28.1226710913,
+          "price": 353.7229050080307,
+          "referenceBps": -52.36708499990917,
+          "impactBps": 50.03083234555228,
+          "routeId": "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D",
+          "routeLabel": "Uniswap v3 · 0.05%",
+          "gasUnits": "277310",
+          "candidateQuotes": [
+            {
+              "routeId": "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+              "outputRaw": "9927924174",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D",
+              "outputRaw": "9947632915",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x783C9bbB765047CFdD2b84b92b2Ca9F11D34b7Ed",
+              "outputRaw": "9848404735",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xa2347ba69167e5602f74640ffbf737ee7cdd825e4726d3462564fc6533070147",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0xeb1d5189e17c16a88e9673231c3aef2c1f30e9e6a7151872c6529dd1c950f774",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0xe5b9112909fde74416b44bb2169bb89870a1363e9897151a90126aa8e140d54f",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x496d48b9c1256a5b4f3c85f85776aff8e75cf847397cc8174242f97ae99b6d71",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x890acf4222bcb8ce2c28e2127fce1f41a9b86de3163644c1c51396baec2c9c14",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "28092033443034760679"
+        },
+        {
+          "size": 50000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "140460167215174802306",
+          "outputRaw": "49113877463",
+          "input": 140.4601672151748,
+          "output": 49113.877463,
+          "shares": 140.613355456501,
+          "price": 349.2831623536177,
+          "referenceBps": -177.22450739998342,
+          "impactBps": 174.9175781522083,
+          "routeId": "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+          "routeLabel": "Uniswap v4 · 0.30%",
+          "gasUnits": "114332",
+          "candidateQuotes": [
+            {
+              "routeId": "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+              "outputRaw": "49113877463",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D",
+              "outputRaw": "48677877770",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x783C9bbB765047CFdD2b84b92b2Ca9F11D34b7Ed",
+              "outputRaw": "46302450648",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xa2347ba69167e5602f74640ffbf737ee7cdd825e4726d3462564fc6533070147",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0xeb1d5189e17c16a88e9673231c3aef2c1f30e9e6a7151872c6529dd1c950f774",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0xe5b9112909fde74416b44bb2169bb89870a1363e9897151a90126aa8e140d54f",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x496d48b9c1256a5b4f3c85f85776aff8e75cf847397cc8174242f97ae99b6d71",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x890acf4222bcb8ce2c28e2127fce1f41a9b86de3163644c1c51396baec2c9c14",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "140460167215174802306"
+        },
+        {
+          "size": 100000,
+          "side": "sell",
+          "status": "ok",
+          "inputRaw": "280920334430350603523",
+          "outputRaw": "97116633832",
+          "input": 280.9203344303506,
+          "output": 97116.633832,
+          "shares": 281.226710913003,
+          "price": 345.33218241151667,
+          "referenceBps": -288.33661680001455,
+          "impactBps": 286.05578280150536,
+          "routeId": "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+          "routeLabel": "Uniswap v4 · 0.30%",
+          "gasUnits": "180020",
+          "candidateQuotes": [
+            {
+              "routeId": "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+              "outputRaw": "97116633832",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xAae0d815EE56e4092a5E5C2911E676Fea50B2d6D",
+              "outputRaw": "73978677176",
+              "fullInput": true
+            },
+            {
+              "routeId": "0x783C9bbB765047CFdD2b84b92b2Ca9F11D34b7Ed",
+              "outputRaw": "71040107287",
+              "fullInput": true
+            },
+            {
+              "routeId": "0xa2347ba69167e5602f74640ffbf737ee7cdd825e4726d3462564fc6533070147",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0xeb1d5189e17c16a88e9673231c3aef2c1f30e9e6a7151872c6529dd1c950f774",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0xe5b9112909fde74416b44bb2169bb89870a1363e9897151a90126aa8e140d54f",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x496d48b9c1256a5b4f3c85f85776aff8e75cf847397cc8174242f97ae99b6d71",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            },
+            {
+              "routeId": "0x890acf4222bcb8ce2c28e2127fce1f41a9b86de3163644c1c51396baec2c9c14",
+              "outputRaw": null,
+              "fullInput": null,
+              "error": "execution reverted"
+            }
+          ],
+          "consumedInputRaw": "280920334430350603523"
+        }
+      ],
+      "probe": {
+        "buyPrice": 355.7171147300423,
+        "sellPrice": 355.5015086457956
+      },
+      "rpc": "https://rpc.mainnet.chain.robinhood.com",
+      "reference": {
+        "price": 355.585,
+        "updatedAt": "2026-11-13T21:05:53Z",
+        "fetchedAt": "2026-11-15T01:55:38.249Z",
+        "source": "https://api.coinbase.com/v1/tokenized-stocks",
+        "label": "Coinbase / Chainlink share reference"
+      }
+    }
+  ],
+  "capturedAt": "2026-11-15T01:55:45.028Z",
+  "coverageVersion": "2026-11-14"
+}

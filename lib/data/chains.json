@@ -1,0 +1,52 @@
+{
+  "ethereum": {
+    "id": 1,
+    "rpc": "https://ethereum.publicnode.com",
+    "UniswapV3Factory": "0x1F98431c8aD98523631AE4a59f267346ea31F984",
+    "UniswapV2Factory": "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f",
+    "QuoterV2": "0x61fFE014bA17989E743c5F6cB21bF9697530B21e",
+    "V4Quoter": "0x99bd42B2B22e531f283b7F8a86dFf631EB16A9D1",
+    "PoolManager": "0x000000000004444c5dc75cB358380D2e3dE08A90",
+    "StateView": "0x7fFE42C4a5DEeA5b0feC41C94C136Cf115597227"
+  },
+  "base": {
+    "id": 8453,
+    "rpc": "https://base.publicnode.com",
+    "UniswapV3Factory": "0x33128a8fC17869897dcE68Ed026d694621f6FDfD",
+    "UniswapV2Factory": "0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6",
+    "QuoterV2": "0x3d4e44Eb1374240CE5F1B871ab261CD16335B76a",
+    "V4Quoter": "0xE1A6C5803e3c44368b171BD680c7D32dfc92CA47",
+    "PoolManager": "0x498581fF718922c3f8e6A244956aF099B2652b2b",
+    "StateView": "0xA3c0c9b65baD0b08107Aa264b0f3dB444b867A71"
+  },
+  "bsc": {
+    "id": 56,
+    "rpc": "https://bsc.publicnode.com",
+    "UniswapV3Factory": "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
+    "UniswapV2Factory": "0x8909Dc15e40173Ff4699343b6eB8132c65e18eC6",
+    "QuoterV2": "0x78D78E420Da98ad378D7799bE8f4AF69033EB077",
+    "V4Quoter": "0x95C086d7fE28AdD842ee220fef225a777474d781",
+    "PoolManager": "0x28e2Ea090877bF75740558f6BFB36A5ffeE9e9dF",
+    "StateView": "0xd13Dd3D6E93f276FAfc9Db9E6BB47C1180aeE0c4"
+  },
+  "ink": {
+    "id": 57073,
+    "rpc": "https://rpc-gel.inkonchain.com",
+    "UniswapV3Factory": "0x640887A9ba3A9C53Ed27D0F7e8246A4F933f3424",
+    "UniswapV2Factory": "0xfe57A6BA1951F69aE2Ed4abe23e0f095DF500C04",
+    "QuoterV2": "0x96b572D2d880cf2Fa2563651BD23ADE6f5516652",
+    "V4Quoter": "0x8928074CA1b241D8Ec02815881c1Af11E8bC5219",
+    "PoolManager": "0x360E68faCcca8cA495c1B759Fd9EEe466db9FB32",
+    "StateView": "0x76Fd297e2D437cd7f76d50F01AfE6160f86e9990"
+  },
+  "robinhood": {
+    "id": 4663,
+    "rpc": "https://rpc.mainnet.chain.robinhood.com",
+    "UniswapV3Factory": "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
+    "UniswapV2Factory": "0x8bcEaA40B9AcdfAedF85AdF4FF01F5Ad6517937f",
+    "QuoterV2": "0x33e885eD0Ec9bF04EcfB19341582aADCb4c8A9E7",
+    "V4Quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+    "PoolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+    "StateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b"
+  }
+}
