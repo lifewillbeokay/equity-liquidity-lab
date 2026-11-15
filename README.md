@@ -59,6 +59,7 @@ The test suite covers exact pool math, local/contract parity checks, missing-sta
 - D1 stores curve metadata, refresh leases, market references, and successful RPC reads keyed by chain, block hash, and complete call parameters.
 - R2 stores full computed curves and their quote evidence. Successful curves are reused for up to two minutes; unavailable results have a shorter 30-second lifetime.
 - Simultaneous refreshes share one capture. Failed refreshes preserve available prior quotes with their original timestamps.
+- Server calculation has a bounded state-read and swap-step budget. Larger captures hand off with the same shared refresh lease to the browser, which computes and stores the completed curve centrally.
 - When server RPC access fails, the browser can collect and save a validated capture. Such captures are explicitly marked as browser-origin data.
 - The page loads saved captures from the shared cache; a cold capture still depends on public RPC availability. The displayed range spans the oldest and newest saved profiles for a stock, including older captures retained after failed or incomplete refreshes.
 

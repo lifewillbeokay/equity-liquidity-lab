@@ -207,7 +207,7 @@ export async function getReference(stock='AAPL'):Promise<Reference>{
  throw new Error(stock+' reference not found');
 }
 // All calls in a sweep are pinned to one block. Each size is independent.
-export async function simulateIssuer(issuer:Issuer,reference:Reference,transport?:Transport,options:{localPools?:boolean}={}):Promise<Simulation>{
+export async function simulateIssuer(issuer:Issuer,reference:Reference,transport?:Transport,options:{localPools?:boolean;localWorkLimit?:{stateReads:number;steps:{remaining:number}}}={}):Promise<Simulation>{
  if((issuer.chain==='solana'||issuer.chain==='ton')&&routesFor(issuer).length){const {simulateProvider}=await import('./provider-simulator');return simulateProvider(issuer,reference);}
  const base:Simulation={rpcFallback:issuer.chain==='robinhood'?'https://rpc.mainnet.chain.robinhood.com':undefined,quoteKind:'onchain',issuerId:issuer.id,status:'error',blockNumber:null,blockHash:null,blockTimestamp:null,fetchedAt:new Date().toISOString(),normalization:null,routes:routesFor(issuer),points:[],probe:{buyPrice:null,sellPrice:null},rpc:CHAINS[issuer.chain].rpc,reference};
  if(!base.routes.length){return {...base,status:'unavailable',coverageNote:issuer.coverageNote??'Official deployment; no supported route in current inventory.'};}
@@ -249,7 +249,7 @@ export async function simulateIssuer(issuer:Issuer,reference:Reference,transport
   const verified=checked.routes;base.verificationErrors=checked.errors;
   base.routes=verified;if(!verified.length){base.status=checked.errors.length?'error':'unavailable';base.error=checked.errors.length?'No route passed contract verification at this block':undefined;return base;}
   base.sampling=newSampling();
-  local=options.localPools===false?undefined:new LocalPoolEngine(issuer,block,transport);
+  local=options.localPools===false?undefined:new LocalPoolEngine(issuer,block,transport,options.localWorkLimit);
   if(local)await local.prepare(verified);
   const spec:({size:number;side:'buy'|'sell';input:bigint})[]=[];
   const jobs:{s:typeof spec[number];route:Route}[]=[];

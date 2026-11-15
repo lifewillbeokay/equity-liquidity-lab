@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {decodeFunctionData,encodeFunctionResult,type Hex} from 'viem';
-import {Q96,MIN_SQRT,MAX_SQRT,MIN_TICK,MAX_TICK,sqrtAtTick,nextTick,swapV3,MissingWord,type V3State} from '../lib/v3-math';
+import {Q96,MIN_SQRT,MAX_SQRT,MIN_TICK,MAX_TICK,sqrtAtTick,nextTick,swapV3,MissingWord,LocalWorkLimit,type V3State} from '../lib/v3-math';
 import {LocalPoolEngine,LocalParityError,locallySupported,poolStateAbi,stateMulticallAbi} from '../lib/local-pools';
 import {quoteRouteJobs,v3Abi} from '../lib/simulator';
 import {ISSUERS,DEPLOYMENTS,routesFor} from '../lib/registry';
@@ -52,6 +52,12 @@ test('one pool snapshot prices independent sizes and refinement with no addition
 test('pool-state RPC failures return fallback, never fabricated empty liquidity',async()=>{
  const issuer=ISSUERS[1],route=routesFor(issuer)[0];const engine=new LocalPoolEngine(issuer,'0x123',async(_url,body)=>(body as any[]).map(r=>({id:r.id,error:{code:-1,message:'Unavailable state'}})));
  await engine.prepare([route]);assert.deepEqual(await engine.quoteMany([{route,side:'buy',amount:100n}]),[null]);assert.ok(Object.keys(engine.stats.fallbacks).length);
+});
+test('server work limits propagate for a leased browser handoff before costly work or any partial capture',async()=>{
+ assert.throws(()=>swapV3(state(),1000n,true,{remaining:0}),LocalWorkLimit);
+ const issuer=ISSUERS[1],route=routesFor(issuer)[0];let rpc=0;
+ const engine=new LocalPoolEngine(issuer,'0x123',async()=>{rpc++;return [];},{stateReads:0,steps:{remaining:0}});
+ await assert.rejects(engine.prepare([route]),LocalWorkLimit);assert.equal(rpc,0);
 });
 test('local results require authoritative same-block endpoint checks; a revert or mismatch aborts the tentative capture',async()=>{
  const issuer=ISSUERS[1],route=routesFor(issuer)[0],jobs=[100n,250n,500n].map(input=>({route,s:{side:'buy' as const,input}}));

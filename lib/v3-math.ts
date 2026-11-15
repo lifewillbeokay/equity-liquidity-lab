@@ -37,6 +37,7 @@ export function swapStep(p:bigint,target:bigint,l:bigint,remaining:bigint,fee:nu
 }
 export class MissingWord extends Error{constructor(public word:number){super('Missing bitmap word '+word);}}
 export class MissingTick extends Error{constructor(public tick:number){super('Missing initialized tick '+tick);}}
+export class LocalWorkLimit extends Error{constructor(){super('Pool calculation exceeds the server work budget; continue in browser');}}
 export type V3State={sqrt:bigint;tick:number;liquidity:bigint;spacing:number;fee:number;words:Map<number,bigint>;ticks:Map<number,bigint>};
 export function nextTick(state:V3State,tick:number,zero:boolean):{tick:number;initialized:boolean}{
  const compressed=Math.floor(tick/state.spacing)+(zero?0:1),word=Math.floor(compressed/256),bit=compressed-word*256;
@@ -46,12 +47,13 @@ export function nextTick(state:V3State,tick:number,zero:boolean):{tick:number;in
  const found=zero?masked.toString(2).length-1:(masked&-masked).toString(2).length-1;
  return {tick:(word*256+found)*state.spacing,initialized:true};
 }
-export function swapV3(state:V3State,amount:bigint,zero:boolean){
+export function swapV3(state:V3State,amount:bigint,zero:boolean,budget?:{remaining:number}){
  if(amount<=0n||amount>=(1n<<255n))throw new Error('Invalid exact input');
  let remaining=amount,output=0n,p=state.sqrt,tick=state.tick,l=state.liquidity,steps=0;
  const limit=zero?MIN_SQRT+1n:MAX_SQRT-1n;
  if(zero?p<=limit:p>=limit)throw new Error('Price already at limit');
  while(remaining>0n&&p!==limit){
+  if(budget&&--budget.remaining<0)throw new LocalWorkLimit();
   if(++steps>4096)throw new Error('Local swap step budget exceeded');
   const found=nextTick(state,tick,zero),next=Math.max(MIN_TICK,Math.min(MAX_TICK,found.tick)),boundary=sqrtAtTick(next);
   const target=zero?(boundary<limit?limit:boundary):(boundary>limit?limit:boundary);

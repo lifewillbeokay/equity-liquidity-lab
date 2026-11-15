@@ -1,7 +1,7 @@
 import {encodeFunctionData,decodeFunctionResult,parseAbi,type Address,type Hex} from 'viem';
 import {CHAINS,type Issuer,type Route} from './registry';
 import {ethCall,rpcBatch,type Transport,type ParsedRouteQuote} from './simulator';
-import {MissingWord,MissingTick,swapV3,sqrtAtTick,MIN_TICK,MAX_TICK,type V3State} from './v3-math';
+import {MissingWord,MissingTick,LocalWorkLimit,swapV3,sqrtAtTick,MIN_TICK,MAX_TICK,type V3State} from './v3-math';
 
 export const LOCAL_ENGINE_VERSION='local-pools-v1';
 export const stateMulticallAbi=parseAbi(['function aggregate3((address target,bool allowFailure,bytes callData)[] calls) payable returns((bool success,bytes returnData)[])']);
@@ -38,9 +38,10 @@ export class LocalPoolEngine{
  private pools=new Map<string,Pool>();
  private replies=new Map<string,ParsedRouteQuote|null>();
  private initialized=false;
- constructor(readonly issuer:Issuer,readonly block:Hex,readonly transport?:Transport){}
+ constructor(readonly issuer:Issuer,readonly block:Hex,readonly transport?:Transport,readonly limits?:{stateReads:number;steps:{remaining:number}}){}
  private async read(calls:StateCall[]):Promise<{value?:unknown;error?:string}[]>{
   this.stats.stateReads+=calls.length;
+  if(this.limits&&this.stats.stateReads>this.limits.stateReads)throw new LocalWorkLimit();
   const requests=calls.map(c=>ethCall(c.to??c.pool.id,encodeFunctionData({abi:poolStateAbi,functionName:c.fn as never,args:(c.args??[]) as never}),this.block));
   let replies:Awaited<ReturnType<typeof rpcBatch>>=[];
   // Official Multicall3 deployments; read-only getters only, never swap quoters
@@ -64,7 +65,7 @@ export class LocalPoolEngine{
   }
   const calls:StateCall[]=[...this.pools.values()].flatMap(pool=>[...(pool.kind==='v2'?['factory','token0','token1','getReserves']:['factory','token0','token1','slot0','liquidity','tickSpacing','fee']).map(fn=>({pool,fn})),...(['token0','token1'] as const).map((token,k)=>({pool,fn:'balanceOf',to:pool[token] as Address,args:[pool.id],field:'balance'+k}))]);
   let result:Awaited<ReturnType<LocalPoolEngine['read']>>;
-  try{result=await this.read(calls);}catch(e){for(const pool of this.pools.values())this.fail(pool,'Pool state unavailable: '+(e as Error).message);return;}
+  try{result=await this.read(calls);}catch(e){if(e instanceof LocalWorkLimit)throw e;for(const pool of this.pools.values())this.fail(pool,'Pool state unavailable: '+(e as Error).message);return;}
   const values=new Map<Pool,Record<string,any>>();
   calls.forEach((c,k)=>{if(result[k].error)this.fail(c.pool,result[k].error!);else{const v=values.get(c.pool)??{};v[c.field??c.fn]=result[k].value;values.set(c.pool,v);}});
   for(const [pool,v]of values){if(pool.failed)continue;try{
@@ -97,7 +98,7 @@ export class LocalPoolEngine{
     const s=pool.state!;
     if(r.version==='v3'&&s.fee!==(side==='buy'?r.fees[k]:r.fees[r.fees.length-1-k]))return null;
     if(r.version==='slipstream'&&s.spacing!==r.tickSpacing)return null;
-    try{const out=swapV3(s,amount,zero);if(!out.amount)return null;
+    try{const out=swapV3(s,amount,zero,this.limits?.steps);if(!out.amount)return null;
      if(!out.complete)return null; // Contract quoter owns exhausted/reverting-path status.
      amount=out.amount;
     }catch(e){if(e instanceof MissingWord||e instanceof MissingTick)throw {pool,need:e};throw e;}
@@ -112,6 +113,7 @@ export class LocalPoolEngine{
   for(let round=0;pending.size;round++){
    const needs=new Map<string,{pool:Pool;fn:string;args:number[]}>();
    for(const [k,j]of pending){try{const result=this.quote(j);this.replies.set(k,result);if(result)this.stats.localQuotes++;pending.delete(k);}catch(e){
+    if(e instanceof LocalWorkLimit)throw e;
     const request=e as {pool?:Pool;need?:MissingWord|MissingTick};
     if(request.pool&&request.need){const {pool,need}=request,s=pool.state!;
      const aggregate=['ethereum','base','bsc'].includes(this.issuer.chain),wordLimit=aggregate?16:4;
@@ -122,7 +124,7 @@ export class LocalPoolEngine{
    }}
    if(!needs.size)continue;
    const calls=[...needs.values()];let replies:Awaited<ReturnType<LocalPoolEngine['read']>>;
-   try{replies=await this.read(calls);}catch(e){for(const c of calls)this.fail(c.pool,(e as Error).message);continue;}
+   try{replies=await this.read(calls);}catch(e){if(e instanceof LocalWorkLimit)throw e;for(const c of calls)this.fail(c.pool,(e as Error).message);continue;}
    const ticks:{pool:Pool;fn:string;args:number[]}[]=[];
    calls.forEach((c,k)=>{const r=replies[k],s=c.pool.state!;if(r.error){this.fail(c.pool,r.error);return;}
     if(c.fn==='ticks'){const [gross,net]=r.value as readonly [bigint,bigint];if(!gross){this.fail(c.pool,'Initialized tick has zero liquidity');return;}s.ticks.set(c.args[0],net);}
@@ -132,7 +134,7 @@ export class LocalPoolEngine{
      if(s.ticks.size+initialized.length<=1024&&(initialized.length<=16||['ethereum','base','bsc'].includes(this.issuer.chain)))for(const tick of initialized)if(!s.ticks.has(tick))ticks.push({pool:c.pool,fn:'ticks',args:[tick]});}
    });
    // Fetch initialized ticks together rather than one HTTP round trip per crossing.
-   if(ticks.length){try{const values=await this.read(ticks);ticks.forEach((c,k)=>{if(values[k].error){this.fail(c.pool,values[k].error!);return;}const [gross,net]=values[k].value as readonly [bigint,bigint];if(gross===0n)this.fail(c.pool,'Initialized tick has zero liquidity');else c.pool.state!.ticks.set(c.args[0],net);});}catch(e){for(const c of ticks)this.fail(c.pool,(e as Error).message);}}
+   if(ticks.length){try{const values=await this.read(ticks);ticks.forEach((c,k)=>{if(values[k].error){this.fail(c.pool,values[k].error!);return;}const [gross,net]=values[k].value as readonly [bigint,bigint];if(gross===0n)this.fail(c.pool,'Initialized tick has zero liquidity');else c.pool.state!.ticks.set(c.args[0],net);});}catch(e){if(e instanceof LocalWorkLimit)throw e;for(const c of ticks)this.fail(c.pool,(e as Error).message);}}
   }
   return jobs.map(j=>this.replies.get(key(j))??null);
  }

@@ -16,6 +16,8 @@ All **544 best/venue points and 1,308 route candidates** matched at the same blo
 
 The result is route-dependent. Ondo MSFT on BNB improved from 1.49s to 0.51s cold / 0.45s with cached state; Ondo AAPL on Ethereum improved from 5.42s to 3.60s / 1.77s. bStocks AAPL used fewer RPC members but was slightly slower cold and materially slower in the later warm run, where public-RPC scheduling/retries dominated. **This is not a whole-dashboard latency guarantee.** Each mode is a single observation, collected sequentially per profile, with other chains in parallel; run order and provider throttling affect timings. Earlier exploratory runs also found little or negative total-time benefit for some Base and Robinhood profiles with many fallback routes. Those observations motivated bounded reads and Multicall batching; they must not be represented as final-version controlled comparisons.
 
+The final production rollout also imposes a server-only work budget (64 state getters / 200 swap steps). A live AAPL check exceeded the hosting runtime limit, so larger calculations now hand off through the existing leased browser collector, then save the completed curves centrally. The Node timings above describe the full calculation engine; they are not a hosted server-only guarantee. Lighter profiles, including the live MSFT BNB check, complete on the server.
+
 ## Correctness and coverage
 
 - Reads include pool identity, token ordering, slot0, liquidity, fee, tick spacing, bitmap words, initialized tick liquidity, reserves, and actual output-token balances. Every read uses one pinned block, and canonical hashes are rechecked before caching.
