@@ -3,3 +3,4 @@
 .reference-note{font-size:9px;color:#b7a777;margin-top:10px;padding:5px 8px;background:#292d1b;border-radius:3px}
 .card-foot>span small{display:block;font-size:8px;margin-top:4px;color:#55735f}
 .reference-source{font-size:10px;color:#819b87;margin:-5px 0 15px;line-height:1.7}.reference-source a{color:#a7cbb2}
+.depth-band{display:flex;align-items:center;gap:8px;margin-left:auto}.depth-band label{font-size:10px;color:#819a88}.depth-band select{padding:7px 23px 7px 9px}.overview{gap:15px}.stats{gap:22px}@media(max-width:1100px){.stats{gap:12px}.depth-band label{display:none}}@media(max-width:760px){.stats{order:4}.depth-band{margin-left:0}.overview>.search{flex:1}.overview>.toggle{margin-left:auto}.depth-band label{display:inline}}

@@ -28,3 +28,7 @@ export function bestAcrossDeployments(simulations:Simulation[],stock:string,issu
 export function bestPoint(views:IssuerView[],size:number,side:'buy'|'sell'){
  return views.flatMap(v=>v.points.filter(p=>p.size===size&&p.side===side&&p.status==='ok').map(p=>({...p,issuerId:v.issuerId}))).sort((a,b)=>side==='buy'?a.price!-b.price!:b.price!-a.price!)[0];
 }
+/** Conservative sampled depth: largest independently quoted order, never a sum. */
+export function sampledDepth(points:QuotePoint[],side:'buy'|'sell',impactPercent:number):number{
+ return Math.max(0,...points.filter(p=>p.side===side&&p.status==='ok'&&p.impactBps!==null&&Number.isFinite(p.impactBps)&&Math.max(0,p.impactBps)/100<=impactPercent+1e-10).map(p=>p.size));
+}
