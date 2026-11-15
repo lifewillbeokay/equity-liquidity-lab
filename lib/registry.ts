@@ -1,5 +1,9 @@
 import chainData from './data/chains.json';
 import poolData from './data/discovered-pools.json';
+import aeroData from './data/aerodrome-pools.json';
+export type Dex='uniswap'|'aerodrome';
+export type DexScope='all'|Dex;
+export const DEX_LABELS={all:'All DEXs',uniswap:'Uniswap',aerodrome:'Aerodrome'};
 import type {Address} from 'viem';
 export const SIZES=[100,1000,5000,10000,50000,100000];
 export type ChainKey=keyof typeof chainData;
@@ -13,9 +17,11 @@ export const ISSUERS:Issuer[]=[
 {id:'robinhood',name:'Robinhood',symbol:'AAPL',chain:'robinhood',token:'0xaf3d76f1834a1d425780943c99ea8a608f8a93f9',decimals:18,color:'#a4d674',settlement:'0x5fc5360d0400a0fd4f2af552add042d716f1d168',settlementSymbol:'USDG',settlementDecimals:6,normalization:'robinhood',source:'https://api.robinhood.com/rhj/assets',note:'Robinhood Apple token on Robinhood Chain.'},
 ];
 export type PoolKey={currency0:Address;currency1:Address;fee:number;tickSpacing:number;hooks:Address};
-export type Route={id:string;version:'v3'|'v4';poolIds:string[];tokens:Address[];fees:number[];key?:PoolKey;label:string};
-export function routesFor(i:Issuer):Route[]{
- return poolData.filter(p=>p.verified&&p.chain===i.chain&&p.base.address.toLowerCase()===i.token&&p.quote.address.toLowerCase()===i.settlement&&['v3','v4'].includes(p.version)).map(p=>({id:p.id,version:p.version as 'v3'|'v4',poolIds:[p.id],tokens:[i.settlement,i.token],fees:[p.fee??(p as unknown as {key:PoolKey}).key?.fee??0],key:(p as unknown as {key?:PoolKey}).key,label:`Uniswap ${p.version} · ${(p.fee??(p as unknown as {key:PoolKey}).key?.fee)===8388608?'dynamic fee':((p.fee??(p as unknown as {key:PoolKey}).key?.fee??0)/10000).toFixed(2)+'%'}`}));
+export type Route={id:string;venue:Dex;version:'v3'|'v4'|'slipstream'|'classic';factory?:Address;quoter?:Address;tickSpacing?:number;stable?:boolean;poolIds:string[];tokens:Address[];fees:number[];key?:PoolKey;label:string};
+export function routesFor(i:Issuer,scope:DexScope='all'):Route[]{
+ const uniswap:Route[]=poolData.filter(p=>p.verified&&p.chain===i.chain&&p.base.address.toLowerCase()===i.token&&p.quote.address.toLowerCase()===i.settlement&&['v3','v4'].includes(p.version)).map(p=>({id:p.id,venue:'uniswap',version:p.version as 'v3'|'v4',poolIds:[p.id],tokens:[i.settlement,i.token],fees:[p.fee??(p as unknown as {key:PoolKey}).key?.fee??0],key:(p as unknown as {key?:PoolKey}).key,label:`Uniswap ${p.version} · ${(p.fee??(p as unknown as {key:PoolKey}).key?.fee)===8388608?'dynamic fee':((p.fee??(p as unknown as {key:PoolKey}).key?.fee??0)/10000).toFixed(2)+'%'}`}));
+ const aerodrome:Route[]=aeroData.verified.filter(p=>p.chain===i.chain&&p.token===i.token&&p.settlement===i.settlement).map(p=>({id:p.id,venue:'aerodrome',version:p.version as 'slipstream'|'classic',factory:p.factory as Address,quoter:p.quoter as Address,tickSpacing:p.tickSpacing,stable:p.stable,poolIds:[p.id],tokens:[i.settlement,i.token],fees:[],label:p.version==='slipstream'?`Aerodrome Slipstream · ts ${p.tickSpacing}`:`Aerodrome ${p.stable?'stable':'volatile'}`}));
+ return [...uniswap,...aerodrome].filter(r=>scope==='all'||r.venue===scope);
 }
 export const CHAIN_LABELS:Record<ChainKey,string>={ethereum:'Ethereum',base:'Base',bsc:'BNB Chain',ink:'Ink',robinhood:'Robinhood Chain'};
 export const EXPLORERS:Record<ChainKey,string>={ethereum:'https://etherscan.io',base:'https://basescan.org',bsc:'https://bscscan.com',ink:'https://explorer.inkonchain.com',robinhood:'https://explorer.robinhood.com'};

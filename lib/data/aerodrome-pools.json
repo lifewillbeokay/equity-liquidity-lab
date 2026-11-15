@@ -1,0 +1,168 @@
+{
+  "discoveredAt": "2026-11-15T02:14:06.497Z",
+  "blockNumber": 57592340,
+  "blockHash": "0xc4ddfdfc515cc98150c9a58a01ed93e87cf5ff1ebd752093977b710b763e4b13",
+  "source": "https://github.com/aerodrome-finance/slipstream/blob/main/README.md",
+  "verified": [
+    {
+      "id": "0x8feacb3aac9499ba4f53aa16e9cd38c36c57765e",
+      "factory": "0xf8f2eb4940cfe7d13603dddd87f123820fc061ef",
+      "quoter": "0x514c8b5f54112481e28028f1166bd78501089259",
+      "chain": "base",
+      "venue": "aerodrome",
+      "version": "slipstream",
+      "token": "0xb200000000000000000000c2e324d24d7eecd1fb",
+      "settlement": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "tickSpacing": 200,
+      "feeAtDiscovery": 3000,
+      "source": "https://github.com/aerodrome-finance/slipstream/blob/main/README.md"
+    },
+    {
+      "id": "0xa3b1e3f9747065e2073722ff4c9027d3ea4994f0",
+      "factory": "0xf8f2eb4940cfe7d13603dddd87f123820fc061ef",
+      "quoter": "0x514c8b5f54112481e28028f1166bd78501089259",
+      "chain": "base",
+      "venue": "aerodrome",
+      "version": "slipstream",
+      "token": "0xb200000000000000000000c2e324d24d7eecd1fb",
+      "settlement": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "tickSpacing": 10,
+      "feeAtDiscovery": 500,
+      "source": "https://github.com/aerodrome-finance/slipstream/blob/main/README.md"
+    },
+    {
+      "id": "0x6b74fc52dd84beb8d2d1be16732749dee70c45e7",
+      "factory": "0x420dd381b31aef6683db6b902084cb0ffece40da",
+      "quoter": "0xcf77a3ba9a5ca399b7c97c74d54e5b1beb874e43",
+      "chain": "base",
+      "venue": "aerodrome",
+      "version": "classic",
+      "token": "0xb200000000000000000000c2e324d24d7eecd1fb",
+      "settlement": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "stable": false,
+      "source": "https://github.com/aerodrome-finance/contracts/blob/main/README.md"
+    }
+  ],
+  "scanned": [
+    {
+      "factory": "0x5e7bb104d84c7cb9b682aac2f3d509f5f406809a",
+      "tickSpacing": 1,
+      "pool": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "factory": "0x5e7bb104d84c7cb9b682aac2f3d509f5f406809a",
+      "tickSpacing": 50,
+      "pool": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "factory": "0x5e7bb104d84c7cb9b682aac2f3d509f5f406809a",
+      "tickSpacing": 100,
+      "pool": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "factory": "0x5e7bb104d84c7cb9b682aac2f3d509f5f406809a",
+      "tickSpacing": 200,
+      "pool": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "factory": "0x5e7bb104d84c7cb9b682aac2f3d509f5f406809a",
+      "tickSpacing": 2000,
+      "pool": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "factory": "0x5e7bb104d84c7cb9b682aac2f3d509f5f406809a",
+      "tickSpacing": 10,
+      "pool": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "factory": "0xade65c38cd4849adba595a4323a8c7ddfe89716a",
+      "tickSpacing": 1,
+      "pool": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "factory": "0xade65c38cd4849adba595a4323a8c7ddfe89716a",
+      "tickSpacing": 50,
+      "pool": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "factory": "0xade65c38cd4849adba595a4323a8c7ddfe89716a",
+      "tickSpacing": 100,
+      "pool": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "factory": "0xade65c38cd4849adba595a4323a8c7ddfe89716a",
+      "tickSpacing": 200,
+      "pool": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "factory": "0xade65c38cd4849adba595a4323a8c7ddfe89716a",
+      "tickSpacing": 2000,
+      "pool": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "factory": "0xade65c38cd4849adba595a4323a8c7ddfe89716a",
+      "tickSpacing": 10,
+      "pool": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "factory": "0xade65c38cd4849adba595a4323a8c7ddfe89716a",
+      "tickSpacing": 500,
+      "pool": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "factory": "0xf8f2eb4940cfe7d13603dddd87f123820fc061ef",
+      "tickSpacing": 1,
+      "pool": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "factory": "0xf8f2eb4940cfe7d13603dddd87f123820fc061ef",
+      "tickSpacing": 50,
+      "pool": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "factory": "0xf8f2eb4940cfe7d13603dddd87f123820fc061ef",
+      "tickSpacing": 100,
+      "pool": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "factory": "0xf8f2eb4940cfe7d13603dddd87f123820fc061ef",
+      "tickSpacing": 200,
+      "pool": "0x8FeaCB3AAC9499bA4F53aa16e9CD38c36C57765E"
+    },
+    {
+      "factory": "0xf8f2eb4940cfe7d13603dddd87f123820fc061ef",
+      "tickSpacing": 2000,
+      "pool": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "factory": "0xf8f2eb4940cfe7d13603dddd87f123820fc061ef",
+      "tickSpacing": 500,
+      "pool": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "factory": "0xf8f2eb4940cfe7d13603dddd87f123820fc061ef",
+      "tickSpacing": 10,
+      "pool": "0xA3b1E3f9747065e2073722Ff4c9027d3eA4994F0"
+    },
+    {
+      "factory": "0xf8f2eb4940cfe7d13603dddd87f123820fc061ef",
+      "tickSpacing": 80,
+      "pool": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "factory": "0xf8f2eb4940cfe7d13603dddd87f123820fc061ef",
+      "tickSpacing": 150,
+      "pool": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "factory": "0x420dd381b31aef6683db6b902084cb0ffece40da",
+      "stable": false,
+      "pool": "0x6b74fC52Dd84bEb8d2D1BE16732749Dee70C45e7"
+    },
+    {
+      "factory": "0x420dd381b31aef6683db6b902084cb0ffece40da",
+      "stable": true,
+      "pool": "0x0000000000000000000000000000000000000000"
+    }
+  ]
+}

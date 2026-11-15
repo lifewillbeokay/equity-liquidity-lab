@@ -1,5 +1,5 @@
 import {encodeFunctionData,decodeFunctionResult,parseAbi,parseUnits,formatUnits,encodePacked,type Address,type Hex} from 'viem';
-import {CHAINS,SIZES,routesFor,type Issuer,type Route,type ChainKey} from './registry';
+import {CHAINS,SIZES,routesFor,type Issuer,type Route,type ChainKey,type Dex,type DexScope} from './registry';
 export const tokenAbi=parseAbi([
  'function decimals() view returns(uint8)','function symbol() view returns(string)',
  'function multiplier() view returns(uint256)','function uiMultiplier() view returns(uint256)',
@@ -7,6 +7,7 @@ export const tokenAbi=parseAbi([
  'function convertToAssets(uint256) view returns(uint256)','function convertToShares(uint256) view returns(uint256)',
  'function asset() view returns(address)','function sharesMultiplier() view returns(uint256)',
  'function getPool(address,address,uint24) view returns(address)','function factory() view returns(address)',
+ 'function defaultFactory() view returns(address)',
  'function token0() view returns(address)','function token1() view returns(address)','function fee() view returns(uint24)',
  'function getSlot0(bytes32) view returns(uint160,int24,uint24,uint24)',
  'function getSValue(address) view returns(uint128,bool)',
@@ -17,6 +18,13 @@ export const v3Abi=parseAbi([
  'function quoteExactInput(bytes path,uint256 amountIn) returns(uint256 amountOut,uint160[] sqrtPriceX96AfterList,uint32[] initializedTicksCrossedList,uint256 gasEstimate)',
  'function quoteExactOutput(bytes path,uint256 amountOut) returns(uint256 amountIn,uint160[] sqrtPriceX96AfterList,uint32[] initializedTicksCrossedList,uint256 gasEstimate)',
 ]);
+export const slipstreamAbi=parseAbi([
+ 'function quoteExactInputSingle((address tokenIn,address tokenOut,uint256 amountIn,int24 tickSpacing,uint160 sqrtPriceLimitX96) params) returns(uint256 amountOut,uint160 sqrtPriceX96After,uint32 initializedTicksCrossed,uint256 gasEstimate)',
+ 'function quoteExactOutputSingle((address tokenIn,address tokenOut,uint256 amount,int24 tickSpacing,uint160 sqrtPriceLimitX96) params) returns(uint256 amountIn,uint160 sqrtPriceX96After,uint32 initializedTicksCrossed,uint256 gasEstimate)',
+]);
+export const classicAbi=parseAbi(['function getAmountsOut(uint256 amountIn,(address from,address to,bool stable,address factory)[] routes) view returns(uint256[] amounts)']);
+const slipstreamFactoryAbi=parseAbi(['function getPool(address,address,int24) view returns(address)']);
+const classicFactoryAbi=parseAbi(['function getPool(address,address,bool) view returns(address)']);
 export const v4Abi=parseAbi([
  'function quoteExactInputSingle(((address currency0,address currency1,uint24 fee,int24 tickSpacing,address hooks) poolKey,bool zeroForOne,uint128 exactAmount,bytes hookData) params) returns(uint256 amountOut,uint256 gasEstimate)',
  'function quoteExactOutputSingle(((address currency0,address currency1,uint24 fee,int24 tickSpacing,address hooks) poolKey,bool zeroForOne,uint128 exactAmount,bytes hookData) params) returns(uint256 amountIn,uint256 gasEstimate)',
@@ -54,6 +62,16 @@ export async function tokenCall(chain:ChainKey,to:Address,fn:string,args:unknown
 export function encodeRouteQuote(issuer:Issuer,route:Route,side:'buy'|'sell',amount:bigint,exactOutput=false){
  const tokens=side==='buy'?route.tokens:[...route.tokens].reverse(), fees=side==='buy'?route.fees:[...route.fees].reverse();
  const config=CHAINS[issuer.chain];
+ if(route.version==='classic'){
+  if(exactOutput)throw new Error('Aerodrome classic supports exact-input quotes only');
+  const fn='getAmountsOut' as const;
+  return {to:route.quoter!,abi:classicAbi,fn,data:encodeFunctionData({abi:classicAbi,functionName:fn,args:[amount,[{from:tokens[0],to:tokens[1],stable:route.stable!,factory:route.factory!}]]})};
+ }
+ if(route.version==='slipstream'){
+  const fn=exactOutput?'quoteExactOutputSingle':'quoteExactInputSingle';
+  return {to:route.quoter!,abi:slipstreamAbi,fn,data:encodeFunctionData({abi:slipstreamAbi,functionName:fn,args:[[tokens[0],tokens[1],amount,route.tickSpacing!,0n]] as never})};
+ }
+
  if(route.version==='v3'){
   let fn:typeof v3Abi[number]['name'],args:unknown[];
   if(tokens.length===2){fn=exactOutput?'quoteExactOutputSingle':'quoteExactInputSingle';args=[[tokens[0],tokens[1],amount,fees[0],0n]];}
@@ -66,14 +84,16 @@ export function encodeRouteQuote(issuer:Issuer,route:Route,side:'buy'|'sell',amo
 export function parseQuote(r:RpcReply,encoded:ReturnType<typeof encodeRouteQuote>){
  if(r.error)throw new Error(r.error.message);if(!r.result||typeof r.result!=='string')throw new Error('Empty quote response');
  const out=decodeFunctionResult({abi:encoded.abi,functionName:encoded.fn as never,data:r.result as Hex}) as readonly unknown[];
- const prices=encoded.abi===v3Abi?(Array.isArray(out[1])?out[1]:[out[1]]) as bigint[]:[];
+ if(encoded.abi===classicAbi)return {amount:out.at(-1) as bigint,gas:null,complete:true};
+ const prices=(encoded.abi===v3Abi||encoded.abi===slipstreamAbi)?(Array.isArray(out[1])?out[1]:[out[1]]) as bigint[]:[];
  // V3 may return a partial fill at a price boundary. V4's canonical BaseV4Quoter
  // explicitly reverts unless the specified input delta is fully consumed.
  const complete=prices.every(p=>p>4295128740n&&p<1461446703485210103287273052203988822378723970341n);
  return {amount:out[0] as bigint,gas:out.at(-1) as bigint,complete};
 }
-export type QuotePoint={size:number;side:'buy'|'sell';status:'ok'|'partial'|'unavailable'|'error';inputRaw:string;outputRaw:string|null;input:number;output:number|null;shares:number|null;price:number|null;referenceBps:number|null;impactBps:number|null;routeId:string|null;routeLabel:string|null;gasUnits:string|null;reason?:string;consumedInputRaw?:string;candidateQuotes?:unknown[]};
-export type Simulation={issuerId:string;status:'ok'|'error'|'unavailable';blockNumber:number|null;blockHash:string|null;blockTimestamp:string|null;fetchedAt:string;normalization:{sharesPerToken:number;method:string;source:string;asOf:string;sourceChain:ChainKey;sourceBlock:number;sourceBlockHash:string;factorRaw:string}|null;routes:Route[];points:QuotePoint[];probe:{buyPrice:number|null;sellPrice:number|null};error?:string;rpc:string;reference:Reference};
+export type QuotePoint={venue?:Dex|null;size:number;side:'buy'|'sell';status:'ok'|'partial'|'unavailable'|'error';inputRaw:string;outputRaw:string|null;input:number;output:number|null;shares:number|null;price:number|null;referenceBps:number|null;impactBps:number|null;routeId:string|null;routeLabel:string|null;gasUnits:string|null;reason?:string;consumedInputRaw?:string;candidateQuotes?:unknown[]};
+export type VenueQuotes={points:QuotePoint[];probe:{buyPrice:number|null;sellPrice:number|null}};
+export type Simulation={venues?:Partial<Record<Dex,VenueQuotes>>;issuerId:string;status:'ok'|'error'|'unavailable';blockNumber:number|null;blockHash:string|null;blockTimestamp:string|null;fetchedAt:string;normalization:{sharesPerToken:number;method:string;source:string;asOf:string;sourceChain:ChainKey;sourceBlock:number;sourceBlockHash:string;factorRaw:string}|null;routes:Route[];points:QuotePoint[];probe:{buyPrice:number|null;sellPrice:number|null};error?:string;rpc:string;reference:Reference};
 export type Snapshot={version:1;capturedAt:string;reference:Reference;simulations:Simulation[];coverageVersion:string};
 export async function getReference():Promise<Reference>{
  let url='https://api.coinbase.com/v1/tokenized-stocks';
@@ -117,10 +137,19 @@ export async function simulateIssuer(issuer:Issuer,reference:Reference,transport
   if(factor<=0n)throw new Error('Invalid share conversion');
   const factorNumber=Number(formatUnits(factor,18));base.normalization={sharesPerToken:factorNumber,method,source:normSource,asOf:normTime!,sourceChain:normChain,sourceBlock:normBlock!,sourceBlockHash:normHash!,factorRaw:factor.toString()};
   if(!base.routes.length){base.status='unavailable';return base;}
-  // Confirm all registered pools against canonical Uniswap deployments at this block.
+  // Confirm registered pools against the canonical deployment for each venue at this block.
   const verified:Route[]=[];
   for(const route of base.routes){
-   if(route.version==='v3'){
+   if(route.venue==='aerodrome'){
+    const abi=route.version==='slipstream'?slipstreamFactoryAbi:classicFactoryAbi;
+    const args=[route.tokens[0],route.tokens[1],route.version==='slipstream'?route.tickSpacing:route.stable];
+    const data=encodeFunctionData({abi,functionName:'getPool',args:args as never});
+    const [reply]=await rpcBatch(issuer.chain,[ethCall(route.factory!,data,block)],transport);if(reply.error)throw new Error(reply.error.message);
+    const pool=decodeFunctionResult({abi,functionName:'getPool',data:reply.result as Hex});
+    if(String(pool).toLowerCase()!==route.id.toLowerCase())continue;
+    const quoterFactory=await tokenCall(issuer.chain,route.quoter!,route.version==='classic'?'defaultFactory':'factory',[],block,transport);
+    if(String(quoterFactory).toLowerCase()!==route.factory!.toLowerCase())continue;
+   }else if(route.version==='v3'){
     const pool=await tokenCall(issuer.chain,CHAINS[issuer.chain].UniswapV3Factory.toLowerCase() as Address,'getPool',[route.tokens[0],route.tokens[1],route.fees[0]],block,transport);
     if(String(pool).toLowerCase()!==route.poolIds[0].toLowerCase())continue;
    }else{const state=await tokenCall(issuer.chain,CHAINS[issuer.chain].StateView.toLowerCase() as Address,'getSlot0',[route.id],block,transport) as readonly bigint[];if(state[0]===0n)continue;}
@@ -138,30 +167,38 @@ export async function simulateIssuer(issuer:Issuer,reference:Reference,transport
   const jobs=spec.flatMap(s=>verified.map(route=>({s,route,encoded:encodeRouteQuote(issuer,route,s.side,s.input)})));
   const raw=await rpcBatch(issuer.chain,jobs.map(j=>ethCall(j.encoded.to,j.encoded.data,block)),transport);
   const outs=raw.map((r,j)=>{try{return parseQuote(r,jobs[j].encoded);}catch{return null;}});
+  const buildPoints=async(scope:DexScope):Promise<VenueQuotes>=>{
   const points:QuotePoint[]=[];
   for(const s of spec){
-   const candidates=jobs.map((j,k)=>({j,k,out:outs[k]})).filter(x=>x.j.s===s);
+   const candidates=jobs.map((j,k)=>({j,k,out:outs[k]})).filter(x=>x.j.s===s&&(scope==='all'||x.j.route.venue===scope));
    const good=candidates.filter(x=>x.out&&x.out.amount>0n&&x.out.complete);
    good.sort((a,b)=>a.out!.amount>b.out!.amount?-1:1);const best=good[0];
-   const point:QuotePoint={size:s.size,side:s.side,status:'unavailable',inputRaw:s.input.toString(),outputRaw:null,input:Number(formatUnits(s.input,s.side==='buy'?issuer.settlementDecimals:issuer.decimals)),output:null,shares:null,price:null,referenceBps:null,impactBps:null,routeId:null,routeLabel:null,gasUnits:null,candidateQuotes:candidates.map(x=>({routeId:x.j.route.id,outputRaw:x.out?.amount.toString()??null,fullInput:x.out?.complete??null,error:raw[x.k].error?.message}))};
+   const point:QuotePoint={size:s.size,side:s.side,status:'unavailable',inputRaw:s.input.toString(),outputRaw:null,input:Number(formatUnits(s.input,s.side==='buy'?issuer.settlementDecimals:issuer.decimals)),output:null,shares:null,price:null,referenceBps:null,impactBps:null,routeId:null,routeLabel:null,gasUnits:null,candidateQuotes:candidates.map(x=>({routeId:x.j.route.id,venue:x.j.route.venue,outputRaw:x.out?.amount.toString()??null,fullInput:x.out?.complete??null,error:raw[x.k].error?.message}))};
    if(best){
     const output=best.out!.amount;point.status='ok';point.outputRaw=output.toString();point.output=Number(formatUnits(output,s.side==='buy'?issuer.decimals:issuer.settlementDecimals));
     const tokenAmount=s.side==='buy'?output:s.input;
     const shareAmount=issuer.normalization==='wrapper'?await tokenCall(issuer.chain,issuer.token,'convertToAssets',[tokenAmount],block,transport) as bigint:tokenAmount*factor/unit;
     point.shares=Number(formatUnits(shareAmount,18));point.price=(s.side==='buy'?point.input:point.output)/point.shares;
-    point.referenceBps=(point.price/reference.price-1)*10000;point.routeId=best.j.route.id;point.routeLabel=best.j.route.label;point.gasUnits=best.out!.gas.toString();point.consumedInputRaw=s.input.toString();
+    point.referenceBps=(point.price/reference.price-1)*10000;point.venue=best.j.route.venue;point.routeId=best.j.route.id;point.routeLabel=best.j.route.label;point.gasUnits=best.out!.gas?.toString()??null;point.consumedInputRaw=s.input.toString();
    }else{
     const partial=candidates.find(x=>x.out&&x.out.amount>0n&&!x.out.complete);
-    const error=candidates.every(x=>raw[x.k].error&&!/revert|liquidity|insufficient|execution/i.test(raw[x.k].error!.message));
-    point.status=partial?'partial':error?'error':'unavailable';point.reason=partial?'Pool cannot consume the full requested input':error?'RPC quote request failed':'No complete quote at this size';
+    const error=candidates.length>0&&candidates.every(x=>raw[x.k].error&&!/revert|liquidity|insufficient|execution/i.test(raw[x.k].error!.message));
+    point.status=partial?'partial':error?'error':'unavailable';point.reason=partial?'Pool cannot consume the full requested input':error?'RPC quote request failed':candidates.length?'No complete quote at this size':'No verified route on this DEX in current coverage';
 
    }
    points.push(point);
   }
-  for(const side of ['buy','sell'] as const){const probe=points.find(p=>p.side===side&&p.size===10&&p.status==='ok');base.probe[side==='buy'?'buyPrice':'sellPrice']=probe?.price??null;for(const p of points.filter(p=>p.side===side&&p.price!==null)){if(probe?.price)p.impactBps=(side==='buy'?p.price!/probe.price-1:1-p.price!/probe.price)*10000;}}
-  base.points=points.filter(p=>p.size!==10);
+  const probes={buyPrice:null as number|null,sellPrice:null as number|null};
+  for(const side of ['buy','sell'] as const){const probe=points.find(p=>p.side===side&&p.size===10&&p.status==='ok');probes[side==='buy'?'buyPrice':'sellPrice']=probe?.price??null;for(const p of points.filter(p=>p.side===side&&p.price!==null)){if(probe?.price)p.impactBps=(side==='buy'?p.price!/probe.price-1:1-p.price!/probe.price)*10000;}}
+  return {points:points.filter(p=>p.size!==10),probe:probes};
+  };
+  const combined=await buildPoints('all');base.points=combined.points;base.probe=combined.probe;base.venues={};
+  for(const venue of ['uniswap','aerodrome'] as const){
+   base.venues[venue]=verified.every(r=>r.venue===venue)?combined:await buildPoints(venue);
+  }
   const [check]=await rpcBatch(issuer.chain,[{method:'eth_getBlockByNumber',params:[block,false]}],transport);
   if((check.result as {hash?:string})?.hash!==b.hash)throw new Error('Snapshot block changed during collection');
   base.status=base.points.some(p=>p.status==='ok')?'ok':base.points.every(p=>p.status==='error')?'error':'unavailable';if(base.status==='error')base.error='RPC quote requests failed';base.fetchedAt=new Date().toISOString();return base;
- }catch(e){base.status='error';base.error=(e as Error).message.slice(0,180);base.points=[];return base;}
+ }catch(e){base.status='error';base.error=(e as Error).message.slice(0,180);base.points=[];base.venues={};return base;}
 }
+

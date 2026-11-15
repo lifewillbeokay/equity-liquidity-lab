@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Apple Liquidity Lab",
-  description: "Compare Apple tokenized-equity buy and sell liquidity across five issuers using verified Uniswap pools.",
+  description: "Compare Apple tokenized-equity buy and sell liquidity across five issuers using verified Uniswap and Aerodrome pools.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
