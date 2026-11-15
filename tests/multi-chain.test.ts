@@ -37,7 +37,7 @@ test('Every registered route starts at its deployment settlement and ends at its
 });
 
 test('Nest Algebra rejects partial consumed input and accepts the deployed six-value response',async()=>{
- const {algebraAbi,parseQuote,encodeRouteQuote}=await import('../lib/simulator');const i=DEPLOYMENTS.find(d=>d.stock==='NVDA'&&d.chain==='hyperevm'&&d.normalization==='wrapper')!,route=routesFor(i).find(r=>r.venue==='nest')!;assert.ok(route);const encoded=encodeRouteQuote(i,route,'buy',100n);
+ const {algebraAbi,parseQuote,encodeRouteQuote}=await import('../lib/simulator');const i=(await import('../lib/data/multi-asset-registry.json')).default.deployments.find(d=>d.stock==='NVDA'&&d.chain==='hyperevm'&&d.normalization==='wrapper')! as unknown as Issuer,route=routesFor(i).find(r=>r.venue==='nest')!;assert.ok(route);const encoded=encodeRouteQuote(i,route,'buy',100n);
  for(const consumed of [99n,100n]){const result=encodeFunctionResult({abi:algebraAbi,functionName:'quoteExactInputSingle',result:[200n,consumed,2n**96n,1,1000n,3000]});const q=parseQuote({result},encoded);assert.equal(q.complete,consumed===100n);assert.equal(q.amount,200n);assert.equal(q.gas,1000n);}
 });
 test('All registered V4 keys including composite leaves hash to their canonical pool IDs',async()=>{

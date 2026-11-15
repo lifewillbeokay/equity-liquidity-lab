@@ -1,3 +1,4 @@
+import {ADAPTIVE_ROUNDS,newSampling,refinementRequests,type SampleRequest} from './sampling';
 import {parseUnits,formatUnits} from 'viem';
 import {CHAINS,SIZES,routesFor,type Issuer} from './registry';
 import type {Reference,Simulation,QuotePoint} from './simulator';
@@ -44,10 +45,11 @@ export async function simulateProvider(i:Issuer,reference:Reference):Promise<Sim
  const result:Simulation={issuerId:i.id,status:'error',quoteKind:'provider',quoteStartedAt:started,blockNumber:null,blockHash:null,blockTimestamp:null,fetchedAt:started,normalization:null,routes:routesFor(i),points:[],probe:{buyPrice:null,sellPrice:null},rpc:CHAINS[i.chain].rpc,reference};
  try{
   const norm=await normalization(i);result.normalization=norm.meta;const factor=norm.factor,unit=10n**BigInt(i.decimals);const all:QuotePoint[]=[];
-  for(const side of ['buy','sell'] as const)for(const size of [10,...SIZES]){
+  result.sampling=newSampling();
+  const quoteSamples=async(requests:SampleRequest[])=>{for(const {side,size} of requests){
    const shares=parseUnits((size/reference.price).toFixed(12),18);const input=side==='buy'?parseUnits(String(size),i.settlementDecimals):shares*unit/factor;
    const tokenIn=side==='buy'?i.settlement:i.token,tokenOut=side==='buy'?i.token:i.settlement;
-   const point:QuotePoint={deploymentId:i.id,chain:i.chain,venue,quoteKind:'provider',size,side,status:'unavailable',inputRaw:String(input),outputRaw:null,input:Number(formatUnits(input,side==='buy'?i.settlementDecimals:i.decimals)),output:null,shares:null,price:null,referenceBps:null,impactBps:null,routeId:null,routeLabel:null,gasUnits:null,candidateQuotes:[]};
+   const point:QuotePoint={sampleKind:SIZES.includes(size)||size===10?'base':'adaptive',deploymentId:i.id,chain:i.chain,venue,quoteKind:'provider',size,side,status:'unavailable',inputRaw:String(input),outputRaw:null,input:Number(formatUnits(input,side==='buy'?i.settlementDecimals:i.decimals)),output:null,shares:null,price:null,referenceBps:null,impactBps:null,routeId:null,routeLabel:null,gasUnits:null,candidateQuotes:[]};
    try{
     let output:bigint;
     if(i.chain==='solana'){
@@ -60,10 +62,15 @@ export async function simulateProvider(i:Issuer,reference:Reference):Promise<Sim
     point.status='ok';point.outputRaw=String(output);point.output=Number(formatUnits(output,side==='buy'?i.decimals:i.settlementDecimals));point.shares=Number(formatUnits((side==='buy'?output:input)*factor/unit,18));point.price=(side==='buy'?point.input:point.output)/point.shares;point.referenceBps=(point.price/reference.price-1)*10000;point.consumedInputRaw=String(input);
    }catch(e){point.status=/could not find pool|no liquidity|COULD_NOT_FIND_ANY_ROUTE|TOKEN_NOT_TRADABLE|NO_ROUTES_FOUND|insufficient liquidity/i.test((e as Error).message)?'unavailable':'error';point.reason=(e as Error).message.slice(0,150);}
    point.observedAt=new Date().toISOString();all.push(point);
+  }};
+  const impacts=()=>{for(const side of ['buy','sell'] as const){const probe=all.find(p=>p.side===side&&p.size===10&&p.status==='ok');result.probe[side==='buy'?'buyPrice':'sellPrice']=probe?.price??null;for(const p of all.filter(p=>p.side===side&&p.price!==null))if(probe?.price)p.impactBps=(side==='buy'?p.price!/probe.price-1:1-p.price!/probe.price)*10000;}};
+  await quoteSamples((['buy','sell'] as const).flatMap(side=>[10,...SIZES].map(size=>({side,size}))));impacts();
+  for(let round=0;round<ADAPTIVE_ROUNDS;round++){
+   const requests=refinementRequests([all],all);if(!requests.length)break;
+   await quoteSamples(requests);result.sampling.rounds++;for(const r of requests)result.sampling.adaptiveSizes[r.side].push(r.size);impacts();
   }
   const after=await normalization(i);if(after.factor!==factor)throw new Error('Share multiplier changed during quote collection; refresh required');
-  for(const side of ['buy','sell'] as const){const probe=all.find(p=>p.side===side&&p.size===10&&p.status==='ok');result.probe[side==='buy'?'buyPrice':'sellPrice']=probe?.price??null;for(const p of all.filter(p=>p.side===side&&p.price!==null))if(probe?.price)p.impactBps=(side==='buy'?p.price!/probe.price-1:1-p.price!/probe.price)*10000;}
-  result.points=all.filter(p=>p.size!==10);result.venues={[venue]:{points:result.points,probe:result.probe}};result.status=result.points.some(p=>p.status==='ok')?'ok':result.points.some(p=>p.status==='error')?'error':'unavailable';if(result.status==='error')result.error=result.points.find(p=>p.reason)?.reason;
+  result.points=all.filter(p=>p.size!==10).sort((a,b)=>a.side.localeCompare(b.side)||a.size-b.size);result.venues={[venue]:{points:result.points,probe:result.probe}};result.status=result.points.some(p=>p.status==='ok')?'ok':result.points.some(p=>p.status==='error')?'error':'unavailable';if(result.status==='error')result.error=result.points.find(p=>p.reason)?.reason;
   result.fetchedAt=new Date().toISOString();return result;
  }catch(e){return {...result,status:'error',points:[],venues:{},error:(e as Error).message.slice(0,180),fetchedAt:new Date().toISOString()};}
 }

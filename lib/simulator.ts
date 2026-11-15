@@ -1,4 +1,5 @@
 import {encodeFunctionData,decodeFunctionResult,parseAbi,parseUnits,formatUnits,encodePacked,encodeAbiParameters,keccak256,type Address,type Hex,type Abi} from 'viem';
+import {ADAPTIVE_ROUNDS,newSampling,refinementRequests,type Sampling,type SampleRequest} from './sampling';
 import {CHAINS,SIZES,DEXES,routesFor,type Issuer,type Route,type ChainKey,type Dex,type DexScope} from './registry';
 export const tokenAbi=parseAbi([
  'function decimals() view returns(uint8)','function symbol() view returns(string)',
@@ -39,22 +40,42 @@ export type Reference={indicative?:boolean;spreadBps?:number;bid?:number;ask?:nu
 export type RpcRequest={method:string;params:unknown[]};
 export type RpcReply={result?:Hex|Record<string,unknown>;error?:{code:number;message:string;data?:unknown}};
 export type Transport=(url:string,body:unknown)=>Promise<unknown>;
+const rpcSchedule=new Map<string,{next:number;perCallMs:number}>();
+export const rpcThrottled=(value:any)=>(Array.isArray(value)?value:[value]).some((item:any)=>/rate limit|too many requests|quota|request limit/i.test(item?.error?.message??''));
 const fetchTransport:Transport=async(url,body)=>{
- for(let attempt=0;attempt<4;attempt++){
+ const schedule=rpcSchedule.get(url)??{next:0,perCallMs:20};rpcSchedule.set(url,schedule);
+ for(let attempt=0;attempt<6;attempt++){
+  const now=Date.now(),at=Math.max(now,schedule.next);schedule.next=at+Math.max(50,(Array.isArray(body)?body.length:1)*schedule.perCallMs);
+  if(at>now)await new Promise(resolve=>setTimeout(resolve,at-now));
   const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(20000)});
-  if((r.status===429||r.status>=500)&&attempt<3){await new Promise(resolve=>setTimeout(resolve,1000*2**attempt));continue;}
-  if(!r.ok)throw new Error(`RPC HTTP ${r.status}: ${(await r.text()).slice(0,150)}`);return r.json();
+  if((r.status===429||r.status>=500)&&attempt<5){
+   if(r.status===429)schedule.perCallMs=Math.min(250,schedule.perCallMs*2);
+   const retry=Number(r.headers.get('retry-after')),delay=Math.min(30000,Math.max(retry>0?retry*1000:0,1000*2**attempt));
+   schedule.next=Math.max(schedule.next,Date.now()+delay);await r.body?.cancel();await new Promise(resolve=>setTimeout(resolve,delay));continue;
+  }
+  if(!r.ok)throw new Error(`RPC HTTP ${r.status}: ${(await r.text()).slice(0,150)}`);
+  const value=await r.json();
+  // Expected pool reverts are healthy RPC responses, not continued throttling.
+  if(!rpcThrottled(value))schedule.perCallMs=Math.max(20,schedule.perCallMs*.95);
+  return value;
  }
  throw new Error('RPC retry exhausted');
 };
+let robinhoodFallbackUntil=0;
 export async function rpcBatch(chain:ChainKey,requests:RpcRequest[],transport:Transport=fetchTransport):Promise<RpcReply[]>{
  const result:RpcReply[]=[];
  const batchSize=chain==='xlayer'?1:25;
  for(let offset=0;offset<requests.length;offset+=batchSize){
   const chunk=requests.slice(offset,offset+batchSize);const body=chunk.map((r,j)=>({jsonrpc:'2.0',id:offset+j+1,...r}));
-  let data:(RpcReply&{id:number})[];const fallback='https://rpc.mainnet.chain.robinhood.com';
-  try{data=await transport(CHAINS[chain].rpc,body) as (RpcReply&{id:number})[];}catch(e){if(chain!=='robinhood'||!/403|archive/i.test((e as Error).message))throw e;data=await transport(fallback,body) as (RpcReply&{id:number})[];}
-  if(chain==='robinhood'&&Array.isArray(data)&&data.some(r=>/archive/i.test(r.error?.message??'')))data=await transport(fallback,body) as (RpcReply&{id:number})[];
+  let data:(RpcReply&{id:number})[]=[];const fallback='https://rpc.mainnet.chain.robinhood.com';
+  for(let attempt=0;attempt<4;attempt++){
+   const useFallback=chain==='robinhood'&&transport===fetchTransport&&Date.now()<robinhoodFallbackUntil;
+   try{data=await transport(useFallback?fallback:CHAINS[chain].rpc,body) as (RpcReply&{id:number})[];}catch(e){if(chain!=='robinhood'||useFallback||!/403|429|archive|rate limit|too many requests/i.test((e as Error).message))throw e;if(transport===fetchTransport)robinhoodFallbackUntil=Date.now()+300000;data=await transport(fallback,body) as (RpcReply&{id:number})[];}
+   if(chain==='robinhood'&&!useFallback&&Array.isArray(data)&&data.some(r=>/archive/i.test(r.error?.message??''))){if(transport===fetchTransport)robinhoodFallbackUntil=Date.now()+300000;data=await transport(fallback,body) as (RpcReply&{id:number})[];}
+   const throttled=rpcThrottled(data);
+   if(!throttled||attempt===3)break;
+   await new Promise(resolve=>setTimeout(resolve,2000*2**attempt));
+  }
   if(!Array.isArray(data)){const one=data as unknown as RpcReply;throw new Error(one.error?.message||'Invalid RPC batch response');}
   const mapped=new Map(data.map(r=>[r.id,r]));result.push(...body.map(r=>mapped.get(r.id)||{error:{code:-1,message:'Missing RPC response'}}));
  }
@@ -152,9 +173,9 @@ export async function verifyRoutes(issuer:Issuer,routes:Route[],block:Hex,transp
 }
 const metricPoolAbi=parseAbi(["function getImmutables() view returns ((address factory,address token0,address token1,uint256 token0ScaleMultiplier,uint256 token1ScaleMultiplier,uint256 initialScaledToken0PerShareE18,uint256 initialScaledToken1PerShareE18,uint256 minimalOperationalLiquidity,address immutablePriceProvider,int256 lowestBin,int256 highestBin,address extension1,address extension2,address extension3,address extension4,address extension5,address extension6,address extension7,uint256 beforeAddLiquidityOrder,uint256 afterAddLiquidityOrder,uint256 beforeRemoveLiquidityOrder,uint256 afterRemoveLiquidityOrder,uint256 beforeSwapOrder,uint256 afterSwapOrder))"]);
 const metricFactoryAbi=parseAbi(['function isPool(address) view returns(bool)']);
-export type QuotePoint={deploymentId?:string;chain?:ChainKey;observedAt?:string;contextSlot?:number;routePlan?:unknown;quoteKind?:'onchain'|'provider';venue?:Dex|null;size:number;side:'buy'|'sell';status:'ok'|'partial'|'unavailable'|'error';inputRaw:string;outputRaw:string|null;input:number;output:number|null;shares:number|null;price:number|null;referenceBps:number|null;impactBps:number|null;routeId:string|null;routeLabel:string|null;gasUnits:string|null;reason?:string;consumedInputRaw?:string;candidateQuotes?:unknown[]};
+export type QuotePoint={sampleKind?:'base'|'adaptive';deploymentId?:string;chain?:ChainKey;observedAt?:string;contextSlot?:number;routePlan?:unknown;quoteKind?:'onchain'|'provider';venue?:Dex|null;size:number;side:'buy'|'sell';status:'ok'|'partial'|'unavailable'|'error';inputRaw:string;outputRaw:string|null;input:number;output:number|null;shares:number|null;price:number|null;referenceBps:number|null;impactBps:number|null;routeId:string|null;routeLabel:string|null;gasUnits:string|null;reason?:string;consumedInputRaw?:string;candidateQuotes?:unknown[]};
 export type VenueQuotes={points:QuotePoint[];probe:{buyPrice:number|null;sellPrice:number|null}};
-export type Simulation={transport?:'server'|'browser';rpcFallback?:string;quoteKind?:'onchain'|'provider';coverageNote?:string;quoteStartedAt?:string;verificationErrors?:{routeId:string;reason:string}[];venues?:Partial<Record<Dex,VenueQuotes>>;issuerId:string;status:'ok'|'error'|'unavailable';blockNumber:number|null;blockHash:string|null;blockTimestamp:string|null;fetchedAt:string;normalization:{sharesPerToken:number;method:string;source:string;asOf:string;sourceChain:ChainKey;sourceBlock:number;sourceBlockHash:string;factorRaw:string}|null;routes:Route[];points:QuotePoint[];probe:{buyPrice:number|null;sellPrice:number|null};error?:string;rpc:string;reference:Reference};
+export type Simulation={sampling?:Sampling;transport?:'server'|'browser';rpcFallback?:string;quoteKind?:'onchain'|'provider';coverageNote?:string;quoteStartedAt?:string;verificationErrors?:{routeId:string;reason:string}[];venues?:Partial<Record<Dex,VenueQuotes>>;issuerId:string;status:'ok'|'error'|'unavailable';blockNumber:number|null;blockHash:string|null;blockTimestamp:string|null;fetchedAt:string;normalization:{sharesPerToken:number;method:string;source:string;asOf:string;sourceChain:ChainKey;sourceBlock:number;sourceBlockHash:string;factorRaw:string}|null;routes:Route[];points:QuotePoint[];probe:{buyPrice:number|null;sellPrice:number|null};error?:string;rpc:string;reference:Reference};
 export type Snapshot={version:1;capturedAt:string;reference:Reference;simulations:Simulation[];coverageVersion:string};
 export async function getReference(stock='AAPL'):Promise<Reference>{
  if(['MU','COIN'].includes(stock)){
@@ -173,7 +194,7 @@ export async function getReference(stock='AAPL'):Promise<Reference>{
 }
 // All calls in a sweep are pinned to one block. Each size is independent.
 export async function simulateIssuer(issuer:Issuer,reference:Reference,transport?:Transport):Promise<Simulation>{
- if(issuer.chain==='solana'||issuer.chain==='ton'){const {simulateProvider}=await import('./provider-simulator');return simulateProvider(issuer,reference);}
+ if((issuer.chain==='solana'||issuer.chain==='ton')&&routesFor(issuer).length){const {simulateProvider}=await import('./provider-simulator');return simulateProvider(issuer,reference);}
  const base:Simulation={rpcFallback:issuer.chain==='robinhood'?'https://rpc.mainnet.chain.robinhood.com':undefined,quoteKind:'onchain',issuerId:issuer.id,status:'error',blockNumber:null,blockHash:null,blockTimestamp:null,fetchedAt:new Date().toISOString(),normalization:null,routes:routesFor(issuer),points:[],probe:{buyPrice:null,sellPrice:null},rpc:CHAINS[issuer.chain].rpc,reference};
  if(!base.routes.length){return {...base,status:'unavailable',coverageNote:issuer.coverageNote??'Official deployment; no supported route in current inventory.'};}
  try{
@@ -212,44 +233,69 @@ export async function simulateIssuer(issuer:Issuer,reference:Reference,transport
   const checked=await verifyRoutes(issuer,base.routes,block,transport);
   const verified=checked.routes;base.verificationErrors=checked.errors;
   base.routes=verified;if(!verified.length){base.status=checked.errors.length?'error':'unavailable';base.error=checked.errors.length?'No route passed contract verification at this block':undefined;return base;}
-  const sizes=[10,...SIZES];const spec:{size:number;side:'buy'|'sell';input:bigint}[]=[];
-  for(const side of ['buy','sell'] as const)for(const size of sizes){
-   const shares=parseUnits((size/reference.price).toFixed(12),18);let input:bigint;
-   if(side==='buy')input=parseUnits(String(size),issuer.settlementDecimals);
-   else if(issuer.normalization==='wrapper')input=await tokenCall(issuer.chain,issuer.token,'convertToShares',[shares],block,transport) as bigint;
-   else input=shares*unit/factor;
-   spec.push({size,side,input});
-  }
-  const jobs=spec.flatMap(s=>verified.map(route=>({s,route})));
-  const {raw,outs}=await quoteRouteJobs(issuer,jobs,block,transport);
-  const buildPoints=async(scope:DexScope):Promise<VenueQuotes>=>{
-  const points:QuotePoint[]=[];
-  for(const s of spec){
-   const candidates=jobs.map((j,k)=>({j,k,out:outs[k]})).filter(x=>x.j.s===s&&(scope==='all'||x.j.route.venue===scope));
-   const good=candidates.filter(x=>x.out&&x.out.amount>0n&&x.out.complete);
-   good.sort((a,b)=>a.out!.amount>b.out!.amount?-1:1);const best=good[0];
-   const point:QuotePoint={size:s.size,side:s.side,status:'unavailable',inputRaw:s.input.toString(),outputRaw:null,input:Number(formatUnits(s.input,s.side==='buy'?issuer.settlementDecimals:issuer.decimals)),output:null,shares:null,price:null,referenceBps:null,impactBps:null,routeId:null,routeLabel:null,gasUnits:null,candidateQuotes:scope==='all'?candidates.map(x=>({routeId:x.j.route.id,venue:x.j.route.venue,outputRaw:x.out?.amount.toString()??null,fullInput:x.out?.complete??null,consumedInputRaw:x.out?.consumedInput?.toString()??(x.out?.complete?s.input.toString():null),error:raw[x.k].error?.message})):undefined};
-   if(best){
-    const output=best.out!.amount;point.status='ok';point.outputRaw=output.toString();point.output=Number(formatUnits(output,s.side==='buy'?issuer.decimals:issuer.settlementDecimals));
-    const tokenAmount=s.side==='buy'?output:s.input;
-    const shareAmount=issuer.normalization==='wrapper'?await tokenCall(issuer.chain,issuer.token,'convertToAssets',[tokenAmount],block,transport) as bigint:tokenAmount*factor/unit;
-    point.shares=Number(formatUnits(shareAmount,18));point.price=(s.side==='buy'?point.input:point.output)/point.shares;
-    point.referenceBps=(point.price/reference.price-1)*10000;point.deploymentId=issuer.id;point.chain=issuer.chain;point.quoteKind='onchain';point.venue=best.j.route.venue;point.routeId=best.j.route.id;point.routeLabel=best.j.route.label;point.gasUnits=best.out!.gas?.toString()??null;point.consumedInputRaw=s.input.toString();
-   }else{
-    const partial=candidates.find(x=>x.out&&!x.out.complete);
-    const error=candidates.length>0&&candidates.every(x=>raw[x.k].error&&!/revert|liquidity|insufficient|execution/i.test(raw[x.k].error!.message));
-    point.status=partial?'partial':error?'error':'unavailable';point.reason=partial?'Pool cannot consume the full requested input':error?'RPC quote request failed':candidates.length?'No complete quote at this size':'No verified route on this DEX in current coverage';
-
+  base.sampling=newSampling();
+  const spec:({size:number;side:'buy'|'sell';input:bigint})[]=[];
+  const jobs:{s:typeof spec[number];route:Route}[]=[];
+  const raw:RpcReply[]=[],outs:(ParsedRouteQuote|null)[]=[];
+  const shareCache=new Map<string,bigint>();
+  const scopes:DexScope[]=['all',...new Set(verified.map(r=>r.venue))];
+  const quoteSamples=async(requests:SampleRequest[])=>{
+   const additions:typeof spec=[];
+   const sell=requests.filter(r=>r.side==='sell');
+   const conversions=issuer.normalization==='wrapper'?await rpcBatch(issuer.chain,sell.map(s=>ethCall(issuer.token,encodeFunctionData({abi:tokenAbi,functionName:'convertToShares',args:[parseUnits((s.size/reference.price).toFixed(12),18)]}),block)),transport):[];
+   let sellIndex=0;
+   for(const request of requests){
+    const shares=parseUnits((request.size/reference.price).toFixed(12),18);let input:bigint;
+    if(request.side==='buy')input=parseUnits(String(request.size),issuer.settlementDecimals);
+    else if(issuer.normalization==='wrapper'){const response=conversions[sellIndex++];if(response.error)throw new Error(response.error.message);input=decodeFunctionResult({abi:tokenAbi,functionName:'convertToShares',data:response.result as Hex});}
+    else input=shares*unit/factor;
+    additions.push({...request,input});
    }
-   points.push(point);
-  }
-  const probes={buyPrice:null as number|null,sellPrice:null as number|null};
-  for(const side of ['buy','sell'] as const){const probe=points.find(p=>p.side===side&&p.size===10&&p.status==='ok');probes[side==='buy'?'buyPrice':'sellPrice']=probe?.price??null;for(const p of points.filter(p=>p.side===side&&p.price!==null)){if(probe?.price)p.impactBps=(side==='buy'?p.price!/probe.price-1:1-p.price!/probe.price)*10000;}}
-  return {points:points.filter(p=>p.size!==10),probe:probes};
+   const addedJobs=additions.flatMap(s=>verified.map(route=>({s,route})));
+   const quoted=await quoteRouteJobs(issuer,addedJobs,block,transport);
+   spec.push(...additions);jobs.push(...addedJobs);raw.push(...quoted.raw);outs.push(...quoted.outs);
+   // Only normalize winning outputs, batched once for all venue views.
+   if(issuer.normalization==='wrapper'){
+    const amounts=new Set<string>();
+    for(const s of additions)for(const scope of scopes){
+     const good=addedJobs.flatMap((j,k)=>j.s===s&&(scope==='all'||j.route.venue===scope)&&quoted.outs[k]?.complete&&quoted.outs[k]!.amount>0n?[quoted.outs[k]!]:[]).sort((a,b)=>a.amount>b.amount?-1:1);
+     if(good[0])amounts.add((s.side==='buy'?good[0].amount:s.input).toString());
+    }
+    const missing=[...amounts].filter(n=>!shareCache.has(n));
+    const converted=await rpcBatch(issuer.chain,missing.map(n=>ethCall(issuer.token,encodeFunctionData({abi:tokenAbi,functionName:'convertToAssets',args:[BigInt(n)]}),block)),transport);
+    missing.forEach((n,k)=>{if(converted[k].error)throw new Error(converted[k].error!.message);shareCache.set(n,decodeFunctionResult({abi:tokenAbi,functionName:'convertToAssets',data:converted[k].result as Hex}));});
+   }
   };
-  const combined=await buildPoints('all');base.points=combined.points;base.probe=combined.probe;base.venues={};
-  for(const venue of DEXES){
-   base.venues[venue]=verified.every(r=>r.venue===venue)?combined:await buildPoints(venue);
+  const buildPoints=(scope:DexScope):VenueQuotes=>{
+   const bySpec=new Map<typeof spec[number],{j:typeof jobs[number];k:number;out:ParsedRouteQuote|null}[]>();
+   jobs.forEach((j,k)=>{if(scope!=='all'&&j.route.venue!==scope)return;const list=bySpec.get(j.s)??[];list.push({j,k,out:outs[k]});bySpec.set(j.s,list);});
+   const points:QuotePoint[]=spec.map(s=>{
+    const candidates=bySpec.get(s)??[],good=candidates.filter(x=>x.out&&x.out.amount>0n&&x.out.complete);
+    good.sort((a,b)=>a.out!.amount>b.out!.amount?-1:1);const best=good[0];
+    const point:QuotePoint={sampleKind:SIZES.includes(s.size)||s.size===10?'base':'adaptive',size:s.size,side:s.side,status:'unavailable',inputRaw:s.input.toString(),outputRaw:null,input:Number(formatUnits(s.input,s.side==='buy'?issuer.settlementDecimals:issuer.decimals)),output:null,shares:null,price:null,referenceBps:null,impactBps:null,routeId:null,routeLabel:null,gasUnits:null,candidateQuotes:scope==='all'?candidates.map(x=>({routeId:x.j.route.id,venue:x.j.route.venue,outputRaw:x.out?.amount.toString()??null,fullInput:x.out?.complete??null,consumedInputRaw:x.out?.consumedInput?.toString()??(x.out?.complete?s.input.toString():null),error:raw[x.k].error?.message})):undefined};
+    if(best){
+     const output=best.out!.amount;point.status='ok';point.outputRaw=output.toString();point.output=Number(formatUnits(output,s.side==='buy'?issuer.decimals:issuer.settlementDecimals));
+     const tokenAmount=s.side==='buy'?output:s.input,shareAmount=issuer.normalization==='wrapper'?shareCache.get(tokenAmount.toString())!:tokenAmount*factor/unit;
+     point.shares=Number(formatUnits(shareAmount,18));point.price=(s.side==='buy'?point.input:point.output)/point.shares;
+     point.referenceBps=(point.price/reference.price-1)*10000;point.deploymentId=issuer.id;point.chain=issuer.chain;point.quoteKind='onchain';point.venue=best.j.route.venue;point.routeId=best.j.route.id;point.routeLabel=best.j.route.label;point.gasUnits=best.out!.gas?.toString()??null;point.consumedInputRaw=s.input.toString();
+    }else{
+     const partial=candidates.find(x=>x.out&&!x.out.complete),error=candidates.length>0&&candidates.every(x=>raw[x.k].error&&!/revert|liquidity|insufficient|execution/i.test(raw[x.k].error!.message));
+     point.status=partial?'partial':error?'error':'unavailable';point.reason=partial?'Pool cannot consume the full requested input':error?'RPC quote request failed':candidates.length?'No complete quote at this size':'No verified route on this DEX in current coverage';
+    }
+    return point;
+   });
+   const probes={buyPrice:null as number|null,sellPrice:null as number|null};
+   for(const side of ['buy','sell'] as const){const probe=points.find(p=>p.side===side&&p.size===10&&p.status==='ok');probes[side==='buy'?'buyPrice':'sellPrice']=probe?.price??null;for(const p of points.filter(p=>p.side===side&&p.price!==null)){if(probe?.price)p.impactBps=(side==='buy'?p.price!/probe.price-1:1-p.price!/probe.price)*10000;}}
+   return {points:points.filter(p=>p.size!==10).sort((a,b)=>a.side.localeCompare(b.side)||a.size-b.size),probe:probes};
+  };
+  const rebuild=()=>{const combined=buildPoints('all');base.points=combined.points;base.probe=combined.probe;base.venues={};for(const venue of new Set(verified.map(r=>r.venue)))base.venues[venue]=verified.every(r=>r.venue===venue)?combined:buildPoints(venue);};
+  await quoteSamples((['buy','sell'] as const).flatMap(side=>[10,...SIZES].map(size=>({side,size}))));rebuild();
+  for(let round=0;round<ADAPTIVE_ROUNDS;round++){
+   const requests=refinementRequests([base.points,...Object.values(base.venues!).map(v=>v!.points)],spec);
+   if(!requests.length)break;
+   await quoteSamples(requests);base.sampling.rounds++;
+   for(const r of requests)base.sampling.adaptiveSizes[r.side].push(r.size);
+   rebuild();
   }
   const [check]=await rpcBatch(issuer.chain,[{method:'eth_getBlockByNumber',params:[block,false]}],transport);
   if((check.result as {hash?:string})?.hash!==b.hash)throw new Error('Snapshot block changed during collection');

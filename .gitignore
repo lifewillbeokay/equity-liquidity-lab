@@ -43,3 +43,6 @@ yarn-error.log*
 
 # OS metadata
 .DS_Store
+
+# Versioned audit download, prepared from the tracked capture before build
+/public/data/equity-snapshot-*.json

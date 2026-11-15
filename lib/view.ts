@@ -2,6 +2,8 @@ import type {Simulation} from './simulator';
 import type {DexScope} from './registry';
 /** Venue views are selected from one collected block, never recollected on filter changes. */
 export function simulationForVenue(s:Simulation,scope:DexScope):Simulation{
+ // Ignore any previously captured Jupiter data after its exclusion from scope.
+ if(s.routes.some(r=>r.venue==='jupiter')||s.points.some(p=>p.venue==='jupiter'))return {...s,status:'unavailable',routes:[],points:[],venues:{},probe:{buyPrice:null,sellPrice:null},coverageNote:'Jupiter is excluded. Direct Solana DEX quotes are not currently integrated.'};
  if(scope==='all')return s;
  const routes=s.routes.filter(r=>r.venue===scope),view=s.venues?.[scope];
  if(s.status==='error')return {...s,routes,points:[],probe:{buyPrice:null,sellPrice:null}};
@@ -20,7 +22,7 @@ export function bestAcrossDeployments(simulations:Simulation[],stock:string,issu
  const valid=records.filter(r=>r.s.status==='ok');
  const baseline=(side:'buy'|'sell')=>{const values=valid.map(({s})=>s.probe[side==='buy'?'buyPrice':'sellPrice']).filter((x):x is number=>x!==null&&Number.isFinite(x)&&x>0);return values.length?(side==='buy'?Math.min(...values):Math.max(...values)):null;};
  const probe={buyPrice:baseline('buy'),sellPrice:baseline('sell')};const points:QuotePoint[]=[];
- for(const side of ['buy','sell'] as const)for(const size of SIZES){const candidates=valid.flatMap(({s,d})=>s.points.filter(p=>p.side===side&&p.size===size&&p.status==='ok'&&p.price!==null&&Number.isFinite(p.price)&&p.price>0).map(p=>({...p,deploymentId:d.id,chain:d.chain,observedAt:p.observedAt??s.fetchedAt,quoteKind:p.quoteKind??s.quoteKind??'onchain' as const})));
+ for(const side of ['buy','sell'] as const)for(const size of [...new Set(valid.flatMap(({s})=>s.points.filter(p=>p.side===side).map(p=>p.size)))].sort((a,b)=>a-b)){const candidates=valid.flatMap(({s,d})=>s.points.filter(p=>p.side===side&&p.size===size&&p.status==='ok'&&p.price!==null&&Number.isFinite(p.price)&&p.price>0).map(p=>({...p,deploymentId:d.id,chain:d.chain,observedAt:p.observedAt??s.fetchedAt,quoteKind:p.quoteKind??s.quoteKind??'onchain' as const})));
  candidates.sort((a,b)=>side==='buy'?a.price!-b.price!:b.price!-a.price!);const p=candidates[0];if(p){const b=probe[side==='buy'?'buyPrice':'sellPrice'];points.push({...p,impactBps:b?(side==='buy'?p.price!/b-1:1-p.price!/b)*10000:null});}
  }
  return {issuerId,points,probe,deployments:records.map(r=>r.s)};
