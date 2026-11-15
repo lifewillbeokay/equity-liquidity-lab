@@ -1,7 +1,7 @@
 import {parseUnits,formatUnits} from 'viem';
 import {CHAINS,SIZES,routesFor,type Issuer} from './registry';
 import type {Reference,Simulation,QuotePoint} from './simulator';
-let jupiterNextAt=0;
+let jupiterNextAt=0,solanaNextAt=0;let solanaIdentityVerified=false;
 async function json(url:string,init:RequestInit={},isJupiter=false):Promise<any>{
  for(let attempt=0;attempt<4;attempt++){
   if(isJupiter){const now=Date.now(),at=Math.max(now,jupiterNextAt);jupiterNextAt=at+2200;await new Promise(r=>setTimeout(r,Math.max(0,at-now)));}
@@ -11,7 +11,10 @@ async function json(url:string,init:RequestInit={},isJupiter=false):Promise<any>
  }
  throw new Error('Quote source retry exhausted');
 }
-async function solanaRpc(method:string,params:unknown[]){const d=await json(CHAINS.solana.rpc,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:1,method,params})});if(d.error)throw new Error(d.error.message);return d.result;}
+async function solanaRpc(method:string,params:unknown[]){
+ let error:unknown;for(const url of [CHAINS.solana.rpc,'https://api.mainnet-beta.solana.com','https://solana-rpc.publicnode.com']){try{const now=Date.now(),at=Math.max(now,solanaNextAt);solanaNextAt=at+350;await new Promise(r=>setTimeout(r,Math.max(0,at-now)));const d=await json(url,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:1,method,params})});if(d.error)throw new Error(d.error.message);return d.result;}catch(e){error=e;}}
+ throw error;
+}
 export function activeSolanaMultiplier(info:any,unixTime:number):number{
  if(info.extensions?.some((e:any)=>e.extension==='pausableConfig'&&e.state.paused))throw new Error('Mint is paused');
  if(info.extensions?.some((e:any)=>e.extension==='transferHook'&&e.state.programId))throw new Error('Unsupported active transfer hook');
@@ -22,6 +25,7 @@ export function activeSolanaMultiplier(info:any,unixTime:number):number{
 async function normalization(i:Issuer){
  const at=new Date().toISOString();
  if(i.chain==='solana'){
+  if(!solanaIdentityVerified){const genesis=await solanaRpc('getGenesisHash',[]);if(genesis!=='5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d')throw new Error('Unexpected Solana network');solanaIdentityVerified=true;}
   const d=await solanaRpc('getAccountInfo',[i.token,{encoding:'jsonParsed',commitment:'confirmed'}]);const info=d.value?.data?.parsed?.info;
   if(d.value?.owner!=='TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb'||info?.decimals!==i.decimals||!info?.isInitialized)throw new Error('Mint identity or decimals mismatch');
   const time=await solanaRpc('getBlockTime',[d.context.slot]);if(!Number.isFinite(time))throw new Error('Mint snapshot time unavailable');const multiplier=activeSolanaMultiplier(info,time);const factor=parseUnits(String(multiplier),18);

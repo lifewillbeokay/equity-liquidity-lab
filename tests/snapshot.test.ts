@@ -12,3 +12,6 @@ test('All eight stocks have current-profile captures; full quotes reconcile norm
  assert.ok(usable>0,stock.id);for(const issuer of ISSUERS){const view=bestAcrossDeployments(s.simulations,stock.id,issuer.id);for(const p of view.points){const candidates=view.deployments.flatMap(d=>d.status==='ok'?d.points.filter(q=>q.side===p.side&&q.size===p.size&&q.status==='ok'):[]);assert.equal(p.price,p.side==='buy'?Math.min(...candidates.map(c=>c.price!)):Math.max(...candidates.map(c=>c.price!)));}}
  }
 });
+test('Compact browser snapshot preserves issuer winners and prices across every DEX filter',async()=>{
+ const {DEXES}=await import('../lib/registry');const light=(await import('../lib/data/slim-market-snapshot.json')).default as unknown as {markets:Record<string,Snapshot>};for(const stock of STOCKS)for(const issuer of ISSUERS)for(const dex of ['all',...DEXES] as const){const a=bestAcrossDeployments((data.markets as Record<string,Snapshot>)[stock.id].simulations,stock.id,issuer.id,dex),b=bestAcrossDeployments(light.markets[stock.id].simulations,stock.id,issuer.id,dex);const comparable=(v:typeof a)=>v.points.map(p=>[p.size,p.side,p.price,p.impactBps,p.deploymentId,p.chain]);assert.deepEqual(comparable(a),comparable(b),stock.id+' '+issuer.id+' '+dex);}
+});

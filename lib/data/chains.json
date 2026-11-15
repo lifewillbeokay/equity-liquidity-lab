@@ -111,7 +111,7 @@
   },
   "solana": {
     "id": 0,
-    "rpc": "https://api.mainnet-beta.solana.com",
+    "rpc": "https://public.rpc.solanavibestation.com",
     "UniswapV3Factory": "0x0000000000000000000000000000000000000000",
     "UniswapV2Factory": "0x0000000000000000000000000000000000000000",
     "QuoterV2": "0x0000000000000000000000000000000000000000",
