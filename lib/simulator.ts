@@ -42,7 +42,7 @@ export type RpcReply={result?:Hex|Record<string,unknown>;error?:{code:number;mes
 export type Transport=(url:string,body:unknown)=>Promise<unknown>;
 const rpcSchedule=new Map<string,{next:number;perCallMs:number}>();
 export const rpcThrottled=(value:any)=>(Array.isArray(value)?value:[value]).some((item:any)=>/rate limit|too many requests|quota|request limit/i.test(item?.error?.message??''));
-const fetchTransport:Transport=async(url,body)=>{
+export const fetchTransport:Transport=async(url,body)=>{
  const schedule=rpcSchedule.get(url)??{next:0,perCallMs:20};rpcSchedule.set(url,schedule);
  for(let attempt=0;attempt<6;attempt++){
   const now=Date.now(),at=Math.max(now,schedule.next);schedule.next=at+Math.max(50,(Array.isArray(body)?body.length:1)*schedule.perCallMs);
@@ -61,17 +61,30 @@ const fetchTransport:Transport=async(url,body)=>{
  }
  throw new Error('RPC retry exhausted');
 };
-let robinhoodFallbackUntil=0;
+const robinhoodFallbackUntil=new WeakMap<Transport,number>();
+/** Shared by quote batches and uncached canonicality checks; each transport keeps its own circuit. */
+export async function rpcTransport(chain:ChainKey,body:unknown,transport:Transport=fetchTransport){
+ const fallback='https://rpc.mainnet.chain.robinhood.com';
+ const useFallback=chain==='robinhood'&&Date.now()<(robinhoodFallbackUntil.get(transport)??0);
+ const retryable=/403|429|archive|rate limit|too many requests|failed to fetch|network|timeout|timed out|abort/i;
+ let data:unknown;
+ try{data=await transport(useFallback?fallback:CHAINS[chain].rpc,body);}catch(e){
+  if(chain!=='robinhood'||useFallback||!retryable.test((e as Error).message))throw e;
+  robinhoodFallbackUntil.set(transport,Date.now()+300000);return transport(fallback,body);
+ }
+ if(chain==='robinhood'&&!useFallback&&(Array.isArray(data)?data:[data]).some(r=>retryable.test(r?.error?.message??''))){
+  robinhoodFallbackUntil.set(transport,Date.now()+300000);return transport(fallback,body);
+ }
+ return data;
+}
 export async function rpcBatch(chain:ChainKey,requests:RpcRequest[],transport:Transport=fetchTransport):Promise<RpcReply[]>{
  const result:RpcReply[]=[];
  const batchSize=chain==='xlayer'?1:25;
  for(let offset=0;offset<requests.length;offset+=batchSize){
   const chunk=requests.slice(offset,offset+batchSize);const body=chunk.map((r,j)=>({jsonrpc:'2.0',id:offset+j+1,...r}));
-  let data:(RpcReply&{id:number})[]=[];const fallback='https://rpc.mainnet.chain.robinhood.com';
+  let data:(RpcReply&{id:number})[]=[];
   for(let attempt=0;attempt<4;attempt++){
-   const useFallback=chain==='robinhood'&&transport===fetchTransport&&Date.now()<robinhoodFallbackUntil;
-   try{data=await transport(useFallback?fallback:CHAINS[chain].rpc,body) as (RpcReply&{id:number})[];}catch(e){if(chain!=='robinhood'||useFallback||!/403|429|archive|rate limit|too many requests|failed to fetch|network|timeout|timed out|abort/i.test((e as Error).message))throw e;if(transport===fetchTransport)robinhoodFallbackUntil=Date.now()+300000;data=await transport(fallback,body) as (RpcReply&{id:number})[];}
-   if(chain==='robinhood'&&!useFallback&&Array.isArray(data)&&data.some(r=>/archive/i.test(r.error?.message??''))){if(transport===fetchTransport)robinhoodFallbackUntil=Date.now()+300000;data=await transport(fallback,body) as (RpcReply&{id:number})[];}
+   data=await rpcTransport(chain,body,transport) as (RpcReply&{id:number})[];
    const throttled=rpcThrottled(data);
    if(!throttled||attempt===3)break;
    await new Promise(resolve=>setTimeout(resolve,2000*2**attempt));
@@ -175,7 +188,7 @@ const metricPoolAbi=parseAbi(["function getImmutables() view returns ((address f
 const metricFactoryAbi=parseAbi(['function isPool(address) view returns(bool)']);
 export type QuotePoint={sampleKind?:'base'|'adaptive';deploymentId?:string;chain?:ChainKey;observedAt?:string;contextSlot?:number;routePlan?:unknown;quoteKind?:'onchain'|'provider';venue?:Dex|null;size:number;side:'buy'|'sell';status:'ok'|'partial'|'unavailable'|'error';inputRaw:string;outputRaw:string|null;input:number;output:number|null;shares:number|null;price:number|null;referenceBps:number|null;impactBps:number|null;routeId:string|null;routeLabel:string|null;gasUnits:string|null;reason?:string;consumedInputRaw?:string;candidateQuotes?:unknown[]};
 export type VenueQuotes={points:QuotePoint[];probe:{buyPrice:number|null;sellPrice:number|null}};
-export type Simulation={refreshError?:string;lastRefreshAttempt?:string;sampling?:Sampling;transport?:'server'|'browser';rpcFallback?:string;quoteKind?:'onchain'|'provider';coverageNote?:string;quoteStartedAt?:string;verificationErrors?:{routeId:string;reason:string}[];venues?:Partial<Record<Dex,VenueQuotes>>;issuerId:string;status:'ok'|'error'|'unavailable';blockNumber:number|null;blockHash:string|null;blockTimestamp:string|null;fetchedAt:string;normalization:{sharesPerToken:number;method:string;source:string;asOf:string;sourceChain:ChainKey;sourceBlock:number;sourceBlockHash:string;factorRaw:string}|null;routes:Route[];points:QuotePoint[];probe:{buyPrice:number|null;sellPrice:number|null};error?:string;rpc:string;reference:Reference};
+export type Simulation={cache?:import('./shared-cache').CacheInfo;refreshError?:string;lastRefreshAttempt?:string;sampling?:Sampling;transport?:'server'|'browser';rpcFallback?:string;quoteKind?:'onchain'|'provider';coverageNote?:string;quoteStartedAt?:string;verificationErrors?:{routeId:string;reason:string}[];venues?:Partial<Record<Dex,VenueQuotes>>;issuerId:string;status:'ok'|'error'|'unavailable';blockNumber:number|null;blockHash:string|null;blockTimestamp:string|null;fetchedAt:string;normalization:{sharesPerToken:number;method:string;source:string;asOf:string;sourceChain:ChainKey;sourceBlock:number;sourceBlockHash:string;factorRaw:string}|null;routes:Route[];points:QuotePoint[];probe:{buyPrice:number|null;sellPrice:number|null};error?:string;rpc:string;reference:Reference};
 export type Snapshot={version:1;capturedAt:string;reference:Reference;simulations:Simulation[];coverageVersion:string};
 export async function getReference(stock='AAPL'):Promise<Reference>{
  if(stock==='MU'){
