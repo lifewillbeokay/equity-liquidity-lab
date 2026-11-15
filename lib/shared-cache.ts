@@ -6,7 +6,7 @@ import type {Reference,Simulation} from './simulator';
 
 export const CURVE_TTL_MS=120_000;
 export const LEASE_MS=600_000;
-export const CACHE_VERSION='shared-curves-v1';
+export const CACHE_VERSION='shared-curves-local-pools-v1';
 export type CacheInfo={state:'hit'|'updated'|'stale';key:string;storedAt:string;expiresAt:string;origin:'server'|'browser';poolReadHits?:number;poolReadMisses?:number};
 export type CachedSimulation=Simulation&{cache?:CacheInfo};
 export type CurveRow={key:string;issuer:string;stock:string;object_key:string|null;captured_at:string|null;expires_at:number;stored_at:number;origin:'server'|'browser'|null;lease_owner:string|null;lease_until:number;retry_at:number;last_error:string|null;reference:string};

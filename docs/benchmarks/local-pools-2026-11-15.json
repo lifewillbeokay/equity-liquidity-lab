@@ -1,0 +1,686 @@
+{
+  "startedAt": "2026-11-15T23:13:18.083Z",
+  "finishedAt": "2026-11-15T23:14:57.204Z",
+  "profiles": [
+    {
+      "stock": "MSFT",
+      "issuerId": "ondo-msft-bsc",
+      "chain": "bsc",
+      "comparison": {
+        "compared": 100,
+        "candidatesCompared": 50,
+        "candidateMismatches": [],
+        "mismatches": [],
+        "sameBlock": true
+      },
+      "modes": {
+        "direct": {
+          "ms": 1490.778875,
+          "calls": 61,
+          "batches": 10,
+          "hits": 0,
+          "blockHash": "0x5a77bfddacee2006c7f4746784634ba80752a54250b95239e57ca45fe96cbd19",
+          "local": {}
+        },
+        "localCold": {
+          "ms": 507.499542,
+          "calls": 14,
+          "batches": 9,
+          "hits": 0,
+          "blockHash": "0x5a77bfddacee2006c7f4746784634ba80752a54250b95239e57ca45fe96cbd19",
+          "local": {
+            "version": "local-pools-v1",
+            "pools": 1,
+            "stateReads": 6,
+            "localQuotes": 52,
+            "reusedQuotes": 0,
+            "validationQuotes": 4,
+            "fallbacks": {},
+            "state": [
+              {
+                "pool": "0xfb3beb765210975e49448af9f2c037896b044277",
+                "kind": "v2",
+                "fee": 2500,
+                "bitmapWords": [],
+                "initializedTicks": 0
+              }
+            ]
+          }
+        },
+        "localWarm": {
+          "ms": 446.5802920000001,
+          "calls": 12,
+          "batches": 8,
+          "hits": 2,
+          "blockHash": "0x5a77bfddacee2006c7f4746784634ba80752a54250b95239e57ca45fe96cbd19",
+          "local": {
+            "version": "local-pools-v1",
+            "pools": 1,
+            "stateReads": 6,
+            "localQuotes": 52,
+            "reusedQuotes": 0,
+            "validationQuotes": 4,
+            "fallbacks": {},
+            "state": [
+              {
+                "pool": "0xfb3beb765210975e49448af9f2c037896b044277",
+                "kind": "v2",
+                "fee": 2500,
+                "bitmapWords": [],
+                "initializedTicks": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stock": "AAPL",
+      "issuerId": "ondo",
+      "chain": "ethereum",
+      "comparison": {
+        "compared": 148,
+        "candidatesCompared": 148,
+        "candidateMismatches": [],
+        "mismatches": [],
+        "sameBlock": true
+      },
+      "modes": {
+        "direct": {
+          "ms": 5419.477792,
+          "calls": 163,
+          "batches": 17,
+          "hits": 0,
+          "blockHash": "0x1e6982d44be09666429742bf197589c1d419833ffb88650e735b50772996e267",
+          "local": {}
+        },
+        "localCold": {
+          "ms": 3601.688459000001,
+          "calls": 66,
+          "batches": 23,
+          "hits": 0,
+          "blockHash": "0x1e6982d44be09666429742bf197589c1d419833ffb88650e735b50772996e267",
+          "local": {
+            "version": "local-pools-v1",
+            "pools": 2,
+            "stateReads": 73,
+            "localQuotes": 115,
+            "reusedQuotes": 0,
+            "validationQuotes": 11,
+            "fallbacks": {
+              "0xad82c9eb065a5cfed71db087e4a52c8a09c69921": "Local tick-state budget reached; using contract quoter outside loaded range"
+            },
+            "state": [
+              {
+                "pool": "0xad82c9eb065a5cfed71db087e4a52c8a09c69921",
+                "kind": "v3",
+                "fee": 10000,
+                "tickSpacing": 200,
+                "bitmapWords": [
+                  -14,
+                  -13,
+                  -12,
+                  -11,
+                  -10,
+                  -9,
+                  -8,
+                  -7,
+                  -6,
+                  -5,
+                  -4,
+                  -3,
+                  -2,
+                  -1,
+                  0,
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "initializedTicks": 15
+              },
+              {
+                "pool": "0x50b31ab7a061843ca6ebab6c006ab4ece6ca2fd8",
+                "kind": "v3",
+                "fee": 3000,
+                "tickSpacing": 60,
+                "bitmapWords": [
+                  -24,
+                  -23,
+                  -22,
+                  -21,
+                  -20,
+                  -19,
+                  -18,
+                  -17,
+                  -16,
+                  -15,
+                  -14,
+                  -13,
+                  -12,
+                  -11,
+                  -10,
+                  -9,
+                  -8,
+                  -7,
+                  -6
+                ],
+                "initializedTicks": 2
+              }
+            ]
+          }
+        },
+        "localWarm": {
+          "ms": 1765.6435420000016,
+          "calls": 58,
+          "batches": 16,
+          "hits": 8,
+          "blockHash": "0x1e6982d44be09666429742bf197589c1d419833ffb88650e735b50772996e267",
+          "local": {
+            "version": "local-pools-v1",
+            "pools": 2,
+            "stateReads": 73,
+            "localQuotes": 115,
+            "reusedQuotes": 0,
+            "validationQuotes": 11,
+            "fallbacks": {
+              "0xad82c9eb065a5cfed71db087e4a52c8a09c69921": "Local tick-state budget reached; using contract quoter outside loaded range"
+            },
+            "state": [
+              {
+                "pool": "0xad82c9eb065a5cfed71db087e4a52c8a09c69921",
+                "kind": "v3",
+                "fee": 10000,
+                "tickSpacing": 200,
+                "bitmapWords": [
+                  -14,
+                  -13,
+                  -12,
+                  -11,
+                  -10,
+                  -9,
+                  -8,
+                  -7,
+                  -6,
+                  -5,
+                  -4,
+                  -3,
+                  -2,
+                  -1,
+                  0,
+                  1,
+                  2,
+                  3,
+                  4
+                ],
+                "initializedTicks": 15
+              },
+              {
+                "pool": "0x50b31ab7a061843ca6ebab6c006ab4ece6ca2fd8",
+                "kind": "v3",
+                "fee": 3000,
+                "tickSpacing": 60,
+                "bitmapWords": [
+                  -24,
+                  -23,
+                  -22,
+                  -21,
+                  -20,
+                  -19,
+                  -18,
+                  -17,
+                  -16,
+                  -15,
+                  -14,
+                  -13,
+                  -12,
+                  -11,
+                  -10,
+                  -9,
+                  -8,
+                  -7,
+                  -6
+                ],
+                "initializedTicks": 2
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "stock": "AAPL",
+      "issuerId": "binance",
+      "chain": "bsc",
+      "comparison": {
+        "compared": 296,
+        "candidatesCompared": 1110,
+        "candidateMismatches": [],
+        "mismatches": [],
+        "sameBlock": true
+      },
+      "modes": {
+        "direct": {
+          "ms": 25749.826541,
+          "calls": 1164,
+          "batches": 54,
+          "hits": 0,
+          "blockHash": "0x30249d7038acb6ff2eb1ae8a5693676d7100aa8639baff854424307ece579afb",
+          "local": {}
+        },
+        "localCold": {
+          "ms": 26718.879999999997,
+          "calls": 953,
+          "batches": 75,
+          "hits": 0,
+          "blockHash": "0x30249d7038acb6ff2eb1ae8a5693676d7100aa8639baff854424307ece579afb",
+          "local": {
+            "version": "local-pools-v1",
+            "pools": 10,
+            "stateReads": 2061,
+            "localQuotes": 278,
+            "reusedQuotes": 0,
+            "validationQuotes": 40,
+            "fallbacks": {
+              "0x45a7e1307d1c61377746362baec6eb9728f1f785": "No active range; using contract quoter",
+              "0xe9a0fa4f1e30704c2f394d1053ff2c62c4d745bc": "No active range; using contract quoter",
+              "0x63ecc45e02b9958a13c4a1becfa5b4ea443c5eba": "No active range; using contract quoter",
+              "0x0905edec2928b701fb6c6354e4eee4960895a82f": "Local tick-state budget reached; using contract quoter outside loaded range",
+              "0x5aca9563f8d14a6d79f12421d549a5606644a270": "Local tick-state budget reached; using contract quoter outside loaded range",
+              "0x36c0fc3159eb8662a2e1b84a4df518d916bce0e1": "Local tick-state budget reached; using contract quoter outside loaded range",
+              "0xe9b9998b2ec5430d2246c7f1f8d9f298c97d7365": "Local tick-state budget reached; using contract quoter outside loaded range"
+            },
+            "state": [
+              {
+                "pool": "0x36c0fc3159eb8662a2e1b84a4df518d916bce0e1",
+                "kind": "v3",
+                "fee": 500,
+                "tickSpacing": 10,
+                "bitmapWords": [
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31
+                ],
+                "initializedTicks": 89
+              },
+              {
+                "pool": "0x0905edec2928b701fb6c6354e4eee4960895a82f",
+                "kind": "v3",
+                "fee": 100,
+                "tickSpacing": 1,
+                "bitmapWords": [
+                  220,
+                  221,
+                  222,
+                  223,
+                  224,
+                  225,
+                  226,
+                  227,
+                  228,
+                  229,
+                  230,
+                  231,
+                  232,
+                  233,
+                  234,
+                  235,
+                  236,
+                  237,
+                  238
+                ],
+                "initializedTicks": 14
+              },
+              {
+                "pool": "0xe9b9998b2ec5430d2246c7f1f8d9f298c97d7365",
+                "kind": "v3",
+                "fee": 2500,
+                "tickSpacing": 50,
+                "bitmapWords": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19
+                ],
+                "initializedTicks": 62
+              },
+              {
+                "pool": "0x172fcd41e0913e95784454622d1c3724f546f849",
+                "kind": "v3",
+                "fee": 100,
+                "tickSpacing": 1,
+                "bitmapWords": [
+                  -251,
+                  -250,
+                  -249
+                ],
+                "initializedTicks": 675
+              },
+              {
+                "pool": "0x5aca9563f8d14a6d79f12421d549a5606644a270",
+                "kind": "v3",
+                "fee": 2500,
+                "tickSpacing": 50,
+                "bitmapWords": [
+                  -10,
+                  -9,
+                  -8,
+                  -7,
+                  -6,
+                  -5,
+                  -4,
+                  -3,
+                  -2,
+                  -1,
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "initializedTicks": 35
+              },
+              {
+                "pool": "0x36696169c63e42cd08ce11f5deebbcebae652050",
+                "kind": "v3",
+                "fee": 500,
+                "tickSpacing": 10,
+                "bitmapWords": [
+                  -26,
+                  -25,
+                  -24
+                ],
+                "initializedTicks": 701
+              },
+              {
+                "pool": "0x1401ff943d08a7e098328c1d3a9d388923b115d2",
+                "kind": "v3",
+                "fee": 2500,
+                "tickSpacing": 50,
+                "bitmapWords": [
+                  -8,
+                  -7,
+                  -6,
+                  -5,
+                  -4,
+                  -3,
+                  -2
+                ],
+                "initializedTicks": 213
+              },
+              {
+                "pool": "0x6805e0e5333c5c3accf2930be4734e2b98f4ce06",
+                "kind": "v3",
+                "fee": 10000,
+                "tickSpacing": 200,
+                "bitmapWords": [
+                  -5,
+                  -4,
+                  -3,
+                  -2,
+                  -1,
+                  0,
+                  1
+                ],
+                "initializedTicks": 67
+              },
+              {
+                "pool": "0x16b9a82891338f9ba80e2d6970fdda79d1eb0dae",
+                "kind": "v2",
+                "fee": 2500,
+                "bitmapWords": [],
+                "initializedTicks": 0
+              },
+              {
+                "pool": "0x550c36d2c777f8621d300f2aa9da4fda5aefffe5",
+                "kind": "v2",
+                "fee": 2500,
+                "bitmapWords": [],
+                "initializedTicks": 0
+              }
+            ]
+          }
+        },
+        "localWarm": {
+          "ms": 43535.896417,
+          "calls": 923,
+          "batches": 48,
+          "hits": 30,
+          "blockHash": "0x30249d7038acb6ff2eb1ae8a5693676d7100aa8639baff854424307ece579afb",
+          "local": {
+            "version": "local-pools-v1",
+            "pools": 10,
+            "stateReads": 2061,
+            "localQuotes": 278,
+            "reusedQuotes": 0,
+            "validationQuotes": 40,
+            "fallbacks": {
+              "0x45a7e1307d1c61377746362baec6eb9728f1f785": "No active range; using contract quoter",
+              "0xe9a0fa4f1e30704c2f394d1053ff2c62c4d745bc": "No active range; using contract quoter",
+              "0x63ecc45e02b9958a13c4a1becfa5b4ea443c5eba": "No active range; using contract quoter",
+              "0x0905edec2928b701fb6c6354e4eee4960895a82f": "Local tick-state budget reached; using contract quoter outside loaded range",
+              "0x5aca9563f8d14a6d79f12421d549a5606644a270": "Local tick-state budget reached; using contract quoter outside loaded range",
+              "0x36c0fc3159eb8662a2e1b84a4df518d916bce0e1": "Local tick-state budget reached; using contract quoter outside loaded range",
+              "0xe9b9998b2ec5430d2246c7f1f8d9f298c97d7365": "Local tick-state budget reached; using contract quoter outside loaded range"
+            },
+            "state": [
+              {
+                "pool": "0x36c0fc3159eb8662a2e1b84a4df518d916bce0e1",
+                "kind": "v3",
+                "fee": 500,
+                "tickSpacing": 10,
+                "bitmapWords": [
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19,
+                  20,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  30,
+                  31
+                ],
+                "initializedTicks": 89
+              },
+              {
+                "pool": "0x0905edec2928b701fb6c6354e4eee4960895a82f",
+                "kind": "v3",
+                "fee": 100,
+                "tickSpacing": 1,
+                "bitmapWords": [
+                  220,
+                  221,
+                  222,
+                  223,
+                  224,
+                  225,
+                  226,
+                  227,
+                  228,
+                  229,
+                  230,
+                  231,
+                  232,
+                  233,
+                  234,
+                  235,
+                  236,
+                  237,
+                  238
+                ],
+                "initializedTicks": 14
+              },
+              {
+                "pool": "0xe9b9998b2ec5430d2246c7f1f8d9f298c97d7365",
+                "kind": "v3",
+                "fee": 2500,
+                "tickSpacing": 50,
+                "bitmapWords": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
+                  15,
+                  16,
+                  17,
+                  18,
+                  19
+                ],
+                "initializedTicks": 62
+              },
+              {
+                "pool": "0x172fcd41e0913e95784454622d1c3724f546f849",
+                "kind": "v3",
+                "fee": 100,
+                "tickSpacing": 1,
+                "bitmapWords": [
+                  -251,
+                  -250,
+                  -249
+                ],
+                "initializedTicks": 675
+              },
+              {
+                "pool": "0x5aca9563f8d14a6d79f12421d549a5606644a270",
+                "kind": "v3",
+                "fee": 2500,
+                "tickSpacing": 50,
+                "bitmapWords": [
+                  -10,
+                  -9,
+                  -8,
+                  -7,
+                  -6,
+                  -5,
+                  -4,
+                  -3,
+                  -2,
+                  -1,
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "initializedTicks": 35
+              },
+              {
+                "pool": "0x36696169c63e42cd08ce11f5deebbcebae652050",
+                "kind": "v3",
+                "fee": 500,
+                "tickSpacing": 10,
+                "bitmapWords": [
+                  -26,
+                  -25,
+                  -24
+                ],
+                "initializedTicks": 701
+              },
+              {
+                "pool": "0x1401ff943d08a7e098328c1d3a9d388923b115d2",
+                "kind": "v3",
+                "fee": 2500,
+                "tickSpacing": 50,
+                "bitmapWords": [
+                  -8,
+                  -7,
+                  -6,
+                  -5,
+                  -4,
+                  -3,
+                  -2
+                ],
+                "initializedTicks": 213
+              },
+              {
+                "pool": "0x6805e0e5333c5c3accf2930be4734e2b98f4ce06",
+                "kind": "v3",
+                "fee": 10000,
+                "tickSpacing": 200,
+                "bitmapWords": [
+                  -5,
+                  -4,
+                  -3,
+                  -2,
+                  -1,
+                  0,
+                  1
+                ],
+                "initializedTicks": 67
+              },
+              {
+                "pool": "0x16b9a82891338f9ba80e2d6970fdda79d1eb0dae",
+                "kind": "v2",
+                "fee": 2500,
+                "bitmapWords": [],
+                "initializedTicks": 0
+              },
+              {
+                "pool": "0x550c36d2c777f8621d300f2aa9da4fda5aefffe5",
+                "kind": "v2",
+                "fee": 2500,
+                "bitmapWords": [],
+                "initializedTicks": 0
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

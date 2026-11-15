@@ -49,11 +49,13 @@ node --import tsx --test tests/*.test.ts
 npm run build
 ```
 
-The test suite covers normalization, full-input fills, route selection, adaptive sampling, snapshot consistency, shared refresh leases, cache expiry, and reorg handling.
+The test suite covers exact pool math, local/contract parity checks, missing-state fallback, normalization, full-input fills, route selection, adaptive sampling, snapshot consistency, shared refresh leases, cache expiry, and reorg handling.
 
 ## Data and caching
 
 - EVM simulations pin their reads to a block and verify canonicality before accepting a capture.
+- Uniswap V3, PancakeSwap V2/V3 and legacy Aerodrome Slipstream can calculate standard and adaptive orders locally from cached pool state, using exact integer arithmetic. Read batches use Multicall3 on Ethereum, Base and BNB. Unsupported/dynamic pools and state beyond the bounded tick scan retain contract quoting.
+- Local paths check token balances and agree with same-block contract quotes at the ends of their sampled input range. A failed check discards the tentative profile and recollects it using contract quotes. Pool-state simulations are labelled separately; they are not wallet execution tests.
 - D1 stores curve metadata, refresh leases, market references, and successful RPC reads keyed by chain, block hash, and complete call parameters.
 - R2 stores full computed curves and their quote evidence. Successful curves are reused for up to two minutes; unavailable results have a shorter 30-second lifetime.
 - Simultaneous refreshes share one capture. Failed refreshes preserve available prior quotes with their original timestamps.
@@ -61,6 +63,8 @@ The test suite covers normalization, full-input fills, route selection, adaptive
 - The page loads saved captures from the shared cache; a cold capture still depends on public RPC availability. The displayed range spans the oldest and newest saved profiles for a stock, including older captures retained after failed or incomplete refreshes.
 
 The committed snapshots in `lib/data/` provide the initial dated view and test fixtures. They are not live prices. Shared production cache contents are runtime data and are not stored in Git.
+
+The [local pool-state benchmark](docs/benchmarks/local-pools-2026-11-15.md) records same-block numerical checks, RPC request counts and observed refresh times. Local calculation reduces repeated quoting, but whole-stock refreshes still depend on unsupported routes and public RPC limits.
 
 ## Aggregator benchmark
 
@@ -73,7 +77,8 @@ The [AAPL/MSFT KyberSwap benchmark](docs/benchmarks/kyberswap-2026-11-15.md) com
 | `app/page.tsx`, `app/globals.css` | Dashboard, depth charts, filters, and route explorer |
 | `app/api/` | Reference, simulation, shared-capture, and export endpoints |
 | `lib/registry.ts`, `lib/data/` | Issuer deployments, supported routes, and seed captures |
-| `lib/simulator.ts` | EVM quote adapters and share normalization |
+| `lib/simulator.ts` | EVM quote adapters, local/contract orchestration and share normalization |
+| `lib/local-pools.ts`, `lib/v3-math.ts` | Bounded pool snapshots and exact local AMM math |
 | `lib/sampling.ts` | Base ladder and adaptive refinement |
 | `lib/market.ts`, `lib/view.ts` | Cross-chain ranking and depth presentation |
 | `lib/shared-cache.ts`, `lib/pool-read-cache.ts` | Persistent curve and block-pinned RPC caching |
