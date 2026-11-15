@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Apple Liquidity Lab",
-  description: "Compare Apple tokenized-equity buy and sell liquidity across five issuers using verified Uniswap and Aerodrome pools.",
+  title: "Equity Liquidity Lab",
+  description: "Compare tokenized-equity buy and sell simulations across issuers, chains and DEX routes.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

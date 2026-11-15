@@ -1,0 +1,1931 @@
+{
+  "routes": [
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "venue": "uniswap",
+      "version": "v3",
+      "factory": "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
+      "quoter": "0x78D78E420Da98ad378D7799bE8f4AF69033EB077",
+      "verified": true,
+      "id": "ondo-bsc-uniswap-0x8D39c7E9427EdfF441C63fc51861522CF02167C8-100",
+      "poolIds": [
+        "0xb125aa15Ad943D96e813E4A06d0c34716F897e26",
+        "0x8D39c7E9427EdfF441C63fc51861522CF02167C8"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [
+        100,
+        3000
+      ],
+      "profileId": "ondo-bsc",
+      "label": "Uniswap v3 \u00b7 via ETH"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "venue": "uniswap",
+      "version": "v3",
+      "factory": "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
+      "quoter": "0x78D78E420Da98ad378D7799bE8f4AF69033EB077",
+      "verified": true,
+      "id": "ondo-bsc-uniswap-0x8D39c7E9427EdfF441C63fc51861522CF02167C8-500",
+      "poolIds": [
+        "0xF9878A5dD55EdC120Fde01893ea713a4f032229c",
+        "0x8D39c7E9427EdfF441C63fc51861522CF02167C8"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [
+        500,
+        3000
+      ],
+      "profileId": "ondo-bsc",
+      "label": "Uniswap v3 \u00b7 via ETH"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "venue": "uniswap",
+      "version": "v3",
+      "factory": "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
+      "quoter": "0x78D78E420Da98ad378D7799bE8f4AF69033EB077",
+      "verified": true,
+      "id": "ondo-bsc-uniswap-0x8D39c7E9427EdfF441C63fc51861522CF02167C8-3000",
+      "poolIds": [
+        "0xdE67D05242B18AF00b28678dB34FEEC883cc9Cd6",
+        "0x8D39c7E9427EdfF441C63fc51861522CF02167C8"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [
+        3000,
+        3000
+      ],
+      "profileId": "ondo-bsc",
+      "label": "Uniswap v3 \u00b7 via ETH"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "venue": "uniswap",
+      "version": "v3",
+      "factory": "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
+      "quoter": "0x78D78E420Da98ad378D7799bE8f4AF69033EB077",
+      "verified": true,
+      "id": "ondo-bsc-uniswap-0x8D39c7E9427EdfF441C63fc51861522CF02167C8-10000",
+      "poolIds": [
+        "0x87c029BBB64C39A2a6762AC0E031757d2974e275",
+        "0x8D39c7E9427EdfF441C63fc51861522CF02167C8"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [
+        10000,
+        3000
+      ],
+      "profileId": "ondo-bsc",
+      "label": "Uniswap v3 \u00b7 via ETH"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "verified": true,
+      "id": "ondo-bsc-pancakeswap-0x74eD4a885da9B273B84cB50DBc19bd988a0Eff9C-100",
+      "poolIds": [
+        "0x172fcD41E0913e95784454622d1c3724f546f849",
+        "0x74eD4a885da9B273B84cB50DBc19bd988a0Eff9C"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [
+        100,
+        100
+      ],
+      "profileId": "ondo-bsc",
+      "label": "Pancakeswap v3 \u00b7 via WBNB"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "verified": true,
+      "id": "ondo-bsc-pancakeswap-0x74eD4a885da9B273B84cB50DBc19bd988a0Eff9C-500",
+      "poolIds": [
+        "0x36696169C63e42cd08ce11f5deeBbCeBae652050",
+        "0x74eD4a885da9B273B84cB50DBc19bd988a0Eff9C"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [
+        500,
+        100
+      ],
+      "profileId": "ondo-bsc",
+      "label": "Pancakeswap v3 \u00b7 via WBNB"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "verified": true,
+      "id": "ondo-bsc-pancakeswap-0x74eD4a885da9B273B84cB50DBc19bd988a0Eff9C-2500",
+      "poolIds": [
+        "0x1401ff943D08a7E098328C1d3a9d388923B115D2",
+        "0x74eD4a885da9B273B84cB50DBc19bd988a0Eff9C"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [
+        2500,
+        100
+      ],
+      "profileId": "ondo-bsc",
+      "label": "Pancakeswap v3 \u00b7 via WBNB"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "verified": true,
+      "id": "ondo-bsc-pancakeswap-0x74eD4a885da9B273B84cB50DBc19bd988a0Eff9C-10000",
+      "poolIds": [
+        "0x6805E0E5333c5c3acCF2930Be4734E2b98f4Ce06",
+        "0x74eD4a885da9B273B84cB50DBc19bd988a0Eff9C"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [
+        10000,
+        100
+      ],
+      "profileId": "ondo-bsc",
+      "label": "Pancakeswap v3 \u00b7 via WBNB"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "verified": true,
+      "id": "ondo-bsc-pancakeswap-0x58a631f2c15e9cB80Ff0c2e4B980CbDb377e6FB0-100",
+      "poolIds": [
+        "0x92b7807bF19b7DDdf89b706143896d05228f3121",
+        "0x58a631f2c15e9cB80Ff0c2e4B980CbDb377e6FB0"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [
+        100,
+        100
+      ],
+      "profileId": "ondo-bsc",
+      "label": "Pancakeswap v3 \u00b7 via USDC"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "verified": true,
+      "id": "ondo-bsc-pancakeswap-0x58a631f2c15e9cB80Ff0c2e4B980CbDb377e6FB0-500",
+      "poolIds": [
+        "0x4f31Fa980a675570939B737Ebdde0471a4Be40Eb",
+        "0x58a631f2c15e9cB80Ff0c2e4B980CbDb377e6FB0"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [
+        500,
+        100
+      ],
+      "profileId": "ondo-bsc",
+      "label": "Pancakeswap v3 \u00b7 via USDC"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "verified": true,
+      "id": "ondo-bsc-pancakeswap-0x58a631f2c15e9cB80Ff0c2e4B980CbDb377e6FB0-2500",
+      "poolIds": [
+        "0x5F69c87e3Ed60d6b6B544C16F0072Cd4A72Ad13C",
+        "0x58a631f2c15e9cB80Ff0c2e4B980CbDb377e6FB0"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [
+        2500,
+        100
+      ],
+      "profileId": "ondo-bsc",
+      "label": "Pancakeswap v3 \u00b7 via USDC"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "verified": true,
+      "id": "ondo-bsc-pancakeswap-0x58a631f2c15e9cB80Ff0c2e4B980CbDb377e6FB0-10000",
+      "poolIds": [
+        "0x418E8Bf549Cb4a544d033Edc8bc26C3357e6EFa7",
+        "0x58a631f2c15e9cB80Ff0c2e4B980CbDb377e6FB0"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [
+        10000,
+        100
+      ],
+      "profileId": "ondo-bsc",
+      "label": "Pancakeswap v3 \u00b7 via USDC"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "verified": true,
+      "id": "ondo-bsc-pancakeswap-0xC0BFbc52dEeceE475BDb52A62f8D7cF128B59358",
+      "poolIds": [
+        "0xC0BFbc52dEeceE475BDb52A62f8D7cF128B59358"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [
+        2500
+      ],
+      "profileId": "ondo-bsc",
+      "label": "Pancakeswap v3 \u00b7 direct USDT"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "verified": true,
+      "id": "ondo-bsc-pancakeswap-0x8dcBA688219dc5Ee6dbf74ee2F74045E2A07C79C",
+      "poolIds": [
+        "0x8dcBA688219dc5Ee6dbf74ee2F74045E2A07C79C"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [
+        100
+      ],
+      "profileId": "ondo-bsc",
+      "label": "Pancakeswap v3 \u00b7 direct USDT"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "verified": true,
+      "id": "ondo-bsc-pancakeswap-0xACe81F8482f19650B09C26CDA8401852Fd00C2CB-100",
+      "poolIds": [
+        "0x172fcD41E0913e95784454622d1c3724f546f849",
+        "0xACe81F8482f19650B09C26CDA8401852Fd00C2CB"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [
+        100,
+        10000
+      ],
+      "profileId": "ondo-bsc",
+      "label": "Pancakeswap v3 \u00b7 via WBNB"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "verified": true,
+      "id": "ondo-bsc-pancakeswap-0xACe81F8482f19650B09C26CDA8401852Fd00C2CB-500",
+      "poolIds": [
+        "0x36696169C63e42cd08ce11f5deeBbCeBae652050",
+        "0xACe81F8482f19650B09C26CDA8401852Fd00C2CB"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [
+        500,
+        10000
+      ],
+      "profileId": "ondo-bsc",
+      "label": "Pancakeswap v3 \u00b7 via WBNB"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "verified": true,
+      "id": "ondo-bsc-pancakeswap-0xACe81F8482f19650B09C26CDA8401852Fd00C2CB-2500",
+      "poolIds": [
+        "0x1401ff943D08a7E098328C1d3a9d388923B115D2",
+        "0xACe81F8482f19650B09C26CDA8401852Fd00C2CB"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [
+        2500,
+        10000
+      ],
+      "profileId": "ondo-bsc",
+      "label": "Pancakeswap v3 \u00b7 via WBNB"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "venue": "pancakeswap",
+      "version": "v3",
+      "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+      "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+      "verified": true,
+      "id": "ondo-bsc-pancakeswap-0xACe81F8482f19650B09C26CDA8401852Fd00C2CB-10000",
+      "poolIds": [
+        "0x6805E0E5333c5c3acCF2930Be4734E2b98f4Ce06",
+        "0xACe81F8482f19650B09C26CDA8401852Fd00C2CB"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [
+        10000,
+        10000
+      ],
+      "profileId": "ondo-bsc",
+      "label": "Pancakeswap v3 \u00b7 via WBNB"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "venue": "pancakeswap",
+      "version": "v2",
+      "factory": "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73",
+      "quoter": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+      "verified": true,
+      "router": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+      "id": "ondo-bsc-0xE545e390D757F7071b48D3BEA88C912DF497c3Ee",
+      "poolIds": [
+        "0xE545e390D757F7071b48D3BEA88C912DF497c3Ee"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [
+        2500
+      ],
+      "profileId": "ondo-bsc",
+      "label": "Pancakeswap v2 \u00b7 direct USDT"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "venue": "pancakeswap",
+      "version": "v2",
+      "factory": "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73",
+      "quoter": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+      "verified": true,
+      "router": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+      "id": "ondo-bsc-0xEd226182eC1d7A888C9bFc002710fF1EEDbFD7Ab",
+      "poolIds": [
+        "0x16b9a82891338f9bA80E2D6970FddA79D1eb0daE",
+        "0xEd226182eC1d7A888C9bFc002710fF1EEDbFD7Ab"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [
+        2500,
+        2500
+      ],
+      "profileId": "ondo-bsc",
+      "label": "Pancakeswap v2 \u00b7 via WBNB"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "id": "ondo-bsc-mixed-eth-100",
+      "venue": "multi",
+      "version": "composite",
+      "poolIds": [
+        "0x9F599F3D64a9D99eA21e68127Bb6CE99f893DA61",
+        "0x8D39c7E9427EdfF441C63fc51861522CF02167C8"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "id": "0x9F599F3D64a9D99eA21e68127Bb6CE99f893DA61",
+          "venue": "pancakeswap",
+          "version": "v3",
+          "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+          "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+          "poolIds": [
+            "0x9F599F3D64a9D99eA21e68127Bb6CE99f893DA61"
+          ],
+          "tokens": [
+            "0x55d398326f99059ff775485246999027b3197955",
+            "0x2170ed0880ac9a755fd29b2688956bd959f933f8"
+          ],
+          "fees": [
+            100
+          ],
+          "label": "PancakeSwap v3 \u00b7 USDT to ETH"
+        },
+        {
+          "id": "0x8D39c7E9427EdfF441C63fc51861522CF02167C8",
+          "venue": "uniswap",
+          "version": "v3",
+          "factory": "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
+          "quoter": "0x78D78E420Da98ad378D7799bE8f4AF69033EB077",
+          "poolIds": [
+            "0x8D39c7E9427EdfF441C63fc51861522CF02167C8"
+          ],
+          "tokens": [
+            "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+            "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+          ],
+          "fees": [
+            3000
+          ],
+          "label": "Uniswap v3 \u00b7 ETH to AAPLon"
+        }
+      ],
+      "verified": true,
+      "label": "PancakeSwap + Uniswap \u00b7 via ETH",
+      "profileId": "ondo-bsc"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "id": "ondo-bsc-mixed-eth-500",
+      "venue": "multi",
+      "version": "composite",
+      "poolIds": [
+        "0xBe141893E4c6AD9272e8C04BAB7E6a10604501a5",
+        "0x8D39c7E9427EdfF441C63fc51861522CF02167C8"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "id": "0xBe141893E4c6AD9272e8C04BAB7E6a10604501a5",
+          "venue": "pancakeswap",
+          "version": "v3",
+          "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+          "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+          "poolIds": [
+            "0xBe141893E4c6AD9272e8C04BAB7E6a10604501a5"
+          ],
+          "tokens": [
+            "0x55d398326f99059ff775485246999027b3197955",
+            "0x2170ed0880ac9a755fd29b2688956bd959f933f8"
+          ],
+          "fees": [
+            500
+          ],
+          "label": "PancakeSwap v3 \u00b7 USDT to ETH"
+        },
+        {
+          "id": "0x8D39c7E9427EdfF441C63fc51861522CF02167C8",
+          "venue": "uniswap",
+          "version": "v3",
+          "factory": "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
+          "quoter": "0x78D78E420Da98ad378D7799bE8f4AF69033EB077",
+          "poolIds": [
+            "0x8D39c7E9427EdfF441C63fc51861522CF02167C8"
+          ],
+          "tokens": [
+            "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+            "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+          ],
+          "fees": [
+            3000
+          ],
+          "label": "Uniswap v3 \u00b7 ETH to AAPLon"
+        }
+      ],
+      "verified": true,
+      "label": "PancakeSwap + Uniswap \u00b7 via ETH",
+      "profileId": "ondo-bsc"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "id": "ondo-bsc-mixed-eth-2500",
+      "venue": "multi",
+      "version": "composite",
+      "poolIds": [
+        "0x66E9AcBA7C3a82C8EE02fAF3E325Dd55D6581a8c",
+        "0x8D39c7E9427EdfF441C63fc51861522CF02167C8"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "id": "0x66E9AcBA7C3a82C8EE02fAF3E325Dd55D6581a8c",
+          "venue": "pancakeswap",
+          "version": "v3",
+          "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+          "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+          "poolIds": [
+            "0x66E9AcBA7C3a82C8EE02fAF3E325Dd55D6581a8c"
+          ],
+          "tokens": [
+            "0x55d398326f99059ff775485246999027b3197955",
+            "0x2170ed0880ac9a755fd29b2688956bd959f933f8"
+          ],
+          "fees": [
+            2500
+          ],
+          "label": "PancakeSwap v3 \u00b7 USDT to ETH"
+        },
+        {
+          "id": "0x8D39c7E9427EdfF441C63fc51861522CF02167C8",
+          "venue": "uniswap",
+          "version": "v3",
+          "factory": "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
+          "quoter": "0x78D78E420Da98ad378D7799bE8f4AF69033EB077",
+          "poolIds": [
+            "0x8D39c7E9427EdfF441C63fc51861522CF02167C8"
+          ],
+          "tokens": [
+            "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+            "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+          ],
+          "fees": [
+            3000
+          ],
+          "label": "Uniswap v3 \u00b7 ETH to AAPLon"
+        }
+      ],
+      "verified": true,
+      "label": "PancakeSwap + Uniswap \u00b7 via ETH",
+      "profileId": "ondo-bsc"
+    },
+    {
+      "issuerId": "ondo-bsc",
+      "chain": "bsc",
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "id": "ondo-bsc-mixed-eth-10000",
+      "venue": "multi",
+      "version": "composite",
+      "poolIds": [
+        "0x83c38557a0576Ad38dEf24abaFA17c2C218cb9E4",
+        "0x8D39c7E9427EdfF441C63fc51861522CF02167C8"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+        "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "id": "0x83c38557a0576Ad38dEf24abaFA17c2C218cb9E4",
+          "venue": "pancakeswap",
+          "version": "v3",
+          "factory": "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865",
+          "quoter": "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997",
+          "poolIds": [
+            "0x83c38557a0576Ad38dEf24abaFA17c2C218cb9E4"
+          ],
+          "tokens": [
+            "0x55d398326f99059ff775485246999027b3197955",
+            "0x2170ed0880ac9a755fd29b2688956bd959f933f8"
+          ],
+          "fees": [
+            10000
+          ],
+          "label": "PancakeSwap v3 \u00b7 USDT to ETH"
+        },
+        {
+          "id": "0x8D39c7E9427EdfF441C63fc51861522CF02167C8",
+          "venue": "uniswap",
+          "version": "v3",
+          "factory": "0xdB1d10011AD0Ff90774D0C6Bb92e5C5c8b4461F7",
+          "quoter": "0x78D78E420Da98ad378D7799bE8f4AF69033EB077",
+          "poolIds": [
+            "0x8D39c7E9427EdfF441C63fc51861522CF02167C8"
+          ],
+          "tokens": [
+            "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+            "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4"
+          ],
+          "fees": [
+            3000
+          ],
+          "label": "Uniswap v3 \u00b7 ETH to AAPLon"
+        }
+      ],
+      "verified": true,
+      "label": "PancakeSwap + Uniswap \u00b7 via ETH",
+      "profileId": "ondo-bsc"
+    },
+    {
+      "issuerId": "ondo-robinhood",
+      "chain": "robinhood",
+      "token": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+      "settlement": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+      "id": "ondo-rh-composite-0",
+      "venue": "multi",
+      "version": "composite",
+      "poolIds": [
+        "0x19D55ABa3E5d2C389B7011c634725136dFDcaE33",
+        "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+        "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "issuerId": "robinhood",
+          "chain": "robinhood",
+          "venue": "up",
+          "id": "0x19D55ABa3E5d2C389B7011c634725136dFDcaE33",
+          "poolIds": [
+            "0x19D55ABa3E5d2C389B7011c634725136dFDcaE33"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+          ],
+          "version": "slipstream",
+          "factory": "0x1ac9dB4a2608ba45D6127B1737949b51Bb54B7F3",
+          "quoter": "0x03983AB2C057a2eac211ff01738a1e49ff325B49",
+          "fees": [],
+          "label": "UP CL \u00b7 ts 60",
+          "tickSpacing": 60
+        },
+        {
+          "id": "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+          ],
+          "tokens": [
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+          ],
+          "fees": [
+            8388608
+          ],
+          "key": {
+            "currency0": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+            "currency1": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "fee": 8388608,
+            "tickSpacing": 1,
+            "hooks": "0xd061f665d1c4816787FCeAa168FA66c59d3Abcc0"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 AAPL to AAPLon"
+        }
+      ],
+      "label": "up + Uniswap v4 \u00b7 via Robinhood AAPL",
+      "verified": true,
+      "profileId": "ondo-robinhood"
+    },
+    {
+      "issuerId": "ondo-robinhood",
+      "chain": "robinhood",
+      "token": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+      "settlement": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+      "id": "ondo-rh-composite-1",
+      "venue": "multi",
+      "version": "composite",
+      "poolIds": [
+        "0x6f7368F0dd18a4E1db631095363d109E6aDe9293",
+        "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+        "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "issuerId": "robinhood",
+          "chain": "robinhood",
+          "venue": "ramses",
+          "id": "0x6f7368F0dd18a4E1db631095363d109E6aDe9293",
+          "poolIds": [
+            "0x6f7368F0dd18a4E1db631095363d109E6aDe9293"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+          ],
+          "version": "slipstream",
+          "factory": "0xE0c4ceb92d08CA985bB70fe0a22fEb121A9854A8",
+          "quoter": "0x4730e03EB4a58A5e20244062D5f9A99bCf5770a6",
+          "fees": [],
+          "label": "Ramses CL \u00b7 ts 1",
+          "tickSpacing": 1,
+          "deployer": "0x4b37359BF291AbE8453692DB58d515a8b013Dca9"
+        },
+        {
+          "id": "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+          ],
+          "tokens": [
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+          ],
+          "fees": [
+            8388608
+          ],
+          "key": {
+            "currency0": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+            "currency1": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "fee": 8388608,
+            "tickSpacing": 1,
+            "hooks": "0xd061f665d1c4816787FCeAa168FA66c59d3Abcc0"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 AAPL to AAPLon"
+        }
+      ],
+      "label": "ramses + Uniswap v4 \u00b7 via Robinhood AAPL",
+      "verified": true,
+      "profileId": "ondo-robinhood"
+    },
+    {
+      "issuerId": "ondo-robinhood",
+      "chain": "robinhood",
+      "token": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+      "settlement": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+      "id": "ondo-rh-composite-2",
+      "venue": "multi",
+      "version": "composite",
+      "poolIds": [
+        "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+        "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+        "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "issuerId": "robinhood",
+          "chain": "robinhood",
+          "venue": "metric",
+          "id": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+          "poolIds": [
+            "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+          ],
+          "version": "metric",
+          "factory": "0x2a53833cc95548cf52c7b159110e22D3a9018f32",
+          "quoter": "0x3B9ea79f482094323d06064E637a7F4528560fcb",
+          "fees": [],
+          "label": "Metric \u00b7 AAPL/USDG",
+          "router": "0x02201E6f13c41506c7Bb635d7543F98826229aB7",
+          "token0": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9"
+        },
+        {
+          "id": "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+          ],
+          "tokens": [
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+          ],
+          "fees": [
+            8388608
+          ],
+          "key": {
+            "currency0": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+            "currency1": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "fee": 8388608,
+            "tickSpacing": 1,
+            "hooks": "0xd061f665d1c4816787FCeAa168FA66c59d3Abcc0"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 AAPL to AAPLon"
+        }
+      ],
+      "label": "metric + Uniswap v4 \u00b7 via Robinhood AAPL",
+      "verified": true,
+      "profileId": "ondo-robinhood"
+    },
+    {
+      "issuerId": "ondo-robinhood",
+      "chain": "robinhood",
+      "token": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+      "settlement": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+      "id": "ondo-rh-composite-3",
+      "venue": "multi",
+      "version": "composite",
+      "poolIds": [
+        "0x7054E59cC5aDeF6c0dFf80cf7f239eb961c8004b",
+        "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+        "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "issuerId": "robinhood",
+          "chain": "robinhood",
+          "venue": "metric",
+          "id": "0x7054E59cC5aDeF6c0dFf80cf7f239eb961c8004b",
+          "poolIds": [
+            "0x7054E59cC5aDeF6c0dFf80cf7f239eb961c8004b"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+          ],
+          "version": "metric",
+          "factory": "0x2a53833cc95548cf52c7b159110e22D3a9018f32",
+          "quoter": "0x3B9ea79f482094323d06064E637a7F4528560fcb",
+          "fees": [],
+          "label": "Metric \u00b7 AAPL/USDG",
+          "router": "0x02201E6f13c41506c7Bb635d7543F98826229aB7",
+          "token0": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9"
+        },
+        {
+          "id": "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+          ],
+          "tokens": [
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+          ],
+          "fees": [
+            8388608
+          ],
+          "key": {
+            "currency0": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+            "currency1": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "fee": 8388608,
+            "tickSpacing": 1,
+            "hooks": "0xd061f665d1c4816787FCeAa168FA66c59d3Abcc0"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 AAPL to AAPLon"
+        }
+      ],
+      "label": "metric + Uniswap v4 \u00b7 via Robinhood AAPL",
+      "verified": true,
+      "profileId": "ondo-robinhood"
+    },
+    {
+      "issuerId": "ondo-robinhood",
+      "chain": "robinhood",
+      "token": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+      "settlement": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+      "id": "ondo-rh-composite-4",
+      "venue": "multi",
+      "version": "composite",
+      "poolIds": [
+        "0x5eD5bb20A7859fFa050739123F0cd3C8171e70c3",
+        "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+        "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "issuerId": "robinhood",
+          "chain": "robinhood",
+          "venue": "metric",
+          "id": "0x5eD5bb20A7859fFa050739123F0cd3C8171e70c3",
+          "poolIds": [
+            "0x5eD5bb20A7859fFa050739123F0cd3C8171e70c3"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+          ],
+          "version": "metric",
+          "factory": "0x2a53833cc95548cf52c7b159110e22D3a9018f32",
+          "quoter": "0x3B9ea79f482094323d06064E637a7F4528560fcb",
+          "fees": [],
+          "label": "Metric \u00b7 AAPL/USDG",
+          "router": "0x02201E6f13c41506c7Bb635d7543F98826229aB7",
+          "token0": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9"
+        },
+        {
+          "id": "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+          ],
+          "tokens": [
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+          ],
+          "fees": [
+            8388608
+          ],
+          "key": {
+            "currency0": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+            "currency1": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "fee": 8388608,
+            "tickSpacing": 1,
+            "hooks": "0xd061f665d1c4816787FCeAa168FA66c59d3Abcc0"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 AAPL to AAPLon"
+        }
+      ],
+      "label": "metric + Uniswap v4 \u00b7 via Robinhood AAPL",
+      "verified": true,
+      "profileId": "ondo-robinhood"
+    },
+    {
+      "issuerId": "ondo-robinhood",
+      "chain": "robinhood",
+      "token": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+      "settlement": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+      "id": "ondo-rh-composite-5",
+      "venue": "multi",
+      "version": "composite",
+      "poolIds": [
+        "0xD69337991EC1Ad70576bB76B47aB2df1a487cc8F",
+        "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+        "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "issuerId": "robinhood",
+          "chain": "robinhood",
+          "venue": "metric",
+          "id": "0xD69337991EC1Ad70576bB76B47aB2df1a487cc8F",
+          "poolIds": [
+            "0xD69337991EC1Ad70576bB76B47aB2df1a487cc8F"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+          ],
+          "version": "metric",
+          "factory": "0x2a53833cc95548cf52c7b159110e22D3a9018f32",
+          "quoter": "0x3B9ea79f482094323d06064E637a7F4528560fcb",
+          "fees": [],
+          "label": "Metric \u00b7 AAPL/USDG",
+          "router": "0x02201E6f13c41506c7Bb635d7543F98826229aB7",
+          "token0": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9"
+        },
+        {
+          "id": "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+          ],
+          "tokens": [
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+          ],
+          "fees": [
+            8388608
+          ],
+          "key": {
+            "currency0": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+            "currency1": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "fee": 8388608,
+            "tickSpacing": 1,
+            "hooks": "0xd061f665d1c4816787FCeAa168FA66c59d3Abcc0"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 AAPL to AAPLon"
+        }
+      ],
+      "label": "metric + Uniswap v4 \u00b7 via Robinhood AAPL",
+      "verified": true,
+      "profileId": "ondo-robinhood"
+    },
+    {
+      "issuerId": "ondo-robinhood",
+      "chain": "robinhood",
+      "token": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+      "settlement": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+      "id": "ondo-rh-composite-6",
+      "venue": "multi",
+      "version": "composite",
+      "poolIds": [
+        "0xE6c82845cea7b36e819F33a79ed8009E700C3aD6",
+        "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+        "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "issuerId": "robinhood",
+          "chain": "robinhood",
+          "venue": "metric",
+          "id": "0xE6c82845cea7b36e819F33a79ed8009E700C3aD6",
+          "poolIds": [
+            "0xE6c82845cea7b36e819F33a79ed8009E700C3aD6"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+          ],
+          "version": "metric",
+          "factory": "0x2a53833cc95548cf52c7b159110e22D3a9018f32",
+          "quoter": "0x3B9ea79f482094323d06064E637a7F4528560fcb",
+          "fees": [],
+          "label": "Metric \u00b7 AAPL/USDG",
+          "router": "0x02201E6f13c41506c7Bb635d7543F98826229aB7",
+          "token0": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9"
+        },
+        {
+          "id": "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+          ],
+          "tokens": [
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+          ],
+          "fees": [
+            8388608
+          ],
+          "key": {
+            "currency0": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+            "currency1": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "fee": 8388608,
+            "tickSpacing": 1,
+            "hooks": "0xd061f665d1c4816787FCeAa168FA66c59d3Abcc0"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 AAPL to AAPLon"
+        }
+      ],
+      "label": "metric + Uniswap v4 \u00b7 via Robinhood AAPL",
+      "verified": true,
+      "profileId": "ondo-robinhood"
+    },
+    {
+      "issuerId": "ondo-robinhood",
+      "chain": "robinhood",
+      "token": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+      "settlement": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+      "id": "ondo-rh-composite-7",
+      "venue": "multi",
+      "version": "composite",
+      "poolIds": [
+        "0x3c2Dae11373059b54dCA262016832FDfaaeA0c46",
+        "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+        "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "issuerId": "robinhood",
+          "chain": "robinhood",
+          "venue": "metric",
+          "id": "0x3c2Dae11373059b54dCA262016832FDfaaeA0c46",
+          "poolIds": [
+            "0x3c2Dae11373059b54dCA262016832FDfaaeA0c46"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+          ],
+          "version": "metric",
+          "factory": "0x2a53833cc95548cf52c7b159110e22D3a9018f32",
+          "quoter": "0x3B9ea79f482094323d06064E637a7F4528560fcb",
+          "fees": [],
+          "label": "Metric \u00b7 AAPL/USDG",
+          "router": "0x02201E6f13c41506c7Bb635d7543F98826229aB7",
+          "token0": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9"
+        },
+        {
+          "id": "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+          ],
+          "tokens": [
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+          ],
+          "fees": [
+            8388608
+          ],
+          "key": {
+            "currency0": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+            "currency1": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "fee": 8388608,
+            "tickSpacing": 1,
+            "hooks": "0xd061f665d1c4816787FCeAa168FA66c59d3Abcc0"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 AAPL to AAPLon"
+        }
+      ],
+      "label": "metric + Uniswap v4 \u00b7 via Robinhood AAPL",
+      "verified": true,
+      "profileId": "ondo-robinhood"
+    },
+    {
+      "issuerId": "ondo-robinhood",
+      "chain": "robinhood",
+      "token": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+      "settlement": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+      "id": "ondo-rh-composite-8",
+      "venue": "multi",
+      "version": "composite",
+      "poolIds": [
+        "0x907a9EA0D9b7c9b3B42A923375BEB9d2C09D794A",
+        "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+        "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "issuerId": "robinhood",
+          "chain": "robinhood",
+          "venue": "aerodrome",
+          "id": "0x907a9EA0D9b7c9b3B42A923375BEB9d2C09D794A",
+          "poolIds": [
+            "0x907a9EA0D9b7c9b3B42A923375BEB9d2C09D794A"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9"
+          ],
+          "version": "aero",
+          "factory": "0xc63d7338c178e805c544B8f897066bD3BBcBE136",
+          "quoter": "0x1dDfeC5058180C207F55BB77D95AcDd0d8227868",
+          "tickSpacing": 10,
+          "fees": [],
+          "label": "Aero CL \u00b7 direct USDG"
+        },
+        {
+          "id": "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+          ],
+          "tokens": [
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+          ],
+          "fees": [
+            8388608
+          ],
+          "key": {
+            "currency0": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+            "currency1": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "fee": 8388608,
+            "tickSpacing": 1,
+            "hooks": "0xd061f665d1c4816787FCeAa168FA66c59d3Abcc0"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 AAPL to AAPLon"
+        }
+      ],
+      "label": "aerodrome + Uniswap v4 \u00b7 via Robinhood AAPL",
+      "verified": true,
+      "profileId": "ondo-robinhood"
+    },
+    {
+      "issuerId": "ondo-robinhood",
+      "chain": "robinhood",
+      "token": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+      "settlement": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+      "id": "ondo-rh-composite-9",
+      "venue": "uniswap",
+      "version": "composite",
+      "poolIds": [
+        "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+        "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+        "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "id": "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0xc748f4671a867db48b552f6b7650bf3255e05f80f00e3f7aad1b17ccb7898fdb"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9"
+          ],
+          "fees": [
+            3000
+          ],
+          "key": {
+            "currency0": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "currency1": "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9",
+            "fee": 3000,
+            "tickSpacing": 60,
+            "hooks": "0x0000000000000000000000000000000000000000"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 USDG to AAPL"
+        },
+        {
+          "id": "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+          ],
+          "tokens": [
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+          ],
+          "fees": [
+            8388608
+          ],
+          "key": {
+            "currency0": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+            "currency1": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "fee": 8388608,
+            "tickSpacing": 1,
+            "hooks": "0xd061f665d1c4816787FCeAa168FA66c59d3Abcc0"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 AAPL to AAPLon"
+        }
+      ],
+      "label": "uniswap + Uniswap v4 \u00b7 via Robinhood AAPL",
+      "verified": true,
+      "profileId": "ondo-robinhood"
+    },
+    {
+      "issuerId": "ondo-robinhood",
+      "chain": "robinhood",
+      "token": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+      "settlement": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+      "id": "ondo-rh-composite-10",
+      "venue": "uniswap",
+      "version": "composite",
+      "poolIds": [
+        "0xa2347ba69167e5602f74640ffbf737ee7cdd825e4726d3462564fc6533070147",
+        "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+        "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "id": "0xa2347ba69167e5602f74640ffbf737ee7cdd825e4726d3462564fc6533070147",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0xa2347ba69167e5602f74640ffbf737ee7cdd825e4726d3462564fc6533070147"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9"
+          ],
+          "fees": [
+            8388608
+          ],
+          "key": {
+            "currency0": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "currency1": "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9",
+            "fee": 8388608,
+            "tickSpacing": 10,
+            "hooks": "0x70a9a88402989226847ec122043ce5e7ff462080"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 USDG to AAPL"
+        },
+        {
+          "id": "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+          ],
+          "tokens": [
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+          ],
+          "fees": [
+            8388608
+          ],
+          "key": {
+            "currency0": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+            "currency1": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "fee": 8388608,
+            "tickSpacing": 1,
+            "hooks": "0xd061f665d1c4816787FCeAa168FA66c59d3Abcc0"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 AAPL to AAPLon"
+        }
+      ],
+      "label": "uniswap + Uniswap v4 \u00b7 via Robinhood AAPL",
+      "verified": true,
+      "profileId": "ondo-robinhood"
+    },
+    {
+      "issuerId": "ondo-robinhood",
+      "chain": "robinhood",
+      "token": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+      "settlement": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+      "id": "ondo-rh-composite-11",
+      "venue": "uniswap",
+      "version": "composite",
+      "poolIds": [
+        "0xeb1d5189e17c16a88e9673231c3aef2c1f30e9e6a7151872c6529dd1c950f774",
+        "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+        "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "id": "0xeb1d5189e17c16a88e9673231c3aef2c1f30e9e6a7151872c6529dd1c950f774",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0xeb1d5189e17c16a88e9673231c3aef2c1f30e9e6a7151872c6529dd1c950f774"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9"
+          ],
+          "fees": [
+            500
+          ],
+          "key": {
+            "currency0": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "currency1": "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9",
+            "fee": 500,
+            "tickSpacing": 10,
+            "hooks": "0xf4f48bf7c0333ab56d418bdd5118d48674d6d040"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 USDG to AAPL"
+        },
+        {
+          "id": "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+          ],
+          "tokens": [
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+          ],
+          "fees": [
+            8388608
+          ],
+          "key": {
+            "currency0": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+            "currency1": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "fee": 8388608,
+            "tickSpacing": 1,
+            "hooks": "0xd061f665d1c4816787FCeAa168FA66c59d3Abcc0"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 AAPL to AAPLon"
+        }
+      ],
+      "label": "uniswap + Uniswap v4 \u00b7 via Robinhood AAPL",
+      "verified": true,
+      "profileId": "ondo-robinhood"
+    },
+    {
+      "issuerId": "ondo-robinhood",
+      "chain": "robinhood",
+      "token": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+      "settlement": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+      "id": "ondo-rh-composite-12",
+      "venue": "uniswap",
+      "version": "composite",
+      "poolIds": [
+        "0xe5b9112909fde74416b44bb2169bb89870a1363e9897151a90126aa8e140d54f",
+        "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+        "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "id": "0xe5b9112909fde74416b44bb2169bb89870a1363e9897151a90126aa8e140d54f",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0xe5b9112909fde74416b44bb2169bb89870a1363e9897151a90126aa8e140d54f"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9"
+          ],
+          "fees": [
+            250
+          ],
+          "key": {
+            "currency0": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "currency1": "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9",
+            "fee": 250,
+            "tickSpacing": 3,
+            "hooks": "0x0000000000000000000000000000000000000000"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 USDG to AAPL"
+        },
+        {
+          "id": "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+          ],
+          "tokens": [
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+          ],
+          "fees": [
+            8388608
+          ],
+          "key": {
+            "currency0": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+            "currency1": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "fee": 8388608,
+            "tickSpacing": 1,
+            "hooks": "0xd061f665d1c4816787FCeAa168FA66c59d3Abcc0"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 AAPL to AAPLon"
+        }
+      ],
+      "label": "uniswap + Uniswap v4 \u00b7 via Robinhood AAPL",
+      "verified": true,
+      "profileId": "ondo-robinhood"
+    },
+    {
+      "issuerId": "ondo-robinhood",
+      "chain": "robinhood",
+      "token": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+      "settlement": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+      "id": "ondo-rh-composite-13",
+      "venue": "uniswap",
+      "version": "composite",
+      "poolIds": [
+        "0x496d48b9c1256a5b4f3c85f85776aff8e75cf847397cc8174242f97ae99b6d71",
+        "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+        "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "id": "0x496d48b9c1256a5b4f3c85f85776aff8e75cf847397cc8174242f97ae99b6d71",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0x496d48b9c1256a5b4f3c85f85776aff8e75cf847397cc8174242f97ae99b6d71"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9"
+          ],
+          "fees": [
+            1000
+          ],
+          "key": {
+            "currency0": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "currency1": "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9",
+            "fee": 1000,
+            "tickSpacing": 1000,
+            "hooks": "0xc52fc52698479e42f0da9a8a75296ec3871454c0"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 USDG to AAPL"
+        },
+        {
+          "id": "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+          ],
+          "tokens": [
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+          ],
+          "fees": [
+            8388608
+          ],
+          "key": {
+            "currency0": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+            "currency1": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "fee": 8388608,
+            "tickSpacing": 1,
+            "hooks": "0xd061f665d1c4816787FCeAa168FA66c59d3Abcc0"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 AAPL to AAPLon"
+        }
+      ],
+      "label": "uniswap + Uniswap v4 \u00b7 via Robinhood AAPL",
+      "verified": true,
+      "profileId": "ondo-robinhood"
+    },
+    {
+      "issuerId": "ondo-robinhood",
+      "chain": "robinhood",
+      "token": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+      "settlement": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+      "id": "ondo-rh-composite-14",
+      "venue": "uniswap",
+      "version": "composite",
+      "poolIds": [
+        "0x890acf4222bcb8ce2c28e2127fce1f41a9b86de3163644c1c51396baec2c9c14",
+        "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+      ],
+      "tokens": [
+        "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+        "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+        "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+      ],
+      "fees": [],
+      "hops": [
+        {
+          "id": "0x890acf4222bcb8ce2c28e2127fce1f41a9b86de3163644c1c51396baec2c9c14",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0x890acf4222bcb8ce2c28e2127fce1f41a9b86de3163644c1c51396baec2c9c14"
+          ],
+          "tokens": [
+            "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9"
+          ],
+          "fees": [
+            500
+          ],
+          "key": {
+            "currency0": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+            "currency1": "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9",
+            "fee": 500,
+            "tickSpacing": 10,
+            "hooks": "0xd1bcbcca41f3bdb6b4812652959c6df725ea2ac0"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 USDG to AAPL"
+        },
+        {
+          "id": "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e",
+          "venue": "uniswap",
+          "version": "v4",
+          "poolIds": [
+            "0x67ba244f324e4f9f9b29e7e7cda4ceb4f071a7787779e16d994d65879933511e"
+          ],
+          "tokens": [
+            "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33"
+          ],
+          "fees": [
+            8388608
+          ],
+          "key": {
+            "currency0": "0x9Bf86418CaF2b7a939603d6c24219a77Bf7F9b33",
+            "currency1": "0xaF3D76f1834A1d425780943C99Ea8A608f8a93f9",
+            "fee": 8388608,
+            "tickSpacing": 1,
+            "hooks": "0xd061f665d1c4816787FCeAa168FA66c59d3Abcc0"
+          },
+          "quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+          "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+          "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+          "label": "Uniswap v4 \u00b7 AAPL to AAPLon"
+        }
+      ],
+      "label": "uniswap + Uniswap v4 \u00b7 via Robinhood AAPL",
+      "verified": true,
+      "profileId": "ondo-robinhood"
+    },
+    {
+      "issuerId": "xstocks-mantle-wrapped-v1",
+      "id": "0x2cc6a607f3445d826b9e29f507b3a2e3b9dae106",
+      "venue": "fluxion",
+      "version": "v3",
+      "factory": "0xf883162ed9c7e8ef604214c964c678e40c9b737c",
+      "quoter": "0x3e4ee18ac7280813236a1eb850679da5322e14ce",
+      "poolIds": [
+        "0x2cc6a607f3445d826b9e29f507b3a2e3b9dae106"
+      ],
+      "tokens": [
+        "0x09bc4e0d864854c6afb6eb9a9cdf58ac190d0df9",
+        "0x5aa7649fdbda47de64a07ac81d64b682af9c0724"
+      ],
+      "fees": [
+        3000
+      ],
+      "label": "Fluxion v3 \u00b7 0.30%"
+    },
+    {
+      "chain": "xlayer",
+      "issuerId": "xstocks-xlayer-wrapped-v2",
+      "venue": "uniswap",
+      "version": "v3",
+      "factory": "0x4B2ab38DBF28D31D467aA8993f6c2585981D6804",
+      "quoter": "0xD1b797D92d87B688193A2B976eFc8D577D204343",
+      "poolIds": [
+        "0xfDd9f2a36645Ab7A65e04B32CC23a4184728b47c"
+      ],
+      "tokens": [
+        "0xb6ceceab302e2e4948951ee7843fc24e92933061",
+        "0x943bf64d566c32a2bcd41ac92fb63c111cc9de8f"
+      ],
+      "fees": [
+        500
+      ],
+      "quoteSymbol": "USDC",
+      "liquidity": "78181839620719023",
+      "verifiedFactory": true,
+      "note": "Requires real quote before adding",
+      "quoteEvidence": [
+        {
+          "side": "buy",
+          "inputRaw": "1000000000",
+          "result": [
+            "2791903303830683214",
+            "1499572670555153130056889",
+            "0",
+            "130422"
+          ],
+          "inputRequiredForQuotedOutput": "1000000000"
+        },
+        {
+          "side": "sell",
+          "inputRaw": "3000000000000000000",
+          "result": [
+            "1071958826",
+            "1497473488989007521368017",
+            "0",
+            "104190"
+          ],
+          "inputRequiredForQuotedOutput": "2999999998896027921"
+        }
+      ],
+      "status": "buy-and-sell-full-fill-verified-at-1000-and-3tokens",
+      "id": "0xfDd9f2a36645Ab7A65e04B32CC23a4184728b47c",
+      "label": "Uniswap v3 \u00b7 USDC \u00b7 0.05%",
+      "settlement": "0xb6ceceab302e2e4948951ee7843fc24e92933061",
+      "settlementDecimals": 6
+    }
+  ]
+}

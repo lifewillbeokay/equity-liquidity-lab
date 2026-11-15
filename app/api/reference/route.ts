@@ -1,3 +1,4 @@
 import {getReference} from '@/lib/simulator';
-let cached:Awaited<ReturnType<typeof getReference>>|null=null;
-export async function GET(){try{if(!cached||Date.now()-Date.parse(cached.fetchedAt)>60000)cached=await getReference();return Response.json(cached);}catch(e){return Response.json({error:(e as Error).message},{status:502});}}
+import {STOCKS} from '@/lib/market';
+const cache=new Map<string,Awaited<ReturnType<typeof getReference>>>();
+export async function GET(request:Request){const stock=new URL(request.url).searchParams.get('stock')??'AAPL';if(!STOCKS.some(s=>s.id===stock))return Response.json({error:'Unknown stock'},{status:400});try{let value=cache.get(stock);if(!value||Date.now()-Date.parse(value.fetchedAt)>60000){value=await getReference(stock);cache.set(stock,value);}return Response.json(value);}catch(e){return Response.json({error:(e as Error).message},{status:502});}}
