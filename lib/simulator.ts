@@ -1,6 +1,8 @@
 import {encodeFunctionData,decodeFunctionResult,parseAbi,parseUnits,formatUnits,encodePacked,encodeAbiParameters,keccak256,type Address,type Hex,type Abi} from 'viem';
 import {ADAPTIVE_ROUNDS,newSampling,refinementRequests,type Sampling,type SampleRequest} from './sampling';
 import {CHAINS,SIZES,DEXES,routesFor,type Issuer,type Route,type ChainKey,type Dex,type DexScope} from './registry';
+import {MetricDepthEngine,type MetricEvidence} from './metric-engine';
+import type {MetricLoader} from './metric-depth';
 import {LocalPoolEngine,LocalParityError,type LocalPoolStats} from './local-pools';
 export const tokenAbi=parseAbi([
  'function decimals() view returns(uint8)','function symbol() view returns(string)',
@@ -185,11 +187,11 @@ export async function verifyRoutes(issuer:Issuer,routes:Route[],block:Hex,transp
  const verified=routes.filter((route,j)=>{try{for(const c of checks[j]){const r=replies[c.index];if(r.error)throw new Error(r.error.message);const value=decodeFunctionResult({abi:c.abi,functionName:c.fn,data:r.result as Hex});if(c.nonzero){if((value as bigint[])[0]===0n)throw new Error('Pool uninitialized');}else if(String(c.field?(value as Record<string,unknown>)[c.field]:value).toLowerCase()!==c.expected!.toLowerCase())throw new Error('Canonical deployment mismatch');}return true;}catch(e){errors.push({routeId:route.id,reason:(e as Error).message.slice(0,120)});return false;}});
  return {routes:verified,errors};
 }
-const metricPoolAbi=parseAbi(["function getImmutables() view returns ((address factory,address token0,address token1,uint256 token0ScaleMultiplier,uint256 token1ScaleMultiplier,uint256 initialScaledToken0PerShareE18,uint256 initialScaledToken1PerShareE18,uint256 minimalOperationalLiquidity,address immutablePriceProvider,int256 lowestBin,int256 highestBin,address extension1,address extension2,address extension3,address extension4,address extension5,address extension6,address extension7,uint256 beforeAddLiquidityOrder,uint256 afterAddLiquidityOrder,uint256 beforeRemoveLiquidityOrder,uint256 afterRemoveLiquidityOrder,uint256 beforeSwapOrder,uint256 afterSwapOrder))"]);
-const metricFactoryAbi=parseAbi(['function isPool(address) view returns(bool)']);
-export type QuotePoint={quoteMethod?:ParsedRouteQuote['method'];sampleKind?:'base'|'adaptive';deploymentId?:string;chain?:ChainKey;observedAt?:string;contextSlot?:number;routePlan?:unknown;quoteKind?:'onchain'|'provider';venue?:Dex|null;size:number;side:'buy'|'sell';status:'ok'|'partial'|'unavailable'|'error';inputRaw:string;outputRaw:string|null;input:number;output:number|null;shares:number|null;price:number|null;referenceBps:number|null;impactBps:number|null;routeId:string|null;routeLabel:string|null;gasUnits:string|null;reason?:string;consumedInputRaw?:string;candidateQuotes?:unknown[]};
+export const metricPoolAbi=parseAbi(["function getImmutables() view returns ((address factory,address token0,address token1,uint256 token0ScaleMultiplier,uint256 token1ScaleMultiplier,uint256 initialScaledToken0PerShareE18,uint256 initialScaledToken1PerShareE18,uint256 minimalOperationalLiquidity,address immutablePriceProvider,int256 lowestBin,int256 highestBin,address extension1,address extension2,address extension3,address extension4,address extension5,address extension6,address extension7,uint256 beforeAddLiquidityOrder,uint256 afterAddLiquidityOrder,uint256 beforeRemoveLiquidityOrder,uint256 afterRemoveLiquidityOrder,uint256 beforeSwapOrder,uint256 afterSwapOrder))"]);
+export const metricFactoryAbi=parseAbi(['function isPool(address) view returns(bool)']);
+export type QuotePoint={metricSources?:MetricEvidence[];quoteMethod?:ParsedRouteQuote['method'];sampleKind?:'base'|'adaptive';deploymentId?:string;chain?:ChainKey;observedAt?:string;contextSlot?:number;routePlan?:unknown;quoteKind?:'onchain'|'provider';venue?:Dex|null;size:number;side:'buy'|'sell';status:'ok'|'partial'|'unavailable'|'error';inputRaw:string;outputRaw:string|null;input:number;output:number|null;shares:number|null;price:number|null;referenceBps:number|null;impactBps:number|null;routeId:string|null;routeLabel:string|null;gasUnits:string|null;reason?:string;consumedInputRaw?:string;candidateQuotes?:unknown[]};
 export type VenueQuotes={points:QuotePoint[];probe:{buyPrice:number|null;sellPrice:number|null}};
-export type Simulation={localPools?:LocalPoolStats&{state:ReturnType<LocalPoolEngine['evidence']>};cache?:import('./shared-cache').CacheInfo;refreshError?:string;lastRefreshAttempt?:string;sampling?:Sampling;transport?:'server'|'browser';rpcFallback?:string;quoteKind?:'onchain'|'provider';coverageNote?:string;quoteStartedAt?:string;verificationErrors?:{routeId:string;reason:string}[];venues?:Partial<Record<Dex,VenueQuotes>>;issuerId:string;status:'ok'|'error'|'unavailable';blockNumber:number|null;blockHash:string|null;blockTimestamp:string|null;fetchedAt:string;normalization:{sharesPerToken:number;method:string;source:string;asOf:string;sourceChain:ChainKey;sourceBlock:number;sourceBlockHash:string;factorRaw:string}|null;routes:Route[];points:QuotePoint[];probe:{buyPrice:number|null;sellPrice:number|null};error?:string;rpc:string;reference:Reference};
+export type Simulation={metricDepth?:MetricDepthEngine['stats']&{state?:ReturnType<MetricDepthEngine['evidence']>};localPools?:LocalPoolStats&{state:ReturnType<LocalPoolEngine['evidence']>};cache?:import('./shared-cache').CacheInfo;refreshError?:string;lastRefreshAttempt?:string;sampling?:Sampling;transport?:'server'|'browser';rpcFallback?:string;quoteKind?:'onchain'|'provider';coverageNote?:string;quoteStartedAt?:string;verificationErrors?:{routeId:string;reason:string}[];venues?:Partial<Record<Dex,VenueQuotes>>;issuerId:string;status:'ok'|'error'|'unavailable';blockNumber:number|null;blockHash:string|null;blockTimestamp:string|null;fetchedAt:string;normalization:{sharesPerToken:number;method:string;source:string;asOf:string;sourceChain:ChainKey;sourceBlock:number;sourceBlockHash:string;factorRaw:string}|null;routes:Route[];points:QuotePoint[];probe:{buyPrice:number|null;sellPrice:number|null};error?:string;rpc:string;reference:Reference};
 export type Snapshot={version:1;capturedAt:string;reference:Reference;simulations:Simulation[];coverageVersion:string};
 export async function getReference(stock='AAPL'):Promise<Reference>{
  if(stock==='MU'){
@@ -206,12 +208,13 @@ export async function getReference(stock='AAPL'):Promise<Reference>{
  }
  throw new Error(stock+' reference not found');
 }
-// All calls in a sweep are pinned to one block. Each size is independent.
-export async function simulateIssuer(issuer:Issuer,reference:Reference,transport?:Transport,options:{localPools?:boolean;localWorkLimit?:{stateReads:number;steps:{remaining:number}}}={}):Promise<Simulation>{
+class MetricNormalizationError extends Error {}
+// Contract calls and normalization are block-pinned. Metric API depth carries its own timestamp. Each size is independent.
+export async function simulateIssuer(issuer:Issuer,reference:Reference,transport?:Transport,options:{metricDepth?:boolean;metricLoader?:MetricLoader;localPools?:boolean;localWorkLimit?:{stateReads:number;steps:{remaining:number}}}={}):Promise<Simulation>{
  if((issuer.chain==='solana'||issuer.chain==='ton')&&routesFor(issuer).length){const {simulateProvider}=await import('./provider-simulator');return simulateProvider(issuer,reference);}
  const base:Simulation={rpcFallback:issuer.chain==='robinhood'?'https://rpc.mainnet.chain.robinhood.com':undefined,quoteKind:'onchain',issuerId:issuer.id,status:'error',blockNumber:null,blockHash:null,blockTimestamp:null,fetchedAt:new Date().toISOString(),normalization:null,routes:routesFor(issuer),points:[],probe:{buyPrice:null,sellPrice:null},rpc:CHAINS[issuer.chain].rpc,reference};
  if(!base.routes.length){return {...base,status:'unavailable',coverageNote:issuer.coverageNote??'Official deployment; no supported route in current inventory.'};}
- let local:LocalPoolEngine|undefined;
+ let local:LocalPoolEngine|undefined,metric:MetricDepthEngine|undefined;
  try{
   const [head,chainId]=await rpcBatch(issuer.chain,[{method:'eth_getBlockByNumber',params:['latest',false]},{method:'eth_chainId',params:[]}],transport);
   if(head.error||chainId.error)throw new Error(head.error?.message||chainId.error?.message);if(Number(BigInt(chainId.result as Hex))!==CHAINS[issuer.chain].id)throw new Error('Unexpected chain ID');
@@ -251,6 +254,9 @@ export async function simulateIssuer(issuer:Issuer,reference:Reference,transport
   base.sampling=newSampling();
   local=options.localPools===false?undefined:new LocalPoolEngine(issuer,block,transport,options.localWorkLimit);
   if(local)await local.prepare(verified);
+  metric=options.metricDepth===false?undefined:new MetricDepthEngine(issuer,block,transport,options.metricLoader);
+  if(metric)await metric.prepare(verified);
+  base.quoteStartedAt=new Date().toISOString();
   const spec:({size:number;side:'buy'|'sell';input:bigint})[]=[];
   const jobs:{s:typeof spec[number];route:Route}[]=[];
   const raw:RpcReply[]=[],outs:(ParsedRouteQuote|null)[]=[];
@@ -269,7 +275,7 @@ export async function simulateIssuer(issuer:Issuer,reference:Reference,transport
     additions.push({...request,input});
    }
    const addedJobs=additions.flatMap(s=>verified.map(route=>({s,route})));
-   const quoted=await quoteRouteJobs(issuer,addedJobs,block,transport,local);
+   const quoted=await quoteRouteJobs(issuer,addedJobs,block,transport,local,metric);
    spec.push(...additions);jobs.push(...addedJobs);raw.push(...quoted.raw);outs.push(...quoted.outs);
    // Only normalize winning outputs, batched once for all venue views.
    if(issuer.normalization==='wrapper'){
@@ -289,12 +295,12 @@ export async function simulateIssuer(issuer:Issuer,reference:Reference,transport
    const points:QuotePoint[]=spec.map(s=>{
     const candidates=bySpec.get(s)??[],good=candidates.filter(x=>x.out&&x.out.amount>0n&&x.out.complete);
     good.sort((a,b)=>a.out!.amount>b.out!.amount?-1:1);const best=good[0];
-    const point:QuotePoint={sampleKind:SIZES.includes(s.size)||s.size===10?'base':'adaptive',size:s.size,side:s.side,status:'unavailable',inputRaw:s.input.toString(),outputRaw:null,input:Number(formatUnits(s.input,s.side==='buy'?issuer.settlementDecimals:issuer.decimals)),output:null,shares:null,price:null,referenceBps:null,impactBps:null,routeId:null,routeLabel:null,gasUnits:null,candidateQuotes:scope==='all'?candidates.map(x=>({routeId:x.j.route.id,venue:x.j.route.venue,method:x.out?.method??'contract',outputRaw:x.out?.amount.toString()??null,fullInput:x.out?.complete??null,consumedInputRaw:x.out?.consumedInput?.toString()??(x.out?.complete?s.input.toString():null),error:raw[x.k].error?.message})):undefined};
+    const point:QuotePoint={sampleKind:SIZES.includes(s.size)||s.size===10?'base':'adaptive',size:s.size,side:s.side,status:'unavailable',inputRaw:s.input.toString(),outputRaw:null,input:Number(formatUnits(s.input,s.side==='buy'?issuer.settlementDecimals:issuer.decimals)),output:null,shares:null,price:null,referenceBps:null,impactBps:null,routeId:null,routeLabel:null,gasUnits:null,candidateQuotes:scope==='all'?candidates.map(x=>({routeId:x.j.route.id,venue:x.j.route.venue,method:x.out?.method??'contract',metricSources:x.out?.metricSources,outputRaw:x.out?.amount.toString()??null,fullInput:x.out?.complete??null,consumedInputRaw:x.out?.consumedInput?.toString()??(x.out?.complete?s.input.toString():null),error:raw[x.k].error?.message})):undefined};
     if(best){
      const output=best.out!.amount;point.status='ok';point.quoteMethod=best.out!.method??'contract';point.outputRaw=output.toString();point.output=Number(formatUnits(output,s.side==='buy'?issuer.decimals:issuer.settlementDecimals));
      const tokenAmount=s.side==='buy'?output:s.input,shareAmount=issuer.normalization==='wrapper'?shareCache.get(tokenAmount.toString())!:tokenAmount*factor/unit;
      point.shares=Number(formatUnits(shareAmount,18));point.price=(s.side==='buy'?point.input:point.output)/point.shares;
-     point.referenceBps=(point.price/reference.price-1)*10000;point.deploymentId=issuer.id;point.chain=issuer.chain;point.quoteKind='onchain';point.venue=best.j.route.venue;point.routeId=best.j.route.id;point.routeLabel=best.j.route.label;point.gasUnits=best.out!.gas?.toString()??null;point.consumedInputRaw=s.input.toString();
+     point.referenceBps=(point.price/reference.price-1)*10000;point.deploymentId=issuer.id;point.chain=issuer.chain;point.metricSources=best.out!.metricSources;point.quoteKind=point.metricSources?.length?'provider':'onchain';point.observedAt=point.metricSources?.map(s=>s.observedAt).sort()[0];point.venue=best.j.route.venue;point.routeId=best.j.route.id;point.routeLabel=best.j.route.label;point.gasUnits=best.out!.gas?.toString()??null;point.consumedInputRaw=s.input.toString();
     }else{
      const partial=candidates.find(x=>x.out&&!x.out.complete),error=candidates.length>0&&candidates.every(x=>raw[x.k].error&&!/revert|liquidity|insufficient|execution/i.test(raw[x.k].error!.message));
      point.status=partial?'partial':error?'error':'unavailable';point.reason=partial?'Pool cannot consume the full requested input':error?'RPC quote request failed':candidates.length?'No complete quote at this size':'No verified route on this DEX in current coverage';
@@ -314,26 +320,39 @@ export async function simulateIssuer(issuer:Issuer,reference:Reference,transport
    for(const r of requests)base.sampling.adaptiveSizes[r.side].push(r.size);
    rebuild();
   }
+  // API depth is newer than the contract block. Never mix it with a share ratio
+  // that changed while collecting the snapshot (including the $10 probes).
+  if(metric?.stats.estimates&&issuer.normalization!=='native-shares'){
+   try{
+    const [current]=await rpcBatch(normChain,[{method:'eth_getBlockByNumber',params:['latest',false]}],transport);const at=(current.result as {number?:Hex})?.number;if(!at)throw new Error('Current normalization block unavailable');
+    let latest:bigint;
+    if(issuer.normalization==='ondo'){const ratio=await tokenCall(normChain,'0xf4fd8a1b412633e10527454137a29db7aa35f15e','getSValue',[issuer.oracleToken??'0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4'],at,transport) as readonly [bigint,boolean];if(ratio[1])throw new Error('Shares oracle paused');latest=ratio[0];}
+    else latest=await tokenCall(issuer.chain,issuer.token,issuer.normalization==='wrapper'?'convertToAssets':issuer.normalization==='b20'?'multiplier':'uiMultiplier',issuer.normalization==='wrapper'?[unit]:[],at,transport) as bigint;
+    if(latest!==factor)throw new Error('Share conversion changed during API collection');
+   }catch(e){throw new MetricNormalizationError((e as Error).message);}
+  }
   const [check]=await rpcBatch(issuer.chain,[{method:'eth_getBlockByNumber',params:[block,false]}],transport);
   if((check.result as {hash?:string})?.hash!==b.hash)throw new Error('Snapshot block changed during collection');
+  if(metric)base.metricDepth={...metric.stats,state:metric.evidence()};
   if(local)base.localPools={...local.stats,state:local.evidence()};
   base.status=base.points.some(p=>p.status==='ok')?'ok':base.points.every(p=>p.status==='error')?'error':'unavailable';if(base.status==='error')base.error='RPC quote requests failed';base.fetchedAt=new Date().toISOString();return base;
  }catch(e){
+  if(e instanceof MetricNormalizationError&&metric){const fallback=await simulateIssuer(issuer,reference,transport,{...options,metricDepth:false});fallback.metricDepth={...metric.stats,pools:0,estimates:0,state:[],fallbacks:{...metric.stats.fallbacks,normalization:e.message}};return fallback;}
   // Discard the entire tentative capture, including earlier adaptive rounds.
   // No locally calculated candidate survives a failed authoritative check.
-  if(e instanceof LocalParityError&&local){const fallback=await simulateIssuer(issuer,reference,transport,{localPools:false});fallback.localPools={...local.stats,localQuotes:0,pools:0,fallbacks:{...local.stats.fallbacks,profile:e.message},state:[]};return fallback;}
+  if(e instanceof LocalParityError&&local){const fallback=await simulateIssuer(issuer,reference,transport,{...options,localPools:false});fallback.localPools={...local.stats,localQuotes:0,pools:0,fallbacks:{...local.stats.fallbacks,profile:e.message},state:[]};return fallback;}
   base.status='error';base.error=(e as Error).message.slice(0,180);base.points=[];base.venues={};return base;
  }
 }
 
 
-export type ParsedRouteQuote={amount:bigint;gas:bigint|null;complete:boolean;consumedInput?:bigint;method?:'contract'|'local-pool'|'mixed'};
-export async function quoteRouteJobs(issuer:Issuer,jobs:{s:{side:'buy'|'sell';input:bigint};route:Route}[],block:Hex,transport?:Transport,local?:LocalPoolEngine){
+export type ParsedRouteQuote={amount:bigint;gas:bigint|null;complete:boolean;consumedInput?:bigint;metricSources?:MetricEvidence[];method?:'contract'|'local-pool'|'mixed'|'metric-depth'};
+export async function quoteRouteJobs(issuer:Issuer,jobs:{s:{side:'buy'|'sell';input:bigint};route:Route}[],block:Hex,transport?:Transport,local?:LocalPoolEngine,metric?:MetricDepthEngine){
  const raw:RpcReply[]=jobs.map(()=>({}));const outs:(ParsedRouteQuote|null)[]=jobs.map(()=>null);
  const replyCache=new Map<string,RpcReply>();
  const paths=jobs.map(j=>j.s.side==='buy'?(j.route.hops??[j.route]):[...(j.route.hops??[j.route])].reverse());
  const amounts=jobs.map(j=>j.s.input);const running=jobs.map(()=>true);const gas:(bigint|null)[]=jobs.map(()=>0n);
- const methods=jobs.map(()=>new Set<string>());
+ const methods=jobs.map(()=>new Set<NonNullable<ParsedRouteQuote['method']>>());const sources:MetricEvidence[][]=jobs.map(()=>[]);
  for(let hop=0;hop<Math.max(...paths.map(p=>p.length));hop++){
   const active=jobs.flatMap((j,index)=>running[index]&&paths[index][hop]?[{index,encoded:encodeRouteQuote(issuer,paths[index][hop],j.s.side,amounts[index])}]:[]);
   const computed=local?await local.quoteMany(active.map(({index})=>({route:paths[index][hop],side:jobs[index].s.side,amount:amounts[index]}))):active.map(()=>null);
@@ -350,11 +369,12 @@ export async function quoteRouteJobs(issuer:Issuer,jobs:{s:{side:'buy'|'sell';in
     const old=local.checkedRanges.get(p.key);local.checkedRanges.set(p.key,{min:old&&old.min<p.amount?old.min:p.amount,max:old&&old.max>p.amount?old.max:p.amount});
    });
   }
+  active.forEach(({index},k)=>{if(!computed[k])computed[k]=metric?.quote(paths[index][hop],jobs[index].s.side,amounts[index])??null;});
   const key=(e:ReturnType<typeof encodeRouteQuote>)=>e.to.toLowerCase()+e.data;const unique=Array.from(new Map(active.filter((j,k)=>!computed[k]&&!replyCache.has(key(j.encoded))).map(j=>[key(j.encoded),j])).entries());
   const fetched=await rpcBatch(issuer.chain,unique.map(([,j])=>ethCall(j.encoded.to,j.encoded.data,block)),transport);unique.forEach(([k],n)=>replyCache.set(k,fetched[n]));const replies=active.map(j=>replyCache.get(key(j.encoded))??{});
-  for(let k=0;k<active.length;k++){const {index,encoded}=active[k];raw[index]=replies[k];try{const out=computed[k]??parseQuote(replies[k],encoded);methods[index].add(computed[k]?'local-pool':'contract');const method=methods[index].size>1?'mixed':computed[k]?'local-pool':'contract';gas[index]=gas[index]===null||out.gas===null?null:gas[index]!+out.gas;const last=hop===paths[index].length-1;
-   if(!out.complete){running[index]=false;outs[index]={...out,method,amount:last?out.amount:0n,consumedInput:paths[index].length===1?out.consumedInput:undefined};}
-   else if(last){running[index]=false;outs[index]={...out,method,gas:gas[index],consumedInput:jobs[index].s.input};}
+  for(let k=0;k<active.length;k++){const {index,encoded}=active[k];raw[index]=replies[k];try{const out:ParsedRouteQuote=computed[k]??parseQuote(replies[k],encoded);methods[index].add(out.method??(computed[k]?'local-pool':'contract'));sources[index].push(...(out.metricSources??[]));const method=methods[index].size>1?'mixed':[...methods[index]][0];const metricSources=sources[index].length?sources[index]:undefined;gas[index]=gas[index]===null||out.gas===null?null:gas[index]!+out.gas;const last=hop===paths[index].length-1;
+   if(!out.complete){running[index]=false;outs[index]={...out,method,metricSources,amount:last?out.amount:0n,consumedInput:paths[index].length===1?out.consumedInput:undefined};}
+   else if(last){running[index]=false;outs[index]={...out,method,metricSources,gas:gas[index],consumedInput:jobs[index].s.input};}
    else amounts[index]=out.amount;
   }catch(e){running[index]=false;raw[index]={error:replies[k].error??{code:-1,message:(e as Error).message.slice(0,160)}};}}
  }

@@ -1,0 +1,1210 @@
+{
+  "startedAt": "2026-11-16T00:01:17.274Z",
+  "finishedAt": "2026-11-16T00:27:49.029Z",
+  "environment": "Local Node.js / public RPCs, contract calls pinned across modes; Metric API has its own serverTs. No gas, swaps or keys.",
+  "profiles": [
+    {
+      "id": "binance",
+      "stock": "AAPL",
+      "runs": {
+        "metricDepth": {
+          "ms": 28997.823207999998,
+          "rpc": 1244,
+          "batches": 57,
+          "api": 1,
+          "apiMs": 315.86924999999997,
+          "status": "ok",
+          "metric": {
+            "pools": 1,
+            "estimates": 0,
+            "fallbacks": {
+              "0x755f5baA43f692550AA46Be662240eEb99Ae7502": "feed_down"
+            }
+          }
+        },
+        "contracts": {
+          "ms": 39566.094292,
+          "rpc": 1242,
+          "batches": 56,
+          "api": 0,
+          "apiMs": 0,
+          "status": "ok",
+          "metric": {}
+        }
+      },
+      "comparison": {
+        "sameContractBlock": true,
+        "apiBlockPinned": false,
+        "standardPoints": 50,
+        "estimateWinners": 0,
+        "contractFullPoints": 74,
+        "depthModeFullPoints": 74,
+        "candidates": []
+      }
+    },
+    {
+      "id": "robinhood",
+      "stock": "AAPL",
+      "runs": {
+        "metricDepth": {
+          "ms": 136924.205958,
+          "rpc": 1737,
+          "batches": 79,
+          "api": 1,
+          "apiMs": 189.08616600000005,
+          "status": "ok",
+          "metric": {
+            "pools": 5,
+            "estimates": 79,
+            "fallbacks": {
+              "0x3c2Dae11373059b54dCA262016832FDfaaeA0c46": "feed_down"
+            }
+          }
+        },
+        "contracts": {
+          "ms": 199290.291291,
+          "rpc": 1790,
+          "batches": 80,
+          "api": 0,
+          "apiMs": 0,
+          "status": "ok",
+          "metric": {}
+        }
+      },
+      "comparison": {
+        "sameContractBlock": true,
+        "apiBlockPinned": false,
+        "standardPoints": 50,
+        "estimateWinners": 67,
+        "contractFullPoints": 74,
+        "depthModeFullPoints": 74,
+        "candidates": [
+          {
+            "side": "buy",
+            "size": 100,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "278116548137123619",
+            "contract": "278116548146268631",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -3.2882030431835574e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 100,
+            "route": "0x7054E59cC5aDeF6c0dFf80cf7f239eb961c8004b",
+            "estimate": "278196714905083393",
+            "contract": "278196715398150809",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -1.772369695451914e-05,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 250,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "695291184964408674",
+            "contract": "695291184987211512",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -3.2796099169729587e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 500,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "1390581752001694767",
+            "contract": "1390581752047101477",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -3.2652991421855404e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 1000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "2781161032301489239",
+            "contract": "2781161032391506804",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -3.2366997970711964e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 2500,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "6952884043121270273",
+            "contract": "6952884043340345368",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -3.150846250576933e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 3750,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "10429302892867866326",
+            "contract": "10429302893189018096",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -3.079314581100334e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 4375,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "12167506524877749176",
+            "contract": "12167506525248074123",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -3.043565399707404e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 5000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "13905706295013009563",
+            "contract": "13905706295431264269",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -3.0077940138539816e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 7500,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "20858466757322629860",
+            "contract": "20858466757920169754",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -2.86474177713103e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 8750,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "24334823817898941616",
+            "contract": "24334823818578664029",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -2.7932101076544313e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 9063,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "25205301207664897917",
+            "contract": "25205301208364420270",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -2.7753022102672276e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 9375,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "26072996555632559485",
+            "contract": "26072996556351508196",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -2.757449824031255e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 10000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "27811165431697469953",
+            "contract": "27811165432454401676",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -2.721689540408079e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 10625,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "29549330446119411114",
+            "contract": "29549330446913082581",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -2.685918154554656e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 11250,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "31287491598924120780",
+            "contract": "31287491599753288738",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -2.650168973161726e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 12500,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "34763802319784795436",
+            "contract": "34763802320681226687",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -2.578626201454881e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 13750,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "38240097594485390684",
+            "contract": "38240097595444112418",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -2.5071056342085285e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 15000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "41716377423231798712",
+            "contract": "41716377424247838251",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -2.4356072714226684e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 20000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "55621342282793242312",
+            "contract": "55621342283988828951",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -2.1495139002070118e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 22500,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "62573732042201701520",
+            "contract": "62573732043457229092",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -2.006483867944553e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 23750,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "66049903755033396090",
+            "contract": "66049903756311436438",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -1.9349633006982003e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 25000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "69526060023557876296",
+            "contract": "69526060024853457802",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -1.8634427334518477e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 30000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "83430530658700605423",
+            "contract": "83430530660016638046",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -1.5773937711571762e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 35000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "97334754201395163815",
+            "contract": "97334754202652112284",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -1.291367013322997e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 40000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "111238730664814115102",
+            "contract": "111238730665932452626",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -1.0053513577190643e-07,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 45000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "125142460062128852565",
+            "contract": "125142460063029060835",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -7.193579065756239e-08,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 50000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "139045806156275645585",
+            "contract": "139045806157255643925",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -7.048028827227881e-08,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 55000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "152948395803776086961",
+            "contract": "152948395804924327717",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -7.507217070212846e-08,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 60000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "166850207804123858730",
+            "contract": "166850207805382553777",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -7.543743407723014e-08,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 65000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "180751242287798418104",
+            "contract": "180751242289109798707",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -7.255085421320473e-08,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 70000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "194651499385242738345",
+            "contract": "194651499386549055148",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -6.710965116951684e-08,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 75000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "208550979226863323040",
+            "contract": "208550979228106846064",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -5.962674798354328e-08,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 80000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "222449681943030220383",
+            "contract": "222449681944153239010",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -5.048295115273049e-08,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 85000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "236347384830607902530",
+            "contract": "236347384831937438023",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -5.625278021170743e-08,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 90000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "250243049323182268052",
+            "contract": "250243049324676754015",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -5.972111694063642e-08,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 95000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "264136544880159336231",
+            "contract": "264136544881421622643",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -4.778955009498986e-08,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 100000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "278026679717195695806",
+            "contract": "278026679719469512010",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -8.178346888598753e-08,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 100,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "100869203",
+            "contract": "100869205",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -0.0001982765696073585,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 100,
+            "route": "0x7054E59cC5aDeF6c0dFf80cf7f239eb961c8004b",
+            "estimate": "100886753",
+            "contract": "100886755",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -0.00019824207830865248,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 250,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "252172944",
+            "contract": "252172946",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -7.931064915922548e-05,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 250,
+            "route": "0x7054E59cC5aDeF6c0dFf80cf7f239eb961c8004b",
+            "estimate": "252168511",
+            "contract": "252168514",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -0.00011896806428879358,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 500,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "504345663",
+            "contract": "504345665",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -3.965534234318113e-05,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 1000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "1008690420",
+            "contract": "1008690422",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -1.9827689490270473e-05,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 2500,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "2521719239",
+            "contract": "2521719241",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -7.931096890345657e-06,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 3750,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "3782570340",
+            "contract": "3782570342",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -5.287409399201692e-06,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 5000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "5043415762",
+            "contract": "5043415765",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -5.94834959066759e-06,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 7500,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "7565089567",
+            "contract": "7565089571",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -5.287446036561505e-06,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 8750,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "8825917950",
+            "contract": "8825917955",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -5.665132807308737e-06,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 9063,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "9141628488",
+            "contract": "9141628493",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -5.4694848650171934e-06,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 9375,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "9456330012",
+            "contract": "9456330017",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -5.287463800129899e-06,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 10000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "10086740654",
+            "contract": "10086740659",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -4.957002586181147e-06,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 11250,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "11347557677",
+            "contract": "11347557684",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -6.168727750832659e-06,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 12500,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "12608369021",
+            "contract": "12608369030",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -7.13811565411504e-06,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 15000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "15129974670",
+            "contract": "15129974683",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -8.592215827718519e-06,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 20000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "20173117808",
+            "contract": "20173117837",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -1.4375566292912367e-05,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 22500,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "22694655297",
+            "contract": "22694655337",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -1.7625295667400565e-05,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 25000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "25216170066",
+            "contract": "25216170120",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -2.1414829909360833e-05,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 30000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "30259131441",
+            "contract": "30259131532",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -3.0073565859822793e-05,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 35000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "35302001931",
+            "contract": "35302002074",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -4.0507617260487905e-05,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 40000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "40344781534",
+            "contract": "40344781745",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -5.229920496674367e-05,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 45000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "45387470246",
+            "contract": "45387470546",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -6.609753633313176e-05,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 50000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "50430068065",
+            "contract": "50430068477",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -8.169729115437008e-05,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 55000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "55472574990",
+            "contract": "55472575537",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -9.860728344968095e-05,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 60000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "60514991016",
+            "contract": "60514991726",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -0.00011732629867644562,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 65000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "65557316143",
+            "contract": "65557317045",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -0.00013758952310816142,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 70000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "70598908545",
+            "contract": "70598908645",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -1.4164525108384396e-05,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 75000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "75638892764",
+            "contract": "75638892815",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -6.74256317445554e-06,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 80000,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "80676864970",
+            "contract": "80676865027",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -7.065222851210251e-06,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 82500,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "83194921411",
+            "contract": "83194921445",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -4.086787575019457e-06,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 83125,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "83824122970",
+            "contract": "83824122982",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -1.4315693075417357e-06,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 83438,
+            "route": "0x6a4fc50b14F6D390340bd0BD2fcdB1752852a099",
+            "estimate": "84139162214",
+            "contract": "84139162251",
+            "fullEstimate": true,
+            "fullContract": true,
+            "deltaBps": -4.397476827122659e-06,
+            "observedAt": "2026-11-16T00:01:19.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ondo-robinhood",
+      "stock": "AAPL",
+      "runs": {
+        "metricDepth": {
+          "ms": 331162.389458,
+          "rpc": 1114,
+          "batches": 57,
+          "api": 1,
+          "apiMs": 349.09216699999524,
+          "status": "ok",
+          "metric": {
+            "pools": 5,
+            "estimates": 67,
+            "fallbacks": {
+              "0x3c2Dae11373059b54dCA262016832FDfaaeA0c46": "feed_down"
+            }
+          }
+        },
+        "contracts": {
+          "ms": 649382.885042,
+          "rpc": 600,
+          "batches": 33,
+          "api": 0,
+          "apiMs": 0,
+          "status": "unavailable",
+          "metric": {}
+        }
+      },
+      "comparison": {
+        "sameContractBlock": true,
+        "apiBlockPinned": false,
+        "standardPoints": 50,
+        "estimateWinners": 36,
+        "contractFullPoints": 0,
+        "depthModeFullPoints": 57,
+        "candidates": [
+          {
+            "side": "buy",
+            "size": 100,
+            "route": "ondo-rh-composite-2",
+            "estimate": "277333367046809408",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 100,
+            "route": "ondo-rh-composite-3",
+            "estimate": "277465813177191249",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 250,
+            "route": "ondo-rh-composite-2",
+            "estimate": "693327123594836101",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 250,
+            "route": "ondo-rh-composite-3",
+            "estimate": "693555415076615732",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 500,
+            "route": "ondo-rh-composite-2",
+            "estimate": "1386633267624025469",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 1000,
+            "route": "ondo-rh-composite-2",
+            "estimate": "2773182620797591228",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 2500,
+            "route": "ondo-rh-composite-2",
+            "estimate": "6932327269847684999",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 5000,
+            "route": "ondo-rh-composite-2",
+            "estimate": "13862557440616932675",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 10000,
+            "route": "ondo-rh-composite-2",
+            "estimate": "27716730293412973673",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 15000,
+            "route": "ondo-rh-composite-2",
+            "estimate": "41562526169611532356",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 20000,
+            "route": "ondo-rh-composite-2",
+            "estimate": "55399952671226090376",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "buy",
+            "size": 25000,
+            "route": "ondo-rh-composite-2",
+            "estimate": "69229017391074128058",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 100,
+            "route": "ondo-rh-composite-2",
+            "estimate": "100858766",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 100,
+            "route": "ondo-rh-composite-3",
+            "estimate": "100860525",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 250,
+            "route": "ondo-rh-composite-2",
+            "estimate": "252144606",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 500,
+            "route": "ondo-rh-composite-2",
+            "estimate": "504281508",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 1000,
+            "route": "ondo-rh-composite-2",
+            "estimate": "1008532191",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 2500,
+            "route": "ondo-rh-composite-2",
+            "estimate": "2521099309",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 5000,
+            "route": "ondo-rh-composite-2",
+            "estimate": "5041428236",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 10000,
+            "route": "ondo-rh-composite-2",
+            "estimate": "10079776341",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 15000,
+            "route": "ondo-rh-composite-2",
+            "estimate": "15115047131",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 20000,
+            "route": "ondo-rh-composite-2",
+            "estimate": "20147243419",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          },
+          {
+            "side": "sell",
+            "size": 25000,
+            "route": "ondo-rh-composite-2",
+            "estimate": "25176368015",
+            "contract": null,
+            "fullEstimate": true,
+            "fullContract": null,
+            "deltaBps": null,
+            "observedAt": "2026-11-16T00:06:54.000Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "robinhood-msft-robinhood",
+      "stock": "MSFT",
+      "runs": {
+        "metricDepth": {
+          "ms": 105705.13116599992,
+          "rpc": 1094,
+          "batches": 56,
+          "api": 1,
+          "apiMs": 1054.8317080000415,
+          "status": "ok",
+          "metric": {
+            "pools": 0,
+            "estimates": 0,
+            "fallbacks": {
+              "0x922c8C144082Ef542334a62B07a73Ce37aB16b27": "feed_down"
+            }
+          }
+        },
+        "contracts": {
+          "ms": 168280.95758299995,
+          "rpc": 1070,
+          "batches": 56,
+          "api": 0,
+          "apiMs": 0,
+          "status": "ok",
+          "metric": {}
+        }
+      },
+      "comparison": {
+        "sameContractBlock": true,
+        "apiBlockPinned": false,
+        "standardPoints": 50,
+        "estimateWinners": 0,
+        "contractFullPoints": 74,
+        "depthModeFullPoints": 74,
+        "candidates": []
+      }
+    }
+  ]
+}

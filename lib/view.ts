@@ -1,6 +1,6 @@
 import type {Simulation} from './simulator';
 import type {DexScope} from './registry';
-/** Venue views are selected from one collected block, never recollected on filter changes. */
+/** Venue views are selected from the same capture (including timestamped API estimates), never recollected on filter changes. */
 export function simulationForVenue(s:Simulation,scope:DexScope):Simulation{
  // Ignore any previously captured Jupiter data after its exclusion from scope.
  if(s.routes.some(r=>r.venue==='jupiter')||s.points.some(p=>p.venue==='jupiter'))return {...s,status:'unavailable',routes:[],points:[],venues:{},probe:{buyPrice:null,sellPrice:null},coverageNote:'Jupiter is excluded. Direct Solana DEX quotes are not currently integrated.'};

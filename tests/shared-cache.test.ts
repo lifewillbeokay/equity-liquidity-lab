@@ -63,3 +63,12 @@ test('pool commit canonical checks use the official Robinhood fallback on struct
 test('duplicate same-owner submissions keep the winning immutable object',async()=>{
  const {db}=database(),{bucket,values}=objects();const now=Date.now(),cache=new SharedCurveCache(db,bucket,()=>now),key=curveKey(issuer,reference);const owner=await cache.acquire(issuer,reference);const commits=await Promise.all([cache.commit(key,owner!,capture(now),'browser'),cache.commit(key,owner!,capture(now),'browser')]);assert.equal(commits.filter(Boolean).length,1);assert.equal(values.size,1);assert.equal((await cache.read((await cache.row(key))!))?.fetchedAt,new Date(now).toISOString());
 });
+test('Metric snapshots expire the whole capture even when only a probe or venue used them',async()=>{
+ const {db}=database(),{bucket}=objects();const now=Date.now(),cache=new SharedCurveCache(db,bucket,()=>now),key=curveKey(issuer,reference),s=capture(now),serverTs=Math.floor((now-90_000)/1000);
+ s.metricDepth={pools:1,estimates:1,fallbacks:{},state:[{poolAddress:'0x'+'1'.repeat(40),priceProviderStatus:'healthy',bidAdj:'1',askAdj:'2',serverTs,depth:{bids:[],asks:[]}}]};
+ await cache.commit(key,(await cache.acquire(issuer,reference))!,s,'server');assert.equal((await cache.row(key))!.expires_at,serverTs*1000+CURVE_TTL_MS);
+ const compact=compactSimulation(s);assert.equal(compact.metricDepth?.state,undefined);assert.equal(compact.metricDepth?.estimates,1);
+});
+test('browser captures cannot attach Metric provenance to unrelated routes or invent API times',()=>{
+ const row={reference:JSON.stringify(reference)} as any,s=capture(Date.now()),p=s.points.find(p=>p.status==='ok')!;p.quoteMethod='metric-depth';p.quoteKind='provider';p.observedAt=s.fetchedAt;p.metricSources=[{source:'metric-depth',pool:'0x'+'1'.repeat(40),observedAt:s.fetchedAt}];assert.throws(()=>validateBrowserCapture(issuer,row,s),/Metric/);
+});

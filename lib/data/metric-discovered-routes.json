@@ -1,0 +1,30 @@
+{
+  "asOf": "2026-11-15T23:59:09.988Z",
+  "routes": [
+    {
+      "issuerId": "binance",
+      "chain": "bsc",
+      "token": "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
+      "settlement": "0x55d398326f99059ff775485246999027b3197955",
+      "verified": true,
+      "id": "metric-discovered-bsc-0x74822d5bd3359522960e77558b4f982db580cf5f",
+      "venue": "metric",
+      "version": "metric",
+      "factory": "0x2a53833cc95548cf52c7b159110e22D3a9018f32",
+      "quoter": "0x3B9ea79f482094323d06064E637a7F4528560fcb",
+      "router": "0x02201E6f13c41506c7Bb635d7543F98826229aB7",
+      "poolIds": [
+        "0x74822D5BD3359522960e77558b4F982db580Cf5F"
+      ],
+      "tokens": [
+        "0x55d398326f99059ff775485246999027b3197955",
+        "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a"
+      ],
+      "fees": [],
+      "token0": "0x431a3BEE82E2ca41e49895CbECE5bB0F76A89b7A",
+      "token1": "0x55d398326f99059ff775485246999027b3197955",
+      "label": "Metric · AAPLB/USDT",
+      "verification": "Official metadata, exact issuer/settlement addresses, onchain factory registration and immutable token pair verified. Runtime full-input checks apply."
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import {cachedMetricDepth} from '../metric-cache';
 import {env} from 'cloudflare:workers';
 import {SharedCurveCache,curveKey,reusable,compactSimulation,validateBrowserCapture,type CachedSimulation,type CurveRow} from '../shared-cache';
 import {PoolReadCache} from '../pool-read-cache';
@@ -20,7 +21,7 @@ export async function sharedSimulation(issuer:Issuer,reference:Reference){
  const reads=new PoolReadCache(cache.db);
  let value:Simulation;
  try{
-  value=await simulateIssuer(issuer,reference,reads.transport,{localWorkLimit:{stateReads:64,steps:{remaining:200}}});
+  value=await simulateIssuer(issuer,reference,reads.transport,{metricLoader:(chainId,pools)=>cachedMetricDepth(cache.objects,chainId,pools),localWorkLimit:{stateReads:64,steps:{remaining:200}}});
   if(reusable(value)){
    await reads.commit();if(!await cache.commit(key,owner,value,'server'))return {status:202,value:{state:'pending',retryAfterMs:1000}};
    row=await cache.row(key);const ready=await cache.read(row!,'updated');if(!ready)throw new Error('Stored curve unavailable');ready.cache!.poolReadHits=reads.hits;ready.cache!.poolReadMisses=reads.misses;

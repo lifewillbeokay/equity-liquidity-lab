@@ -1,3 +1,4 @@
+import {validDepth} from './metric-depth';
 import {formatUnits,parseUnits} from 'viem';
 import {createHash} from 'node:crypto';
 import {routesFor,SIZES,type Issuer} from './registry';
@@ -6,7 +7,7 @@ import type {Reference,Simulation} from './simulator';
 
 export const CURVE_TTL_MS=120_000;
 export const LEASE_MS=600_000;
-export const CACHE_VERSION='shared-curves-local-pools-v2';
+export const CACHE_VERSION='shared-curves-metric-depth-v1';
 export type CacheInfo={state:'hit'|'updated'|'stale';key:string;storedAt:string;expiresAt:string;origin:'server'|'browser';poolReadHits?:number;poolReadMisses?:number};
 export type CachedSimulation=Simulation&{cache?:CacheInfo};
 export type CurveRow={key:string;issuer:string;stock:string;object_key:string|null;captured_at:string|null;expires_at:number;stored_at:number;origin:'server'|'browser'|null;lease_owner:string|null;lease_until:number;retry_at:number;last_error:string|null;reference:string};
@@ -16,7 +17,7 @@ export function curveKey(issuer:Issuer,reference:Reference){return digest({versi
 export function reusable(s:Simulation){return s.status!=='error'&&!s.points.some(p=>p.status==='error')&&!s.verificationErrors?.length;}
 export function compactSimulation(s:CachedSimulation):CachedSimulation{
  const point=(p:Simulation['points'][number])=>{const {candidateQuotes,...rest}=p;return rest;};
- return {...s,points:s.points.map(point),venues:s.venues?Object.fromEntries(Object.entries(s.venues).map(([k,v])=>[k,{...v,points:v!.points.map(point)}])):undefined};
+ return {...s,metricDepth:s.metricDepth?{...s.metricDepth,state:undefined}:undefined,points:s.points.map(point),venues:s.venues?Object.fromEntries(Object.entries(s.venues).map(([k,v])=>[k,{...v,points:v!.points.map(point)}])):undefined};
 }
 export class SharedCurveCache{
  constructor(readonly db:D1Database,readonly objects:ObjectStore,readonly now:()=>number=Date.now){}
@@ -38,7 +39,7 @@ export class SharedCurveCache{
   const row=await this.row(key),now=this.now();if(!row||row.lease_owner!==owner||row.lease_until<=now)return false;
   const objectKey=`curves/${key}/${crypto.randomUUID()}.json`;const {cache:ignored,...clean}=value as CachedSimulation;
   await this.objects.put(objectKey,JSON.stringify(clean),{httpMetadata:{contentType:'application/json'}});
-  const captured=Date.parse(value.fetchedAt),ttl=value.status==='ok'?CURVE_TTL_MS:30_000;const expires=Number.isFinite(captured)?Math.min(now+ttl,captured+ttl):now;
+  const captured=Date.parse(value.fetchedAt),ttl=value.status==='ok'?CURVE_TTL_MS:30_000;const expires=Number.isFinite(captured)?Math.min(now+ttl,captured+ttl,...(value.metricDepth?.estimates?value.metricDepth.state?.map(q=>q.serverTs*1000+ttl)??[]:[]),...Object.values(value.venues??{}).flatMap(v=>v?.points.flatMap(p=>p.metricSources?.map(m=>Date.parse(m.observedAt)+ttl)??[])??[]),...value.points.flatMap(p=>p.metricSources?.map(m=>Date.parse(m.observedAt)+ttl)??[])):now;
   const won=await this.db.prepare('UPDATE curve_cache SET object_key=?,captured_at=?,expires_at=?,stored_at=?,origin=?,lease_owner=NULL,lease_until=0,retry_at=0,last_error=NULL WHERE key=? AND lease_owner=? AND lease_until>? RETURNING key').bind(objectKey,value.fetchedAt,expires,now,origin,key,owner,now).first();
   if(!won){await this.objects.delete(objectKey);return false;}
   // The old pointer is replaced atomically. A racing reader can re-read the row.
@@ -79,7 +80,10 @@ export function validateBrowserCapture(issuer:Issuer,row:CurveRow,s:Simulation){
    if(p.side==='buy'&&p.inputRaw!==parseUnits(String(p.size),issuer.settlementDecimals).toString())throw new Error('Buy notional does not reconcile');
    if(p.side==='sell')close(p.shares,p.size/reference.price,'Sell notional');
    if(issuer.normalization!=='wrapper')close(p.shares,(p.side==='buy'?p.output!:p.input)*s.normalization.sharesPerToken,'Share normalization');
-   const route=routesFor(issuer).find(r=>r.id===p.routeId);if(p.venue!==route?.venue||(venue!=='all'&&p.venue!==venue))throw new Error('Quote venue does not reconcile');
+   const route=routesFor(issuer).find(r=>r.id===p.routeId);
+   const metricPools=(route?.hops??(route?[route]:[])).filter(r=>r.version==='metric').map(r=>r.poolIds[0].toLowerCase());
+   if(p.quoteMethod==='metric-depth'&&!p.metricSources?.length)throw new Error('Metric estimate lacks provenance');
+   if(p.metricSources?.length){if(p.quoteKind!=='provider'||p.observedAt!==p.metricSources.map(m=>m.observedAt).sort()[0])throw new Error('Metric provenance mismatch');for(const m of p.metricSources){const ts=Date.parse(m.observedAt);const snapshot=s.metricDepth?.state?.find(q=>q.poolAddress.toLowerCase()===m.pool.toLowerCase());if(m.source!=='metric-depth'||!metricPools.includes(m.pool.toLowerCase())||!Number.isFinite(ts)||ts<captured-600000||ts>captured+5000||!s.quoteStartedAt||!Number.isFinite(Date.parse(s.quoteStartedAt))||!validDepth(snapshot,m.pool,Date.parse(s.quoteStartedAt))||snapshot.serverTs*1000!==ts)throw new Error('Invalid Metric source');}}if(p.venue!==route?.venue||(venue!=='all'&&p.venue!==venue))throw new Error('Quote venue does not reconcile');
    close(p.referenceBps,(p.price/reference.price-1)*10000,'Reference deviation');
    const probe=view.probe[p.side==='buy'?'buyPrice':'sellPrice'];if(probe)close(p.impactBps,(p.side==='buy'?p.price/probe-1:1-p.price/probe)*10000,'Impact');else if(p.impactBps!==null)throw new Error('Impact lacks a probe');
    const calculated=(p.side==='buy'?p.input:p.output!)/p.shares;if(!Number.isFinite(calculated)||Math.abs(calculated-p.price)>Math.max(1e-8,p.price*1e-10))throw new Error('Quote price does not reconcile');

@@ -4,6 +4,7 @@ import aeroData from './data/aerodrome-pools.json';
 import allChainData from './data/all-chain-registry.json';
 import allChainRoutes from './data/all-chain-routes.json';
 import multiAssetData from './data/multi-asset-registry.json';
+import metricDiscovered from './data/metric-discovered-routes.json';
 import mainDexData from './data/main-dex-routes.json';
 export const DEXES=['uniswap','aerodrome','pancakeswap','metric','up','ramses','fluxion','communityv3','nest','sushiswap','jupiter','stonfi','multi'] as const;
 export type Dex=typeof DEXES[number];
@@ -32,7 +33,7 @@ export function routesFor(i:Issuer,scope:DexScope='all'):Route[]{
  if(i.chain==='ton'){const venue='stonfi';return scope==='all'||scope===venue?[{id:venue+'-'+i.id,venue,version:'provider',tokens:[i.settlement,i.token],poolIds:[],fees:[],label:DEX_LABELS[venue]}]:[];}
  const uniswap:Route[]=poolData.filter(p=>p.verified&&p.chain===i.chain&&p.base.address.toLowerCase()===i.token.toLowerCase()&&p.quote.address.toLowerCase()===i.settlement.toLowerCase()&&['v3','v4'].includes(p.version)).map(p=>({id:p.id,venue:'uniswap',version:p.version as 'v3'|'v4',poolIds:[p.id],tokens:[i.settlement,i.token],fees:[p.fee??(p as unknown as {key:PoolKey}).key?.fee??0],key:(p as unknown as {key?:PoolKey}).key,label:`Uniswap ${p.version} · ${(p.fee??(p as unknown as {key:PoolKey}).key?.fee)===8388608?'dynamic fee':((p.fee??(p as unknown as {key:PoolKey}).key?.fee??0)/10000).toFixed(2)+'%'}`}));
  const aerodrome:Route[]=aeroData.verified.filter(p=>p.chain===i.chain&&p.token===i.token&&p.settlement===i.settlement).map(p=>({id:p.id,venue:'aerodrome',version:p.version as 'slipstream'|'classic',factory:p.factory as Address,quoter:p.quoter as Address,tickSpacing:p.tickSpacing,stable:p.stable,poolIds:[p.id],tokens:[i.settlement,i.token],fees:[],label:p.version==='slipstream'?`Aerodrome Slipstream · ts ${p.tickSpacing}`:`Aerodrome ${p.stable?'stable':'volatile'}`}));
- const additional=[...mainDexData.routes,...allChainRoutes.routes,...multiAssetData.routes].filter(p=>p.issuerId===i.id) as unknown as Route[];
+ const additional=[...metricDiscovered.routes,...mainDexData.routes,...allChainRoutes.routes,...multiAssetData.routes].filter(p=>p.issuerId===i.id) as unknown as Route[];
  return [...uniswap,...aerodrome,...additional].filter(r=>scope==='all'||r.venue===scope);
 }
 export const ACTIVE_DEXES=DEXES.filter(venue=>DEPLOYMENTS.some(d=>routesFor(d).some(r=>r.venue===venue||r.hops?.some(h=>h.venue===venue))));

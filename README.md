@@ -53,9 +53,10 @@ The test suite covers exact pool math, local/contract parity checks, missing-sta
 
 ## Data and caching
 
-- EVM simulations pin their reads to a block and verify canonicality before accepting a capture.
+- Contract simulations pin their reads to a block and verify canonicality before accepting a capture. Metric API depth carries a separate provider timestamp.
 - Uniswap V3, PancakeSwap V2/V3 and legacy Aerodrome Slipstream can calculate standard and adaptive orders locally from cached pool state, using exact integer arithmetic. Read batches use Multicall3 on Ethereum, Base and BNB. Unsupported/dynamic pools and state beyond the bounded tick scan retain contract quoting.
 - Local paths check token balances and agree with same-block contract quotes at the ends of their sampled input range. A failed check discards the tentative profile and recollects it using contract quotes. Pool-state simulations are labelled separately; they are not wallet execution tests.
+- Metric batch depth estimates calculate all standard and adaptive sizes locally from one API snapshot. R2 shares healthy depth for 15 seconds, while preserving `serverTs`; snapshots older than 60 seconds at preparation are rejected. Unsupported, unhealthy, incomplete or failed estimates fall back to contract quotes. A changed share multiplier discards the API capture. Estimates are labeled in the ladder, tooltips and route details.
 - D1 stores curve metadata, refresh leases, market references, and successful RPC reads keyed by chain, block hash, and complete call parameters.
 - R2 stores full computed curves and their quote evidence. Successful curves are reused for up to two minutes; unavailable results have a shorter 30-second lifetime.
 - Simultaneous refreshes share one capture. Failed refreshes preserve available prior quotes with their original timestamps.
@@ -67,9 +68,11 @@ The committed snapshots in `lib/data/` provide the initial dated view and test f
 
 The [local pool-state benchmark](docs/benchmarks/local-pools-2026-11-15.md) records same-block numerical checks, RPC request counts and observed refresh times. Local calculation reduces repeated quoting, but whole-stock refreshes still depend on unsupported routes and public RPC limits.
 
+The [Metric depth benchmark](docs/benchmarks/metric-depth-2026-11-16.md) records the public batch API, conservative accuracy checks, coverage failures, and end-to-end timings.
+
 ## Aggregator benchmark
 
-The [AAPL/MSFT KyberSwap benchmark](docs/benchmarks/kyberswap-2026-11-15.md) compares complete cold sweeps using identical inputs. The public endpoint was slower and lost samples to rate limiting, so direct DEX quoting remains the production source. The report includes per-profile coverage, a slower-rate control, machine-readable results, and commands to reproduce the test. A higher-capacity API-key gateway has not been benchmarked.
+The [AAPL/MSFT KyberSwap benchmark](docs/benchmarks/kyberswap-2026-11-15.md) compares complete cold sweeps using identical inputs. The public endpoint was slower and lost samples to rate limiting, so KyberSwap is not used in production. The report includes per-profile coverage, a slower-rate control, machine-readable results, and commands to reproduce the test. A higher-capacity API-key gateway has not been benchmarked.
 
 ## Source map
 
@@ -80,6 +83,7 @@ The [AAPL/MSFT KyberSwap benchmark](docs/benchmarks/kyberswap-2026-11-15.md) com
 | `lib/registry.ts`, `lib/data/` | Issuer deployments, supported routes, and seed captures |
 | `lib/simulator.ts` | EVM quote adapters, local/contract orchestration and share normalization |
 | `lib/local-pools.ts`, `lib/v3-math.ts` | Bounded pool snapshots and exact local AMM math |
+| `lib/metric-depth.ts`, `lib/metric-engine.ts`, `lib/metric-cache.ts` | Conservative Metric depth math, route integration, and shared API snapshots |
 | `lib/sampling.ts` | Base ladder and adaptive refinement |
 | `lib/market.ts`, `lib/view.ts` | Cross-chain ranking and depth presentation |
 | `lib/shared-cache.ts`, `lib/pool-read-cache.ts` | Persistent curve and block-pinned RPC caching |
